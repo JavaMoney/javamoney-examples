@@ -11,4 +11,5 @@
   <modules>
   	<module>javamoney-tradingapp</module>
   </modules>
+  <name>Java Money and Currency Web Examples</name>
 </project>

@@ -11,7 +11,7 @@
     <artifactId>javamoney-tradingapp</artifactId>
     <packaging>war</packaging>
 
-    <name>Getting Started with Spring for JSR 354</name>
+    <name>Java Money and Currency Web Spring Trading App</name>
 
     <properties>
                 <!-- Spring version -->

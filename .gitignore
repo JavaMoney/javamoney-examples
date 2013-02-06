@@ -6,3 +6,5 @@
 *.ear
 /.settings
 /.project
+/javafx/.project
+/javafx/.classpath

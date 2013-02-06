@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<context:component-scan base-package="net.java.javamoney.examples.tradingapp.domain"/>
+
+	<context:component-scan base-package="net.java.javamoney.examples.tradingapp.repo"/>
+
+	<tx:annotation-driven />
+    <bean id="portfolioController" 
+          class="com.devx.tradingapp.web.PortfolioController">        
+        <constructor-arg index="0">
+            <ref bean="portfolio"/>
+        </constructor-arg>
+        <constructor-arg index="1">
+            <ref bean="market"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="portfolio" class="net.java.javamoney.examples.tradingapp.domain.Portfolio">
+        <constructor-arg index="0"><value>100000</value></constructor-arg>
+        <constructor-arg index="1">
+            <map>
+                <entry key="IBM"><value>50</value></entry>
+                <entry key="JAVA"><value>200</value></entry>
+                <entry key="DELL"><value>200</value></entry>
+                <entry key="GOOG"><value>100</value></entry>
+                <entry key="MSFT"><value>100</value></entry>
+            </map>
+        </constructor-arg>
+        <constructor-arg index="2">
+            <ref bean="defCurrency"/>
+        </constructor-arg>      
+    </bean>
+    
+    <bean id="defCurrency" class="org.jscience.economics.money.Currency">
+        <constructor-arg index="0"><value>USD</value></constructor-arg>
+    </bean>
+    
+    <bean id="market" class="com.devx.tradingapp.business.Market">
+        <constructor-arg index="0"><value>NYSE</value></constructor-arg>
+        <constructor-arg index="1"><value>New York</value></constructor-arg>
+        <constructor-arg index="2">
+            <ref bean="defCurrency"/>
+        </constructor-arg>
+        <constructor-arg index="3">
+            <map>
+                <entry key="FRA"><value>Frankfurt;EUR</value></entry>
+                <entry key="LSE"><value>London;GBP</value></entry>
+                <entry key="NYSE"><value>New York;USD</value></entry>
+                <entry key="TSE"><value>Tokio;JPY</value></entry>
+            </map>
+        </constructor-arg>
+        <constructor-arg index="4">
+            <map>
+                <entry key="EUR"><value>1.56</value></entry>
+                <entry key="GBP"><value>2.069</value></entry>
+                <entry key="USD"><value>1</value></entry>
+                <entry key="JPY"><value>0.009721</value></entry>
+                <entry key="INR"><value>0.025</value></entry>
+            </map>
+        </constructor-arg>
+        <!-- This is somewhat optinal, app works without, but only using the Standard symbols       
+        <constructor-arg index="5">
+            <map>
+                <entry key="EUR"><value>€</value></entry>
+                TODO use Unicode where possible
+                <entry key="GBP"><value>£</value></entry>
+                <entry key="USD"><value>$</value></entry>
+                <entry key="JPY"><value>¥</value></entry>
+            </map>
+        </constructor-arg -->
+    </bean>
+          
+    <bean id="logonValidator" class="com.devx.tradingapp.web.LogonValidator"/>
+    <bean id="logonForm" class="com.devx.tradingapp.web.LogonFormController">
+        <property name="sessionForm"><value>true</value></property>
+        <property name="commandName"><value>credentials</value></property>
+        <property name="commandClass"><value>com.devx.tradingapp.business.Credentials</value></property>
+        <property name="validator"><ref bean="logonValidator"/></property>
+        <property name="formView"><value>logon</value></property>
+        <property name="successView"><value>portfolio.htm</value></property>
+    </bean>
+
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename"><value>messages</value></property>
+    </bean>
+    
+    <bean id="tradeForm" class="com.devx.tradingapp.web.TradeFormController">
+        <constructor-arg index="0">
+            <ref bean="portfolio"/>
+        </constructor-arg>
+    </bean>
+    
+    <!-- you can have more than one handler defined -->
+    <bean id="urlMapping" 
+          class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="urlMap">
+            <map>
+                <entry key="/portfolio.htm">
+                    <ref bean="portfolioController" />
+                </entry>
+                <entry key="/logon.htm">
+                    <ref bean="logonForm"/>
+                </entry>
+                <entry key="/trade.htm">
+                    <ref bean="tradeForm"/>
+                </entry>
+            </map>
+        </property>
+    </bean> 
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass"><value>org.springframework.web.servlet.view.JstlView</value></property>
+        <property name="prefix"><value>/WEB-INF/jsp/</value></property>
+        <property name="suffix"><value>.jsp</value></property>
+    </bean>  
+</beans>

@@ -42,6 +42,7 @@ public class Main {
         // Make valid...
         System.out.println(total.getValue());
         
+        // Calling Money-API directly
         System.out.println(bill1.getNewAmountDue());
         System.out.println(bill2.getNewAmountDue().add(bill1.getNewAmountDue()));
     }

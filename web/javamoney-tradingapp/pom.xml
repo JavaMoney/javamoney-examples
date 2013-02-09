@@ -14,7 +14,7 @@
     <name>Java Money and Currency Web Spring Trading App</name>
 
     <properties>
-                <!-- Spring version -->
+        <!-- Spring version -->
         <version.spring>3.1.1.RELEASE</version.spring>
 
         <!-- Spring Third Party dependencies -->
@@ -32,7 +32,7 @@
     <dependencyManagement>
 
 		<dependencies>
-                        <!-- Define the version of JBoss' Java EE 6 APIs we want to import. Any
+            <!-- Define the version of JBoss' Java EE 6 APIs we want to import. Any
                 dependencies from org.jboss.spec will have their version defined by this
                 BOM -->
             <!-- JBoss distributes a complete set of Java EE 6 APIs including a Bill

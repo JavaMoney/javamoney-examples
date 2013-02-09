@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <artifactId>money-examples</artifactId>
+    <artifactId>javamoney-examples</artifactId>
     <groupId>net.java.javamoney</groupId>
     <version>0.0.1-SNAPSHOT</version>
     <relativePath>..</relativePath>
   </parent>
-  <artifactId>money-examples-web</artifactId>
+  <artifactId>javamoney-examples-web</artifactId>
   <packaging>pom</packaging>
   <modules>
-  	<module>money-tradingapp</module>
+  	<!--  module>javamoney-tradingapp</module -->
   </modules>
   <name>Java Money and Currency Web Examples</name>
 </project>

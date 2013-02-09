@@ -1,4 +1,4 @@
-money-examples
+javamoney-examples
 ==================
 
 JSR 354 Examples

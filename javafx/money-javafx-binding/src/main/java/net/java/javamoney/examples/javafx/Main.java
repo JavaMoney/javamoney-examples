@@ -1,3 +1,6 @@
+/*
+ * JSR 354 JavaFX Binding Example
+ */
 package net.java.javamoney.examples.javafx;
 
 import javafx.beans.InvalidationListener;
@@ -6,7 +9,6 @@ import javafx.beans.binding.Bindings;
 import javafx.beans.binding.NumberBinding;
 
 /**
- *
  * @author Werner Keil
  */
 public class Main {

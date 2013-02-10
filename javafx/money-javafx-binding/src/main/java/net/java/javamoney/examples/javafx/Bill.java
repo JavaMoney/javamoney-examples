@@ -10,8 +10,7 @@ import javax.money.Monetary;
 import javax.money.MonetaryAmount;
 
 /**
- *
- * @author Werner
+ * @author Werner Keil
  */
 public class Bill {
     

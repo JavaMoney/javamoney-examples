@@ -45,8 +45,8 @@ public class BindingController
             log.debug("Saying hello to " + name);
             messageLabel.setText("Hello " + name);
         } else {
-            log.debug("Neither first name nor last name was set, saying hello to anonymous person");
-            messageLabel.setText("Hello mysterious person");
+            log.debug("Neither first name nor last name was set, cannot create account for anonymous person");
+            messageLabel.setText("Sorry mysterious person;-)");
         }
     }
 

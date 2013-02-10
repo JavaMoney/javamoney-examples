@@ -17,4 +17,4 @@ All you need to build this project is Java 8.0 (Java SDK 1.8) or an equivalent J
 
 The application this project produces is designed to be run on JavaFX 2 or above.
 
-[![Image](/site/resources/images/Eclipse_JRE8_1.png "Screenshot  1")]
+[![Image](/src/site/resources/images/Eclipse_JRE8_1.png "Screenshot  1")]

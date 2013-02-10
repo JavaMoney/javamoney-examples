@@ -8,7 +8,7 @@ What is it?
 
 This is your project! It is a sample, runnable Maven 3 project to help you get your foot in the door developing with JSR 354 on JavaFX. 
 
-It was inspired by [Nordic NightHacking][http://www.ustream.tv/recorded/28943732] with Stephen Chin in Copenhagen.
+It was inspired by [Nordic NightHacking http://www.ustream.tv/recorded/28943732] with Stephen Chin in Copenhagen.
 
 System requirements
 -------------------

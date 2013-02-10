@@ -1,3 +1,6 @@
+/*
+ * JSR 354 JavaFX Binding Example
+ */
 package net.java.javamoney.examples.javafx;
 
 import javafx.fxml.FXML;
@@ -7,6 +10,10 @@ import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * @author Werner Keil
+ *
+ */
 public class BindingController
 {
     private static final Logger log = LoggerFactory.getLogger(BindingController.class);

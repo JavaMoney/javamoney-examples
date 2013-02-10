@@ -16,3 +16,5 @@ System requirements
 All you need to build this project is Java 8.0 (Java SDK 1.8) or an equivalent Java version with **JavaFX**, Maven 3.0 or better.
 
 The application this project produces is designed to be run on JavaFX 2 or above.
+
+[![Image](/site/resources/images/Eclipse_JRE8_1.png "Screenshot  1")]

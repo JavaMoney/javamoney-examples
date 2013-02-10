@@ -1,3 +1,6 @@
+/*
+ * JSR 354 JavaFX Binding Example
+ */
 package net.java.javamoney.examples.javafx;
 
 import javafx.application.Application;
@@ -8,6 +11,10 @@ import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * @author Werner Keil
+ *
+ */
 public class BindingApp extends Application {
 
     private static final Logger log = LoggerFactory.getLogger(BindingApp.class);

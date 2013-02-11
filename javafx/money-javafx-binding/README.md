@@ -26,7 +26,7 @@ In order to make Maven build the project, you need to select a Java 8 compliant 
 If you run Maven from the command line instead of an IDE like Eclipse or NetBeans, please ensure, the `JAVA_HOME` environment variable points to an appropriate version of Java 8 or above. Either JRE or JDK as long as it contains JavaFX.
 
 ###Steps for Eclipse
-Add "jdk 1.8.0" or equivalent like "jre8" to your "Installed JREs" under Eclipse, if they don't exist there. 
+Add "jdk 1.8.0" or equivalent like "jre8" to your "Installed JREs" in Eclipse, if they don't exist there. 
 ![Image](/src/site/resources/images/Eclipse_JRE8_0_1.png "Add JRE to Eclipse")
 
 Under "Java Build Path" of "Project Properties" select the JRE System Library in the "Libraries" tab.

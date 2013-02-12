@@ -3,6 +3,9 @@
  */
 package net.java.javamoney.examples.javafx;
 
+import java.time.LocalDateTime;
+import java.time.temporal.Temporal;
+
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
@@ -47,5 +50,9 @@ public class Main {
         // Calling Money-API directly
         System.out.println(bill1.getNewAmountDue());
         System.out.println(bill2.getNewAmountDue().add(bill1.getNewAmountDue()));
+        
+        // Some test to check out Temporal
+        Temporal t = LocalDateTime.now();
+        System.out.println(t);
     }
 }

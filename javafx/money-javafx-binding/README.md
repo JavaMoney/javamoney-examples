@@ -22,13 +22,11 @@ Setting up the project
 
 In order to make Maven build the project, you need to select a Java 8 compliant JVM or another runtime environment including JavaFX. 
 
-Steps for Command Line
-- - -
+###Steps for Command Line
 If you run Maven from the command line instead of an IDE like Eclipse or NetBeans, please ensure, the `JAVA_HOME` environment variable points to an appropriate version of Java 8 or above. Either JRE or JDK as long as it contains JavaFX.
 
-Steps for Eclipse
-- - -
-Add "jdk 1.8.0" or equivalent like "jre8" to your "Installed JREs" under Eclipse, if they don't exist there. 
+###Steps for Eclipse
+Add "jdk 1.8.0" or equivalent like "jre8" to your "Installed JREs" in Eclipse, if they don't exist there. 
 ![Image](/src/site/resources/images/Eclipse_JRE8_0_1.png "Add JRE to Eclipse")
 
 Under "Java Build Path" of "Project Properties" select the JRE System Library in the "Libraries" tab.
@@ -39,8 +37,7 @@ Click "Edit" and select "jdk 1.8.0" or equivalent from the "Alternate JRE" list.
 
 ![Image](/src/site/resources/images/Eclipse_JRE8_2.png "Edit Library in Eclipse")
 
-Steps for NetBeans
-- - -
+###Steps for NetBeans
 Add Java Platform like "JDK 1.8" or equivalent to NetBeans, if they don't exist in the Java Platform Manager. 
 ![Image](/src/site/resources/images/NB7_JavaFX_2.png "Add Java Platform to NetBeans")
 

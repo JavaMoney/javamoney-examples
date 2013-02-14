@@ -3,11 +3,8 @@
  */
 package net.java.javamoney.javafx.binding;
 
-import java.util.Locale;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
-import javafx.beans.binding.BooleanBinding;
-import javafx.beans.binding.StringBinding;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 

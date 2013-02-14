@@ -4,7 +4,7 @@
 package net.java.javamoney.javafx.property;
 /**
  *
- * @author Werner
+ * @author Werner Keil
  */
 public class ReadonlyMonetaryProperty {
     

@@ -3,7 +3,7 @@
   <parent>
     <artifactId>javamoney-examples</artifactId>
     <groupId>net.java.javamoney</groupId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.1-SNAPSHOT</version>
     <relativePath>..</relativePath>
   </parent>
   <artifactId>javamoney-examples-javafx</artifactId>
@@ -11,4 +11,5 @@
   <modules>
   	<module>money-javafx-binding</module>
   </modules>
+  <name>Java Money and Currency JavaFX Examples</name>
 </project>

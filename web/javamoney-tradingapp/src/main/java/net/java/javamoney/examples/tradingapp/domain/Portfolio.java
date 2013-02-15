@@ -49,7 +49,7 @@ public class Portfolio implements Characterizable {
         }
     }
 
-    public Iterator getSymbolIterator() {
+    public Iterator<String> getSymbolIterator() {
         return sharesPerSymbol.keySet().iterator();
     }
 

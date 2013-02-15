@@ -1,5 +1,5 @@
 <%@ include file="/WEB-INF/views/include.jsp" %>
-<%--@ page import="com.devx.tradingapp.web.LogHelper"--%>
+<%--@ page import="net.java.javamoney.examples.tradingapp.mvc.LogHelper"--%>
 <html>
 <head>
 	<%-- meta http-equiv="content-type" content="text/html; charset=UTF-8" />

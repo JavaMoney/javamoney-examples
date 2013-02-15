@@ -12,7 +12,7 @@ import com.surveycom.sdj.Nameable;// TODO change to SDJ3
  * This object represents a simplified stock market place.
  * 
  * @author Werner Keil
- * @version 0.9, $Date$
+ * @version 0.9.1, 15-02-13
  * 
  */
 public class Market implements Nameable {

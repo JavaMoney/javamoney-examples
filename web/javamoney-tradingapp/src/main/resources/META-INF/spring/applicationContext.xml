@@ -18,7 +18,7 @@
 
 	<tx:annotation-driven />
     <bean id="portfolioController" 
-          class="com.devx.tradingapp.web.PortfolioController">        
+          class="net.java.javamoney.examples.tradingapp.mvc.PortfolioController">        
         <constructor-arg index="0">
             <ref bean="portfolio"/>
         </constructor-arg>
@@ -47,7 +47,7 @@
         <constructor-arg index="0"><value>USD</value></constructor-arg>
     </bean>
     
-    <bean id="market" class="com.devx.tradingapp.business.Market">
+    <bean id="market" class="net.java.javamoney.examples.tradingapp.domain.Market">
         <constructor-arg index="0"><value>NYSE</value></constructor-arg>
         <constructor-arg index="1"><value>New York</value></constructor-arg>
         <constructor-arg index="2">
@@ -82,11 +82,11 @@
         </constructor-arg -->
     </bean>
           
-    <bean id="logonValidator" class="com.devx.tradingapp.web.LogonValidator"/>
-    <bean id="logonForm" class="com.devx.tradingapp.web.LogonFormController">
+    <bean id="logonValidator" class="net.java.javamoney.examples.tradingapp.mvc.LogonValidator"/>
+    <bean id="logonForm" class="net.java.javamoney.examples.tradingapp.mvc.LogonFormController">
         <property name="sessionForm"><value>true</value></property>
         <property name="commandName"><value>credentials</value></property>
-        <property name="commandClass"><value>com.devx.tradingapp.business.Credentials</value></property>
+        <property name="commandClass"><value>net.java.javamoney.examples.tradingapp.domain.Credentials</value></property>
         <property name="validator"><ref bean="logonValidator"/></property>
         <property name="formView"><value>logon</value></property>
         <property name="successView"><value>portfolio.htm</value></property>
@@ -96,7 +96,7 @@
         <property name="basename"><value>messages</value></property>
     </bean>
     
-    <bean id="tradeForm" class="com.devx.tradingapp.web.TradeFormController">
+    <bean id="tradeForm" class="net.java.javamoney.examples.tradingapp.mvc.TradeFormController">
         <constructor-arg index="0">
             <ref bean="portfolio"/>
         </constructor-arg>
@@ -121,7 +121,7 @@
     </bean> 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass"><value>org.springframework.web.servlet.view.JstlView</value></property>
-        <property name="prefix"><value>/WEB-INF/jsp/</value></property>
+        <property name="prefix"><value>/WEB-INF/views/</value></property>
         <property name="suffix"><value>.jsp</value></property>
     </bean>  
 </beans>

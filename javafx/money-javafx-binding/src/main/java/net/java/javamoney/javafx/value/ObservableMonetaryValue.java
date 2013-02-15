@@ -4,11 +4,13 @@
 package net.java.javamoney.javafx.value;
 
 import javafx.beans.value.ObservableValue;
+
+import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
 
 /**
  *
- * @author Werner
+ * @author Werner Keil
  */
 public interface ObservableMonetaryValue  extends ObservableValue<MonetaryAmount> {
     public int intValue();
@@ -18,4 +20,6 @@ public interface ObservableMonetaryValue  extends ObservableValue<MonetaryAmount
     public float floatValue();
 
     public double doubleValue();
+    
+    public CurrencyUnit getCurrency();
 }

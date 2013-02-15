@@ -8,16 +8,19 @@ import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 
+import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
 import net.java.javamoney.javafx.value.ObservableMonetaryValue;
 
 /**
  *
- * @author Werner
+ * @author Werner Keil
  */
-public class MonetaryExpressionBase extends MonetaryExpression implements Observable,
+public class MonetaryExpressionBase implements MonetaryExpression, Observable,
         ObservableMonetaryValue, ObservableValue<MonetaryAmount> {
 
+	private MonetaryAmount amount;
+	
     @Override
     public void addListener(InvalidationListener il) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -60,6 +63,12 @@ public class MonetaryExpressionBase extends MonetaryExpression implements Observ
 
     @Override
     public MonetaryAmount getValue() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return amount;
     }
+
+	@Override
+	public CurrencyUnit getCurrency() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

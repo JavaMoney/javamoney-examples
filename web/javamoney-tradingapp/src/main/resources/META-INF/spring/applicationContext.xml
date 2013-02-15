@@ -31,11 +31,11 @@
         <constructor-arg index="0"><value>100000</value></constructor-arg>
         <constructor-arg index="1">
             <map>
-                <entry key="IBM"><value>50</value></entry>
-                <entry key="JAVA"><value>200</value></entry>
-                <entry key="DELL"><value>200</value></entry>
-                <entry key="GOOG"><value>100</value></entry>
-                <entry key="MSFT"><value>100</value></entry>
+                <entry key="IBM"><value>50.00</value></entry>
+                <entry key="JAVA"><value>200.00</value></entry>
+                <entry key="DELL"><value>200.00</value></entry>
+                <entry key="GOOG"><value>100.00</value></entry>
+                <entry key="MSFT"><value>100.00</value></entry>
             </map>
         </constructor-arg>
         <constructor-arg index="2">

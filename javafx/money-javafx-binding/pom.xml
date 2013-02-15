@@ -24,12 +24,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf4j.version>1.6.1</slf4j.version>
         <javax.money.version>0.3-SNAPSHOT</javax.money.version>
+        <javamoney.ri.version>0.3-SNAPSHOT</javamoney.ri.version>
     </properties>
 
     <build>
         <plugins>
-
-
             <plugin>
                 <groupId>com.zenjava</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
@@ -72,9 +71,9 @@
                 <version>${javax.money.version}</version>
             </dependency>
               <dependency>
-                <groupId>javax.money</groupId>
-                <artifactId>money-ri</artifactId>
-                <version>${javax.money.version}</version>
+                <groupId>net.java.javamoney</groupId>
+                <artifactId>javamoney-ri</artifactId>
+                <version>${javamoney.ri.version}</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
@@ -130,11 +129,11 @@
             <artifactId>log4j</artifactId>
             <version>1.2.16</version>
         </dependency>
-
         <dependency>
-        	<groupId>javax.money</groupId>
-        	<artifactId>money-ri</artifactId>
+        	<groupId>net.java.javamoney</groupId>
+        	<artifactId>javamoney-ri</artifactId>
         </dependency>
+        
         <dependency>
         	<groupId>junit</groupId>
         	<artifactId>junit</artifactId>

@@ -6,8 +6,8 @@ package net.java.javamoney.examples.javafx;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javax.money.CurrencyUnit;
-import javax.money.Monetary;
 import javax.money.MonetaryAmount;
+import javax.money.provider.Monetary;
 
 /**
  * @author Werner Keil

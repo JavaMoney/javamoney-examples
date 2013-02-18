@@ -2,7 +2,7 @@
  * Common constants used across the application
  * 
  * @author Werner Keil
- *
+ * @deprecated
  */
 public abstract class Constants {
 	public static final String APP_TITLE = "JSR 354 Stock-Trading System";

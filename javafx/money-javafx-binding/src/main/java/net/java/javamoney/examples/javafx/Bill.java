@@ -18,7 +18,8 @@ public class Bill {
     private DoubleProperty amountDue = new SimpleDoubleProperty();
     private double doubleValue = 10d;
     private CurrencyUnit currency =  Monetary.getCurrencyUnitProvider().get("ISO-4217", "DKK");
-    private MonetaryAmount newAmountDue = Monetary.getMonetaryAmountProvider().get(currency, doubleValue);
+    private MonetaryAmount newAmountDue = Monetary.getMonetaryAmountProvider().
+    		getMonetaryAmountFactory().get(currency, doubleValue);
             
     // Define a getter for the property's value
     public final double getAmountDue(){return amountDue.get();}

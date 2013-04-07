@@ -1,0 +1,50 @@
+package samples;
+
+import javax.money.CurrencyUnit;
+
+import net.java.javamoney.ri.core.MoneyCurrency;
+
+/**
+ * Sample snippets for accessing and creating currencies on platform level.
+ */
+public class CreateCurrencies {
+
+	/**
+	 * Shows simple creation of a CurrencyUnit for ISO, backed up by JDK
+	 * Currency implementation.
+	 */
+	public void forISOCurrencies() {
+		CurrencyUnit currency = MoneyCurrency.of("USD");
+		// since backed up by java.util.Currency this will return a result
+	}
+
+	/**
+	 * Demonstrates the access of non ISO currencies.
+	 */
+	public void forCustomCurrencies() {
+		CurrencyUnit currency = MoneyCurrency.of("myNamespace", "myCode");
+		// May return null, since no such currency may be defined...
+	}
+
+	/**
+	 * Demonstrates how a custom currency of arbitrary complexity can be
+	 * constructed and - optionally - cached and shared.
+	 */
+	public void buildACurrencyUnit() {
+		MoneyCurrency.Builder builder = new MoneyCurrency.Builder();
+		builder.setNamespace("myNamespace");
+		builder.setCurrencyCode("myCode");
+		builder.setDefaultFractionDigits(4);
+		builder.setLegalTender(false);
+		builder.setValidFrom(System.currentTimeMillis());
+		builder.setVirtual(true);
+		builder.setAttribute("test-only", true);
+		CurrencyUnit unit = builder.build();
+		// nevertheless MoneyCurrency.of("myNamespace", "myCode"); still returns
+		// null!
+		builder.build(true);
+		// no it is registered
+		unit = MoneyCurrency.of("myNamespace", "myCode");
+	}
+
+}

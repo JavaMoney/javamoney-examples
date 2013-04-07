@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<BorderPane id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml">
+  <bottom>
+    <AnchorPane fx:id="actionPane" prefHeight="64.0" prefWidth="600.0">
+      <children>
+        <HBox fx:id="buttonPane" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+      </children>
+    </AnchorPane>
+  </bottom>
+  <center>
+    <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="-1.0" BorderPane.alignment="TOP_LEFT" BorderPane.margin="$x1">
+      <content>
+        <AnchorPane id="resultPane" fx:id="resultPane" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+          <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
+          </padding>
+        </AnchorPane>
+      </content>
+    </ScrollPane>
+  </center>
+  <left>
+    <AnchorPane fx:id="amountInputPane" prefHeight="200.0" prefWidth="200.0" BorderPane.margin="$x1" />
+  </left>
+</BorderPane>

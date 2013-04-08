@@ -46,7 +46,6 @@ public class GetExchangeRate extends AbstractExamplePane {
 			Button actionButton = new Button("Create");
 			actionButton
 					.setOnAction(new javafx.event.EventHandler<ActionEvent>() {
-						@Override
 						public void handle(ActionEvent action) {
 							StringWriter sw = new StringWriter();
 							PrintWriter pw = new PrintWriter(sw);

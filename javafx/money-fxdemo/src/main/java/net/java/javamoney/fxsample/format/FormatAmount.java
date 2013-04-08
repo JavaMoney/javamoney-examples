@@ -50,7 +50,6 @@ public class FormatAmount extends AbstractExamplePane {
 			Button actionButton = new Button("Create and Format Amount");
 			actionButton
 					.setOnAction(new javafx.event.EventHandler<ActionEvent>() {
-						@Override
 						public void handle(ActionEvent action) {
 							StringWriter sw = new StringWriter();
 							PrintWriter pw = new PrintWriter(sw);
@@ -97,7 +96,6 @@ public class FormatAmount extends AbstractExamplePane {
 			Button fillButton = new Button("Fill INR Example");
 			fillButton
 					.setOnAction(new javafx.event.EventHandler<ActionEvent>() {
-						@Override
 						public void handle(ActionEvent action) {
 							MonetaryAmount amount = Money.of("INR",
 											12345678901234567890.123d);

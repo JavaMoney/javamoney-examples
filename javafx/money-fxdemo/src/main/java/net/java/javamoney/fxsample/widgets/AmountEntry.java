@@ -48,7 +48,6 @@ public class AmountEntry extends AbstractFXMLComponent {
 		numberType.getItems().add("Long");
 		namespaceBox.getSelectionModel().selectedItemProperty()
 				.addListener(new ChangeListener() {
-					@Override
 					public void changed(ObservableValue value, Object oldValue,
 							Object newValue) {
 						List<String> currencies = new ArrayList<String>();

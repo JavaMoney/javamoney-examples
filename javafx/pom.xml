@@ -10,6 +10,7 @@
   <packaging>pom</packaging>
   <modules>
   	<module>money-javafx-binding</module>
+  	<module>money-fxdemo</module>
   </modules>
   <name>Java Money and Currency JavaFX Examples</name>
 </project>

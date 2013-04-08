@@ -43,7 +43,6 @@ public class MinMaxSample extends AbstractExamplePane {
 			Button minButton = new Button("Calculate MIN");
 			minButton
 					.setOnAction(new javafx.event.EventHandler<ActionEvent>() {
-						@Override
 						public void handle(ActionEvent action) {
 							StringWriter sw = new StringWriter();
 							PrintWriter pw = new PrintWriter(sw);
@@ -75,7 +74,6 @@ public class MinMaxSample extends AbstractExamplePane {
 			Button maxButton = new Button("Calculate MAX");
 			maxButton
 					.setOnAction(new javafx.event.EventHandler<ActionEvent>() {
-						@Override
 						public void handle(ActionEvent action) {
 							StringWriter sw = new StringWriter();
 							PrintWriter pw = new PrintWriter(sw);

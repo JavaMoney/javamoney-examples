@@ -44,7 +44,6 @@ public class SamplePage extends BorderPane {
 			codeToolBar.setId("code-tool-bar");
 			Button copyCodeButton = new Button("Copy Source");
 			copyCodeButton.setOnAction(new EventHandler<ActionEvent>() {
-				@Override
 				public void handle(ActionEvent actionEvent) {
 					Map<DataFormat, Object> clipboardContent = new HashMap<DataFormat, Object>();
 					clipboardContent.put(DataFormat.PLAIN_TEXT, rawCode);

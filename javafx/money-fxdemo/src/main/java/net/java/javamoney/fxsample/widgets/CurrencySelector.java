@@ -36,7 +36,6 @@ public class CurrencySelector extends AbstractFXMLComponent {
 		namespaceBox.getSelectionModel().selectedItemProperty()
 				.addListener(new ChangeListener() {
 
-					@Override
 					public void changed(ObservableValue value, Object oldValue,
 							Object newValue) {
 						if (newValue != null) {

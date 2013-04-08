@@ -44,7 +44,6 @@ public class AccessCurrencies extends AbstractExamplePane {
 			AnchorPane.setTopAnchor(exPane, 10d);
 			Button actionButton = new Button("Access Currency");
 			actionButton.setOnAction(new javafx.event.EventHandler<ActionEvent>() {
-				@Override
 				public void handle(ActionEvent action) {
 					StringWriter sw = new StringWriter();
 					PrintWriter pw = new PrintWriter(sw);

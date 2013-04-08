@@ -58,7 +58,6 @@ public class MainScreen extends AbstractFXMLComponent {
 		button.setPrefWidth(200d);
 		button.setAlignment(Pos.CENTER_LEFT);
 		button.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
 			public void handle(ActionEvent arg0) {
 				openSample(type);
 			}

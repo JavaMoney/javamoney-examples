@@ -9,7 +9,7 @@
         <version>0.2-SNAPSHOT</version>
     </parent>
 
-    <artifactId>javamoney-javafx-binding</artifactId>
+    <artifactId>money-javafx-binding</artifactId>
     <name>Java Money and Currency JavaFX Binding Examples</name>
 
     <packaging>jar</packaging>

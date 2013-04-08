@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/JavaMoney FXDemo/src/main/java/net/java/javamoney/fxsample/FXSample.java"/>
+<listEntry value="/money-fxdemo/src/main/java/net/java/javamoney/fxsample/FXSample.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
@@ -13,6 +13,6 @@
 <listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="net.java.javamoney.fxsample.FXSample"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="JavaMoney FXDemo"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="money-fxdemo"/>
 <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xms32M -Xmx256m"/>
 </launchConfiguration>

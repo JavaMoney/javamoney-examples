@@ -27,19 +27,19 @@ If you run Maven from the command line instead of an IDE like Eclipse or NetBean
 
 ###Steps for Eclipse
 Add "jdk 1.8.0" or equivalent like "jre8" to your "Installed JREs" in Eclipse, if they don't exist there. 
-![Image](/src/site/resources/images/Eclipse_JRE8_0_1.png "Add JRE to Eclipse")
+![Image](../src/site/resources/images/Eclipse_JRE8_0_1.png "Add JRE to Eclipse")
 
 Under "Java Build Path" of "Project Properties" select the JRE System Library in the "Libraries" tab.
-![Image](/src/site/resources/images/Eclipse_JRE8_1.png "Java Build Path in Eclipse")
+![Image](../src/site/resources/images/Eclipse_JRE8_1.png "Java Build Path in Eclipse")
 
 
 Click "Edit" and select "jdk 1.8.0" or equivalent from the "Alternate JRE" list. Should the "Workspace default JRE" state something like "jdk 1.8.0" or "jre8", you may use that, too. Only if your Eclipse version already supports Java 8 and above, you may also select "JavaSE-1.8" or an appropriate similar value in "Execution environment".
 
-![Image](/src/site/resources/images/Eclipse_JRE8_2.png "Edit Library in Eclipse")
+![Image](../src/site/resources/images/Eclipse_JRE8_2.png "Edit Library in Eclipse")
 
 ###Steps for NetBeans
 Add Java Platform like "JDK 1.8" or equivalent to NetBeans, if they don't exist in the Java Platform Manager. 
-![Image](/src/site/resources/images/NB7_JavaFX_2.png "Add Java Platform to NetBeans")
+![Image](../src/site/resources/images/NB7_JavaFX_2.png "Add Java Platform to NetBeans")
 
 Under "Build > Compile" of "Project Properties" select "JDK 1.8" or equivalent from the "Java Platform" list. 
-![Image](/src/site/resources/images/NB7_JavaFX_3.png "Project Properties in NetBeans")
+![Image](../src/site/resources/images/NB7_JavaFX_3.png "Project Properties in NetBeans")

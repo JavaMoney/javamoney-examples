@@ -23,8 +23,10 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf4j.version>1.6.1</slf4j.version>
-        <javax.money.version>0.3</javax.money.version>
-        <javamoney.ri.version>0.3</javamoney.ri.version>
+        
+        <!-- JSR versions -->
+        <javax.money.version>1.0-SNAPSHOT</javax.money.version>
+        <javamoney.ri.version>1.0-SNAPSHOT</javamoney.ri.version>
     </properties>
 
     <build>

@@ -7,6 +7,7 @@ import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
+import javax.money.Money;
 import javax.money.provider.Monetary;
 
 /**
@@ -18,8 +19,7 @@ public class Bill {
     private DoubleProperty amountDue = new SimpleDoubleProperty();
     private double doubleValue = 10d;
     private CurrencyUnit currency =  Monetary.getCurrencyUnitProvider().get("ISO-4217", "DKK");
-    private MonetaryAmount newAmountDue = Monetary.getMonetaryAmountProvider().
-    		getMonetaryAmountFactory().get(currency, doubleValue);
+    private MonetaryAmount newAmountDue = Money.of(currency, doubleValue);
             
     // Define a getter for the property's value
     public final double getAmountDue(){return amountDue.get();}

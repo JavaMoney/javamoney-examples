@@ -10,7 +10,7 @@
 
 
 	<!-- The Basics -->
-	<name>JavaMoney FX Sample</name>
+	<name>JavaMoney FX Demo</name>
 
 	<packaging>jar</packaging>
 
@@ -23,7 +23,7 @@
 		<dependency>
 			<groupId>net.java.javamoney</groupId>
 			<artifactId>money-ri</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<version>${javax.money.version}</version>
 		</dependency>
 	</dependencies>
 

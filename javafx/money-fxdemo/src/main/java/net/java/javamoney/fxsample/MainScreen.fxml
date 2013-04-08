@@ -68,7 +68,7 @@
       <children>
         <VBox id="VBox" alignment="TOP_LEFT" spacing="5.0">
           <children>
-            <Label text="JavaMoney Sample Application" textFill="#fff500">
+            <Label text="JavaMoney Demo Application" textFill="#fff500">
               <effect>
                 <Reflection bottomOpacity="0.23809523809523808" fraction="0.376984126984127" topOffset="-5.0" />
               </effect>

@@ -14,6 +14,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import javax.money.MonetaryAmount;
+import javax.money.MonetaryCalculations;
 
 import net.java.javamoney.fxsample.widgets.AbstractExamplePane;
 import net.java.javamoney.fxsample.widgets.AbstractSingleSamplePane;
@@ -42,8 +43,7 @@ public class CalculateAmounts extends AbstractExamplePane {
 			exPane.getChildren().add(amount1Pane);
 			exPane.getChildren().add(amount2Pane);
 			VBox amountBox = new VBox();
-			amountBox.getChildren().addAll(amount1Pane,
-					amount2Pane);
+			amountBox.getChildren().addAll(amount1Pane, amount2Pane);
 			VBox opBox = new VBox();
 			opBox.getChildren().addAll(new Label("Operation"), operationChoice,
 					addResultToAmount1);
@@ -101,9 +101,11 @@ public class CalculateAmounts extends AbstractExamplePane {
 									.equals(operation)) {
 								return amount1.divideToIntegralValue(amount2);
 							} else if ("max".equals(operation)) {
-								return amount1.max(amount2);
+								return MonetaryCalculations.max(amount1,
+										amount2);
 							} else if ("min".equals(operation)) {
-								return amount1.min(amount2);
+								return MonetaryCalculations.min(amount1,
+										amount2);
 							} else if ("remainder".equals(operation)) {
 								return amount1.remainder(amount2);
 							}

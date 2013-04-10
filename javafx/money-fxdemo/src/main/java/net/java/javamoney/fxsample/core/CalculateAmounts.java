@@ -99,10 +99,10 @@ public class CalculateAmounts extends AbstractExamplePane {
 							} else if ("divideToIntegralValue"
 									.equals(operation)) {
 								return amount1.divideToIntegralValue(amount2);
-							} else if ("max".equals(operation)) {
-								return amount1.max(amount2);
-							} else if ("min".equals(operation)) {
-								return amount1.min(amount2);
+//							} else if ("max".equals(operation)) {
+//								return amount1.max(amount2);
+//							} else if ("min".equals(operation)) {
+//								return amount1.min(amount2);
 							} else if ("remainder".equals(operation)) {
 								return amount1.remainder(amount2);
 							}

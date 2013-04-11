@@ -6,7 +6,7 @@
     <parent>
         <artifactId>javamoney-examples-web</artifactId>
         <groupId>net.java.javamoney</groupId>
-        <version>0.2-SNAPSHOT</version>
+        <version>0.3-SNAPSHOT</version>
     </parent>
     <artifactId>javamoney-tradingapp</artifactId>
     <packaging>war</packaging>

@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>net.java.javamoney</groupId>
 		<artifactId>javamoney-examples-javafx</artifactId>
-		<version>0.2-SNAPSHOT</version>
+		<version>0.3-SNAPSHOT</version>
 	</parent>
 
 
@@ -27,7 +27,6 @@
 		</dependency>
 	</dependencies>
 
-	<version>1.0.0-SNAPSHOT</version>
 	<url>http://java.net/project/javamoney</url>
 	<description>JSR 354 Java Money &amp; Currency FX Sample</description>
 	<organization>

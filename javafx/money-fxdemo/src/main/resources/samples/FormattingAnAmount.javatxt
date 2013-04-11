@@ -1,0 +1,44 @@
+package samples;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.money.CurrencyUnit;
+import javax.money.MonetaryAmount;
+import javax.money.convert.CurrencyConverter;
+import javax.money.ext.AmountUtils;
+import javax.money.format.ItemFormatter;
+import javax.money.provider.Monetary;
+
+import net.java.javamoney.ri.core.Money;
+import net.java.javamoney.ri.core.MoneyCurrency;
+
+/**
+ * Sample snippets for accessing and creating currencies on platform level.
+ */
+public class FormattingAnAmount {
+
+	/**
+	 * Shows usage of AmountUtils exensions.
+	 */
+	public String styleAnAmount(MonetaryAmount amount) {
+		LocalizationStyle style = new LocalizationStyle.Builder()
+			.setLocale(Locale.ENGLISH).setAttribute("groupSizes",4).build();
+		ItemFormatter<Amount> formatter = Monetary.getItemFormatterFactory().getItemFormatter(MonetaryAmount.class, style");
+		return formatter.format(amount);
+	}
+
+	/**
+	 * Shows simple usage of TokenizedItemFormatterBuilder.
+	 */
+	public String formatAmountUsingTokenizedFormatter(MonetaryAmount amount) {
+		TokenizedItemFormatterBuilder<MonetaryAmount> builder = new DefaultTokenizedItemFormatter.Builder<MonetaryAmount>(
+				MonetaryAmount.class);
+		builder.addLiteral("Amount: ");
+		DecimalFormat df = ...;
+		builder.addToken(new FormattedAmount(df));
+		
+		ItemFormatter<MonetaryAmount> formatter = builder.build();
+		return formatter.format(amount);
+	}
+}

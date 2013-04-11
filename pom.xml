@@ -1,6 +1,24 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>javamoney-examples</groupId>
+  <groupId>net.java.javamoney</groupId>
   <artifactId>javamoney-examples</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.2-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Java Money and Currency Examples</name>
+  <modules>
+  	<module>web</module>
+  	<!--  module>javafx</module --> 
+  	<!-- TODO add profiles for Java 8/FX -->
+  </modules>
+  	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jdkVersion>1.7</jdkVersion>
+		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
+		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+		<basedir>.</basedir>
+		<!-- Dependency versions -->
+		<junit.version>4.8.2</junit.version>
+        <javax.money.version>1.0-SNAPSHOT</javax.money.version>
+        <javamoney.ri.version>1.0-SNAPSHOT</javamoney.ri.version>
+	</properties>
 </project>

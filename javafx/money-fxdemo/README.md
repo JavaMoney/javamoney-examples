@@ -1,4 +1,4 @@
-javamoney-fxdemo
+money-fxdemo
 ========================
 
 What is it?

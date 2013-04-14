@@ -1,4 +1,4 @@
-package net.java.javamoney.fxsample;
+package net.java.javamoney.fxdemo;
 
 import javafx.scene.Node;
 import javafx.scene.Parent;

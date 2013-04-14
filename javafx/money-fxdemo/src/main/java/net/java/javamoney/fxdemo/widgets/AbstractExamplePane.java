@@ -1,4 +1,4 @@
-package net.java.javamoney.fxsample.widgets;
+package net.java.javamoney.fxdemo.widgets;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import net.java.javamoney.fxsample.AbstractFXMLComponent;
+import net.java.javamoney.fxdemo.AbstractFXMLComponent;
 
 public abstract class AbstractExamplePane extends AbstractFXMLComponent {
 
@@ -30,7 +30,7 @@ public abstract class AbstractExamplePane extends AbstractFXMLComponent {
 	private AnchorPane contentPane;
 
 	public AbstractExamplePane(Node content) {
-		super("/net/java/javamoney/fxsample/widgets/ExamplePane.fxml");
+		super("/net/java/javamoney/fxdemo/widgets/ExamplePane.fxml");
 		this.contentPane.getChildren().add(content);
 		AnchorPane.setBottomAnchor(content, 0d);
 		AnchorPane.setTopAnchor(content, 0d);

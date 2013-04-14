@@ -1,4 +1,4 @@
-package net.java.javamoney.fxsample.core;
+package net.java.javamoney.fxdemo.core;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -15,9 +15,9 @@ import javafx.scene.layout.VBox;
 
 import javax.money.MonetaryAmount;
 
-import net.java.javamoney.fxsample.widgets.AbstractExamplePane;
-import net.java.javamoney.fxsample.widgets.AbstractSingleSamplePane;
-import net.java.javamoney.fxsample.widgets.AmountEntry;
+import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
+import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
+import net.java.javamoney.fxdemo.widgets.AmountEntry;
 
 public class CalculateAmounts extends AbstractExamplePane {
 

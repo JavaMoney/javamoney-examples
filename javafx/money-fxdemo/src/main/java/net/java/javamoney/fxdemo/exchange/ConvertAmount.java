@@ -1,4 +1,4 @@
-package net.java.javamoney.fxsample.exchange;
+package net.java.javamoney.fxdemo.exchange;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -17,11 +17,11 @@ import javax.money.convert.ExchangeRate;
 import javax.money.convert.ExchangeRateType;
 import javax.money.provider.Monetary;
 
-import net.java.javamoney.fxsample.widgets.AbstractExamplePane;
-import net.java.javamoney.fxsample.widgets.AbstractSingleSamplePane;
-import net.java.javamoney.fxsample.widgets.AmountEntry;
-import net.java.javamoney.fxsample.widgets.CurrencySelector;
-import net.java.javamoney.fxsample.widgets.ExchangeRateTypeSelector;
+import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
+import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
+import net.java.javamoney.fxdemo.widgets.AmountEntry;
+import net.java.javamoney.fxdemo.widgets.CurrencySelector;
+import net.java.javamoney.fxdemo.widgets.ExchangeRateTypeSelector;
 
 public class ConvertAmount extends AbstractExamplePane {
 

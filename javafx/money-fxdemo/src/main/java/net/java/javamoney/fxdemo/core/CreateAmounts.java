@@ -1,4 +1,4 @@
-package net.java.javamoney.fxsample.core;
+package net.java.javamoney.fxdemo.core;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,9 +14,9 @@ import javafx.scene.layout.HBox;
 
 import javax.money.MonetaryAmount;
 
-import net.java.javamoney.fxsample.widgets.AbstractExamplePane;
-import net.java.javamoney.fxsample.widgets.AbstractSingleSamplePane;
-import net.java.javamoney.fxsample.widgets.AmountEntry;
+import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
+import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
+import net.java.javamoney.fxdemo.widgets.AmountEntry;
 
 public class CreateAmounts extends AbstractExamplePane {
 

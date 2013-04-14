@@ -1,4 +1,4 @@
-package net.java.javamoney.fxsample.widgets;
+package net.java.javamoney.fxdemo.widgets;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,7 +15,7 @@ import javax.money.CurrencyUnit;
 import javax.money.MoneyCurrency;
 import javax.money.provider.Monetary;
 
-import net.java.javamoney.fxsample.AbstractFXMLComponent;
+import net.java.javamoney.fxdemo.AbstractFXMLComponent;
 
 public class CurrencySelector extends AbstractFXMLComponent {
 
@@ -29,7 +29,7 @@ public class CurrencySelector extends AbstractFXMLComponent {
 	private Label currencyTitle;
 
 	public CurrencySelector(String title) {
-		super("/net/java/javamoney/fxsample/widgets/CurrencySelector.fxml");
+		super("/net/java/javamoney/fxdemo/widgets/CurrencySelector.fxml");
 		this.currencyTitle.setText(title);
 		namespaceBox.getItems().addAll(
 				Monetary.getCurrencyUnitProvider().getNamespaces());

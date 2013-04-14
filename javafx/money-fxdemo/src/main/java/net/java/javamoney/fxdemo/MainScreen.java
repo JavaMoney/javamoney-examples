@@ -1,4 +1,4 @@
-package net.java.javamoney.fxsample;
+package net.java.javamoney.fxdemo;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -8,13 +8,13 @@ import javafx.scene.Node;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-import net.java.javamoney.fxsample.core.AccessCurrencies;
-import net.java.javamoney.fxsample.core.CalculateAmounts;
-import net.java.javamoney.fxsample.core.CreateAmounts;
-import net.java.javamoney.fxsample.exchange.ConvertAmount;
-import net.java.javamoney.fxsample.exchange.GetExchangeRate;
-import net.java.javamoney.fxsample.ext.MinMaxSample;
-import net.java.javamoney.fxsample.format.FormatAmount;
+import net.java.javamoney.fxdemo.core.AccessCurrencies;
+import net.java.javamoney.fxdemo.core.CalculateAmounts;
+import net.java.javamoney.fxdemo.core.CreateAmounts;
+import net.java.javamoney.fxdemo.exchange.ConvertAmount;
+import net.java.javamoney.fxdemo.exchange.GetExchangeRate;
+import net.java.javamoney.fxdemo.ext.MinMaxSample;
+import net.java.javamoney.fxdemo.format.FormatAmount;
 
 public class MainScreen extends AbstractFXMLComponent {
 	@FXML

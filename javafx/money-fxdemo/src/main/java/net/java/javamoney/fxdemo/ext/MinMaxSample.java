@@ -1,8 +1,9 @@
-package net.java.javamoney.fxsample.ext;
+package net.java.javamoney.fxdemo.ext;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.math.BigDecimal;
+import java.util.Arrays;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
@@ -11,12 +12,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
 import javax.money.MonetaryAmount;
-import javax.money.ext.AmountUtils;
-import javax.money.provider.Monetary;
+import javax.money.function.Maximum;
+import javax.money.function.Minimum;
 
-import net.java.javamoney.fxsample.widgets.AbstractExamplePane;
-import net.java.javamoney.fxsample.widgets.AbstractSingleSamplePane;
-import net.java.javamoney.fxsample.widgets.AmountEntry;
+import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
+import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
+import net.java.javamoney.fxdemo.widgets.AmountEntry;
 
 public class MinMaxSample extends AbstractExamplePane {
 
@@ -47,7 +48,9 @@ public class MinMaxSample extends AbstractExamplePane {
 							StringWriter sw = new StringWriter();
 							PrintWriter pw = new PrintWriter(sw);
 							try {
-								MonetaryAmount min = Monetary.getExtension(AmountUtils.class).min(amount1.getAmount(), amount2.getAmount(), amount3.getAmount());
+								MonetaryAmount min = Minimum.from(Arrays.asList(
+										amount1.getAmount(), amount2.getAmount(), 
+										amount3.getAmount()));
 								pw.println("MonetaryAmount (Min)");
 								pw.println("--------------------");
 								pw.println();
@@ -78,7 +81,9 @@ public class MinMaxSample extends AbstractExamplePane {
 							StringWriter sw = new StringWriter();
 							PrintWriter pw = new PrintWriter(sw);
 							try {
-								MonetaryAmount max = Monetary.getExtension(AmountUtils.class).max(amount1.getAmount(), amount2.getAmount(), amount3.getAmount());
+								MonetaryAmount max =  Maximum.from(Arrays.asList(
+										amount1.getAmount(), amount2.getAmount(), 
+										amount3.getAmount()));
 								pw.println("MonetaryAmount (Max)");
 								pw.println("--------------------");
 								pw.println();

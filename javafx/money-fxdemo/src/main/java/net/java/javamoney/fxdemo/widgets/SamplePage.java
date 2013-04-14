@@ -1,4 +1,4 @@
-package net.java.javamoney.fxsample.widgets;
+package net.java.javamoney.fxdemo.widgets;
 
 import java.io.IOException;
 import java.io.InputStream;

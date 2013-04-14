@@ -1,4 +1,4 @@
-package net.java.javamoney.fxsample.widgets;
+package net.java.javamoney.fxdemo.widgets;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import javax.money.Money;
 import javax.money.MoneyCurrency;
 import javax.money.provider.Monetary;
 
-import net.java.javamoney.fxsample.AbstractFXMLComponent;
+import net.java.javamoney.fxdemo.AbstractFXMLComponent;
 import net.java.javamoney.ri.core.IntegralMoney;
 
 public class AmountEntry extends AbstractFXMLComponent {

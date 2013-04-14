@@ -1,4 +1,4 @@
-package net.java.javamoney.fxsample.format;
+package net.java.javamoney.fxdemo.format;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -18,9 +18,9 @@ import javax.money.format.ItemFormatter;
 import javax.money.format.LocalizationStyle;
 import javax.money.provider.Monetary;
 
-import net.java.javamoney.fxsample.widgets.AbstractExamplePane;
-import net.java.javamoney.fxsample.widgets.AbstractSingleSamplePane;
-import net.java.javamoney.fxsample.widgets.AmountEntry;
+import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
+import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
+import net.java.javamoney.fxdemo.widgets.AmountEntry;
 import net.java.javamoney.ri.format.provider.format.IsoAmountFormatter.CurrencyPlacement;
 
 public class FormatAmount extends AbstractExamplePane {

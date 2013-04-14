@@ -1,4 +1,4 @@
-package net.java.javamoney.fxsample;
+package net.java.javamoney.fxdemo;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -7,9 +7,9 @@ import javafx.stage.StageStyle;
 
 import org.apache.log4j.Logger;
 
-public class FXSample extends Application {
+public class FXDemo extends Application {
 
-	private static final Logger LOGGER = Logger.getLogger(FXSample.class);
+	private static final Logger LOGGER = Logger.getLogger(FXDemo.class);
 
 	public void start(final Stage primaryStage) {
 		try {
@@ -26,7 +26,7 @@ public class FXSample extends Application {
 	}
 
 	public static void main(String[] args) {
-		Application.launch(FXSample.class, args);
+		Application.launch(FXDemo.class, args);
 	}
 
 }

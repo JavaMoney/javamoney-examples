@@ -1,4 +1,4 @@
-package net.java.javamoney.fxsample;
+package net.java.javamoney.fxdemo;
 
 import java.io.IOException;
 import java.lang.reflect.Field;

@@ -33,7 +33,6 @@ public class CalculateAmounts extends AbstractExamplePane {
 		private HBox exPane = new HBox();
 		private AmountEntry amount1Pane = new AmountEntry("First Amount");
 		private AmountEntry amount2Pane = new AmountEntry("Second Amount");
-		private Label operationLabel = new Label("Operation to be performed:");
 		private ChoiceBox<String> operationChoice = new ChoiceBox<>();
 		private CheckBox addResultToAmount1 = new CheckBox(
 				"Set result to Amount 1.");
@@ -60,7 +59,7 @@ public class CalculateAmounts extends AbstractExamplePane {
 						public void handle(ActionEvent action) {
 							StringWriter sw = new StringWriter();
 							PrintWriter pw = new PrintWriter(sw);
-							StringBuilder builder = new StringBuilder();
+//							StringBuilder builder = new StringBuilder();
 							try {
 								MonetaryAmount amount1 = amount1Pane
 										.getAmount();

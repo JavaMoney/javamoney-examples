@@ -17,7 +17,7 @@ import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
 import javax.money.Money;
 import javax.money.MoneyCurrency;
-import javax.money.provider.Monetary;
+import javax.money.provider.MonetaryCurrencies;
 
 import net.java.javamoney.fxdemo.AbstractFXMLComponent;
 import net.java.javamoney.ri.core.IntegralMoney;
@@ -35,15 +35,14 @@ public class AmountEntry extends AbstractFXMLComponent {
 
 	@FXML
 	private TextField numberValue;
-	
+
 	@FXML
 	private Label amountTitle;
 
 	public AmountEntry(String title) {
 		super("AmountEntry.fxml");
 		amountTitle.setText(title);
-		namespaceBox.getItems().addAll(
-				Monetary.getCurrencyUnitProvider().getNamespaces());
+		namespaceBox.getItems().addAll(MonetaryCurrencies.getNamespaces());
 		numberType.getItems().add("BigDecimal");
 		numberType.getItems().add("Long");
 		namespaceBox.getSelectionModel().selectedItemProperty()
@@ -51,9 +50,8 @@ public class AmountEntry extends AbstractFXMLComponent {
 					public void changed(ObservableValue value, Object oldValue,
 							Object newValue) {
 						List<String> currencies = new ArrayList<String>();
-						for (CurrencyUnit unit : Monetary
-								.getCurrencyUnitProvider().getAll(
-										(String) newValue)) {
+						for (CurrencyUnit unit : MonetaryCurrencies
+								.getAll((String) newValue)) {
 							currencies.add(unit.getCurrencyCode());
 						}
 						Collections.sort(currencies);
@@ -67,32 +65,31 @@ public class AmountEntry extends AbstractFXMLComponent {
 		String namespace = (String) namespaceBox.getSelectionModel()
 				.getSelectedItem();
 		String code = (String) codeBox.getSelectionModel().getSelectedItem();
-		String typeClass = (String)numberType.getSelectionModel()
+		String typeClass = (String) numberType.getSelectionModel()
 				.getSelectedItem();
-		CurrencyUnit currency = Monetary.getCurrencyUnitProvider().get(
-				namespace, code);
+		CurrencyUnit currency = MonetaryCurrencies.get(namespace, code);
 		BigDecimal dec = new BigDecimal(numberValue.getText());
 		if (typeClass != null) {
-			if("Long".equals(typeClass)){
+			if ("Long".equals(typeClass)) {
 				return IntegralMoney.of(currency, dec);
 			}
 		}
 		return Money.of(currency, dec);
 	}
 
-	public void setAmount(MonetaryAmount amount){
-		if(amount!=null){
-			namespaceBox.getSelectionModel().select(amount.getCurrency().getNamespace());
-			codeBox.getSelectionModel().select(amount.getCurrency().getCurrencyCode());
-			if(IntegralMoney.class.equals(amount.getClass())){
+	public void setAmount(MonetaryAmount amount) {
+		if (amount != null) {
+			namespaceBox.getSelectionModel().select(
+					amount.getCurrency().getNamespace());
+			codeBox.getSelectionModel().select(
+					amount.getCurrency().getCurrencyCode());
+			if (IntegralMoney.class.equals(amount.getClass())) {
 				numberType.getSelectionModel().select("Long");
-			}
-			else{
+			} else {
 				numberType.getSelectionModel().select("BigDecimal");
 			}
 			numberValue.setText(amount.asType(BigDecimal.class).toString());
-		}
-		else{
+		} else {
 			namespaceBox.getSelectionModel().clearSelection();
 			codeBox.getSelectionModel().clearSelection();
 			numberType.getSelectionModel().clearSelection();

@@ -1,19 +1,18 @@
 package net.java.javamoney.fxdemo.widgets;
 
-import java.util.Enumeration;
+import java.util.Collection;
 
 import javafx.scene.control.ChoiceBox;
 
 import javax.money.convert.ExchangeRateType;
-import javax.money.provider.Monetary;
+import javax.money.convert.MonetaryConversion;
 
 public class ExchangeRateTypeSelector extends ChoiceBox<ExchangeRateType> {
 
 	public ExchangeRateTypeSelector() {
-		Enumeration<ExchangeRateType> en = Monetary.getConversionProvider()
+		Collection<ExchangeRateType> en = MonetaryConversion
 				.getSupportedExchangeRateTypes();
-		while (en.hasMoreElements()) {
-			ExchangeRateType type = en.nextElement();
+		for (ExchangeRateType type : en) {
 			getItems().add(type);
 		}
 

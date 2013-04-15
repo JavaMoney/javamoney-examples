@@ -33,7 +33,7 @@ public class CalculateAmounts extends AbstractExamplePane {
 		private HBox exPane = new HBox();
 		private AmountEntry amount1Pane = new AmountEntry("First Amount");
 		private AmountEntry amount2Pane = new AmountEntry("Second Amount");
-		private ChoiceBox<String> operationChoice = new ChoiceBox<>();
+		private ChoiceBox<String> operationChoice = new ChoiceBox<String>();
 		private CheckBox addResultToAmount1 = new CheckBox(
 				"Set result to Amount 1.");
 

@@ -14,9 +14,9 @@ import javafx.scene.layout.VBox;
 
 import javax.money.MonetaryAmount;
 import javax.money.Money;
-import javax.money.format.ItemFormatter;
+import javax.money.format.ItemFormat;
 import javax.money.format.LocalizationStyle;
-import javax.money.provider.Monetary;
+import javax.money.format.MonetaryFormat;
 
 import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
 import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
@@ -66,17 +66,17 @@ public class FormatAmount extends AbstractExamplePane {
 										groupsInt[i] = Integer
 												.parseInt(groups[i]);
 									}
-									styleBuilder.setAttribute("groups", groupsInt);
+									styleBuilder.setAttribute("groups",
+											groupsInt);
 								}
 								CurrencyPlacement placement = currencyPlacement
 										.getSelectionModel().getSelectedItem();
 								if (placement != null) {
-									styleBuilder.setAttribute("currencyPlacement",
-											placement);
+									styleBuilder.setAttribute(
+											"currencyPlacement", placement);
 								}
-								ItemFormatter<MonetaryAmount> formatter = Monetary
-										.getItemFormatterFactory()
-										.getItemFormatter(MonetaryAmount.class,
+								ItemFormat<MonetaryAmount> formatter = MonetaryFormat
+										.getItemFormat(MonetaryAmount.class,
 												styleBuilder.build());
 								pw.println("Formatted Amount");
 								pw.println("----------------");
@@ -98,7 +98,7 @@ public class FormatAmount extends AbstractExamplePane {
 					.setOnAction(new javafx.event.EventHandler<ActionEvent>() {
 						public void handle(ActionEvent action) {
 							MonetaryAmount amount = Money.of("INR",
-											12345678901234567890.123d);
+									12345678901234567890.123d);
 							amount1.setAmount(amount);
 							groupSizes.setText("3,2");
 						}

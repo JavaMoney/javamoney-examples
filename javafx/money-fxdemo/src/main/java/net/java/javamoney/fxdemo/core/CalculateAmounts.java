@@ -112,6 +112,7 @@ public class CalculateAmounts extends AbstractExamplePane {
 						private void printSummary(MonetaryAmount amount,
 								PrintWriter pw) {
 							pw.println("Class: " + amount.getClass().getName());
+							pw.println("Currency: " + amount.getCurrency());
 							pw.println("Value (BD): "
 									+ amount.asType(BigDecimal.class));
 							pw.println("Precision: " + amount.getPrecision());

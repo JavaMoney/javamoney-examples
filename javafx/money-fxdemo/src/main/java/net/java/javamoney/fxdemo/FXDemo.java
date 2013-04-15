@@ -2,6 +2,7 @@ package net.java.javamoney.fxdemo;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -16,7 +17,9 @@ public class FXDemo extends Application {
 			Scene scene = new Scene(new MainScreen());
 			primaryStage.setScene(scene);
 			primaryStage.centerOnScreen();
-			primaryStage.setTitle("JSR 354 JavaMoney - Examples");
+			primaryStage.setTitle("JSR 354 JavaMoney - Demo");
+			// set icon
+			primaryStage.getIcons().add(new Image("/images/javamoney_s.png"));
 			primaryStage.initStyle(StageStyle.DECORATED);
 			primaryStage.show();
 		} catch (Exception e) {

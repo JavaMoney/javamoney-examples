@@ -12,7 +12,7 @@ import javafx.scene.layout.AnchorPane;
 
 import org.apache.log4j.Logger;
 
-public class AbstractFXMLComponent extends AnchorPane {
+public abstract class AbstractFXMLComponent extends AnchorPane {
 
 	private static final String DEFAULT_BUNDLE = "i18n/translation";
 

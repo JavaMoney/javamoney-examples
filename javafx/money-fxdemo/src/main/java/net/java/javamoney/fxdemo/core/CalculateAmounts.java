@@ -23,8 +23,8 @@ public class CalculateAmounts extends AbstractExamplePane {
 
 	public CalculateAmounts() {
 		super(new ExamplePane());
-		setExampleTitle("Monetary Amounts Arithmethics");
-		setExampleDescription("This example shows how to perform arithemtic operations on monmetary amounts.");
+		setExampleTitle("Monetary Amount Arithmethics");
+		setExampleDescription("This example shows how to perform arithemtic operations on monetary amounts.");
 		setExampleCode(loadExample("/samples/AmountArithmetics.javatxt"));
 	}
 
@@ -34,7 +34,7 @@ public class CalculateAmounts extends AbstractExamplePane {
 		private AmountEntry amount1Pane = new AmountEntry("First Amount");
 		private AmountEntry amount2Pane = new AmountEntry("Second Amount");
 		private Label operationLabel = new Label("Operation to be performed:");
-		private ChoiceBox operationChoice = new ChoiceBox();
+		private ChoiceBox<String> operationChoice = new ChoiceBox<>();
 		private CheckBox addResultToAmount1 = new CheckBox(
 				"Set result to Amount 1.");
 

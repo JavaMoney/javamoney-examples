@@ -103,7 +103,6 @@ public final class ComponentUtil {
 				}
 			}
 			if (node instanceof Accordion) {
-				Accordion sp = (Accordion) node;
 				for (Node child : ((Accordion) node).getPanes()) {
 					Node result = lookupInternal(child, id);
 					if (result != null) {

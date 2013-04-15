@@ -73,7 +73,7 @@ public abstract class AbstractFXMLComponent extends AnchorPane {
 	}
 
 	private void initFields() {
-		Class clazz = getClass();
+		Class<?> clazz = getClass();
 		while (clazz != null) {
 			Field[] fields = clazz.getDeclaredFields();
 			for (Field f : fields) {

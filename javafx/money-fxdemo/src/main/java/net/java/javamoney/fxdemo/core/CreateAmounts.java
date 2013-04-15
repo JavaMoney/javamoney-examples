@@ -42,7 +42,6 @@ public class CreateAmounts extends AbstractExamplePane {
 						public void handle(ActionEvent action) {
 							StringWriter sw = new StringWriter();
 							PrintWriter pw = new PrintWriter(sw);
-							StringBuilder builder = new StringBuilder();
 							try {
 								MonetaryAmount amount = amount1.getAmount();
 								pw.println("MonetaryAmount");

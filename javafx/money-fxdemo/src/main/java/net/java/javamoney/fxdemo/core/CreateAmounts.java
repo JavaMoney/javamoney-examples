@@ -1,8 +1,5 @@
 package net.java.javamoney.fxdemo.core;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.math.BigDecimal;
@@ -23,7 +20,7 @@ public class CreateAmounts extends AbstractExamplePane {
 	public CreateAmounts() {
 		super(new ExamplePane());
 		setExampleTitle("Creating Monetary Amounts");
-		setExampleDescription("This example shows how to create monmetary amounts with different currencies and with different number representations.");
+		setExampleDescription("This example shows how to create monetary amounts with different currencies and with different number representations.");
 		setExampleCode(loadExample("/samples/CreateAmounts.javatxt"));
 	}
 

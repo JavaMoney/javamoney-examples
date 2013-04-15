@@ -2,7 +2,6 @@ package net.java.javamoney.fxdemo.core;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.math.BigDecimal;
 import java.util.Locale;
 
 import javafx.event.ActionEvent;
@@ -12,13 +11,8 @@ import javafx.scene.layout.HBox;
 
 import javax.money.CurrencyUnit;
 import javax.money.LocalizableCurrencyUnit;
-import javax.money.MonetaryAmount;
-import javax.money.provider.Monetary;
-
-import net.java.javamoney.fxdemo.core.CreateAmounts.ExamplePane;
 import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
 import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
-import net.java.javamoney.fxdemo.widgets.AmountEntry;
 import net.java.javamoney.fxdemo.widgets.CurrencySelector;
 
 public class AccessCurrencies extends AbstractExamplePane {

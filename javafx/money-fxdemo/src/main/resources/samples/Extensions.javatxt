@@ -18,21 +18,20 @@ import net.java.javamoney.ri.core.MoneyCurrency;
 public class Extensions {
 
 	/**
-	 * Shows usage of AmountUtils exensions.
+	 * Shows usage of Minimal monetary function and rounding.
 	 */
 	public MonetaryAmount calculateMin(MonetaryAmount... amounts) {
-		return Monetary.getExtension(AmountUtils.class).min(amounts);
+		return Minimum.from(amounts).with(MoneyRounding.of(amounts[0].getCurrency()));
 	}
 	
 	/**
-	 * Shows usage of AmountUtils exensions.
+	 * Shows usage of functions, e.g. SeparateAmounts, Total.
 	 */
-	public Map<CurrencyUnit,MonetaryAmount> calculateTotals(Collection amounts) {
-		AmountUtils utils = Monetary.getExtension(AmountUtils.class);
-		Map<CurrencyUnit, List<MonetaryAmount>> amountsSplitted = utils.separateCurrencies(amounts);
+	public Map<CurrencyUnit,MonetaryAmount> calculateTotals(Collection<MonetaryAmount> amounts) {
+		Map<CurrencyUnit,Collection<MonetaryAmount>> amountsSplitted = SeparateAmounts.from(amounts);
 		Map<CurrencyUnit,MonetaryAmount> result = new HashMap<CurrencyUnit,MonetaryAmount>();
 		for (Map.Entry<CurrencyUnit, List<MonetaryAmount>> entry : amountsSplitted.entrySet()) {
-			result.put(enty.getKey(), utils.total(entry.getValue()));
+			result.put(enty.getKey(), Total.from(entry.getValue()));
 		}
 		return result;
 	}

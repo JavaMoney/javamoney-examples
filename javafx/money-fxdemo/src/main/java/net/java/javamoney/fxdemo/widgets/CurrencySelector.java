@@ -13,7 +13,7 @@ import javafx.scene.control.Label;
 
 import javax.money.CurrencyUnit;
 import javax.money.MoneyCurrency;
-import javax.money.provider.Monetary;
+import javax.money.provider.MonetaryCurrencies;
 
 import net.java.javamoney.fxdemo.AbstractFXMLComponent;
 
@@ -31,8 +31,7 @@ public class CurrencySelector extends AbstractFXMLComponent {
 	public CurrencySelector(String title) {
 		super("/net/java/javamoney/fxdemo/widgets/CurrencySelector.fxml");
 		this.currencyTitle.setText(title);
-		namespaceBox.getItems().addAll(
-				Monetary.getCurrencyUnitProvider().getNamespaces());
+		namespaceBox.getItems().addAll(MonetaryCurrencies.getNamespaces());
 		namespaceBox.getSelectionModel().selectedItemProperty()
 				.addListener(new ChangeListener() {
 
@@ -40,9 +39,8 @@ public class CurrencySelector extends AbstractFXMLComponent {
 							Object newValue) {
 						if (newValue != null) {
 							final List<String> currencyCodes = new ArrayList<String>();
-							for (CurrencyUnit unit : Monetary
-									.getCurrencyUnitProvider().getAll(
-											(String) newValue)) {
+							for (CurrencyUnit unit : MonetaryCurrencies
+									.getAll((String) newValue)) {
 								String code = unit.getCurrencyCode();
 								if (code != null && !code.trim().isEmpty()) {
 									if (!currencyCodes.contains(code)) {
@@ -64,7 +62,7 @@ public class CurrencySelector extends AbstractFXMLComponent {
 				.getSelectedItem();
 		String code = (String) codeBox.getSelectionModel().getSelectedItem();
 		if (namespace != null && code != null) {
-			return Monetary.getCurrencyUnitProvider().get(namespace, code);
+			return MonetaryCurrencies.get(namespace, code);
 		}
 		return null;
 	}

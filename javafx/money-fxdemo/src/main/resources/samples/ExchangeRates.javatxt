@@ -19,8 +19,8 @@ public class ExchangeRates {
 		CurrencyUnit base = MoneyCurrency.of("EUR");
 		CurrencyUnit term = MoneyCurrency.of("USD");
 		ExchangeRateType rateType = ExchangeRateType.of("EZB");
-		ExchangeRateProvider rateProv = Monetary.getConversionProvider()
-				.getExchangeRateProvider(rateType);
+		COnversionProvider rateProv = MonetaryConversion
+				.getConversionProvider(rateType);
 		// Access Current
 		ExchangeRate rate = rateProv.getExchangeRate(base, term);
 		// Access Historic

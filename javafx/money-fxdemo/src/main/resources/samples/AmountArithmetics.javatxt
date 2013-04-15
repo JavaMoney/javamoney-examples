@@ -36,4 +36,15 @@ public class AmountArithemtics {
 		MonetaryAmount sum = m1.add(m2);
 		MonetaryAmount diff = m2.substract(m1).negate();
 	}
+	
+	/**
+	 * Monetary Operations...
+	 */
+	public void monetaryOperations() {
+		MonetaryAmount m1 = Money.of("USD", 789);
+		MonetaryAmount m2 = Money.of("USD", 1234566.15);
+		
+		MonetaryAmount sum = m1.add(m2);
+		MonetaryAmount diffMajorPartOnly = m2.substract(m1).negate().with(MajorPart.of());
+	}
 }

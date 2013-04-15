@@ -24,20 +24,19 @@ public class FormattingAnAmount {
 	public String styleAnAmount(MonetaryAmount amount) {
 		LocalizationStyle style = new LocalizationStyle.Builder()
 			.setLocale(Locale.ENGLISH).setAttribute("groupSizes",4).build();
-		ItemFormatter<Amount> formatter = Monetary.getItemFormatterFactory().getItemFormatter(MonetaryAmount.class, style");
-		return formatter.format(amount);
+		ItemFormat<Amount> format = MonetaryFormat.getItemFormatter(MonetaryAmount.class, style);
+		return format.format(amount);
 	}
 
 	/**
 	 * Shows simple usage of TokenizedItemFormatterBuilder.
 	 */
 	public String formatAmountUsingTokenizedFormatter(MonetaryAmount amount) {
-		TokenizedItemFormatterBuilder<MonetaryAmount> builder = new DefaultTokenizedItemFormatter.Builder<MonetaryAmount>(
+		BuildableItemFormatter.Builder<MonetaryAmount> builder = new BuildableItemFormatter.Builder<MonetaryAmount>(
 				MonetaryAmount.class);
 		builder.addLiteral("Amount: ");
 		DecimalFormat df = ...;
 		builder.addToken(new FormattedAmount(df));
-		
 		ItemFormatter<MonetaryAmount> formatter = builder.build();
 		return formatter.format(amount);
 	}

@@ -3,7 +3,6 @@ package net.java.javamoney.fxdemo.exchange;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.math.BigDecimal;
-import java.util.Arrays;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
@@ -13,9 +12,8 @@ import javafx.scene.layout.VBox;
 
 import javax.money.MonetaryAmount;
 import javax.money.convert.CurrencyConverter;
-import javax.money.convert.ExchangeRate;
 import javax.money.convert.ExchangeRateType;
-import javax.money.provider.Monetary;
+import javax.money.convert.MonetaryConversion;
 
 import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
 import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
@@ -56,9 +54,8 @@ public class ConvertAmount extends AbstractExamplePane {
 							try {
 								ExchangeRateType type = rateTypeSelector
 										.getSelectionModel().getSelectedItem();
-								CurrencyConverter prov = Monetary
-										.getConversionProvider()
-										.getCurrencyConverter(type);
+								CurrencyConverter prov = MonetaryConversion
+										.getConversionProvider(type).getConverter();
 								MonetaryAmount convertedAmount = prov.convert(amountBox.getAmount(), currencySelector1.getCurrency());
 								pw.println("Converted Amount");
 								pw.println("----------------");

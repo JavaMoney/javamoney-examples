@@ -2,6 +2,7 @@ package net.java.javamoney.fxdemo.core;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.Currency;
 import java.util.Locale;
 
 import javafx.event.ActionEvent;
@@ -10,7 +11,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
 import javax.money.CurrencyUnit;
-import javax.money.LocalizableCurrencyUnit;
+import javax.money.MoneyCurrency;
+
 import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
 import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
 import net.java.javamoney.fxdemo.widgets.CurrencySelector;
@@ -62,9 +64,8 @@ public class AccessCurrencies extends AbstractExamplePane {
 					pw.println("Legal Tender: " + currency.isLegalTender());
 					pw.println("Virtual Currency: " + currency.isVirtual());
 					pw.println("Default Fraction Digits: " + currency.getDefaultFractionDigits());
-					if(currency instanceof LocalizableCurrencyUnit){
-						LocalizableCurrencyUnit lcu = (LocalizableCurrencyUnit)currency;
-						pw.println("LocalizableCurrencyUnit: true");
+					if(currency.getNamespace().equals(MoneyCurrency.ISO_NAMESPACE)){
+						Currency lcu = Currency.getInstance(currency.getCurrencyCode());
 						pw.println("Display Name: " + lcu.getDisplayName(Locale.ENGLISH));
 						pw.println("Symbol: " + lcu.getSymbol(Locale.ENGLISH));
 

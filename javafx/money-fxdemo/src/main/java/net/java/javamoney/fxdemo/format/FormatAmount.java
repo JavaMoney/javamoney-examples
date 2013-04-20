@@ -16,12 +16,12 @@ import javax.money.MonetaryAmount;
 import javax.money.Money;
 import javax.money.format.ItemFormat;
 import javax.money.format.LocalizationStyle;
-import javax.money.format.MonetaryFormat;
+import javax.money.format.MonetaryFormats;
 
 import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
 import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
 import net.java.javamoney.fxdemo.widgets.AmountEntry;
-import net.java.javamoney.ri.format.provider.format.IsoAmountFormatter.CurrencyPlacement;
+import net.java.javamoney.ri.format.impl.IsoAmountFormatter.CurrencyPlacement;
 
 public class FormatAmount extends AbstractExamplePane {
 
@@ -53,7 +53,6 @@ public class FormatAmount extends AbstractExamplePane {
 						public void handle(ActionEvent action) {
 							StringWriter sw = new StringWriter();
 							PrintWriter pw = new PrintWriter(sw);
-							StringBuilder builder = new StringBuilder();
 							try {
 								MonetaryAmount amount = amount1.getAmount();
 								LocalizationStyle.Builder styleBuilder = new LocalizationStyle.Builder(
@@ -75,7 +74,7 @@ public class FormatAmount extends AbstractExamplePane {
 									styleBuilder.setAttribute(
 											"currencyPlacement", placement);
 								}
-								ItemFormat<MonetaryAmount> formatter = MonetaryFormat
+								ItemFormat<MonetaryAmount> formatter = MonetaryFormats
 										.getItemFormat(MonetaryAmount.class,
 												styleBuilder.build());
 								pw.println("Formatted Amount");

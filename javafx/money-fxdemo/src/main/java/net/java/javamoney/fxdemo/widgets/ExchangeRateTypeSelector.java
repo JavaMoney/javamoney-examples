@@ -5,14 +5,14 @@ import java.util.Collection;
 import javafx.scene.control.ChoiceBox;
 
 import javax.money.convert.ExchangeRateType;
-import javax.money.convert.MonetaryConversion;
+import javax.money.convert.MonetaryConversions;
 
 public class ExchangeRateTypeSelector extends ChoiceBox<ExchangeRateType> {
 
 	public ExchangeRateTypeSelector() {
-		Collection<ExchangeRateType> en = MonetaryConversion
+		final Collection<ExchangeRateType> types = MonetaryConversions
 				.getSupportedExchangeRateTypes();
-		for (ExchangeRateType type : en) {
+		for (ExchangeRateType type : types) {
 			getItems().add(type);
 		}
 

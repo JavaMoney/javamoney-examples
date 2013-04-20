@@ -13,7 +13,7 @@ import javafx.scene.layout.VBox;
 import javax.money.MonetaryAmount;
 import javax.money.convert.CurrencyConverter;
 import javax.money.convert.ExchangeRateType;
-import javax.money.convert.MonetaryConversion;
+import javax.money.convert.MonetaryConversions;
 
 import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
 import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
@@ -54,7 +54,7 @@ public class ConvertAmount extends AbstractExamplePane {
 							try {
 								ExchangeRateType type = rateTypeSelector
 										.getSelectionModel().getSelectedItem();
-								CurrencyConverter prov = MonetaryConversion
+								CurrencyConverter prov = MonetaryConversions
 										.getConversionProvider(type).getConverter();
 								MonetaryAmount convertedAmount = prov.convert(amountBox.getAmount(), currencySelector1.getCurrency());
 								pw.println("Converted Amount");

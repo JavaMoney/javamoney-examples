@@ -13,7 +13,7 @@ import javafx.scene.control.Label;
 
 import javax.money.CurrencyUnit;
 import javax.money.MoneyCurrency;
-import javax.money.provider.MonetaryCurrencies;
+import javax.money.ext.MonetaryCurrencies;
 
 import net.java.javamoney.fxdemo.AbstractFXMLComponent;
 

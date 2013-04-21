@@ -12,7 +12,7 @@ import javafx.scene.layout.VBox;
 import javax.money.convert.ConversionProvider;
 import javax.money.convert.ExchangeRate;
 import javax.money.convert.ExchangeRateType;
-import javax.money.convert.MonetaryConversion;
+import javax.money.convert.MonetaryConversions;
 
 import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
 import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
@@ -52,7 +52,7 @@ public class GetExchangeRate extends AbstractExamplePane {
 							try {
 								ExchangeRateType type = rateTypeSelector
 										.getSelectionModel().getSelectedItem();
-								ConversionProvider prov = MonetaryConversion
+								ConversionProvider prov = MonetaryConversions
 										.getConversionProvider(type);
 								ExchangeRate rate = prov.getExchangeRate(
 										currencySelector1.getCurrency(),

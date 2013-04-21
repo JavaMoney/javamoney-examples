@@ -18,6 +18,7 @@ import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
 import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
 import net.java.javamoney.fxdemo.widgets.CurrencySelector;
 import net.java.javamoney.fxdemo.widgets.ExchangeRateTypeSelector;
+//github.com/JavaMoney/javamoney-examples.git
 
 public class GetExchangeRate extends AbstractExamplePane {
 

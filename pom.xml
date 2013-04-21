@@ -18,7 +18,7 @@
 		<basedir>.</basedir>
 		<!-- Dependency versions -->
 		<junit.version>4.8.2</junit.version>
-        <javax.money.version>1.0-SNAPSHOT</javax.money.version>
+        <javamoney.version>1.0-SNAPSHOT</javamoney.version>
         <javamoney.ri.version>1.0-SNAPSHOT</javamoney.ri.version>
 	</properties>
 </project>

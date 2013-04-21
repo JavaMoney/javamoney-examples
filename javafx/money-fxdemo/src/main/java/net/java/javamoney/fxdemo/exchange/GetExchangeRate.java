@@ -1,7 +1,5 @@
 package net.java.javamoney.fxdemo.exchange;
 
-import static javax.money.convert.MonetaryConversions.getConversionProvider;
-
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
@@ -14,11 +12,13 @@ import javafx.scene.layout.VBox;
 import javax.money.convert.ConversionProvider;
 import javax.money.convert.ExchangeRate;
 import javax.money.convert.ExchangeRateType;
+import javax.money.convert.MonetaryConversions;
 
 import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
 import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
 import net.java.javamoney.fxdemo.widgets.CurrencySelector;
 import net.java.javamoney.fxdemo.widgets.ExchangeRateTypeSelector;
+//github.com/JavaMoney/javamoney-examples.git
 
 public class GetExchangeRate extends AbstractExamplePane {
 
@@ -53,7 +53,8 @@ public class GetExchangeRate extends AbstractExamplePane {
 							try {
 								ExchangeRateType type = rateTypeSelector
 										.getSelectionModel().getSelectedItem();
-								ConversionProvider prov = getConversionProvider(type);
+								ConversionProvider prov = MonetaryConversions
+										.getConversionProvider(type);
 								ExchangeRate rate = prov.getExchangeRate(
 										currencySelector1.getCurrency(),
 										currencySelector2.getCurrency());

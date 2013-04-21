@@ -12,8 +12,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 
 import javax.money.CurrencyUnit;
+import javax.money.MonetaryCurrencies;
 import javax.money.MoneyCurrency;
-import javax.money.ext.MonetaryCurrencies;
 
 import net.java.javamoney.fxdemo.AbstractFXMLComponent;
 

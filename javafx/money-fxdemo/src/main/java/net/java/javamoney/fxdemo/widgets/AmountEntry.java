@@ -15,9 +15,9 @@ import javafx.scene.control.TextField;
 
 import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
-import javax.money.MonetaryCurrencies;
 import javax.money.Money;
 import javax.money.MoneyCurrency;
+import javax.money.ext.MonetaryCurrencies;
 
 import net.java.javamoney.fxdemo.AbstractFXMLComponent;
 import net.java.javamoney.ri.IntegralMoney;

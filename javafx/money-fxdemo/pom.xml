@@ -23,7 +23,7 @@
 		<dependency>
 			<groupId>net.java.javamoney</groupId>
 			<artifactId>money-ri</artifactId>
-			<version>${javamoney.version}</version>
+			<version>0.5-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 

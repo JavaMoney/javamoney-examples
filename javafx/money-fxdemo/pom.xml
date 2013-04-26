@@ -25,6 +25,11 @@
 			<artifactId>money-ri</artifactId>
 			<version>${javamoney.ri.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>net.java.javamoney</groupId>
+			<artifactId>money-java-se</artifactId>
+			<version>${javamoney.version}</version>
+		</dependency>
 	</dependencies>
 
 	<url>http://java.net/project/javamoney</url>

@@ -33,9 +33,9 @@ public class GetExchangeRate extends AbstractExamplePane {
 
 		private VBox exPane = new VBox();
 		private CurrencySelector currencySelector1 = new CurrencySelector(
-				"Source Currency");
+				"Base Currency");
 		private CurrencySelector currencySelector2 = new CurrencySelector(
-				"Target Currency");
+				"Term Currency");
 		private ExchangeRateTypeSelector rateTypeSelector = new ExchangeRateTypeSelector();
 
 		public ExamplePane() {

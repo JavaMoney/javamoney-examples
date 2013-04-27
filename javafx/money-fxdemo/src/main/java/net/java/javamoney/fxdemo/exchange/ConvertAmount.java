@@ -17,9 +17,6 @@ import javax.money.convert.CurrencyConverter;
 import javax.money.convert.ExchangeRateType;
 import javax.money.convert.MonetaryConversions;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
 import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
 import net.java.javamoney.fxdemo.widgets.AmountEntry;
@@ -33,9 +30,6 @@ import net.java.javamoney.ri.convert.provider.EZBConversionProvider;
  *
  */
 public class ConvertAmount extends AbstractExamplePane {
-	private static final Logger LOGGER = LoggerFactory
-			.getLogger(ConvertAmount.class);
-
 	public ConvertAmount() {
 		super(new ExamplePane());
 		setExampleTitle("Convert an Amount");
@@ -61,13 +55,13 @@ public class ConvertAmount extends AbstractExamplePane {
 						public void changed(
 								ObservableValue<? extends ExchangeRateType> observable,
 								ExchangeRateType oldERT, ExchangeRateType newERT) {
-							LOGGER.info((observable !=null ? "Obs: " + observable : "")
+							logger.info((observable !=null ? "Obs: " + observable : "")
 									+ (oldERT !=null ? " Old ERT: " + oldERT : "")
 									+ (newERT !=null ? " New ERT: " + newERT : ""));
 							
 							if (newERT != null) {
 								if (EZBConversionProvider.RATE_TYPE.equals(newERT)) {
-									LOGGER.debug("got ECB");
+									logger.debug("got ECB");
 									amountBox.getCodeBox().setValue(EZBConversionProvider.BASE_CURRENCY.getCurrencyCode());
 									amountBox.getCodeBox().setDisable(true);
 								} else {

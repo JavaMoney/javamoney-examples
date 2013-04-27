@@ -22,6 +22,11 @@ import javax.money.ext.MonetaryCurrencies;
 import net.java.javamoney.fxdemo.AbstractFXMLComponent;
 import net.java.javamoney.ri.IntegralMoney;
 
+/**
+ * @author Anatole Tresch
+ * @author Werner Keil
+ *
+ */
 public class AmountEntry extends AbstractFXMLComponent {
 
 	@FXML
@@ -95,5 +100,9 @@ public class AmountEntry extends AbstractFXMLComponent {
 			numberType.getSelectionModel().clearSelection();
 			numberValue.setText("0");
 		}
+	}
+
+	public ComboBox getCodeBox() {
+		return codeBox;
 	}
 }

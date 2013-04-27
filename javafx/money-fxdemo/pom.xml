@@ -16,10 +16,15 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.16</version>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jul-to-slf4j</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>net.java.javamoney</groupId>
 			<artifactId>money-ri</artifactId>
@@ -28,8 +33,9 @@
 		<dependency>
 			<groupId>net.java.javamoney</groupId>
 			<artifactId>money-java-se</artifactId>
-			<version>${javamoney.version}</version>
+			<version>${javamoney.ri.version}</version>
 		</dependency>
+
 	</dependencies>
 
 	<url>http://java.net/project/javamoney</url>

@@ -3,6 +3,8 @@ package net.java.javamoney.fxdemo.exchange;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -14,14 +16,24 @@ import javax.money.convert.ExchangeRate;
 import javax.money.convert.ExchangeRateType;
 import javax.money.convert.MonetaryConversions;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
 import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
 import net.java.javamoney.fxdemo.widgets.CurrencySelector;
 import net.java.javamoney.fxdemo.widgets.ExchangeRateTypeSelector;
-//github.com/JavaMoney/javamoney-examples.git
+import net.java.javamoney.ri.convert.provider.EZBConversionProvider;
 
+/**
+ * @author Werner Keil
+ * @author Anatole Tresch
+ *
+ */
 public class GetExchangeRate extends AbstractExamplePane {
-
+	private static final Logger LOGGER = LoggerFactory
+			.getLogger(GetExchangeRate.class);
+	
 	public GetExchangeRate() {
 		super(new ExamplePane());
 		setExampleTitle("Access Exchange Rates");
@@ -42,14 +54,36 @@ public class GetExchangeRate extends AbstractExamplePane {
 			exPane.getChildren().addAll(new Label("Rate Type"),
 					rateTypeSelector, currencySelector1, currencySelector2);
 			this.inputPane.getChildren().add(exPane);
+			rateTypeSelector.valueProperty().addListener(
+					new ChangeListener<ExchangeRateType>() {
+						public void changed(
+								ObservableValue<? extends ExchangeRateType> observable,
+								ExchangeRateType oldERT, ExchangeRateType newERT) {
+							LOGGER.info((observable !=null ? "Obs: " + observable : "")
+									+ (oldERT !=null ? " Old ERT: " + oldERT : "")
+									+ (newERT !=null ? " New ERT: " + newERT : ""));
+							
+							if (newERT != null) {
+								if (EZBConversionProvider.RATE_TYPE.equals(newERT)) {
+									LOGGER.debug("got ECB");
+									currencySelector1.setCurrency(EZBConversionProvider.BASE_CURRENCY);
+									currencySelector1.setDisable(true);
+								} else {
+									currencySelector1.setDisable(false);
+								}
+							}
+						}
+
+					});
+			
 			AnchorPane.setLeftAnchor(exPane, 10d);
 			AnchorPane.setTopAnchor(exPane, 10d);
 			Button actionButton = new Button("Create");
 			actionButton
 					.setOnAction(new javafx.event.EventHandler<ActionEvent>() {
 						public void handle(ActionEvent action) {
-							StringWriter sw = new StringWriter();
-							PrintWriter pw = new PrintWriter(sw);
+							final StringWriter sw = new StringWriter();
+							final PrintWriter pw = new PrintWriter(sw);
 							try {
 								ExchangeRateType type = rateTypeSelector
 										.getSelectionModel().getSelectedItem();
@@ -77,8 +111,8 @@ public class GetExchangeRate extends AbstractExamplePane {
 						private void printSummary(ExchangeRate rate,
 								PrintWriter pw) {
 							pw.println("Class: " + rate.getClass().getName());
-							pw.println("Source Currency: " + rate.getBase());
-							pw.println("Target Currency: " + rate.getTerm());
+							pw.println("Base Currency: " + rate.getBase());
+							pw.println("Term Currency: " + rate.getTerm());
 							pw.println("Factor: " + rate.getFactor());
 							pw.println("Provider: " + rate.getProvider());
 							pw.println("Derived: " + rate.isDerived());

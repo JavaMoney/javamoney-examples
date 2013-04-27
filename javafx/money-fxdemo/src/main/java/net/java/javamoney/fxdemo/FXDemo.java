@@ -6,11 +6,12 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class FXDemo extends Application {
 
-	private static final Logger LOGGER = Logger.getLogger(FXDemo.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(FXDemo.class);
 
 	public void start(final Stage primaryStage) {
 		try {
@@ -23,7 +24,7 @@ public class FXDemo extends Application {
 			primaryStage.initStyle(StageStyle.DECORATED);
 			primaryStage.show();
 		} catch (Exception e) {
-			LOGGER.fatal("Failed to start application.", e);
+			LOGGER.error("Failed to start application.", e);
 			System.exit(-1);
 		}
 	}

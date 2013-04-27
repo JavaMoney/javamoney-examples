@@ -4,6 +4,8 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.math.BigDecimal;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -15,13 +17,24 @@ import javax.money.convert.CurrencyConverter;
 import javax.money.convert.ExchangeRateType;
 import javax.money.convert.MonetaryConversions;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
 import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
 import net.java.javamoney.fxdemo.widgets.AmountEntry;
 import net.java.javamoney.fxdemo.widgets.CurrencySelector;
 import net.java.javamoney.fxdemo.widgets.ExchangeRateTypeSelector;
+import net.java.javamoney.ri.convert.provider.EZBConversionProvider;
 
+/**
+ * @author Anatole Tresch
+ * @author Werner Keil
+ *
+ */
 public class ConvertAmount extends AbstractExamplePane {
+	private static final Logger LOGGER = LoggerFactory
+			.getLogger(ConvertAmount.class);
 
 	public ConvertAmount() {
 		super(new ExamplePane());
@@ -34,29 +47,54 @@ public class ConvertAmount extends AbstractExamplePane {
 
 		private VBox exPane = new VBox();
 		private AmountEntry amountBox = new AmountEntry("Amount");
-		private CurrencySelector currencySelector1 = new CurrencySelector("Target Currency");
+		private CurrencySelector currencySelector1 = new CurrencySelector(
+				"Term Currency");
 		private ExchangeRateTypeSelector rateTypeSelector = new ExchangeRateTypeSelector();
 
 		public ExamplePane() {
 			exPane.getChildren().addAll(new Label("Rate Type"),
-					rateTypeSelector,
-					amountBox,
-					currencySelector1);
+					rateTypeSelector, amountBox, currencySelector1);
 			this.inputPane.getChildren().add(exPane);
+			rateTypeSelector.valueProperty().addListener(
+					new ChangeListener<ExchangeRateType>() {
+
+						public void changed(
+								ObservableValue<? extends ExchangeRateType> observable,
+								ExchangeRateType oldERT, ExchangeRateType newERT) {
+							LOGGER.info((observable !=null ? "Obs: " + observable : "")
+									+ (oldERT !=null ? " Old ERT: " + oldERT : "")
+									+ (newERT !=null ? " New ERT: " + newERT : ""));
+							
+							if (newERT != null) {
+								if (EZBConversionProvider.RATE_TYPE.equals(newERT)) {
+									LOGGER.debug("got ECB");
+									amountBox.getCodeBox().setValue(EZBConversionProvider.BASE_CURRENCY.getCurrencyCode());
+									amountBox.getCodeBox().setDisable(true);
+								} else {
+									amountBox.getCodeBox().setDisable(false);
+								}
+							}
+						}
+
+					});
+
 			AnchorPane.setLeftAnchor(exPane, 10d);
 			AnchorPane.setTopAnchor(exPane, 10d);
 			Button actionButton = new Button("Create");
 			actionButton
 					.setOnAction(new javafx.event.EventHandler<ActionEvent>() {
 						public void handle(ActionEvent action) {
-							StringWriter sw = new StringWriter();
-							PrintWriter pw = new PrintWriter(sw);
+							final StringWriter sw = new StringWriter();
+							final PrintWriter pw = new PrintWriter(sw);
 							try {
 								ExchangeRateType type = rateTypeSelector
 										.getSelectionModel().getSelectedItem();
 								CurrencyConverter prov = MonetaryConversions
-										.getConversionProvider(type).getConverter();
-								MonetaryAmount convertedAmount = prov.convert(amountBox.getAmount(), currencySelector1.getCurrency());
+										.getConversionProvider(type)
+										.getConverter();
+								MonetaryAmount convertedAmount = prov.convert(
+										amountBox.getAmount(),
+										currencySelector1.getCurrency());
 								pw.println("Converted Amount");
 								pw.println("----------------");
 								pw.println();
@@ -71,6 +109,7 @@ public class ConvertAmount extends AbstractExamplePane {
 						private void printSummary(MonetaryAmount amount,
 								PrintWriter pw) {
 							pw.println("Class: " + amount.getClass().getName());
+							pw.println("Currency: " + amount.getCurrency());
 							pw.println("Value (BD): "
 									+ amount.asType(BigDecimal.class));
 							pw.println("Precision: " + amount.getPrecision());

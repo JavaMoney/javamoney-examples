@@ -17,6 +17,10 @@ import javax.money.ext.MonetaryCurrencies;
 
 import net.java.javamoney.fxdemo.AbstractFXMLComponent;
 
+/**
+ * @author Anatole Tresch
+ *
+ */
 public class CurrencySelector extends AbstractFXMLComponent {
 
 	@FXML

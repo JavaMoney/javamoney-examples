@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
+import javax.money.CurrencyUnit;
 import javax.money.convert.ConversionProvider;
 import javax.money.convert.ExchangeRate;
 import javax.money.convert.ExchangeRateType;
@@ -45,6 +46,8 @@ public class GetExchangeRate extends AbstractExamplePane {
 		private ExchangeRateTypeSelector rateTypeSelector = new ExchangeRateTypeSelector();
 
 		public ExamplePane() {
+			final Button swapButton = new Button("Swap");
+			swapButton.setDisable(true);
 			exPane.getChildren().addAll(new Label("Rate Type"),
 					rateTypeSelector, currencySelector1, currencySelector2);
 			this.inputPane.getChildren().add(exPane);
@@ -62,8 +65,10 @@ public class GetExchangeRate extends AbstractExamplePane {
 									logger.debug("got ECB");
 									currencySelector1.setCurrency(EZBConversionProvider.BASE_CURRENCY);
 									currencySelector1.setDisable(true);
+									swapButton.setDisable(true);
 								} else {
 									currencySelector1.setDisable(false);
+									swapButton.setDisable(false);
 								}
 							}
 						}
@@ -116,7 +121,18 @@ public class GetExchangeRate extends AbstractExamplePane {
 							}
 						}
 					});
-			buttonPane.getChildren().add(actionButton);
+			
+			swapButton
+					.setOnAction(new javafx.event.EventHandler<ActionEvent>() {
+						public void handle(ActionEvent action) {
+							logger.debug("Swapping...");
+							final CurrencyUnit tmpCurrency = currencySelector1.getCurrency();
+							currencySelector1.setCurrency(currencySelector2.getCurrency());
+							currencySelector2.setCurrency(tmpCurrency);
+						}
+					});
+			
+			buttonPane.getChildren().addAll(actionButton, swapButton);
 		}
 	}
 }

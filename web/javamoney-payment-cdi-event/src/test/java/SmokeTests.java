@@ -21,8 +21,6 @@ import static org.junit.Assert.assertEquals;
 
 import javax.money.MonetaryAmount;
 import javax.money.Money;
-import javax.money.convert.ExchangeRateType;
-
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,9 +28,6 @@ import org.slf4j.LoggerFactory;
 public class SmokeTests {
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(SmokeTests.class);
-
-	private static final ExchangeRateType RATE_TYPE = ExchangeRateType
-			.of("EZB");
 
 	@Test
 	public void testCreateMoney() {

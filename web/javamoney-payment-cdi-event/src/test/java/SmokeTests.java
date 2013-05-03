@@ -25,7 +25,7 @@ import org.slf4j.LoggerFactory;
 /**
  * 
  * @author Werner Keil
- *
+ * 
  */
 public class SmokeTests {
 	private static final Logger LOGGER = LoggerFactory

@@ -1,9 +1,9 @@
 payment-cdi-event: Use CDI Events to Process Debit and Credit Operations
 ========================================================================
-Author: Elvadas Nono, Werner Keil (JSR 354 enablement)
+Author: Elvadas Nono (initial contribution), Werner Keil
 Level: Beginner
 Technologies: CDI, JSR 345 (Money and Currency API)
-Summary: Demonstrates how to use CDI 1.0 Events
+Summary: Demonstrates how to use CDI 1.0 Events with the Money and Currency API
 Target Product: EAP
 
 What is it?
@@ -17,7 +17,7 @@ To test this quickstart, enter an amount, choose either a Credit or Debit operat
 
 A Session scoped (@SessionScoped) payment event handler catches the operation and produces (@Produces) a named list of all operations performed during this session.  The event is logged in the JBoss console and the event list is displayed in a table at the bottom of the form.
  
-The payment-cdi-event quickstart defines the following classes:
+The payment-cdi-event example defines the following classes:
  
  *   PaymentBean: 
      *   A session scoped bean that stores the payment form information: 
@@ -42,7 +42,7 @@ System requirements
 
 All you need to build this project is Java 6.0 (Java SDK 1.6) or better, Maven 3.0 or better.
 
-The application this project produces is designed to be run on JBoss Enterprise Application Platform 6 or JBoss AS 7. 
+The application this project produces is designed to be run on JBoss Enterprise Application Platform 6 or JBoss WildFly 7. 
 
  
 Configure Maven
@@ -51,7 +51,7 @@ Configure Maven
 If you have not yet done so, you must [Configure Maven](../README.md#mavenconfiguration) before testing the quickstarts.
 
 
-Start JBoss Enterprise Application Platform 6 or JBoss AS 7 with the Web Profile
+Start JBoss Enterprise Application Platform 6 or JBoss WildFly 7 with the Web Profile
 -------------------------
 
 1. Open a command line and navigate to the root of the JBoss server directory.
@@ -61,7 +61,7 @@ Start JBoss Enterprise Application Platform 6 or JBoss AS 7 with the Web Profile
         For Windows: JBOSS_HOME\bin\standalone.bat
 
  
-Build and Deploy the Quickstart
+Build and Deploy the Example
 -------------------------
 
 _NOTE: The following build command assumes you have configured your Maven user settings. If you have not, you must include Maven setting arguments on the command line. See [Build and Deploy the Quickstarts](../README.md#buildanddeploy) for complete instructions and additional options._
@@ -72,20 +72,20 @@ _NOTE: The following build command assumes you have configured your Maven user s
 
         mvn clean package jboss-as:deploy
 
-4. This will deploy `target/jboss-as-payment-cdi-event.war` to the running instance of the server.
+4. This will deploy `target/javamoney-payment-cdi-event.war` to the running instance of the server.
 
 
 Access the application 
 ---------------------
 
-The application will be running at the following URL: <http://localhost:8080/jboss-as-payment-cdi-event/>.
+The application will be running at the following URL: <http://localhost:8080/javamoney-payment-cdi-event/>.
 
 
 Undeploy the Archive
 --------------------
 
 1. Make sure you have started the JBoss Server as described above.
-2. Open a command line and navigate to the root directory of this quickstart.
+2. Open a command line and navigate to the root directory of this example.
 3. When you are finished testing, type this command to undeploy the archive:
 
         mvn jboss-as:undeploy

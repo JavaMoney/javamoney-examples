@@ -10,6 +10,7 @@
   <packaging>pom</packaging>
   <modules>
   	<!--  module>javamoney-tradingapp</module -->
+  	<module>javamoney-payment-cdi-event</module>
   </modules>
   <name>Java Money and Currency Web Examples</name>
 </project>

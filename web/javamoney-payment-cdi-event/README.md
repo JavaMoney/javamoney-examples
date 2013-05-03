@@ -1,10 +1,10 @@
 payment-cdi-event: Use CDI Events to Process Debit and Credit Operations
 ========================================================================
- Author: Elvadas Nono (initial contribution), Werner Keil 
- Level: Beginner 
- Technologies: CDI, JSR 345 (Money and Currency API) 
- Summary: Demonstrates how to use CDI 1.0 Events with the Money and Currency API
- Target Product: EAP
+Author: Elvadas Nono (initial contribution), Werner Keil; 
+Level: Beginner; 
+Technologies: CDI, JSR 345 (Money and Currency API) 
+Summary: Demonstrates how to use CDI 1.0 Events with the Money and Currency API; 
+Target Product: EAP
 
 What is it?
 -----------

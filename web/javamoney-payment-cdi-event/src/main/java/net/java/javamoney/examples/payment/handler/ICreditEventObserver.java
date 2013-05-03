@@ -1,7 +1,7 @@
 /*
  * JSR 354 Examples
- * Copyright 2012-2013, Credit Suisse, Red Hat, Inc., and individual
- * contributors by the @author tag. See the copyright.txt in the 
+ * Copyright 2012-2013, Credit Suisse AG, Red Hat, Inc. and/or its affiliates, 
+ * and individual contributors by the @author tag. See the copyright.txt in the
  * distribution for a full listing of individual contributors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,11 +15,7 @@
  * limitations under the License.
  */
 package net.java.javamoney.examples.payment.handler;
-/**
- * 
- * @author Elvadas-Nono
- *
- */
+
 
 
 import javax.enterprise.event.Observes;
@@ -27,7 +23,11 @@ import javax.enterprise.event.Observes;
 import net.java.javamoney.examples.payment.events.PaymentEvent;
 import net.java.javamoney.examples.payment.qualifiers.Credit;
 
-
+/**
+ * 
+ * @author Elvadas-Nono
+ *
+ */
 public interface ICreditEventObserver {
 	
 	public void onCreditPaymentEvent(@Observes @Credit PaymentEvent event);

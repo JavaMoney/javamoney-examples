@@ -27,7 +27,7 @@ import javax.money.MonetaryAmount;
  */
 public class PaymentEvent {
 
-	private PaymentTypeEnum type;  //credit or debit
+	private PaymentType type;  //credit or debit
 //	private BigDecimal amount;
 	private Date datetime;
 	private MonetaryAmount money;
@@ -35,10 +35,10 @@ public class PaymentEvent {
 //	public BigDecimal getAmount() {
 //		return amount;
 //	}
-	public PaymentTypeEnum getType() {
+	public PaymentType getType() {
 		return type;
 	}
-	public void setType(PaymentTypeEnum type) {
+	public void setType(PaymentType type) {
 		this.type = type;
 	}
 //	public void setAmount(BigDecimal amount) {

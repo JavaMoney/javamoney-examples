@@ -32,7 +32,7 @@ import javax.money.Money;
 import javax.money.MoneyCurrency;
 
 import net.java.javamoney.examples.payment.events.PaymentEvent;
-import net.java.javamoney.examples.payment.events.PaymentTypeEnum;
+import net.java.javamoney.examples.payment.events.PaymentType;
 import net.java.javamoney.examples.payment.qualifiers.Credit;
 import net.java.javamoney.examples.payment.qualifiers.Debit;
 
@@ -80,14 +80,14 @@ public class PaymentBean implements Serializable {
 	}
 
 
-	private String paymentOption=PaymentTypeEnum.DEBIT.toString();
+	private String paymentOption=PaymentType.DEBIT.toString();
 	
 	
 	//Pay Action
 	public String pay(){
 
 		PaymentEvent currentEvtPayload = new PaymentEvent();
-		currentEvtPayload.setType(PaymentTypeEnum.of(paymentOption));
+		currentEvtPayload.setType(PaymentType.of(paymentOption));
 		//currentEvtPayload.setAmount(amount);
 		currentEvtPayload.setMoney(money);
 		currentEvtPayload.setDatetime(new Date());

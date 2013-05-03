@@ -19,21 +19,26 @@ package net.java.javamoney.examples.payment.events;
 import java.util.HashMap;
 import java.util.Map;
 
-public enum PaymentTypeEnum {
+/**
+ * 
+ * @author Werner Keil
+ * 
+ */
+public enum PaymentType {
 
 	CREDIT("1"), DEBIT("2");
 
 	private final String value;
 
-	static Map<String, PaymentTypeEnum> map = new HashMap<String, PaymentTypeEnum>();
+	static Map<String, PaymentType> map = new HashMap<String, PaymentType>();
 
 	static {
-		for (PaymentTypeEnum paymentType : PaymentTypeEnum.values()) {
+		for (PaymentType paymentType : PaymentType.values()) {
 			map.put(paymentType.getValue(), paymentType);
 		}
 	}
 
-	private PaymentTypeEnum(String value) {
+	private PaymentType(String value) {
 		this.value = value;
 	}
 
@@ -41,7 +46,7 @@ public enum PaymentTypeEnum {
 		return value;
 	}
 
-	public static PaymentTypeEnum of(String value) {
+	public static PaymentType of(String value) {
 		return map.get(value);
 	}
 }

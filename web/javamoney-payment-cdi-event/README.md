@@ -9,7 +9,7 @@ Target Product: EAP
 What is it?
 -----------
 
-This quickstart demonstrates how to use *CDI 1.0 Events* in  *JBoss Enterprise Application Platform 6* or *JBoss WildFly 7* and above.
+This example demonstrates how to use *CDI 1.0 Events* in  *JBoss Enterprise Application Platform 6* or *JBoss WildFly 7* and above.
 
 The JSF front-end client allows you to create both credit and debit operation events.
 

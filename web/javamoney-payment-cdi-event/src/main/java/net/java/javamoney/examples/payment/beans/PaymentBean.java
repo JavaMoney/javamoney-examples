@@ -108,8 +108,6 @@ public class PaymentBean implements Serializable {
 		}
 		
 		//paymentAction
-		
-	
 		return "index";
 	}
 	

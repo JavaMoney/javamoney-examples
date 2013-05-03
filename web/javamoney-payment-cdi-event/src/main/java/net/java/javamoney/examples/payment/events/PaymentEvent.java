@@ -26,24 +26,17 @@ import javax.money.MonetaryAmount;
  *
  */
 public class PaymentEvent {
-
 	private PaymentType type;  //credit or debit
-//	private BigDecimal amount;
 	private Date datetime;
 	private MonetaryAmount money;
 	
-//	public BigDecimal getAmount() {
-//		return amount;
-//	}
 	public PaymentType getType() {
 		return type;
 	}
 	public void setType(PaymentType type) {
 		this.type = type;
 	}
-//	public void setAmount(BigDecimal amount) {
-//		this.amount = amount;
-//	}
+
 	public Date getDatetime() {
 		return datetime;
 	}
@@ -60,7 +53,5 @@ public class PaymentEvent {
 	public void setMoney(MonetaryAmount money) {
 		this.money = money;
 	}
-	
-	
 	
 }

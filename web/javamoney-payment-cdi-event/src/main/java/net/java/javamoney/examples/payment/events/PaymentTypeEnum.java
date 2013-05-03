@@ -1,7 +1,7 @@
 /*
- * JBoss, Home of Professional Open Source
- * Copyright 2012, Red Hat, Inc. and/or its affiliates, and individual
- * contributors by the @authors tag. See the copyright.txt in the 
+ * JSR 354 Examples
+ * Copyright 2012-2013, Credit Suisse AG, Red Hat, Inc. and/or its affiliates, 
+ * and individual contributors by the @author tag. See the copyright.txt in the
  * distribution for a full listing of individual contributors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,30 +20,28 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum PaymentTypeEnum {
-	
-	CREDIT("1"),
-	DEBIT("2");
-	
+
+	CREDIT("1"), DEBIT("2");
+
 	private final String value;
 
-	
-	static Map <String,PaymentTypeEnum> map = new HashMap<String,PaymentTypeEnum>();
-	
+	static Map<String, PaymentTypeEnum> map = new HashMap<String, PaymentTypeEnum>();
+
 	static {
-	for (PaymentTypeEnum paymentType : PaymentTypeEnum.values()) {
-	    map.put(paymentType.getValue(), paymentType);
+		for (PaymentTypeEnum paymentType : PaymentTypeEnum.values()) {
+			map.put(paymentType.getValue(), paymentType);
+		}
 	}
-	}		
-	
-	private PaymentTypeEnum (String value){
-		this.value=value;
+
+	private PaymentTypeEnum(String value) {
+		this.value = value;
 	}
-	
-	public String getValue(){
+
+	public String getValue() {
 		return value;
 	}
-	
-	public static PaymentTypeEnum fromString(String value){
+
+	public static PaymentTypeEnum of(String value) {
 		return map.get(value);
 	}
 }

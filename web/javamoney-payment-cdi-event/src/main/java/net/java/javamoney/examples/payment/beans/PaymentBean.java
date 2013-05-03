@@ -1,7 +1,7 @@
 /*
- * JBoss, Home of Professional Open Source
- * Copyright 2012-2013, Red Hat, Inc. and/or its affiliates, and individual
- * contributors by the @authors tag. See the copyright.txt in the 
+ * JSR 354 Examples
+ * Copyright 2012-2013, Credit Suisse AG, Red Hat, Inc. and/or its affiliates, 
+ * and individual contributors by the @author tag. See the copyright.txt in the
  * distribution for a full listing of individual contributors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,15 +36,15 @@ import net.java.javamoney.examples.payment.events.PaymentTypeEnum;
 import net.java.javamoney.examples.payment.qualifiers.Credit;
 import net.java.javamoney.examples.payment.qualifiers.Debit;
 
-
-
 @Named
 @SessionScoped
 
 public class PaymentBean implements Serializable {
 	
-	
-	private static final long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6634420857401223541L;
 
 	@Inject
 	private Logger log;
@@ -87,7 +87,7 @@ public class PaymentBean implements Serializable {
 	public String pay(){
 
 		PaymentEvent currentEvtPayload = new PaymentEvent();
-		currentEvtPayload.setType(PaymentTypeEnum.fromString(paymentOption));
+		currentEvtPayload.setType(PaymentTypeEnum.of(paymentOption));
 		//currentEvtPayload.setAmount(amount);
 		currentEvtPayload.setMoney(money);
 		currentEvtPayload.setDatetime(new Date());

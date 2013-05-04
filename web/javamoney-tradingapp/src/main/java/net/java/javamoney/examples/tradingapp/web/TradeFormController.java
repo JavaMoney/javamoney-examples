@@ -1,3 +1,18 @@
+/*
+ * JSR 354 Stock-Trading Example
+ * Copyright 2005-2013, Werner Keil and individual contributors by the @author tag. 
+ * See the copyright.txt in the distribution for a full listing of individual contributors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,  
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package net.java.javamoney.examples.tradingapp.web;
 
 import javax.servlet.http.HttpServletRequest;
@@ -5,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import net.java.javamoney.examples.tradingapp.business.Portfolio;
 import net.java.javamoney.examples.tradingapp.business.Trade;
+import net.java.javamoney.examples.tradingapp.business.TradeType;
 import net.java.javamoney.examples.tradingapp.quotes.QuoteManager;
 import net.neurotech.quotes.Quote;
 import net.neurotech.quotes.QuoteException;
@@ -33,7 +49,7 @@ public class TradeFormController extends AbstractWizardFormController {
 
     protected Object formBackingObject(HttpServletRequest request) {
         Trade trade = new Trade();
-        trade.setBuySell(Trade.BUY);
+        trade.setType(TradeType.BUY);
         return trade;
     }
 
@@ -81,7 +97,7 @@ public class TradeFormController extends AbstractWizardFormController {
             HttpServletResponse response, Object command, BindException errors) {
         Trade trade = (Trade) command;
 
-        if (trade.isBuySell() == Trade.BUY) {
+        if (TradeType.BUY.equals(trade.getType())) {
             portfolio.buyStock(trade.getSymbol(), trade.getShares(), trade
                     .getPrice());
         } else {
@@ -106,11 +122,11 @@ public class TradeFormController extends AbstractWizardFormController {
     }
 
     private boolean tradeIsBuy(Trade trade) {
-        return trade.isBuySell() == Trade.BUY;
+        return TradeType.BUY.equals(trade.getType());
     }
 
     private boolean tradeIsSell(Trade trade) {
-        return trade.isBuySell() == Trade.SELL;
+        return TradeType.SELL.equals(trade.getType());
     }
 
     private boolean symbolIsInvalid(String symbol) {

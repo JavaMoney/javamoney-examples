@@ -30,7 +30,7 @@ public enum PaymentType {
 
 	private final String value;
 
-	static Map<String, PaymentType> map = new HashMap<String, PaymentType>();
+	static final Map<String, PaymentType> map = new HashMap<String, PaymentType>();
 
 	static {
 		for (PaymentType paymentType : PaymentType.values()) {

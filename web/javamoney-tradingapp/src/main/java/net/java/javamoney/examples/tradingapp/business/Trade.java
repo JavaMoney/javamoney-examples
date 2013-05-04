@@ -26,12 +26,14 @@ import com.surveycom.sdj.Characterizable;
  */
 public class Trade implements Characterizable {
 
-    public static final boolean BUY = true;
+    //public static final boolean BUY = true;
 
-    public static final boolean SELL = false;
+    //public static final boolean SELL = false;
 
-    private boolean buySell;
+    //private boolean buySell;
 
+    private TradeType type;
+    
     private String symbol;
 
     private int shares;
@@ -39,12 +41,12 @@ public class Trade implements Characterizable {
     private Amount<Money> price;
 
     public boolean isBuySell() {
-        return buySell;
+        return TradeType.BUY.equals(type);
     }
 
-    public void setBuySell(boolean buySell) {
-        this.buySell = buySell;
-    }
+//    public void setBuySell(boolean buySell) {
+//        this.buySell = buySell;
+//    }
 
     public Amount<Money> getPrice() {
         return price;
@@ -69,4 +71,12 @@ public class Trade implements Characterizable {
     public void setSymbol(String symbol) {
         this.symbol = symbol;
     }
+
+    public void setType(TradeType tradeType) {
+    	this.type = tradeType;
+    }
+    
+	public TradeType getType() {
+		return type;
+	}
 }

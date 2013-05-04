@@ -1,28 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE web-app PUBLIC '-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN' 'http://java.sun.com/dtd/web-app_2_3.dtd'>
-
-<web-app>	
-	<display-name>tradingapp</display-name>
-	<description>JSR-275 Stock-Trading System</description>
-	<servlet>
-		<servlet-name>tradingapp</servlet-name>
-		<servlet-class>
-			org.springframework.web.servlet.DispatcherServlet
-		</servlet-class>
-		<load-on-startup>1</load-on-startup>
-	</servlet>	
-	<servlet-mapping>
-		<servlet-name>tradingapp</servlet-name>
-		<url-pattern>*.htm</url-pattern>
-	</servlet-mapping>
-	
-	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
-	</welcome-file-list>
-
-	<taglib>
-		<taglib-uri>/spring</taglib-uri>
-		<taglib-location>/WEB-INF/spring.tld</taglib-location>
-	</taglib>
-
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+                         "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+ <display-name>tradingapp</display-name>
+ <description>JSR-354 Stock-Trading System</description>
+ <servlet>
+  <servlet-name>tradingapp</servlet-name>
+  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  <load-on-startup>1</load-on-startup>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>tradingapp</servlet-name>
+  <url-pattern>*.htm</url-pattern>
+ </servlet-mapping>
+ <welcome-file-list>
+  <welcome-file>index.jsp</welcome-file>
+ </welcome-file-list>
+ <taglib>
+  <taglib-uri>/spring</taglib-uri>
+  <taglib-location>/WEB-INF/spring.tld</taglib-location>
+ </taglib>
 </web-app>

@@ -1,5 +1,5 @@
 /*
- * JSR 354 Examples
+ * JSR 354 CDI Example
  * Copyright 2012-2013, Credit Suisse, Red Hat, Inc., and individual
  * contributors by the @author tag. See the copyright.txt in the 
  * distribution for a full listing of individual contributors.

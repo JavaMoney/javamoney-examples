@@ -25,13 +25,6 @@ import com.surveycom.sdj.Characterizable;
  *
  */
 public class Trade implements Characterizable {
-
-    //public static final boolean BUY = true;
-
-    //public static final boolean SELL = false;
-
-    //private boolean buySell;
-
     private TradeType type;
     
     private String symbol;

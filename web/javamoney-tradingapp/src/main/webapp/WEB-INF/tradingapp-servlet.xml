@@ -54,16 +54,6 @@
     			<entry key="INR"><value>0.025</value></entry>
     		</map>
     	</constructor-arg>
-    	<!-- This is somewhat optinal, app works without, but only using the Standard symbols    	
-    	<constructor-arg index="5">
-    		<map>
-    			<entry key="EUR"><value>€</value></entry>
-    			TODO use Unicode where possible
-    			<entry key="GBP"><value>£</value></entry>
-    			<entry key="USD"><value>$</value></entry>
-    			<entry key="JPY"><value>¥</value></entry>
-    		</map>
-    	</constructor-arg -->
     </bean>
           
     <bean id="logonValidator" class="net.java.javamoney.examples.tradingapp.web.LogonValidator"/>

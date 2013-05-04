@@ -20,6 +20,10 @@ import org.jscience.physics.amount.Amount;
 
 import com.surveycom.sdj.Characterizable;
 
+/**
+ * @author Werner Keil
+ *
+ */
 public class Trade implements Characterizable {
 
     public static final boolean BUY = true;

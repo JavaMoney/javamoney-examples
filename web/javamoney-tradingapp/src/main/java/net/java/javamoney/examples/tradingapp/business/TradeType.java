@@ -25,7 +25,7 @@ import java.util.Map;
  */
 public enum TradeType {
 
-	BUY("1"), SELL("2");
+	BUY("B"), SELL("S");
 
 	private final String value;
 

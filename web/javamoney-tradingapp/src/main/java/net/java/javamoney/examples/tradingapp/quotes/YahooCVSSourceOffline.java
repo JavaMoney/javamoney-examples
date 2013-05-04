@@ -15,7 +15,6 @@ import static net.java.javamoney.examples.tradingapp.Constants.PROPS_EXT;
 import static net.java.javamoney.examples.tradingapp.Constants.TRADING;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -48,7 +47,7 @@ public class YahooCVSSourceOffline extends YahooCSVSource {
 			+ "&f=snl1d1t1c1ohgv&e=.c";
 */
         try {
-        	InputStream in = YahooCVSSourceOffline.class.getResourceAsStream 
+        	InputStream in = getClass().getResourceAsStream 
         		("/" + TRADING + PROPS_EXT);
         	props.load(in);
         } catch (IOException ie) {
@@ -58,8 +57,8 @@ public class YahooCVSSourceOffline extends YahooCSVSource {
         String folder = props.getProperty(TRADING + ".quotefolder", DEF_FOLDER);       
 		String u = folder + symbol + CSV_EXT;
 		try {
-			FileInputStream fis = new FileInputStream(u);
-			BufferedReader in = new BufferedReader(new InputStreamReader(fis));
+			InputStream is = getClass().getResourceAsStream(u);
+			BufferedReader in = new BufferedReader(new InputStreamReader(is));
 
 			content = in.readLine();
 			in.close();

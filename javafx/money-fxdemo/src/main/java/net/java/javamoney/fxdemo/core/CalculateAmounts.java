@@ -51,8 +51,7 @@ public class CalculateAmounts extends AbstractExamplePane {
 			AnchorPane.setLeftAnchor(inputPane, 10d);
 			AnchorPane.setTopAnchor(inputPane, 10d);
 			operationChoice.getItems().addAll("add", "subtract", "multiply",
-					"divide", "divideToIntegralValue", "max", "min",
-					"remainder");
+					"divide", "divideToIntegralValue", "remainder");
 			Button actionButton = new Button("Perform");
 			actionButton
 					.setOnAction(new javafx.event.EventHandler<ActionEvent>() {

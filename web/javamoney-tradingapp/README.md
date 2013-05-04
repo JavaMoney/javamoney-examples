@@ -6,18 +6,16 @@ javamoney-tradingapp
 What is it?
 -----------
 
-This is your project! It is a sample, deployable Maven 3 project to help you get your foot in the door developing with Spring on JBoss Enterprise Application Platform 6 or JBoss AS 7.1. 
+This is your project! It is a sample, deployable Maven 3 project to help you get your foot in the door developing with Spring on Java Enterprise Edition. 
 
-This project is setup to allow you to create a compliant Spring 3.1 application using Spring MVC, JPA 2.0 and Bean Validation 1.0. It includes a persistence unit and some sample persistence and transaction code to introduce you to database access in enterprise Java. 
-
-The example uses the `java:jboss/datasources/SpringQuickstartDS` database, configured and deployed by the application.
+This project is setup to allow you to create a compliant Spring 3.1 application using Spring MVC.
 
 System requirements
 -------------------
 
-All you need to build this project is Java 6.0 (Java SDK 1.6) or better, Maven 3.0 or better.
+All you need to build this project is Java 6.0 (Java SDK 1.6) or higher, Maven 3.0 or higher.
 
-The application this project produces is designed to be run on JBoss Enterprise Application Platform 6 or JBoss AS 7.1. 
+The application this project produces is designed to be run on a **Java EE 6** container server like Tomcat, Jetty or JBoss AS 7.1. 
 
 Start JBoss Enterprise Application Platform 6 or JBoss AS 7.1
 -------------------------

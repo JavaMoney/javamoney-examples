@@ -6,7 +6,7 @@ javamoney-tradingapp
 What is it?
 -----------
 
-This is your project! It is a sample, deployable Maven 3 project to help you get your foot in the door developing with Spring on Java Enterprise Edition. 
+This is your project! It is a sample, deployable Maven 3 project to help you get your foot in the door developing with Spring and Java Financial Library [link text here][jfl-USAGE.txt] on Java Enterprise Edition. 
 
 This project is setup to allow you to create a compliant Spring 3.1 application using Spring MVC.
 

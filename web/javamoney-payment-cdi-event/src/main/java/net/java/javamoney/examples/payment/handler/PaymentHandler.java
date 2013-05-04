@@ -1,7 +1,7 @@
 /*
- * JBoss, Home of Professional Open Source
- * Copyright 2012, Red Hat, Inc. and/or its affiliates, and individual
- * contributors by the @authors tag. See the copyright.txt in the 
+ * JSR 354 Examples
+ * Copyright 2012-2013, Credit Suisse AG, Red Hat, Inc. and/or its affiliates, 
+ * and individual contributors by the @author tag. See the copyright.txt in the
  * distribution for a full listing of individual contributors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,13 +32,17 @@ import net.java.javamoney.examples.payment.qualifiers.Credit;
 import net.java.javamoney.examples.payment.qualifiers.Debit;
 
 
+/**
+ * @author Werner Keil
+ *
+ */
 @SessionScoped
 public class PaymentHandler implements Serializable,ICreditEventObserver, IDebitEventObserver {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 5039671005494708392L;
 
 	@Inject
 	private Logger logger;
@@ -50,7 +54,6 @@ public class PaymentHandler implements Serializable,ICreditEventObserver, IDebit
 	public List<PaymentEvent> getPayments() {
 		return payments;
 	}
-
 
 
 	public void onCreditPaymentEvent(@Observes @Credit PaymentEvent event){

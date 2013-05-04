@@ -35,6 +35,7 @@ import net.java.javamoney.examples.payment.events.PaymentEvent;
 import net.java.javamoney.examples.payment.events.PaymentType;
 import net.java.javamoney.examples.payment.qualifiers.Credit;
 import net.java.javamoney.examples.payment.qualifiers.Debit;
+import net.java.javamoney.impl.cdi.qualifiers.Amount;
 
 @Named
 @SessionScoped
@@ -59,14 +60,15 @@ public class PaymentBean implements Serializable {
 	Event<PaymentEvent> debitEventProducer;
 	
 //	@Inject
-//	@Amount
 //	private MonetaryAmountFactory amountFactory;
 	
 	private static final CurrencyUnit CURRENCY = MoneyCurrency.of("EUR");
 	
+	@Amount
 	private BigDecimal amount= new BigDecimal(10.0);
 	//private final CurrencyUnit DOLLAR = MoneyCurrency.getInstance("ISO4217", "USD");
 	
+	@Amount
 	private MonetaryAmount money =  Money.of(CURRENCY, amount);
 	
 	

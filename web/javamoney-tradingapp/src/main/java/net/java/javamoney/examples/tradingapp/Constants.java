@@ -1,5 +1,5 @@
 /*
- * JSR 354 Trading App Example
+ * JSR 354 Stock-Trading System
  * Copyright 2005-2013, Werner Keil and individual contributors by the @author tag. 
  * See the copyright.txt in the distribution for a full listing of individual contributors.
  *

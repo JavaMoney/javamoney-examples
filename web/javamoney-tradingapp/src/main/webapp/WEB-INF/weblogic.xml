@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wls:weblogic-web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wls="http://www.bea.com/ns/weblogic/90" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd http://www.bea.com/ns/weblogic/90 http://www.bea.com/ns/weblogic/90/weblogic-web-app.xsd">
+  <wls:context-root>trading</wls:context-root>
+  <!-- wls:library-ref>
+    <wls:library-name>jstl</wls:library-name>
+    <wls:specification-version>1.0.3</wls:specification-version>
+    <wls:exact-match>true</wls:exact-match>
+  </wls:library-ref>
+  <wls:library-ref>
+    <wls:library-name>spring</wls:library-name>
+    <wls:specification-version>1.0.2</wls:specification-version>
+    <wls:exact-match>false</wls:exact-match>
+  </wls:library-ref -->
+</wls:weblogic-web-app>

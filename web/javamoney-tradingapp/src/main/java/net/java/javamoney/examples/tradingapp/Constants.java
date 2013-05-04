@@ -1,3 +1,6 @@
+/*
+ * $Id$
+ */
 package net.java.javamoney.examples.tradingapp;
 
 /**
@@ -7,7 +10,7 @@ package net.java.javamoney.examples.tradingapp;
  *
  */
 public abstract class Constants {
-	public static final String APP_TITLE = "JSR 354 Stock-Trading System";
+	public static final String APP_TITLE = "JSR 275 Stock-Trading System";
 	
 	public static final String TRADING = "trading";
 	

@@ -15,7 +15,7 @@
 
 	<artifactId>javamoney-payment-cdi-event</artifactId>
 	<packaging>war</packaging>
-	<name>Java Money and Currency: CDI Event</name>
+	<name>Java Money and Currency CDI Event Example</name>
 	<description>JBoss AS Quickstarts: CDI Event</description>
 
 	<url>http://jboss.org/jbossas</url>
@@ -191,7 +191,7 @@
 
 	<parent>
 		<groupId>net.java.javamoney</groupId>
-		<version>0.3-SNAPSHOT</version>
+		<version>0.3</version>
 		<artifactId>javamoney-examples-web</artifactId>
 	</parent>
 </project>

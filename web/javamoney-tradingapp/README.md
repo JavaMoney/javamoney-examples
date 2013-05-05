@@ -17,6 +17,14 @@ All you need to build this project is Java 6.0 (Java SDK 1.6) or higher, Maven 3
 
 The application this project produces is designed to be run on a **Java EE 6** container server like Tomcat, Jetty or JBoss AS 7.1. 
 
+
+
+Maven 3rd Party JARs
+------
+
+        mvn install:install-file -Dfile=<path-to-file> -DgroupId=<group-id> -DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging>
+
+
 Start JBoss Enterprise Application Platform 6 or JBoss AS 7.1
 -------------------------
 

@@ -19,18 +19,17 @@ The application this project produces is designed to be run on a **Java EE 6** c
 
 
 
-Maven 3rd Party JARs
----
+1. Maven 3rd Party JARs
 
         mvn install:install-file -Dfile=<path-to-file> -DgroupId=<group-id> \
         -DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging>
 
-1. SDJ-ID
+    1.1 SDJ-ID
 
         mvn install:install-file -Dfile=<path-to-project>/src/etc/lib/sdj2-id.jar \
         -DgroupId=com.surveycom.sdj  -DartifactId=sdj2-id -Dversion=0.9.30 -Dpackaging=jar
 
-2. JFL [see](#java-financial-library---api-usage)
+    1.2. JFL [see](#java-financial-library---api-usage)
 
         mvn install:install-file -Dfile=<path-to-project>/src/etc/lib/jfl.jar \
         -DgroupId=net.neurotech.finance  -DartifactId=jfl -Dversion=1.0.0 -Dpackaging=jar

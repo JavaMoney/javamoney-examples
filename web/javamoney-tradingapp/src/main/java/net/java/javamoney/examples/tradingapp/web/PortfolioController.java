@@ -123,7 +123,7 @@ public class PortfolioController implements Controller {
         	if (cSymbol != null) {
         		Currency curr = new Currency(cSymbol);
         		
-        		// TODO retrieve this from Yahoo Service similar to quotes
+        		// TODO retrieve this from Yahoo Service similar to quotes, or 354 style ExchangeRateProvider
         		Object oRate = market.getCurrencyExchangeRates().get(cSymbol);
         		if (oRate != null) {
         			Number exchangeRate;

@@ -15,11 +15,8 @@
  */
 package net.java.javamoney.examples.tradingapp.business;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
- * 
+ * The type of trade, either BUY or SELL
  * @author Werner Keil
  * 
  */
@@ -29,14 +26,6 @@ public enum TradeType {
 
 	private final String value;
 
-	static final Map<String, TradeType> map = new HashMap<String, TradeType>();
-
-	static {
-		for (TradeType paymentType : TradeType.values()) {
-			map.put(paymentType.getValue(), paymentType);
-		}
-	}
-
 	private TradeType(String value) {
 		this.value = value;
 	}
@@ -45,7 +34,10 @@ public enum TradeType {
 		return value;
 	}
 
-	public static TradeType of(String value) {
-		return map.get(value);
+	public static TradeType of(String s) {
+		for (TradeType t : values()) {
+			if (t.getValue().equals(s)) return t;
+		}
+		return null;
 	}
 }

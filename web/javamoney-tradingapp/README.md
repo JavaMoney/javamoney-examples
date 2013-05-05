@@ -19,7 +19,7 @@ The application this project produces is designed to be run on a **Java EE 6** c
 
 
 
-1. **Maven 3rd party JARs**
+**1. Maven 3rd party JARs**
 
 
    There are 2 3rd Party JARs currently not available in MavenCentral or a similar Nexus. Therefore you should install them into your local repository following the [Guide to installing 3rd party JARs](http://maven.apache.org/guides/mini/guide-3rd-party-jars-local.html)

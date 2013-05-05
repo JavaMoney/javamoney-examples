@@ -19,8 +19,9 @@ The application this project produces is designed to be run on a **Java EE 6** c
 
 
 
-1. **Maven 3rd Party JARs**
-dd
+1. **Maven 3rd Party JARs** 
+   ss
+
 
         mvn install:install-file -Dfile=<path-to-file> -DgroupId=<group-id> \
         -DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging>

@@ -26,7 +26,7 @@
 		<version.string.taglibs>1.1.0</version.string.taglibs>
 		<version.commons.lang>2.6</version.commons.lang>
 		<version.commons.logging>1.1.1</version.commons.logging>
-		<version.sdj>0.9.29</version.sdj>
+		<version.sdj>0.9.30</version.sdj>
 		<version.jfl>1.0.0</version.jfl>
 
 		<!-- JBoss AS plugin for deployment -->
@@ -170,7 +170,7 @@
 			</dependency>
 			<dependency>
 				<groupId>com.surveycom.sdj</groupId>
-				<artifactId>sdj2</artifactId>
+				<artifactId>sdj2-id</artifactId>
 				<version>${version.sdj}</version>
 			</dependency>
 			<dependency>
@@ -361,7 +361,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.surveycom.sdj</groupId>
-			<artifactId>sdj2</artifactId>
+			<artifactId>sdj2-id</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>net.neurotech.finance</groupId>

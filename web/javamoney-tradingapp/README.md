@@ -1,8 +1,6 @@
 javamoney-tradingapp
 ========================
 
-**NOTE: This example is in progress, handle with care for now...**
-
 What is it?
 -----------
 

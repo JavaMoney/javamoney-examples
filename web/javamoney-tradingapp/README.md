@@ -17,9 +17,13 @@ All you need to build this project is Java 6.0 (Java SDK 1.6) or higher, Maven 3
 
 The application this project produces is designed to be run on a **Java EE 6** container server like Tomcat, Jetty or JBoss AS 7.1. 
 
+1. **Checkout and Build JSR 354**
+  
+  Checkout [JavaMoney](https://github.com/JavaMoney/javamoney) in the main "javamoney" project run
+  
+          mvn clean install
 
-
-1. **Maven 3rd party JARs**
+2. **Maven 3rd party JARs**
 
 
    There are two 3rd Party JARs currently not available in MavenCentral or a similar Nexus. Therefore you should install them into your local repository following the [Guide to installing 3rd party JARs](http://maven.apache.org/guides/mini/guide-3rd-party-jars-local.html)

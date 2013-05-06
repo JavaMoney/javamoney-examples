@@ -45,13 +45,13 @@ Starting the Application
 1. **Start with Jetty**
 
 
-1.1 The easiest way to start the application is via the Maven Jetty Plugin. Run
+  1.1 The easiest way to start the application is via the Maven Jetty Plugin. Run
   
           mvn jetty:run -P jetty
 
-1.2 Access the application
+  1.2 Access the application
  
-The application on Jetty will be running at the following URL: <http://localhost:8080/>.
+  The application on Jetty will be running at the following URL: <http://localhost:8080/>.
 
 
 

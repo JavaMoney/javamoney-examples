@@ -26,12 +26,12 @@ The application this project produces is designed to be run on a **Java EE 6** c
 
    There are two 3rd Party JARs currently not available in MavenCentral or a similar Nexus. Therefore you should install them into your local repository following the [Guide to installing 3rd party JARs](http://maven.apache.org/guides/mini/guide-3rd-party-jars-local.html)
 
-    1.1 SDJ-ID
+  2.1 SDJ-ID
 
         mvn install:install-file -Dfile=<path-to-project>/src/etc/lib/sdj2-id.jar \
         -DgroupId=com.surveycom.sdj  -DartifactId=sdj2-id -Dversion=0.9.30 -Dpackaging=jar
 
-    1.2. JFL [see](#java-financial-library---api-usage)
+  2.2. JFL [see](#java-financial-library---api-usage)
 
         mvn install:install-file -Dfile=<path-to-project>/src/etc/lib/jfl-1.6.1.jar \
         -DgroupId=jfl  -DartifactId=jfl -Dversion=1.6.1 -Dpackaging=jar

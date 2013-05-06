@@ -42,17 +42,17 @@ The application this project produces is designed to be run on a **Java EE 6** c
 Starting the Application
 ---------------------------------------------------------------------------
 
-Start with Jetty
--------------------------
+1. **Start with Jetty**
+
 
 The easiest way to start the application is via the Maven Jetty Plugin. Run
   
           mvn jetty:run -P jetty
 
-Access the application 
----------------------
+2. **Access the application** 
  
 The application on Jetty will be running at the following URL: <http://localhost:8080/>.
+
 
 
 Start JBoss Enterprise Application Platform 6 or JBoss AS 7.1

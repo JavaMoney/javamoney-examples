@@ -49,6 +49,12 @@ The easiest way to start the application is via the Maven Jetty Plugin. Run
   
           mvn jetty:run -P jetty
 
+Access the application 
+---------------------
+ 
+The application on Jetty will be running at the following URL: <http://localhost:8080/>.
+
+
 Start JBoss Enterprise Application Platform 6 or JBoss AS 7.1
 -------------------------
 

@@ -19,7 +19,7 @@ The application this project produces is designed to be run on a **Java EE 6** c
 
 1. **Checkout and Build JSR 354**
   
-  Checkout [JavaMoney](https://github.com/JavaMoney/javamoney) in the main "javamoney" project run
+  Checkout [JavaMoney](https://github.com/JavaMoney/javamoney) in the **javamoney** project home run
   
           mvn clean install
 
@@ -38,6 +38,16 @@ The application this project produces is designed to be run on a **Java EE 6** c
         mvn install:install-file -Dfile=<path-to-project>/src/etc/lib/jfl-1.6.1.jar \
         -DgroupId=jfl  -DartifactId=jfl -Dversion=1.6.1 -Dpackaging=jar
 
+
+Starting the Application
+---------------------------------------------------------------------------
+
+Start with Jetty
+-------------------------
+
+The easiest way to start the application is via the Maven Jetty Plugin. Run
+  
+          mvn jetty:run -P jetty
 
 Start JBoss Enterprise Application Platform 6 or JBoss AS 7.1
 -------------------------

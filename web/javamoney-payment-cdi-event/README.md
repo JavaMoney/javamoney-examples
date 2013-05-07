@@ -1,4 +1,4 @@
-payment-cdi-event: Use CDI Events to Process Debit and Credit Operations
+javamoney-payment-cdi-event: Use CDI Events to Process Debit and Credit Operations
 ========================================================================
 Author: Elvadas Nono (initial contribution), Werner Keil; 
 Level: Beginner; 
@@ -17,7 +17,7 @@ To test this quickstart, enter an amount, choose either a Credit or Debit operat
 
 A Session scoped (@SessionScoped) payment event handler catches the operation and produces (@Produces) a named list of all operations performed during this session.  The event is logged in the JBoss console and the event list is displayed in a table at the bottom of the form.
  
-The payment-cdi-event example defines the following classes:
+The javamoney-payment-cdi-event example defines the following classes:
  
  *   PaymentBean: 
      *   A session scoped bean that stores the payment form information: 
@@ -27,7 +27,7 @@ The payment-cdi-event example defines the following classes:
          *   public String pay(): Process the operation when the user clicks on submit. We have only one JSP page, so the method does not return anything and the flow of control doesn't change.
          *   public void reset(): Clear the payment form data.
  *   PaymentEvent: We have only one Event. It handles both credit and debit operations. Qualifiers help us to make the difference at injection point.
- *   PaymentTypeEnum:  A typesafe enum is used to represent the operation payment type. It contains utility methods to convert between String and Enum.
+ *   PaymentType:  A typesafe enum is used to represent the operation payment type. It contains utility methods to convert between String and Enum.
  *   The qualifiers package contains the Credit and Debit classes. The annotation determines the operation of injecting Event.
  *   The handler package containss Interfaces and implementations of PaymentEvent Observers.
      *   ICreditEventObserver: Interface to listen to CREDIT Event Only (@Observes @Credit).

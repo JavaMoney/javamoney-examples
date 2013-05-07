@@ -1,8 +1,11 @@
 /*
  * JSR 354 Examples
- * Copyright 2012-2013, Credit Suisse AG, Red Hat, Inc. and/or its affiliates, 
- * and individual contributors by the @author tag. See the copyright.txt in the
- * distribution for a full listing of individual contributors.
+ * Copyright 2012 Red Hat, Inc. and/or its affiliates,
+ * and individual contributors by the @author tags. See the copyright.txt in the
+ * distribution for a full listing of individual contributors
+ *
+ * Copyright 2012-2013, Credit Suisse AG, Werner Keil 
+ * and individual contributors by the @author tags.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +17,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.java.javamoney.examples.payment.qualifiers;
+package net.java.javamoney.examples.paymentcdi.qualifiers;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
@@ -29,5 +32,5 @@ import static java.lang.annotation.ElementType.PARAMETER;
 @Qualifier
 @Target({TYPE, METHOD, FIELD, PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Credit {
+public @interface Debit {
 }

@@ -1,8 +1,11 @@
 /*
- * JBoss, Home of Professional Open Source
- * Copyright 2012, Red Hat, Inc. and/or its affiliates, and individual
- * contributors by the @authors tag. See the copyright.txt in the 
- * distribution for a full listing of individual contributors.
+ * JSR 354 Examples
+ * Copyright 2012 Red Hat, Inc. and/or its affiliates,
+ * and individual contributors by the @author tags. See the copyright.txt in the
+ * distribution for a full listing of individual contributors
+ *
+ * Copyright 2012-2013, Credit Suisse AG, Werner Keil 
+ * and individual contributors by the @author tags.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +17,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.java.javamoney.examples.payment.handler;
+package net.java.javamoney.examples.paymentcdi.handler;
 /**
  * 
  * @author Elvadas-Nono
@@ -24,8 +27,8 @@ package net.java.javamoney.examples.payment.handler;
 
 import javax.enterprise.event.Observes;
 
-import net.java.javamoney.examples.payment.events.PaymentEvent;
-import net.java.javamoney.examples.payment.qualifiers.Debit;
+import net.java.javamoney.examples.paymentcdi.events.PaymentEvent;
+import net.java.javamoney.examples.paymentcdi.qualifiers.Debit;
 
 
 public interface IDebitEventObserver {

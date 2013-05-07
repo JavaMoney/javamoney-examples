@@ -16,9 +16,9 @@
 	<artifactId>javamoney-payment-cdi-event</artifactId>
 	<packaging>war</packaging>
 	<name>Java Money and Currency: CDI Event</name>
-	<description>JBoss AS Quickstarts: CDI Event</description>
+	<description>Java Money and Currency: CDI Payment Event</description>
 
-	<url>http://jboss.org/jbossas</url>
+	<url>http://javamoney.java.net</url>
 	<licenses>
 		<license>
 			<name>Apache License, Version 2.0</name>

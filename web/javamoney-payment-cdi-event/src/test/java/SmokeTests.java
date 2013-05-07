@@ -1,8 +1,7 @@
 /*
  * JSR 354 Examples
- * Copyright 2012-2013, Credit Suisse AG, Red Hat, Inc. and/or its affiliates, 
- * and individual contributors by the @author tag. See the copyright.txt in the
- * distribution for a full listing of individual contributors.
+ * Copyright 2012-2013, Credit Suisse AG, Werner Keil 
+ * and individual contributors by the @author tags.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.

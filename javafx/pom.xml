@@ -3,7 +3,7 @@
   <parent>
     <artifactId>javamoney-examples</artifactId>
     <groupId>net.java.javamoney</groupId>
-    <version>0.4-SNAPSHOT</version>
+    <version>0.4</version>
     <relativePath>..</relativePath>
   </parent>
   <artifactId>javamoney-examples-javafx</artifactId>

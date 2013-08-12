@@ -3,9 +3,9 @@
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>net.java.javamoney</groupId>
+		<groupId>org.javamoney</groupId>
 		<artifactId>javamoney-examples-javafx</artifactId>
-		<version>0.4</version>
+		<version>0.5-SNAPSHOT</version>
 	</parent>
 
 

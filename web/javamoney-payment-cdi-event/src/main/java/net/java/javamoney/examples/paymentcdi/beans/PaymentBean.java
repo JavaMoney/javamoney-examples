@@ -38,7 +38,7 @@ import net.java.javamoney.examples.paymentcdi.events.PaymentEvent;
 import net.java.javamoney.examples.paymentcdi.events.PaymentType;
 import net.java.javamoney.examples.paymentcdi.qualifiers.Credit;
 import net.java.javamoney.examples.paymentcdi.qualifiers.Debit;
-import net.java.javamoney.impl.cdi.qualifiers.Amount;
+import org.javamoney.annotation.Amount;
 
 @Named
 @SessionScoped

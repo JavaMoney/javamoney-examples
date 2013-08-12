@@ -21,7 +21,7 @@ import javax.money.format.MonetaryFormats;
 import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
 import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
 import net.java.javamoney.fxdemo.widgets.AmountEntry;
-import net.java.javamoney.ri.format.impl.IsoAmountFormatter.CurrencyPlacement;
+import net.java.javamoney.ri.format.IsoAmountFormatter.CurrencyPlacement;
 
 public class FormatAmount extends AbstractExamplePane {
 
@@ -56,7 +56,7 @@ public class FormatAmount extends AbstractExamplePane {
 							try {
 								MonetaryAmount amount = amount1.getAmount();
 								LocalizationStyle.Builder styleBuilder = new LocalizationStyle.Builder(
-										"default", Locale.ENGLISH);
+										MonetaryAmount.class);
 								if (groupSizes.getText() != null) {
 									String[] groups = groupSizes.getText()
 											.split(",");
@@ -80,7 +80,7 @@ public class FormatAmount extends AbstractExamplePane {
 								pw.println("Formatted Amount");
 								pw.println("----------------");
 								if (formatter != null) {
-									pw.println(formatter.format(amount));
+									pw.println(formatter.format(amount, Locale.getDefault()));
 								} else {
 									pw.println("N/A: No formatter available.");
 								}

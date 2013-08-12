@@ -91,18 +91,18 @@ public class CalculateAmounts extends AbstractExamplePane {
 							} else if ("subtract".equals(operation)) {
 								return amount1.subtract(amount2);
 							} else if ("multiply".equals(operation)) {
-								return amount1.multiply(amount2);
+								return amount1.multiply(amount2.doubleValue());
 							} else if ("divide".equals(operation)) {
-								return amount1.divide(amount2);
+								return amount1.divide(amount2.doubleValue());
 							} else if ("divideToIntegralValue"
 									.equals(operation)) {
-								return amount1.divideToIntegralValue(amount2);
+								return amount1.divideToIntegralValue(amount2.doubleValue());
 //							} else if ("max".equals(operation)) {
 //								return amount1.max(amount2);
 //							} else if ("min".equals(operation)) {
 //								return amount1.min(amount2);
 							} else if ("remainder".equals(operation)) {
-								return amount1.remainder(amount2);
+								return amount1.remainder(amount2.doubleValue());
 							}
 							return null;
 						}

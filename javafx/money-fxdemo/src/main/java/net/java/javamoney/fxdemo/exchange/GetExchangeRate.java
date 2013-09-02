@@ -21,7 +21,9 @@ import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
 import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
 import net.java.javamoney.fxdemo.widgets.CurrencySelector;
 import net.java.javamoney.fxdemo.widgets.ExchangeRateTypeSelector;
+import net.java.javamoney.ri.convert.provider.BTCCurrency;
 import net.java.javamoney.ri.convert.provider.EZBConversionProvider;
+import net.java.javamoney.ri.convert.provider.MtGoxV2ConversionProvider;
 
 /**
  * @author Werner Keil
@@ -65,9 +67,18 @@ public class GetExchangeRate extends AbstractExamplePane {
 									logger.debug("got ECB");
 									currencySelector1.setCurrency(EZBConversionProvider.BASE_CURRENCY);
 									currencySelector1.setDisable(true);
+									currencySelector2.setDisable(false);
+									swapButton.setDisable(true);
+								} else if (MtGoxV2ConversionProvider.RATE_TYPE.equals(newERT)) {
+									logger.debug("got BTC");
+									currencySelector1.setDisable(false);
+									
+									currencySelector2.setCurrency(BTCCurrency.of());
+									currencySelector2.setDisable(true);
 									swapButton.setDisable(true);
 								} else {
 									currencySelector1.setDisable(false);
+									currencySelector2.setDisable(false);
 									swapButton.setDisable(false);
 								}
 							}
@@ -86,11 +97,16 @@ public class GetExchangeRate extends AbstractExamplePane {
 							try {
 								ExchangeRateType type = rateTypeSelector
 										.getSelectionModel().getSelectedItem();
-								ConversionProvider prov = MonetaryConversions
+								ConversionProvider prov;
+								if (MtGoxV2ConversionProvider.RATE_TYPE.equals(type)) {
+									prov = new MtGoxV2ConversionProvider();
+								} else {
+									prov = MonetaryConversions
 										.getConversionProvider(type);
-								ExchangeRate rate = prov.getExchangeRate(
-										currencySelector1.getCurrency(),
-										currencySelector2.getCurrency());
+								}
+								final CurrencyUnit curr1 = currencySelector1.getCurrency();
+								final CurrencyUnit curr2 = currencySelector2.getCurrency();
+								ExchangeRate rate = prov.getExchangeRate(curr1,curr2);
 								pw.println("Exchange Rate");
 								pw.println("--------------");
 								pw.println();

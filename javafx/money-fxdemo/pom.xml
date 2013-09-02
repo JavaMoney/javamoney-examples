@@ -36,6 +36,11 @@
 			<version>${javamoney.ri.version}</version>
 		</dependency>
 
+        <dependency>
+            <groupId>in.jugchennai.javamoney</groupId>
+            <artifactId>TrakStok-JavaMoney</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 	</dependencies>
 
 	<url>http://java.net/project/javamoney</url>

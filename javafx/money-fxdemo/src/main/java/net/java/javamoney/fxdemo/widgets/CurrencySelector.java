@@ -16,9 +16,11 @@ import javax.money.MoneyCurrency;
 import javax.money.ext.MonetaryCurrencies;
 
 import net.java.javamoney.fxdemo.AbstractFXMLComponent;
+import net.java.javamoney.ri.convert.provider.BTCCurrency;
 
 /**
  * @author Anatole Tresch
+ * @author Werner Keil
  *
  */
 public class CurrencySelector extends AbstractFXMLComponent {
@@ -32,10 +34,12 @@ public class CurrencySelector extends AbstractFXMLComponent {
 	@FXML
 	private Label currencyTitle;
 
+	@SuppressWarnings("unchecked")
 	public CurrencySelector(String title) {
 		super("/net/java/javamoney/fxdemo/widgets/CurrencySelector.fxml");
 		this.currencyTitle.setText(title);
 		namespaceBox.getItems().addAll(MonetaryCurrencies.getNamespaces());
+		namespaceBox.getItems().add(BTCCurrency.BTC_NAMESPACE);
 		namespaceBox.getSelectionModel().selectedItemProperty()
 				.addListener(new ChangeListener() {
 
@@ -43,13 +47,15 @@ public class CurrencySelector extends AbstractFXMLComponent {
 							Object newValue) {
 						if (newValue != null) {
 							final List<String> currencyCodes = new ArrayList<String>();
-							for (CurrencyUnit unit : MonetaryCurrencies
-									.getAll((String) newValue)) {
-								String code = unit.getCurrencyCode();
-								if (code != null && !code.trim().isEmpty()) {
-									if (!currencyCodes.contains(code)) {
-										currencyCodes.add(unit
-												.getCurrencyCode());
+							if (MoneyCurrency.ISO_NAMESPACE.equals(newValue)) {
+								for (CurrencyUnit unit : MonetaryCurrencies
+										.getAll((String) newValue)) {
+									String code = unit.getCurrencyCode();
+									if (code != null && !code.trim().isEmpty()) {
+										if (!currencyCodes.contains(code)) {
+											currencyCodes.add(unit
+													.getCurrencyCode());
+										}
 									}
 								}
 							}
@@ -66,7 +72,11 @@ public class CurrencySelector extends AbstractFXMLComponent {
 				.getSelectedItem();
 		String code = (String) codeBox.getSelectionModel().getSelectedItem();
 		if (namespace != null && code != null) {
-			return MonetaryCurrencies.get(namespace, code);
+			if (BTCCurrency.BTC_NAMESPACE.equals(namespace)) {
+				return BTCCurrency.of();
+			} else {
+				return MonetaryCurrencies.get(namespace, code);
+			}
 		}
 		return null;
 	}
@@ -74,6 +84,9 @@ public class CurrencySelector extends AbstractFXMLComponent {
 	public void setCurrency(CurrencyUnit unit) {
 		if (unit != null) {
 			namespaceBox.getSelectionModel().select(unit.getNamespace());
+			if (!codeBox.getItems().contains(unit.getCurrencyCode())) {
+				codeBox.getItems().add(unit.getCurrencyCode());
+			}
 			codeBox.getSelectionModel().select(unit.getCurrencyCode());
 		} else {
 			namespaceBox.getSelectionModel().clearSelection();

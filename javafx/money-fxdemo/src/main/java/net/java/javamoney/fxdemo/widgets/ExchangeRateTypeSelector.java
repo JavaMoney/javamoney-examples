@@ -7,6 +7,13 @@ import javafx.scene.control.ChoiceBox;
 import javax.money.convert.ExchangeRateType;
 import javax.money.convert.MonetaryConversions;
 
+import net.java.javamoney.ri.convert.provider.MtGoxV2ConversionProvider;
+
+/**
+ * 
+ * @author Werner Keil
+ *
+ */
 public class ExchangeRateTypeSelector extends ChoiceBox<ExchangeRateType> {
 
 	public ExchangeRateTypeSelector() {
@@ -15,7 +22,7 @@ public class ExchangeRateTypeSelector extends ChoiceBox<ExchangeRateType> {
 		for (ExchangeRateType type : types) {
 			getItems().add(type);
 		}
-
+		getItems().add(new MtGoxV2ConversionProvider().getExchangeRateType());
 	}
 
 }

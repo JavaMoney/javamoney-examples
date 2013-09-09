@@ -6,7 +6,7 @@
     <parent>
         <artifactId>javamoney-examples-javafx</artifactId>
         <groupId>org.javamoney</groupId>
-        <version>0.5-SNAPSHOT</version>
+        <version>0.6-SNAPSHOT</version>
     </parent>
 
     <artifactId>money-javafx-binding</artifactId>

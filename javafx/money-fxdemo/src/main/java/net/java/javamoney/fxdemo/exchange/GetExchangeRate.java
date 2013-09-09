@@ -21,7 +21,7 @@ import net.java.javamoney.fxdemo.widgets.AbstractExamplePane;
 import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
 import net.java.javamoney.fxdemo.widgets.CurrencySelector;
 import net.java.javamoney.fxdemo.widgets.ExchangeRateTypeSelector;
-import net.java.javamoney.ri.convert.provider.EZBConversionProvider;
+import net.java.javamoney.ri.convert.provider.EZBCurrentConversionProvider;
 
 /**
  * @author Werner Keil
@@ -61,9 +61,9 @@ public class GetExchangeRate extends AbstractExamplePane {
 									+ (newERT !=null ? " New ERT: " + newERT : ""));
 							
 							if (newERT != null) {
-								if (EZBConversionProvider.RATE_TYPE.equals(newERT)) {
+								if (EZBCurrentConversionProvider.RATE_TYPE.equals(newERT)) {
 									logger.debug("got ECB");
-									currencySelector1.setCurrency(EZBConversionProvider.BASE_CURRENCY);
+									currencySelector1.setCurrency(EZBCurrentConversionProvider.BASE_CURRENCY);
 									currencySelector1.setDisable(true);
 									swapButton.setDisable(true);
 								} else {

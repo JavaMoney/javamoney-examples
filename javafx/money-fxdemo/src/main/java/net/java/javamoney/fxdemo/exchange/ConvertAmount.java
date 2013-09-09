@@ -22,7 +22,7 @@ import net.java.javamoney.fxdemo.widgets.AbstractSingleSamplePane;
 import net.java.javamoney.fxdemo.widgets.AmountEntry;
 import net.java.javamoney.fxdemo.widgets.CurrencySelector;
 import net.java.javamoney.fxdemo.widgets.ExchangeRateTypeSelector;
-import net.java.javamoney.ri.convert.provider.EZBConversionProvider;
+import net.java.javamoney.ri.convert.provider.EZBCurrentConversionProvider;
 
 /**
  * @author Anatole Tresch
@@ -60,9 +60,9 @@ public class ConvertAmount extends AbstractExamplePane {
 									+ (newERT !=null ? " New ERT: " + newERT : ""));
 							
 							if (newERT != null) {
-								if (EZBConversionProvider.RATE_TYPE.equals(newERT)) {
+								if (EZBCurrentConversionProvider.RATE_TYPE.equals(newERT)) {
 									logger.debug("got ECB");
-									amountBox.getCodeBox().setValue(EZBConversionProvider.BASE_CURRENCY.getCurrencyCode());
+									amountBox.getCodeBox().setValue(EZBCurrentConversionProvider.BASE_CURRENCY.getCurrencyCode());
 									amountBox.getCodeBox().setDisable(true);
 								} else {
 									amountBox.getCodeBox().setDisable(false);

@@ -25,6 +25,14 @@
 		<javamoney.version>0.6-SNAPSHOT</javamoney.version>
 		<javamoney.ri.version>0.6-SNAPSHOT</javamoney.ri.version>
 	</properties>
+	
+	<licenses>
+        <license>
+            <name>Apache License version 2.0</name>
+            <url>LICENSE.txt</url>
+        </license>
+    </licenses>
+    
 	<dependencyManagement>
 		<dependencies>
 			<dependency>

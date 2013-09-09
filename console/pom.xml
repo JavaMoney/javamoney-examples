@@ -30,4 +30,5 @@
         </dependency>
 
     </dependencies>
+    <name>Java Money and Currency Console Examples</name>
 </project>

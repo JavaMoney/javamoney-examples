@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
+import javax.money.CurrencyNamespace;
 import javax.money.CurrencyUnit;
 import javax.money.MoneyCurrency;
 
@@ -61,10 +62,8 @@ public class AccessCurrencies extends AbstractExamplePane {
 					pw.println("Namespace: " + currency.getNamespace());
 					pw.println("Currency Code: " + currency.getCurrencyCode());
 					pw.println("Numeric Code: " + currency.getNumericCode());
-					pw.println("Legal Tender: " + currency.isLegalTender());
-					pw.println("Virtual Currency: " + currency.isVirtual());
 					pw.println("Default Fraction Digits: " + currency.getDefaultFractionDigits());
-					if(currency.getNamespace().equals(MoneyCurrency.ISO_NAMESPACE)){
+					if(CurrencyNamespace.ISO_NAMESPACE.equals(currency.getNamespace())){
 						Currency lcu = Currency.getInstance(currency.getCurrencyCode());
 						pw.println("Display Name: " + lcu.getDisplayName(Locale.ENGLISH));
 						pw.println("Symbol: " + lcu.getSymbol(Locale.ENGLISH));

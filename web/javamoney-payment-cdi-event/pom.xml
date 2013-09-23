@@ -191,7 +191,7 @@
 
 	<parent>
 		<groupId>org.javamoney</groupId>
-		<version>0.5-SNAPSHOT</version>
+		<version>0.7-SNAPSHOT</version>
 		<artifactId>javamoney-examples-web</artifactId>
 	</parent>
 </project>

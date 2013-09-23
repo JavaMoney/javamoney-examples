@@ -11,6 +11,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 
+import javax.money.CurrencyNamespace;
 import javax.money.CurrencyUnit;
 import javax.money.MoneyCurrency;
 import javax.money.ext.MonetaryCurrencies;
@@ -24,7 +25,7 @@ import net.java.javamoney.fxdemo.AbstractFXMLComponent;
 public class CurrencySelector extends AbstractFXMLComponent {
 
 	@FXML
-	private ChoiceBox<String> namespaceBox;
+	private ChoiceBox<CurrencyNamespace> namespaceBox;
 
 	@FXML
 	private ComboBox<String> codeBox;
@@ -44,7 +45,7 @@ public class CurrencySelector extends AbstractFXMLComponent {
 						if (newValue != null) {
 							final List<String> currencyCodes = new ArrayList<String>();
 							for (CurrencyUnit unit : MonetaryCurrencies
-									.getAll((String) newValue)) {
+									.getAll((CurrencyNamespace)newValue)) {
 								String code = unit.getCurrencyCode();
 								if (code != null && !code.trim().isEmpty()) {
 									if (!currencyCodes.contains(code)) {
@@ -58,12 +59,12 @@ public class CurrencySelector extends AbstractFXMLComponent {
 						}
 					}
 				});
-		namespaceBox.getSelectionModel().select(MoneyCurrency.ISO_NAMESPACE);
+		namespaceBox.getSelectionModel().select(CurrencyNamespace.ISO_NAMESPACE);
 	}
 
 	public CurrencyUnit getCurrency() {
-		String namespace = (String) namespaceBox.getSelectionModel()
-				.getSelectedItem();
+		String namespace = namespaceBox.getSelectionModel()
+				.getSelectedItem().getId();
 		String code = (String) codeBox.getSelectionModel().getSelectedItem();
 		if (namespace != null && code != null) {
 			return MonetaryCurrencies.get(namespace, code);

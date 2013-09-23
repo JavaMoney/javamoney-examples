@@ -65,14 +65,14 @@ public class FormatAmount extends AbstractExamplePane {
 										groupsInt[i] = Integer
 												.parseInt(groups[i]);
 									}
-									styleBuilder.setAttribute("groups",
-											groupsInt);
+//									styleBuilder.setAttribute("groups",
+//											groupsInt);
 								}
 								CurrencyPlacement placement = currencyPlacement
 										.getSelectionModel().getSelectedItem();
 								if (placement != null) {
-									styleBuilder.setAttribute(
-											"currencyPlacement", placement);
+//									styleBuilder.setAttribute(
+//											"currencyPlacement", placement);
 								}
 								ItemFormat<MonetaryAmount> formatter = MonetaryFormats
 										.getItemFormat(MonetaryAmount.class,

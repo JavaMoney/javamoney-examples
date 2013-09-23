@@ -13,6 +13,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import javax.money.CurrencyNamespace;
 import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
 import javax.money.Money;
@@ -56,18 +57,18 @@ public class AmountEntry extends AbstractFXMLComponent {
 							Object newValue) {
 						List<String> currencies = new ArrayList<String>();
 						for (CurrencyUnit unit : MonetaryCurrencies
-								.getAll((String) newValue)) {
+								.getAll(CurrencyNamespace.of(String.valueOf(newValue)))) {
 							currencies.add(unit.getCurrencyCode());
 						}
 						Collections.sort(currencies);
 						codeBox.getItems().setAll(currencies);
 					}
 				});
-		namespaceBox.getSelectionModel().select(MoneyCurrency.ISO_NAMESPACE);
+		namespaceBox.getSelectionModel().select(CurrencyNamespace.ISO_NAMESPACE_ID);
 	}
 
 	public MonetaryAmount getAmount() {
-		String namespace = (String) namespaceBox.getSelectionModel()
+		CurrencyNamespace namespace = (CurrencyNamespace) namespaceBox.getSelectionModel()
 				.getSelectedItem();
 		String code = (String) codeBox.getSelectionModel().getSelectedItem();
 		String typeClass = (String) numberType.getSelectionModel()

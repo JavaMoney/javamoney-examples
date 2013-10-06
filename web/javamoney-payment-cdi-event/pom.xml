@@ -90,7 +90,7 @@
 				<version>${version.jsr}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.javamoney</groupId>
+				<groupId>org.javamoney.bundles</groupId>
 				<artifactId>javamoney-ee</artifactId>
 				<version>${version.org.javamoney}</version>
 			</dependency>
@@ -147,7 +147,7 @@
 			<artifactId>money-ri</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.javamoney</groupId>
+			<groupId>org.javamoney.bundles</groupId>
 			<artifactId>javamoney-ee</artifactId>
 		</dependency>
 

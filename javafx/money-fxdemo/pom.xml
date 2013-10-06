@@ -26,14 +26,24 @@
 		</dependency>
 
 		<dependency>
-			<groupId>net.java.javamoney</groupId>
+			<groupId>javax.money</groupId>
 			<artifactId>money-ri</artifactId>
 			<version>${jsr.ri.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>net.java.javamoney</groupId>
-			<artifactId>money-java-se</artifactId>
-			<version>${jsr.ri.version}</version>
+			<groupId>org.javamoney</groupId>
+			<artifactId>javamoney-common</artifactId>
+			<version>${javamoney.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.javamoney</groupId>
+			<artifactId>javamoney-conversion</artifactId>
+			<version>${javamoney.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.javamoney.bundles</groupId>
+			<artifactId>javamoney-se</artifactId>
+			<version>${javamoney.version}</version>
 		</dependency>
 
 	</dependencies>
@@ -44,7 +54,7 @@
 		<name>JSR 354</name>
 		<url>http://jcp.org?id=354</url>
 	</organization>
-	<artifactId>money-fxdemo</artifactId>
+	<artifactId>javamoney-fxdemo</artifactId>
     <build>
         <plugins>
             <plugin>

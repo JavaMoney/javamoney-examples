@@ -37,6 +37,11 @@
 		</dependency>
 		<dependency>
 			<groupId>org.javamoney</groupId>
+			<artifactId>javamoney-calc</artifactId>
+			<version>${javamoney.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.javamoney</groupId>
 			<artifactId>javamoney-conversion</artifactId>
 			<version>${javamoney.version}</version>
 		</dependency>

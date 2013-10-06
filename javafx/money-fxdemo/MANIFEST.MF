@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: net.java.javamoney.fxdemo.FXDemo
+Main-Class: org.javamoney.examples.fxdemo.FXDemo
 

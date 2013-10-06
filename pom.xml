@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.javamoney</groupId>
+	<groupId>org.javamoney.examples</groupId>
 	<artifactId>javamoney-examples</artifactId>
 	<version>0.7-SNAPSHOT</version>
 	<packaging>pom</packaging>
@@ -22,8 +22,9 @@
 		<junit.version>4.8.2</junit.version>
 		<slf4j.version>1.6.1</slf4j.version>
 		<!-- JSR versions -->
-		<javamoney.version>${version}</javamoney.version>
-		<javamoney.ri.version>${version}</javamoney.ri.version>
+		<jsr.version>${version}</jsr.version>
+		<jsr.ri.version>${version}</jsr.ri.version>
+		<javamoney.version>0.3-SNAPSHOT</javamoney.version>
 	</properties>
 	
 	<licenses>
@@ -51,4 +52,9 @@
 		<name>JSR 354 Expert Group</name>
 		<url>http://javamoney.org</url>
 	</organization>
+	<parent>
+		<groupId>org.javamoney</groupId>
+		<artifactId>javamoney-parent</artifactId>
+		<version>0.3-SNAPSHOT</version>
+	</parent>
 </project>

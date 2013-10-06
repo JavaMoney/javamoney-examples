@@ -1,5 +1,5 @@
 /*
- * JSR 354 Examples
+ * JavaMoney Examples
  * Copyright 2012-2013, Werner Keil 
  * and individual contributors by the @author tags.
  *
@@ -15,22 +15,21 @@
  */
 package org.javamoney.examples.console;
 
+import javax.money.FastMoney;
 import javax.money.Money;
-
-import net.java.javamoney.ri.IntegralMoney;
 
 /**
  * @author Werner Keil
- * @version 0.7
+ * @version 0.7.1
  */
-public class IntegralDemo {
+public class MoneyDemo {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		Money amt1 = Money.of("USD", 10.1234556123456789);
-		IntegralMoney amt2 = IntegralMoney.of("USD", 123456789);
+		FastMoney amt2 = FastMoney.of("USD", 123456789);
 		Money total = amt1.add(amt2);
 		System.out.println(total);
 	}

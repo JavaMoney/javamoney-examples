@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <artifactId>javamoney-examples</artifactId>
-    <groupId>org.javamoney</groupId>
+    <groupId>org.javamoney.examples</groupId>
     <version>0.7-SNAPSHOT</version>
     <relativePath>..</relativePath>
   </parent>

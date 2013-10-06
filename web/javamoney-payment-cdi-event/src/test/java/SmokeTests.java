@@ -15,7 +15,6 @@
  */
 import static org.junit.Assert.assertEquals;
 
-import javax.money.MonetaryAmount;
 import javax.money.Money;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -35,7 +34,7 @@ public class SmokeTests {
 		// Creating one
 		Money amount1 = Money.of("CHF", 1.0d);
 		Money amount2 = Money.of("CHF", 1.0d);
-		MonetaryAmount amount3 = amount1.add(amount2);
+		Money amount3 = amount1.add(amount2);
 		LOGGER.debug(amount1 + " + " + amount2 + " = " + amount3);
 		assertEquals(1.0d, amount1.doubleValue(), 0);
 		assertEquals(1.0d, amount2.doubleValue(), 0);

@@ -3,7 +3,7 @@
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.javamoney</groupId>
+		<groupId>org.javamoney.examples</groupId>
 		<artifactId>javamoney-examples-javafx</artifactId>
 		<version>0.7-SNAPSHOT</version>
 	</parent>
@@ -28,12 +28,12 @@
 		<dependency>
 			<groupId>net.java.javamoney</groupId>
 			<artifactId>money-ri</artifactId>
-			<version>${javamoney.ri.version}</version>
+			<version>${jsr.ri.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>net.java.javamoney</groupId>
 			<artifactId>money-java-se</artifactId>
-			<version>${javamoney.ri.version}</version>
+			<version>${jsr.ri.version}</version>
 		</dependency>
 
 	</dependencies>

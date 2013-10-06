@@ -18,7 +18,7 @@
 	<name>Java Money and Currency: CDI Event</name>
 	<description>Java Money and Currency: CDI Payment Event</description>
 
-	<url>http://javamoney.java.net</url>
+	<url>http://javamoney.org</url>
 	<licenses>
 		<license>
 			<name>Apache License, Version 2.0</name>
@@ -55,7 +55,8 @@
 		<maven.compiler.source>1.6</maven.compiler.source>
 
 		<!-- JSR versions -->
-		<javamoney.version>0.5-SNAPSHOT</javamoney.version>
+		<version.jsr>0.7-SNAPSHOT</version.jsr>
+		<version.org.javamoney>0.3-SNAPSHOT</version.org.javamoney>
 	</properties>
 
 	<dependencyManagement>
@@ -84,14 +85,14 @@
 			</dependency>
 
 			<dependency>
-				<groupId>net.java.javamoney</groupId>
+				<groupId>javax.money</groupId>
 				<artifactId>money-ri</artifactId>
-				<version>${javamoney.version}</version>
+				<version>${version.jsr}</version>
 			</dependency>
 			<dependency>
-				<groupId>net.java.javamoney</groupId>
-				<artifactId>money-java-ee</artifactId>
-				<version>${javamoney.version}</version>
+				<groupId>org.javamoney</groupId>
+				<artifactId>javamoney-ee</artifactId>
+				<version>${version.org.javamoney}</version>
 			</dependency>
 
 			<!-- Needed for running tests (you may also use TestNG) -->
@@ -142,12 +143,12 @@
 		</dependency>
 
 		<dependency>
-			<groupId>net.java.javamoney</groupId>
+			<groupId>javax.money</groupId>
 			<artifactId>money-ri</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>net.java.javamoney</groupId>
-			<artifactId>money-java-ee</artifactId>
+			<groupId>org.javamoney</groupId>
+			<artifactId>javamoney-ee</artifactId>
 		</dependency>
 
 		<dependency>
@@ -180,7 +181,6 @@
 				processors -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${version.compiler.plugin}</version>
 				<configuration>
 					<source>${maven.compiler.source}</source>
 					<target>${maven.compiler.target}</target>
@@ -190,7 +190,7 @@
 	</build>
 
 	<parent>
-		<groupId>org.javamoney</groupId>
+		<groupId>org.javamoney.examples</groupId>
 		<version>0.7-SNAPSHOT</version>
 		<artifactId>javamoney-examples-web</artifactId>
 	</parent>

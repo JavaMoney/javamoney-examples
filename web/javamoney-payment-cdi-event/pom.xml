@@ -15,7 +15,7 @@
 	
 	<parent>
 		<groupId>org.javamoney.examples</groupId>
-		<version>0.7-SNAPSHOT</version>
+		<version>0.3-SNAPSHOT</version>
 		<artifactId>javamoney-examples-web</artifactId>
 	</parent>
 	
@@ -61,7 +61,7 @@
 		<maven.compiler.source>1.6</maven.compiler.source>
 
 		<!-- JSR versions -->
-		<version.jsr>0.7-SNAPSHOT</version.jsr>
+		<version.jsr>0.7</version.jsr>
 		<version.org.javamoney>0.3-SNAPSHOT</version.org.javamoney>
 	</properties>
 

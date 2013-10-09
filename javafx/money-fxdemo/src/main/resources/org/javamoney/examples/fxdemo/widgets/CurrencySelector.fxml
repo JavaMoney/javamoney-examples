@@ -21,19 +21,6 @@
       <center>
         <VBox prefHeight="64.0" prefWidth="149.0">
           <children>
-            <Label text="Namespace">
-              <labelFor>
-                <ChoiceBox fx:id="namespaceBox" maxWidth="1.7976931348623157E308" VBox.vgrow="NEVER">
-                  <VBox.margin>
-                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
-                  </VBox.margin>
-                </ChoiceBox>
-              </labelFor>
-              <VBox.margin>
-                <Insets left="5.0" right="5.0" />
-              </VBox.margin>
-            </Label>
-            <fx:reference source="namespaceBox" />
             <Label text="Currency Code">
               <labelFor>
                 <ComboBox fx:id="codeBox" editable="true" maxWidth="1.7976931348623157E308" VBox.margin="$x1" VBox.vgrow="NEVER" />

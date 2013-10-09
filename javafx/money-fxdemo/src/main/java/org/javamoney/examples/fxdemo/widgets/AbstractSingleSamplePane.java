@@ -23,7 +23,7 @@ public class AbstractSingleSamplePane extends AbstractFXMLComponent {
 	protected TextArea outputArea;
 
 	public AbstractSingleSamplePane() {
-		super("/net/java/javamoney/fxdemo/widgets/SingleSamplePane.fxml");
+		super("/org/javamoney/examples/fxdemo/widgets/SingleSamplePane.fxml");
 	}
 
 }

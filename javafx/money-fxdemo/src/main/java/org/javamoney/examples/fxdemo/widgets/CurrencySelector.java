@@ -30,7 +30,7 @@ public class CurrencySelector extends AbstractFXMLComponent {
 	private Label currencyTitle;
 
 	public CurrencySelector(String title) {
-		super("/net/java/javamoney/fxdemo/widgets/CurrencySelector.fxml");
+		super("/org/javamoney/examples/fxdemo/widgets/CurrencySelector.fxml");
 		this.currencyTitle.setText(title);
 	}
 

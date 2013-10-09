@@ -31,7 +31,7 @@ public abstract class AbstractExamplePane extends AbstractFXMLComponent {
 	private AnchorPane contentPane;
 
 	public AbstractExamplePane(Node content) {
-		super("/net/java/javamoney/fxdemo/widgets/ExamplePane.fxml");
+		super("/org/javamoney/examples/fxdemo/widgets/ExamplePane.fxml");
 		this.contentPane.getChildren().add(content);
 		AnchorPane.setBottomAnchor(content, 0d);
 		AnchorPane.setTopAnchor(content, 0d);

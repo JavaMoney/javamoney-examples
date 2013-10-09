@@ -19,9 +19,9 @@
         </dependency>
 
         <dependency>
-            <groupId>javax.money</groupId>
-            <artifactId>money-ri</artifactId>
-            <version>${jsr.ri.version}</version>
+            <groupId>org.javamoney.bundles</groupId>
+            <artifactId>javamoney-se</artifactId>
+            <version>${javamoney.version}</version>
         </dependency>
 
     </dependencies>

@@ -2,7 +2,6 @@ package org.javamoney.examples.fxdemo.core;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.math.BigDecimal;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
@@ -18,6 +17,7 @@ import javax.money.MonetaryAmount;
 import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
 import org.javamoney.examples.fxdemo.widgets.AmountEntry;
+import org.javamoney.moneta.Money;
 
 public class CalculateAmounts extends AbstractExamplePane {
 
@@ -58,7 +58,7 @@ public class CalculateAmounts extends AbstractExamplePane {
 						public void handle(ActionEvent action) {
 							StringWriter sw = new StringWriter();
 							PrintWriter pw = new PrintWriter(sw);
-//							StringBuilder builder = new StringBuilder();
+							// StringBuilder builder = new StringBuilder();
 							try {
 								MonetaryAmount amount1 = amount1Pane
 										.getAmount();
@@ -87,22 +87,28 @@ public class CalculateAmounts extends AbstractExamplePane {
 								MonetaryAmount amount1, MonetaryAmount amount2,
 								String operation) {
 							if ("add".equals(operation)) {
-								return amount1.add(amount2);
+								return Money.from(amount1).add(amount2);
 							} else if ("subtract".equals(operation)) {
-								return amount1.subtract(amount2);
+								return Money.from(amount1).subtract(amount2);
 							} else if ("multiply".equals(operation)) {
-								return amount1.multiply(amount2.doubleValue());
+								return Money.from(amount1).multiply(
+										Money.from(amount2).doubleValue());
 							} else if ("divide".equals(operation)) {
-								return amount1.divide(amount2.doubleValue());
+								return Money.from(amount1).divide(
+										Money.from(amount2).doubleValue());
 							} else if ("divideToIntegralValue"
 									.equals(operation)) {
-								return amount1.divideToIntegralValue(amount2.doubleValue());
-//							} else if ("max".equals(operation)) {
-//								return amount1.max(amount2);
-//							} else if ("min".equals(operation)) {
-//								return amount1.min(amount2);
+								return Money.from(amount1)
+										.divideToIntegralValue(
+												Money.from(amount2)
+														.doubleValue());
+								// } else if ("max".equals(operation)) {
+								// return amount1.max(amount2);
+								// } else if ("min".equals(operation)) {
+								// return amount1.min(amount2);
 							} else if ("remainder".equals(operation)) {
-								return amount1.remainder(amount2.doubleValue());
+								return Money.from(amount1).remainder(
+										Money.from(amount2).doubleValue());
 							}
 							return null;
 						}
@@ -111,10 +117,8 @@ public class CalculateAmounts extends AbstractExamplePane {
 								PrintWriter pw) {
 							pw.println("Class: " + amount.getClass().getName());
 							pw.println("Currency: " + amount.getCurrency());
-							pw.println("Value (BD): "
-									+ amount.asType(BigDecimal.class));
-							pw.println("Precision: " + amount.getPrecision());
-							pw.println("Scale: " + amount.getScale());
+							pw.println("Value: "
+									+ amount);
 						}
 					});
 			buttonPane.getChildren().add(actionButton);

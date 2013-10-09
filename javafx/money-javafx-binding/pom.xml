@@ -1,141 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <artifactId>javamoney-examples-javafx</artifactId>
-        <groupId>org.javamoney.examples</groupId>
-        <version>0.7-SNAPSHOT</version>
-    </parent>
+	<parent>
+		<artifactId>javamoney-examples-javafx</artifactId>
+		<groupId>org.javamoney.examples</groupId>
+		<version>0.7-SNAPSHOT</version>
+	</parent>
 
-    <artifactId>money-javafx-binding</artifactId>
-    <name>Java Money and Currency JavaFX Binding Examples</name>
+	<artifactId>money-javafx-binding</artifactId>
+	<name>Java Money and Currency JavaFX Binding Examples</name>
 
-    <packaging>jar</packaging>
-    
-    <organization>
-        <!-- Used as the 'Vendor' for JNLP generation -->
-        <name>JavaMoney.org</name>
-        <url>http://javamoney.org</url>
-    </organization>
+	<packaging>jar</packaging>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <slf4j.version>1.6.1</slf4j.version>
-    </properties>
+	<organization>
+		<!-- Used as the 'Vendor' for JNLP generation -->
+		<name>JavaMoney.org</name>
+		<url>http://javamoney.org</url>
+	</organization>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>com.zenjava</groupId>
-                <artifactId>javafx-maven-plugin</artifactId>
-                <version>1.3</version>
-                <configuration>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<slf4j.version>1.6.1</slf4j.version>
+	</properties>
 
-                    <mainClass>net.java.javamoney.javafx.binding.MainApp</mainClass>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.zenjava</groupId>
+				<artifactId>javafx-maven-plugin</artifactId>
+				<version>1.3</version>
+				<configuration>
 
-                    <!-- only required if signing the jar file -->
-                    <keyStoreAlias>example-user</keyStoreAlias>
-                    <keyStorePassword>example-password</keyStorePassword>
-                    <permissions>
-                        <permission>all-permissions</permission>
-                    </permissions>
+					<mainClass>net.java.javamoney.javafx.binding.MainApp</mainClass>
 
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+					<!-- only required if signing the jar file -->
+					<keyStoreAlias>example-user</keyStoreAlias>
+					<keyStorePassword>example-password</keyStorePassword>
+					<permissions>
+						<permission>all-permissions</permission>
+					</permissions>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.javamoney</groupId>
-                <artifactId>javamoney-conversion</artifactId>
-                <version>${javamoney.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.javamoney</groupId>
-                <artifactId>javamoney-extensions</artifactId>
-                <version>${javamoney.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>javax.money</groupId>
-                <artifactId>money-ri</artifactId>
-                <version>${jsr.ri.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>4.8.1</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
-        </dependencies>
-    </dependencyManagement>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.javamoney</groupId>
+				<artifactId>javamoney-conversion</artifactId>
+				<version>${javamoney.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.javamoney</groupId>
+				<artifactId>javamoney-extensions</artifactId>
+				<version>${javamoney.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.8.1</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.javamoney</groupId>
+				<artifactId>jsr354-ri</artifactId>
+				<version>${jsr.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
-    <dependencies>
-    
-        <!-- MigLayout -->
+	<dependencies>
 
-        <dependency>
-            <groupId>com.miglayout</groupId>
-            <artifactId>miglayout-javafx</artifactId>
-            <version>4.2</version>
-        </dependency>
+		<!-- MigLayout -->
 
-        <!-- Apache Commons -->
+		<dependency>
+			<groupId>com.miglayout</groupId>
+			<artifactId>miglayout-javafx</artifactId>
+			<version>4.2</version>
+		</dependency>
 
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.6</version>
-        </dependency>
+		<!-- Apache Commons -->
 
-        <!-- Logging  -->
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.16</version>
-        </dependency>
-        <dependency>
-        	<groupId>javax.money</groupId>
-        	<artifactId>money-ri</artifactId>
-        </dependency>
-        
-        <dependency>
-        	<groupId>junit</groupId>
-        	<artifactId>junit</artifactId>
-        	<scope>test</scope>
-        </dependency>
-    </dependencies>
+		<!-- Logging -->
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+		<dependency>
+			<groupId>org.javamoney</groupId>
+			<artifactId>jsr354-ri</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 </project>

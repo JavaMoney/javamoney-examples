@@ -6,11 +6,14 @@
     <version>0.7-SNAPSHOT</version>
     <relativePath>..</relativePath>
   </parent>
+  
   <artifactId>javamoney-examples-web</artifactId>
   <packaging>pom</packaging>
+  <name>Java Money and Currency Web Examples</name>
+  
   <modules>
   	<!--  module>javamoney-tradingapp</module -->
   	<module>javamoney-payment-cdi-event</module>
   </modules>
-  <name>Java Money and Currency Web Examples</name>
+  
 </project>

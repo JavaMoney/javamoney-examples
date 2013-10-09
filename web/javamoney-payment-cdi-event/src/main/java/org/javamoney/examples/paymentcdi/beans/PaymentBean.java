@@ -31,14 +31,14 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
-import javax.money.Money;
-import javax.money.MoneyCurrency;
 
 import org.javamoney.annotation.Amount;
 import org.javamoney.examples.paymentcdi.events.PaymentEvent;
 import org.javamoney.examples.paymentcdi.events.PaymentType;
 import org.javamoney.examples.paymentcdi.qualifiers.Credit;
 import org.javamoney.examples.paymentcdi.qualifiers.Debit;
+import org.javamoney.moneta.Money;
+import org.javamoney.moneta.MoneyCurrency;
 
 @Named
 @SessionScoped

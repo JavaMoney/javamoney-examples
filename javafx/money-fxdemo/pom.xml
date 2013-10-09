@@ -26,8 +26,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>javax.money</groupId>
-			<artifactId>money-ri</artifactId>
+			<groupId>org.javamoney.bundles</groupId>
+			<artifactId>javamoney-se</artifactId>
 			<version>${jsr.ri.version}</version>
 		</dependency>
 		<dependency>

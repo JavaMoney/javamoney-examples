@@ -13,16 +13,16 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import javax.money.MonetaryAmount;
-import javax.money.Money;
-import javax.money.format.ItemFormat;
-import javax.money.format.LocalizationStyle;
-import javax.money.format.MonetaryFormats;
 
 import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
 import org.javamoney.examples.fxdemo.widgets.AmountEntry;
-
-import net.java.javamoney.ri.format.IsoAmountFormatter.CurrencyPlacement;
+import org.javamoney.format.IsoAmountFormatter.CurrencyPlacement;
+import org.javamoney.format.ItemFormat;
+import org.javamoney.format.LocalizationStyle;
+import org.javamoney.format.MonetaryFormats;
+import org.javamoney.moneta.Money;
+import org.javamoney.moneta.format.MonetaryAmountFormat.CurrencyStyle;
 
 public class FormatAmount extends AbstractExamplePane {
 
@@ -38,13 +38,13 @@ public class FormatAmount extends AbstractExamplePane {
 		private VBox exPane = new VBox();
 		private AmountEntry amount1 = new AmountEntry("Amount Formatted");
 		private TextField groupSizes = new TextField("4");
-		private ChoiceBox<CurrencyPlacement> currencyPlacement = new ChoiceBox<CurrencyPlacement>();
+		private ChoiceBox<CurrencyStyle> currencyPlacement = new ChoiceBox<CurrencyStyle>();
 
 		public ExamplePane() {
 			exPane.getChildren().addAll(amount1, new Label("groupSizes"),
 					groupSizes, new Label("currencyPlacement"),
 					currencyPlacement);
-			currencyPlacement.getItems().addAll(CurrencyPlacement.values());
+			currencyPlacement.getItems().addAll(CurrencyStyle.values());
 			this.inputPane.getChildren().add(exPane);
 			AnchorPane.setLeftAnchor(exPane, 10d);
 			AnchorPane.setTopAnchor(exPane, 10d);
@@ -69,7 +69,7 @@ public class FormatAmount extends AbstractExamplePane {
 //									styleBuilder.setAttribute("groups",
 //											groupsInt);
 								}
-								CurrencyPlacement placement = currencyPlacement
+								CurrencyStyle placement = currencyPlacement
 										.getSelectionModel().getSelectedItem();
 								if (placement != null) {
 //									styleBuilder.setAttribute(

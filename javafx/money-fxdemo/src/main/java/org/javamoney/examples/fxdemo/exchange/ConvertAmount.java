@@ -2,7 +2,6 @@ package org.javamoney.examples.fxdemo.exchange;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.math.BigDecimal;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -13,22 +12,21 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import javax.money.MonetaryAmount;
-import javax.money.convert.CurrencyConverter;
-import javax.money.convert.ExchangeRateType;
-import javax.money.convert.MonetaryConversions;
 
+import org.javamoney.convert.CurrencyConverter;
+import org.javamoney.convert.ExchangeRateType;
+import org.javamoney.convert.MonetaryConversions;
+import org.javamoney.convert.provider.EZBCurrentConversionProvider;
 import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
 import org.javamoney.examples.fxdemo.widgets.AmountEntry;
 import org.javamoney.examples.fxdemo.widgets.CurrencySelector;
 import org.javamoney.examples.fxdemo.widgets.ExchangeRateTypeSelector;
 
-import net.java.javamoney.ri.convert.provider.EZBCurrentConversionProvider;
-
 /**
  * @author Anatole Tresch
  * @author Werner Keil
- *
+ * 
  */
 public class ConvertAmount extends AbstractExamplePane {
 	public ConvertAmount() {
@@ -56,14 +54,22 @@ public class ConvertAmount extends AbstractExamplePane {
 						public void changed(
 								ObservableValue<? extends ExchangeRateType> observable,
 								ExchangeRateType oldERT, ExchangeRateType newERT) {
-							logger.info((observable !=null ? "Obs: " + observable : "")
-									+ (oldERT !=null ? " Old ERT: " + oldERT : "")
-									+ (newERT !=null ? " New ERT: " + newERT : ""));
-							
+							logger.info((observable != null ? "Obs: "
+									+ observable : "")
+									+ (oldERT != null ? " Old ERT: " + oldERT
+											: "")
+									+ (newERT != null ? " New ERT: " + newERT
+											: ""));
+
 							if (newERT != null) {
-								if (EZBCurrentConversionProvider.RATE_TYPE.equals(newERT)) {
+								if (EZBCurrentConversionProvider.RATE_TYPE
+										.equals(newERT)) {
 									logger.debug("got ECB");
-									amountBox.getCodeBox().setValue(EZBCurrentConversionProvider.BASE_CURRENCY.getCurrencyCode());
+									amountBox
+											.getCodeBox()
+											.setValue(
+													EZBCurrentConversionProvider.BASE_CURRENCY
+															.getCurrencyCode());
 									amountBox.getCodeBox().setDisable(true);
 								} else {
 									amountBox.getCodeBox().setDisable(false);
@@ -104,11 +110,7 @@ public class ConvertAmount extends AbstractExamplePane {
 						private void printSummary(MonetaryAmount amount,
 								PrintWriter pw) {
 							pw.println("Class: " + amount.getClass().getName());
-							pw.println("Currency: " + amount.getCurrency());
-							pw.println("Value (BD): "
-									+ amount.asType(BigDecimal.class));
-							pw.println("Precision: " + amount.getPrecision());
-							pw.println("Scale: " + amount.getScale());
+							pw.println("Vaöue: " + amount.toString());
 						}
 					});
 			buttonPane.getChildren().add(actionButton);

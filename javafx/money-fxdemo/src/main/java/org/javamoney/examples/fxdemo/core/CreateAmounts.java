@@ -2,7 +2,6 @@ package org.javamoney.examples.fxdemo.core;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.math.BigDecimal;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
@@ -23,8 +22,6 @@ public class CreateAmounts extends AbstractExamplePane {
 		setExampleDescription("This example shows how to create monetary amounts with different currencies and with different number representations.");
 		setExampleCode(loadExample("/samples/CreateAmounts.javatxt"));
 	}
-
-	
 
 	public final static class ExamplePane extends AbstractSingleSamplePane {
 
@@ -58,12 +55,7 @@ public class CreateAmounts extends AbstractExamplePane {
 						private void printSummary(MonetaryAmount amount,
 								PrintWriter pw) {
 							pw.println("Class: " + amount.getClass().getName());
-							pw.println("Value (BD): "
-									+ amount.asType(BigDecimal.class));
-							pw.println("Value (double): "
-									+ amount.doubleValue());
-							pw.println("Precision: " + amount.getPrecision());
-							pw.println("Scale: " + amount.getScale());
+							pw.println("Value: " + amount);
 						}
 					});
 			buttonPane.getChildren().add(actionButton);

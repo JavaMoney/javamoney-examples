@@ -11,11 +11,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
 import javax.money.CurrencyUnit;
-import javax.money.MoneyCurrency;
 
 import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
 import org.javamoney.examples.fxdemo.widgets.CurrencySelector;
+import org.javamoney.moneta.MoneyCurrency;
 
 public class AccessCurrencies extends AbstractExamplePane {
 
@@ -44,7 +44,7 @@ public class AccessCurrencies extends AbstractExamplePane {
 					StringWriter sw = new StringWriter();
 					PrintWriter pw = new PrintWriter(sw);
 					try {
-						CurrencyUnit currency = selector.getCurrency();
+						MoneyCurrency currency = selector.getCurrency();
 						pw.println("CurrencyUnit");
 						pw.println("------------");
 						pw.println();
@@ -56,13 +56,12 @@ public class AccessCurrencies extends AbstractExamplePane {
 					CreateCurrencyPane.this.outputArea.setText(sw.toString());
 				}
 
-				private void printSummary(CurrencyUnit currency, PrintWriter pw) {
+				private void printSummary(MoneyCurrency currency, PrintWriter pw) {
 					pw.println("Class: " + currency.getClass().getName());
-					pw.println("Namespace: " + currency.getNamespace());
 					pw.println("Currency Code: " + currency.getCurrencyCode());
 					pw.println("Numeric Code: " + currency.getNumericCode());
 					pw.println("Default Fraction Digits: " + currency.getDefaultFractionDigits());
-					if(CurrencyNamespace.ISO_NAMESPACE.equals(currency.getNamespace())){
+					if(currency.isJavaCurrency(currency.getCurrencyCode())){
 						Currency lcu = Currency.getInstance(currency.getCurrencyCode());
 						pw.println("Display Name: " + lcu.getDisplayName(Locale.ENGLISH));
 						pw.println("Symbol: " + lcu.getSymbol(Locale.ENGLISH));

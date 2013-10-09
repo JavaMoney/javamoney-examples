@@ -12,12 +12,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
 import javax.money.MonetaryAmount;
-import javax.money.Money;
 
 import org.javamoney.calc.function.MonetaryCalculations;
 import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
 import org.javamoney.examples.fxdemo.widgets.AmountEntry;
+import org.javamoney.moneta.Money;
 
 public class MinMaxSample extends AbstractExamplePane {
 

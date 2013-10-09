@@ -12,17 +12,16 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import javax.money.CurrencyUnit;
-import javax.money.convert.ConversionProvider;
-import javax.money.convert.ExchangeRate;
-import javax.money.convert.ExchangeRateType;
-import javax.money.convert.MonetaryConversions;
 
+import org.javamoney.convert.ConversionProvider;
+import org.javamoney.convert.ExchangeRate;
+import org.javamoney.convert.ExchangeRateType;
+import org.javamoney.convert.MonetaryConversions;
+import org.javamoney.convert.provider.EZBCurrentConversionProvider;
 import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
 import org.javamoney.examples.fxdemo.widgets.CurrencySelector;
 import org.javamoney.examples.fxdemo.widgets.ExchangeRateTypeSelector;
-
-import net.java.javamoney.ri.convert.provider.EZBCurrentConversionProvider;
 
 /**
  * @author Werner Keil

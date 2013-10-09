@@ -4,6 +4,7 @@
 package net.java.javamoney.javafx.binding;
 
 import javafx.beans.binding.Binding;
+
 import javax.money.MonetaryAmount;
 
 /**

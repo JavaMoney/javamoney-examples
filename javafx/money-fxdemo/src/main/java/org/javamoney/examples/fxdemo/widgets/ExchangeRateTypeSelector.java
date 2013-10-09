@@ -4,8 +4,8 @@ import java.util.Collection;
 
 import javafx.scene.control.ChoiceBox;
 
-import javax.money.convert.ExchangeRateType;
-import javax.money.convert.MonetaryConversions;
+import org.javamoney.convert.ExchangeRateType;
+import org.javamoney.convert.MonetaryConversions;
 
 public class ExchangeRateTypeSelector extends ChoiceBox<ExchangeRateType> {
 

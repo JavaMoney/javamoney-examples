@@ -31,17 +31,17 @@
 			<version>${jsr.ri.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.javamoney</groupId>
+			<groupId>org.javamoney.lib</groupId>
 			<artifactId>javamoney-common</artifactId>
 			<version>${javamoney.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.javamoney</groupId>
+			<groupId>org.javamoney.lib</groupId>
 			<artifactId>javamoney-calc</artifactId>
 			<version>${javamoney.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.javamoney</groupId>
+			<groupId>org.javamoney.lib</groupId>
 			<artifactId>javamoney-conversion</artifactId>
 			<version>${javamoney.version}</version>
 		</dependency>

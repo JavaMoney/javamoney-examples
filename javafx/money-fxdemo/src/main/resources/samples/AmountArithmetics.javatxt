@@ -7,9 +7,9 @@ import java.math.RoundingMode;
 import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
 
-import net.java.javamoney.ri.core.IntegralMoney;
-import net.java.javamoney.ri.core.Money;
-import net.java.javamoney.ri.core.MoneyCurrency;
+import org.javamoney.ri.core.IntegralMoney;
+import org.javamoney.ri.core.Money;
+import org.javamoney.ri.core.MoneyCurrency;
 
 /**
  * Sample snippets for arithemtic operations with amounts.

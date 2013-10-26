@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.m2e.Maven2LaunchConfigurationType">
 <booleanAttribute key="M2_DEBUG_OUTPUT" value="false"/>
-<stringAttribute key="M2_GOALS" value="install"/>
+<stringAttribute key="M2_GOALS" value="clean install"/>
 <booleanAttribute key="M2_NON_RECURSIVE" value="false"/>
 <booleanAttribute key="M2_OFFLINE" value="false"/>
 <stringAttribute key="M2_PROFILES" value=""/>
@@ -11,7 +11,8 @@
 <intAttribute key="M2_THREADS" value="1"/>
 <booleanAttribute key="M2_UPDATE_SNAPSHOTS" value="false"/>
 <booleanAttribute key="M2_WORKSPACE_RESOLUTION" value="false"/>
+<stringAttribute key="bad_container_name" value="\javamoney-examples\j"/>
 <stringAttribute key="org.eclipse.debug.ui.ATTR_CONSOLE_ENCODING" value="UTF-8"/>
 <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0"/>
-<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${workspace_loc:/javamoney-examples/javafx}"/>
+<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${workspace_loc:/javamoney-examples}"/>
 </launchConfiguration>

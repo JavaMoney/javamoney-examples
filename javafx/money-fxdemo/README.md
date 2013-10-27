@@ -1,7 +1,7 @@
 money-fxdemo
 ========================
 
-**Warning:** This demo is currently broken and no longer works due to changes introduced with the Public Draft of JSR 354.
+**Warning:** This demo is currently broken and no longer works due to changes introduced with the Public Draft of JSR 354. \\
 Please stay tuned...
 
 What is it?

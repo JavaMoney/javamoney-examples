@@ -10,7 +10,7 @@
 	<artifactId>javamoney-ez</artifactId>
 	<version>2.5-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>JavaMoney-EZ</name>
+	<name>JavaMoney EZ</name>
 	<description>EZ Money Reloaded - powered by JavaMoney</description>
 	<licenses>
 		<license>

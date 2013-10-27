@@ -1,5 +1,5 @@
 /*
- * JSR 354 Examples
+ * JavaMoney Examples
  * Copyright 2012 Red Hat, Inc. and/or its affiliates,
  * and individual contributors by the @author tags. See the copyright.txt in the
  * distribution for a full listing of individual contributors
@@ -17,22 +17,44 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.javamoney.examples.paymentcdi.handler;
+package org.javamoney.examples.cdi.payment.events;
+
+import java.util.Date;
+
+import javax.money.MonetaryAmount;
+
+
 /**
- * 
- * @author Elvadas-Nono
+ * @author Werner Keil
  *
  */
-
-
-import javax.enterprise.event.Observes;
-
-import org.javamoney.examples.paymentcdi.events.PaymentEvent;
-import org.javamoney.examples.paymentcdi.qualifiers.Debit;
-
-
-public interface IDebitEventObserver {
+public class PaymentEvent {
+	private PaymentType type;  //credit or debit
+	private Date datetime;
+	private MonetaryAmount money;
 	
-	public void onDebitPaymentEvent(@Observes @Debit PaymentEvent event);
+	public PaymentType getType() {
+		return type;
+	}
+	public void setType(PaymentType type) {
+		this.type = type;
+	}
 
+	public Date getDatetime() {
+		return datetime;
+	}
+	public void setDatetime(Date datetime) {
+		this.datetime = datetime;
+	}
+
+	public String toString(){
+		return "EVT:"+getDatetime()+":"+getMoney()+":"+getType();
+	}
+	public MonetaryAmount getMoney() {
+		return money;
+	}
+	public void setMoney(MonetaryAmount money) {
+		this.money = money;
+	}
+	
 }

@@ -15,7 +15,7 @@
 	
 	<parent>
 		<groupId>org.javamoney.examples</groupId>
-		<version>0.3-SNAPSHOT</version>
+		<version>0.7-SNAPSHOT</version>
 		<artifactId>javamoney-examples-web</artifactId>
 	</parent>
 	

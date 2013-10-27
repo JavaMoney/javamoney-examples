@@ -1,5 +1,5 @@
 /*
- * JSR 354 Examples
+ * JavaMoney Examples
  * Copyright 2012 Red Hat, Inc. and/or its affiliates,
  * and individual contributors by the @author tags. See the copyright.txt in the
  * distribution for a full listing of individual contributors
@@ -17,7 +17,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.javamoney.examples.paymentcdi.beans;
+package org.javamoney.examples.cdi.payment.beans;
 
 
 import java.io.Serializable;
@@ -33,10 +33,10 @@ import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
 
 import org.javamoney.annotation.Amount;
-import org.javamoney.examples.paymentcdi.events.PaymentEvent;
-import org.javamoney.examples.paymentcdi.events.PaymentType;
-import org.javamoney.examples.paymentcdi.qualifiers.Credit;
-import org.javamoney.examples.paymentcdi.qualifiers.Debit;
+import org.javamoney.examples.cdi.payment.events.PaymentEvent;
+import org.javamoney.examples.cdi.payment.events.PaymentType;
+import org.javamoney.examples.cdi.payment.qualifiers.Credit;
+import org.javamoney.examples.cdi.payment.qualifiers.Debit;
 import org.javamoney.moneta.Money;
 import org.javamoney.moneta.MoneyCurrency;
 

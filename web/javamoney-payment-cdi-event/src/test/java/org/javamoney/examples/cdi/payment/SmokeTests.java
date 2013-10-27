@@ -1,6 +1,6 @@
-package org.javamoney.examples.paymentcdi;
+package org.javamoney.examples.cdi.payment;
 /*
- * JSR 354 Examples
+ * JavaMoney Examples
  * Copyright 2012-2013, Credit Suisse AG, Werner Keil 
  * and individual contributors by the @author tags.
  *

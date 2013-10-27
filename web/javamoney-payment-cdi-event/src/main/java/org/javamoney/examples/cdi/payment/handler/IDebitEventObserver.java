@@ -1,5 +1,5 @@
 /*
- * JSR 354 Examples
+ * JavaMoney Examples
  * Copyright 2012 Red Hat, Inc. and/or its affiliates,
  * and individual contributors by the @author tags. See the copyright.txt in the
  * distribution for a full listing of individual contributors
@@ -17,22 +17,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.javamoney.examples.paymentcdi.handler;
-
-
-
-import javax.enterprise.event.Observes;
-
-import org.javamoney.examples.paymentcdi.events.PaymentEvent;
-import org.javamoney.examples.paymentcdi.qualifiers.Credit;
-
+package org.javamoney.examples.cdi.payment.handler;
 /**
  * 
  * @author Elvadas-Nono
  *
  */
-public interface ICreditEventObserver {
+
+
+import javax.enterprise.event.Observes;
+
+import org.javamoney.examples.cdi.payment.events.PaymentEvent;
+import org.javamoney.examples.cdi.payment.qualifiers.Debit;
+
+
+public interface IDebitEventObserver {
 	
-	public void onCreditPaymentEvent(@Observes @Credit PaymentEvent event);
+	public void onDebitPaymentEvent(@Observes @Debit PaymentEvent event);
 
 }

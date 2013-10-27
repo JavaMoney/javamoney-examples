@@ -1,5 +1,5 @@
 /*
- * JSR 354 Examples
+ * JavaMoney Examples
  * Copyright 2012 Red Hat, Inc. and/or its affiliates,
  * and individual contributors by the @author tags. See the copyright.txt in the
  * distribution for a full listing of individual contributors
@@ -17,7 +17,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.javamoney.examples.paymentcdi.resources;
+package org.javamoney.examples.cdi.payment.resources;
 
 import java.util.logging.Logger;
 

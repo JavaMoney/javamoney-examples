@@ -7,11 +7,11 @@
 	<parent>
 		<artifactId>javamoney-examples</artifactId>
 		<groupId>org.javamoney.examples</groupId>
-		<version>0.3-SNAPSHOT</version>
+		<version>0.7-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
 
-	<artifactId>money-javafx-binding</artifactId>
+	<artifactId>javamoney-fxbinding</artifactId>
 	<name>Java Money and Currency JavaFX Binding Examples</name>
 
 	<packaging>jar</packaging>

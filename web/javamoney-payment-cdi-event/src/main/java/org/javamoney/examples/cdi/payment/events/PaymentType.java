@@ -1,5 +1,5 @@
 /*
- * JSR 354 Examples
+ * JavaMoney Examples
  * Copyright 2012 Red Hat, Inc. and/or its affiliates,
  * and individual contributors by the @author tags. See the copyright.txt in the
  * distribution for a full listing of individual contributors
@@ -17,20 +17,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.javamoney.examples.paymentcdi.qualifiers;
+package org.javamoney.examples.cdi.payment.events;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.Target;
+import java.util.HashMap;
+import java.util.Map;
 
-import javax.inject.Qualifier;
-import java.lang.annotation.RetentionPolicy;
-import static java.lang.annotation.ElementType.TYPE;
-import static java.lang.annotation.ElementType.METHOD;
-import static java.lang.annotation.ElementType.FIELD;
-import static java.lang.annotation.ElementType.PARAMETER;
+/**
+ * 
+ * @author Werner Keil
+ * 
+ */
+public enum PaymentType {
 
-@Qualifier
-@Target({TYPE, METHOD, FIELD, PARAMETER})
-@Retention(RetentionPolicy.RUNTIME)
-public @interface Credit {
+	CREDIT("1"), DEBIT("2");
+
+	private final String value;
+
+	static final Map<String, PaymentType> map = new HashMap<String, PaymentType>();
+
+	static {
+		for (PaymentType paymentType : PaymentType.values()) {
+			map.put(paymentType.getValue(), paymentType);
+		}
+	}
+
+	private PaymentType(String value) {
+		this.value = value;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public static PaymentType of(String value) {
+		return map.get(value);
+	}
 }

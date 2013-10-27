@@ -1,5 +1,5 @@
 /*
- * JSR 354 Examples
+ * JavaMoney Examples
  * Copyright 2012 Red Hat, Inc. and/or its affiliates,
  * and individual contributors by the @author tags. See the copyright.txt in the
  * distribution for a full listing of individual contributors
@@ -17,39 +17,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.javamoney.examples.paymentcdi.events;
+package org.javamoney.examples.cdi.payment.handler;
 
-import java.util.HashMap;
-import java.util.Map;
+
+
+import javax.enterprise.event.Observes;
+
+import org.javamoney.examples.cdi.payment.events.PaymentEvent;
+import org.javamoney.examples.cdi.payment.qualifiers.Credit;
 
 /**
  * 
- * @author Werner Keil
- * 
+ * @author Elvadas-Nono
+ *
  */
-public enum PaymentType {
+public interface ICreditEventObserver {
+	
+	public void onCreditPaymentEvent(@Observes @Credit PaymentEvent event);
 
-	CREDIT("1"), DEBIT("2");
-
-	private final String value;
-
-	static final Map<String, PaymentType> map = new HashMap<String, PaymentType>();
-
-	static {
-		for (PaymentType paymentType : PaymentType.values()) {
-			map.put(paymentType.getValue(), paymentType);
-		}
-	}
-
-	private PaymentType(String value) {
-		this.value = value;
-	}
-
-	public String getValue() {
-		return value;
-	}
-
-	public static PaymentType of(String value) {
-		return map.get(value);
-	}
 }

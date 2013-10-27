@@ -1,5 +1,5 @@
 /*
- * JSR 354 Examples
+ * JavaMoney Examples
  * Copyright 2012 Red Hat, Inc. and/or its affiliates,
  * and individual contributors by the @author tags. See the copyright.txt in the
  * distribution for a full listing of individual contributors
@@ -17,44 +17,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.javamoney.examples.paymentcdi.events;
+package org.javamoney.examples.cdi.payment.qualifiers;
 
-import java.util.Date;
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
 
-import javax.money.MonetaryAmount;
+import javax.inject.Qualifier;
+import java.lang.annotation.RetentionPolicy;
+import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.ElementType.FIELD;
+import static java.lang.annotation.ElementType.PARAMETER;
 
-
-/**
- * @author Werner Keil
- *
- */
-public class PaymentEvent {
-	private PaymentType type;  //credit or debit
-	private Date datetime;
-	private MonetaryAmount money;
-	
-	public PaymentType getType() {
-		return type;
-	}
-	public void setType(PaymentType type) {
-		this.type = type;
-	}
-
-	public Date getDatetime() {
-		return datetime;
-	}
-	public void setDatetime(Date datetime) {
-		this.datetime = datetime;
-	}
-
-	public String toString(){
-		return "EVT:"+getDatetime()+":"+getMoney()+":"+getType();
-	}
-	public MonetaryAmount getMoney() {
-		return money;
-	}
-	public void setMoney(MonetaryAmount money) {
-		this.money = money;
-	}
-	
+@Qualifier
+@Target({TYPE, METHOD, FIELD, PARAMETER})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Credit {
 }

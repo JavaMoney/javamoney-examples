@@ -26,7 +26,7 @@
 		<junit.version>4.8.2</junit.version>
 		<slf4j.version>1.6.1</slf4j.version>
 		<!-- JSR versions -->
-		<jsr.version>0.7.1-SNAPSHOT</jsr.version>
+		<jsr.version>0.7</jsr.version>
 		<javamoney.version>0.3-SNAPSHOT</javamoney.version>
 	</properties>
 

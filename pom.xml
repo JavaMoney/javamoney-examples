@@ -11,11 +11,14 @@
 	<artifactId>javamoney-examples</artifactId>
 	<packaging>pom</packaging>
 	<name>Java Money and Currency Examples</name>
+	<version>0.7-SNAPSHOT</version>
+	
 	<modules>
 		<module>web</module>
 		<!-- module>javafx</module -->
 		<!-- TODO add profiles for Java 8/FX -->
 		<module>console</module>
+		<module>swing</module>
 	</modules>
 	<properties>
 		<basedir>.</basedir>
@@ -48,6 +51,4 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
-	<version>0.7-SNAPSHOT</version>
 </project>

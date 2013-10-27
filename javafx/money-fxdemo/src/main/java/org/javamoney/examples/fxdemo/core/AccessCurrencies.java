@@ -5,12 +5,12 @@ import java.io.StringWriter;
 import java.util.Currency;
 import java.util.Locale;
 
+import javax.money.CurrencyUnit;
+
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-
-import javax.money.CurrencyUnit;
 
 import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
@@ -44,7 +44,7 @@ public class AccessCurrencies extends AbstractExamplePane {
 					StringWriter sw = new StringWriter();
 					PrintWriter pw = new PrintWriter(sw);
 					try {
-						MoneyCurrency currency = selector.getCurrency();
+						CurrencyUnit currency = selector.getCurrency();
 						pw.println("CurrencyUnit");
 						pw.println("------------");
 						pw.println();
@@ -56,12 +56,12 @@ public class AccessCurrencies extends AbstractExamplePane {
 					CreateCurrencyPane.this.outputArea.setText(sw.toString());
 				}
 
-				private void printSummary(MoneyCurrency currency, PrintWriter pw) {
+				private void printSummary(CurrencyUnit currency, PrintWriter pw) {
 					pw.println("Class: " + currency.getClass().getName());
 					pw.println("Currency Code: " + currency.getCurrencyCode());
-					pw.println("Numeric Code: " + currency.getNumericCode());
-					pw.println("Default Fraction Digits: " + currency.getDefaultFractionDigits());
-					if(currency.isJavaCurrency(currency.getCurrencyCode())){
+//					pw.println("Numeric Code: " + currency.getNumericCode());
+//					pw.println("Default Fraction Digits: " + currency.getDefaultFractionDigits());
+					if(MoneyCurrency.isJavaCurrency(currency.getCurrencyCode())){
 						Currency lcu = Currency.getInstance(currency.getCurrencyCode());
 						pw.println("Display Name: " + lcu.getDisplayName(Locale.ENGLISH));
 						pw.println("Symbol: " + lcu.getSymbol(Locale.ENGLISH));

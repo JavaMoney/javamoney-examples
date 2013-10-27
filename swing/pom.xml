@@ -9,6 +9,26 @@
 	<artifactId>javamoney-examples-swing</artifactId>
 	<name>Java Money and Currency Swing RCP Examples</name>
 	<packaging>pom</packaging>
+
+	<licenses>
+		<license>
+			<name>Apache License version 2.0</name>
+			<url>../LICENSE.txt</url>
+		</license>
+	</licenses>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Needed for running tests (you may also use TestNG) -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.8.2</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -24,6 +44,11 @@
 			<groupId>org.javamoney.bundles</groupId>
 			<artifactId>javamoney-se</artifactId>
 			<version>${javamoney.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
 		</dependency>
 
 	</dependencies>

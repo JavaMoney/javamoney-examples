@@ -4,14 +4,14 @@ javamoney-ez
 What is it?
 -----------
 
-This is your project! It is a sample, runnable Maven 3 project to help you get your foot in the door developing with JSR 354 on JavaFX. 
+This is an improved successor to [EZ Money](http://www.downloadcollection.com/ez_money.htm "EZ Money"). 
 
 System requirements
 -------------------
 
-All you need to build this project is **Java 8.0 (Java SDK 1.8)** or an equivalent Java version with **JavaFX**, Maven 3.0 or better.
+All you need to build this project is **Java 6.0**, Maven 3.0 or better.
 
-The application this project produces is designed to be run on JavaFX 2 or above.
+The application this project produces is designed to be run on Java Swing.
 
 Setting up the project
 -------------------

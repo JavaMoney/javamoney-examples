@@ -20,4 +20,5 @@ In order to make Maven build the project, you need to select a Java 6 or above c
 
 ###Steps for Command Line
 If you run Maven from the command line instead of an IDE like Eclipse or NetBeans, please ensure, the `JAVA_HOME` environment variable points to an appropriate version of Java 6 or above.
+
 Run `mvn compile exec:java` to execute the main class of javamoney-ez.

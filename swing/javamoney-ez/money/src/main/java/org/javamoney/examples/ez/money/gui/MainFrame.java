@@ -8,6 +8,7 @@ import static org.javamoney.examples.ez.common.utility.I18NHelper.getSharedPrope
 import static org.javamoney.examples.ez.common.utility.ResourceHelper.openURL;
 import static javax.swing.JOptionPane.PLAIN_MESSAGE;
 import static javax.swing.JOptionPane.showMessageDialog;
+import static org.javamoney.examples.ez.money.IconKeys.WINDOWS_BANNER;
 import static org.javamoney.examples.ez.money.IconKeys.WINDOWS_LOGO;
 import static org.javamoney.examples.ez.money.gui.dialog.PreferencesDialog.showPreferencesDialog;
 import static org.javamoney.examples.ez.money.utility.BackupHelper.makeBackup;
@@ -219,7 +220,7 @@ extends Frame
 
     // Build panel.
     panel.addEmptyCellAt(0, 0);
-    panel.add(WINDOWS_LOGO.getIcon(), 0, 1, 1, 1, 100, 0);
+    panel.add(WINDOWS_BANNER.getIcon(), 0, 1, 1, 1, 100, 0);
     panel.addEmptyCellAt(0, 2);
     panel.add(name, 0, 3, 1, 1, 0, 0);
     panel.addEmptyCellAt(0, 4);

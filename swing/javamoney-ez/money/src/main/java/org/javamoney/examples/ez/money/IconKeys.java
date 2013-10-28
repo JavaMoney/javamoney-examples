@@ -229,7 +229,12 @@ IconKeys
    */
   WARNING("Warning"),
   /**
-   * The icon used as the project's logo on the Windows platform.
+   * The image used as the project's banner on the Windows platform.
+   */
+  WINDOWS_BANNER("WindowsBanner"),
+  
+  /**
+   * The icon used as the project's symbol on the Windows platform.
    */
   WINDOWS_LOGO("WindowsLogo");
 

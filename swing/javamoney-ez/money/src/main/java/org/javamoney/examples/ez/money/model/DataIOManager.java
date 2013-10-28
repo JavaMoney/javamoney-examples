@@ -622,7 +622,7 @@ DataIOManager
       for(Transaction trans : account.getTransactions())
       {
         stream.println(TRANS_ACCOUNT + account.getIdentifier());
-        stream.println(TRANS_AMOUNT + US_DOLLAR.format(trans.getAmount(), false));
+        stream.println(TRANS_AMOUNT +   US_DOLLAR.format(trans.getAmount(), false));
         stream.println(TRANS_CHECK_NUMBER + trans.getCheckNumber());
         stream.println(TRANS_DATE + DATE_FORMAT.format(trans.getDate()));
         stream.println(TRANS_CATEGORY + trans.getCategory());
@@ -641,6 +641,7 @@ DataIOManager
   // Start of class members.
   //////////////////////////////////////////////////////////////////////////////
 
+  private static final String USD = "$";
   private static final Currency US_DOLLAR = CurrencyFormatKeys.US_DOLLAR.getCurrency();
   private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("M/d/yyyy");
 
@@ -664,7 +665,7 @@ DataIOManager
   private static final char REMINDER_DAYS_TO_ALARM = 'A';
   private static final char REMINDER_DUE_BY = 'D';
   private static final char TRANS_ACCOUNT = '@';
-  private static final char TRANS_AMOUNT = '$';
+  private static final char TRANS_AMOUNT = '\u00A4';
   private static final char TRANS_CHECK_NUMBER = '#';
   private static final char TRANS_CATEGORY = 'G';
   private static final char TRANS_DATE = 'D';

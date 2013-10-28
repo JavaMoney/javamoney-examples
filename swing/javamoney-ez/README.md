@@ -16,10 +16,11 @@ The application this project produces is designed to be run on Java Swing.
 Setting up the project
 -------------------
 
-In order to make Maven build the project, you need to select a Java 8 compliant JVM or another runtime environment including JavaFX. 
+In order to make Maven build the project, you need to select a Java 6 or above compliant JVM.
 
 ###Steps for Command Line
-If you run Maven from the command line instead of an IDE like Eclipse or NetBeans, please ensure, the `JAVA_HOME` environment variable points to an appropriate version of Java 8 or above. Either JRE or JDK as long as it contains JavaFX.
+If you run Maven from the command line instead of an IDE like Eclipse or NetBeans, please ensure, the `JAVA_HOME` environment variable points to an appropriate version of Java 6 or above.
+Run `mvn compile exec:java` to execute the main class of the javamoney-ez application.
 
 ###Steps for Eclipse
 Add "jdk 1.8.0" or equivalent like "jre8" to your "Installed JREs" in Eclipse, if they don't exist there. 

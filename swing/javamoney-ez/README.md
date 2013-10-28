@@ -20,8 +20,4 @@ In order to make Maven build the project, you need to select a Java 6 or above c
 
 ###Steps for Command Line
 If you run Maven from the command line instead of an IDE like Eclipse or NetBeans, please ensure, the `JAVA_HOME` environment variable points to an appropriate version of Java 6 or above.
-Run `mvn compile exec:java` to execute the main class of the javamoney-ez application.
-
-###Steps for Eclipse
-Add "jdk 1.8.0" or equivalent like "jre8" to your "Installed JREs" in Eclipse, if they don't exist there. 
-![Image](../src/site/resources/images/Eclipse_JRE8_0_1.png "Add JRE to Eclipse")
+Run `mvn compile exec:java` to execute the main class of javamoney-ez.

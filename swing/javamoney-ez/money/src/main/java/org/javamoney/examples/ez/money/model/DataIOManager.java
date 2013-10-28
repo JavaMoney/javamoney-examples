@@ -175,7 +175,7 @@ DataIOManager
     if(encrypt == true)
     {
       Cipher cipher = getEncryptionCipher(readPassword());
-
+//TODO try with resource (Java7)
       pStream = new PrintStream(new CipherOutputStream(fStream, cipher));
     }
     else
@@ -468,7 +468,7 @@ DataIOManager
       }
       else if(key == TRANS_AMOUNT)
       {
-        amount = line;
+        amount = line.substring(1);
       }
       else if(key == TRANS_CATEGORY)
       {
@@ -622,7 +622,7 @@ DataIOManager
       for(Transaction trans : account.getTransactions())
       {
         stream.println(TRANS_ACCOUNT + account.getIdentifier());
-        stream.println(TRANS_AMOUNT +   US_DOLLAR.format(trans.getAmount(), false));
+        stream.println(TRANS_AMOUNT +  USD + US_DOLLAR.format(trans.getAmount(), false));
         stream.println(TRANS_CHECK_NUMBER + trans.getCheckNumber());
         stream.println(TRANS_DATE + DATE_FORMAT.format(trans.getDate()));
         stream.println(TRANS_CATEGORY + trans.getCategory());

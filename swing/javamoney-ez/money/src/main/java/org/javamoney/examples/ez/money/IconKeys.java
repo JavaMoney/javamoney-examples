@@ -236,7 +236,7 @@ IconKeys
   /**
    * The icon used as the project's symbol on the Windows platform.
    */
-  WINDOWS_LOGO("WindowsLogo");
+  WINDOWS_LOGO("WindowsLogo2");
 
   //////////////////////////////////////////////////////////////////////////////
   // Start of public methods.

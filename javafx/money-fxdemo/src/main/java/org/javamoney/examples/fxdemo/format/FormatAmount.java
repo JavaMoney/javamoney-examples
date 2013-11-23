@@ -17,12 +17,12 @@ import javax.money.MonetaryAmount;
 import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
 import org.javamoney.examples.fxdemo.widgets.AmountEntry;
-import org.javamoney.format.IsoAmountFormatter.CurrencyPlacement;
 import org.javamoney.format.ItemFormat;
 import org.javamoney.format.LocalizationStyle;
 import org.javamoney.format.MonetaryFormats;
 import org.javamoney.moneta.Money;
-import org.javamoney.moneta.format.MonetaryAmountFormat.CurrencyStyle;
+import org.javamoney.moneta.format.CurrencyStyle;
+
 
 public class FormatAmount extends AbstractExamplePane {
 

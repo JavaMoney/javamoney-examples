@@ -4,14 +4,14 @@
 	<parent>
 		<groupId>org.javamoney</groupId>
 		<artifactId>javamoney-parent</artifactId>
-		<version>0.3-SNAPSHOT</version>
+		<version>0.3</version>
 	</parent>
 	
 	<groupId>org.javamoney.examples</groupId>
 	<artifactId>javamoney-examples</artifactId>
 	<packaging>pom</packaging>
 	<name>Java Money and Currency Examples</name>
-	<version>0.7-SNAPSHOT</version>
+	<version>0.7</version>
 	
 	<modules>
 		<module>web</module>
@@ -27,7 +27,7 @@
 		<slf4j.version>1.6.1</slf4j.version>
 		<!-- JSR versions -->
 		<jsr.version>0.7</jsr.version>
-		<javamoney.version>0.3-SNAPSHOT</javamoney.version>
+		<javamoney.version>0.3</javamoney.version>
 	</properties>
 
 	<licenses>

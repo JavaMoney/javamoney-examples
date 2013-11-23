@@ -231,7 +231,7 @@ IconKeys
   /**
    * The image used as the project's banner on the Windows platform.
    */
-  WINDOWS_BANNER("WindowsBanner"),
+  WINDOWS_BANNER("WindowsBanner2"),
   
   /**
    * The icon used as the project's symbol on the Windows platform.

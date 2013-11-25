@@ -48,7 +48,7 @@ public class MinMaxSample extends AbstractExamplePane {
 							StringWriter sw = new StringWriter();
 							PrintWriter pw = new PrintWriter(sw);
 							try {
-								MonetaryAmount min = MonetaryCalculations.minimum().apply(Arrays.asList(
+								MonetaryAmount min = MonetaryCalculations.minimum().calculate(Arrays.asList(
 										amount1.getAmount(), amount2.getAmount(), 
 										amount3.getAmount()));
 								pw.println("MonetaryAmount (Min)");
@@ -84,7 +84,7 @@ public class MinMaxSample extends AbstractExamplePane {
 							StringWriter sw = new StringWriter();
 							PrintWriter pw = new PrintWriter(sw);
 							try {
-								MonetaryAmount max =  MonetaryCalculations.maximum().apply(Arrays.asList(
+								MonetaryAmount max =  MonetaryCalculations.maximum().calculate(Arrays.asList(
 										amount1.getAmount(), amount2.getAmount(), 
 										amount3.getAmount()));
 								pw.println("MonetaryAmount (Max)");

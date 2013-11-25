@@ -35,6 +35,10 @@ RegisterTable
 extends SortedDataTable<RegisterTransaction>
 {
   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 4972222391968037432L;
+/**
    * Constructs a new table.
    */
   public

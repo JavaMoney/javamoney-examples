@@ -47,6 +47,10 @@ AccountsPanel
 extends DataElementPanel
 {
   /**
+	 * 
+	 */
+	private static final long serialVersionUID = -6962300921859527548L;
+/**
    * Constructs a new preferences panel.
    */
   public

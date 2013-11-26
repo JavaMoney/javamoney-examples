@@ -16,7 +16,7 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.StringTokenizer;
 
-import org.javamoney.examples.ez.money.locale.Currency;
+import org.javamoney.examples.ez.money.locale.CurrencyFormat;
 import org.javamoney.examples.ez.money.model.dynamic.transaction.TransactionTypeKeys;
 import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
 
@@ -250,7 +250,7 @@ TransactionExtracter
    */
   protected
   final
-  Currency
+  CurrencyFormat
   getCurrency()
   {
     return itsCurrency;
@@ -390,7 +390,7 @@ TransactionExtracter
 
   private
   void
-  setCurrency(Currency currency)
+  setCurrency(CurrencyFormat currency)
   {
     itsCurrency = currency;
   }
@@ -406,7 +406,7 @@ TransactionExtracter
   // Start of class members.
   //////////////////////////////////////////////////////////////////////////////
 
-  private Currency itsCurrency;
+  private CurrencyFormat itsCurrency;
   private ImportExportDateFormatKeys itsDateFormat;
   private TransactionTypeKeys itsType;
 }

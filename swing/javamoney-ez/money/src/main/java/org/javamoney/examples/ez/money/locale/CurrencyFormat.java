@@ -1,4 +1,4 @@
-// Currency
+// CurrencyFormat
 
 package org.javamoney.examples.ez.money.locale;
 
@@ -13,7 +13,7 @@ import java.util.Locale;
 public
 final
 class
-Currency
+CurrencyFormat
 {
   /**
    * Constructs a new currency for the specified locale.
@@ -21,7 +21,7 @@ Currency
    * @param locale The locale for determining how to format and parse.
    */
   public
-  Currency(Locale locale)
+  CurrencyFormat(Locale locale)
   {
     setDecimalFormat(new DecimalFormat("#,###.##", new DecimalFormatSymbols(locale)));
 

@@ -36,7 +36,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 
-import org.javamoney.examples.ez.money.locale.Currency;
+import org.javamoney.examples.ez.money.locale.CurrencyFormat;
 import org.javamoney.examples.ez.money.model.dynamic.transaction.Split;
 import org.javamoney.examples.ez.money.model.persisted.account.Account;
 import org.javamoney.examples.ez.money.model.persisted.account.AccountTypeKeys;
@@ -88,7 +88,7 @@ extends Exporter
     try
     {
       PrintStream stream = new PrintStream(new FileOutputStream(file));
-      Currency currency = getImportExportCurrencyFormat().getCurrency();
+      CurrencyFormat currency = getImportExportCurrencyFormat().getCurrency();
       ImportExportDateFormatKeys dateFormat = getImportExportDateFormat();
 
       // Print the account's information.
@@ -204,7 +204,7 @@ extends Exporter
   private
   static
   void
-  printSplit(PrintStream stream, Transaction trans, Currency currency)
+  printSplit(PrintStream stream, Transaction trans, CurrencyFormat currency)
   {
     Split split = new Split(trans);
 

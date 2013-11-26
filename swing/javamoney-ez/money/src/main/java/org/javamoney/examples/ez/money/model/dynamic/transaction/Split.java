@@ -6,7 +6,7 @@ import static org.javamoney.examples.ez.money.locale.CurrencyFormatKeys.US_DOLLA
 
 import java.util.StringTokenizer;
 
-import org.javamoney.examples.ez.money.locale.Currency;
+import org.javamoney.examples.ez.money.locale.CurrencyFormat;
 import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
 
 /**
@@ -169,7 +169,7 @@ Split
   private String[] itsCategories;
   private int itsSize;
 
-  private static final Currency FORMAT = US_DOLLAR.getCurrency();
+  private static final CurrencyFormat FORMAT = US_DOLLAR.getCurrency();
 
   /**
    * The maximum splits a transaction can have.

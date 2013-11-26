@@ -25,7 +25,7 @@ import javax.swing.event.TableModelListener;
 import org.javamoney.examples.ez.money.IconKeys;
 import org.javamoney.examples.ez.money.gui.GUIConstants;
 import org.javamoney.examples.ez.money.gui.table.SplitTable;
-import org.javamoney.examples.ez.money.locale.Currency;
+import org.javamoney.examples.ez.money.locale.CurrencyFormat;
 import org.javamoney.examples.ez.money.locale.CurrencyFormatKeys;
 import org.javamoney.examples.ez.money.model.dynamic.transaction.Split;
 import org.javamoney.examples.ez.money.model.persisted.category.CategoryCollection;
@@ -452,7 +452,7 @@ extends ApplicationDialog
   private SplitTable itsTable;
   private double itsTotal;
 
-  private static final Currency US_DOLLAR = CurrencyFormatKeys.US_DOLLAR.getCurrency();
+  private static final CurrencyFormat US_DOLLAR = CurrencyFormatKeys.US_DOLLAR.getCurrency();
 
   private static final String ACTION_ADD = getProperty("add");
   private static final String ACTION_REMOVE = getSharedProperty("remove");

@@ -8,7 +8,7 @@ import static org.javamoney.examples.ez.money.importexport.QIFConstants.CATEGORY
 import static org.javamoney.examples.ez.money.model.DataManager.getAccounts;
 import static org.javamoney.examples.ez.money.utility.DialogHelper.error;
 
-import org.javamoney.examples.ez.money.locale.Currency;
+import org.javamoney.examples.ez.money.locale.CurrencyFormat;
 import org.javamoney.examples.ez.money.locale.CurrencyFormatKeys;
 import org.javamoney.examples.ez.money.model.DataElement;
 import org.javamoney.examples.ez.money.model.dynamic.transaction.Split;
@@ -395,7 +395,7 @@ TransactionHelper
   updateSplit(Transaction trans, String oldSplit, String newSplit)
   {
     Split split = new Split(trans);
-    Currency dollar = CurrencyFormatKeys.US_DOLLAR.getCurrency();
+    CurrencyFormat dollar = CurrencyFormatKeys.US_DOLLAR.getCurrency();
     String category = "";
 
     for(int index = 0; index < split.size(); ++index)

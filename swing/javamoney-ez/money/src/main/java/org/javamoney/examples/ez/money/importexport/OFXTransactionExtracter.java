@@ -12,7 +12,7 @@ import java.io.PushbackReader;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.javamoney.examples.ez.money.locale.Currency;
+import org.javamoney.examples.ez.money.locale.CurrencyFormat;
 import org.javamoney.examples.ez.money.locale.CurrencyFormatKeys;
 import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
 
@@ -82,7 +82,7 @@ extends TransactionExtracter
 
   private
   static
-  Currency
+  CurrencyFormat
   getCurrencyFormat(String value)
   {
     CurrencyFormatKeys format = null;

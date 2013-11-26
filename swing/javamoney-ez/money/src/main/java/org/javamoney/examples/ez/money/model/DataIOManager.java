@@ -27,7 +27,7 @@ import javax.crypto.Cipher;
 import javax.crypto.CipherInputStream;
 import javax.crypto.CipherOutputStream;
 
-import org.javamoney.examples.ez.money.locale.Currency;
+import org.javamoney.examples.ez.money.locale.CurrencyFormat;
 import org.javamoney.examples.ez.money.locale.CurrencyFormatKeys;
 import org.javamoney.examples.ez.money.model.persisted.account.Account;
 import org.javamoney.examples.ez.money.model.persisted.account.AccountTypeKeys;
@@ -642,7 +642,7 @@ DataIOManager
   //////////////////////////////////////////////////////////////////////////////
 
   private static final String USD = "$";
-  private static final Currency US_DOLLAR = CurrencyFormatKeys.US_DOLLAR.getCurrency();
+  private static final CurrencyFormat US_DOLLAR = CurrencyFormatKeys.US_DOLLAR.getCurrency();
   private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("M/d/yyyy");
 
   // Field keys.

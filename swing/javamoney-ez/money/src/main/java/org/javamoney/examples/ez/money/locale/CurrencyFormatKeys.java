@@ -15,11 +15,11 @@ CurrencyFormatKeys
   /**
    * A currency format of #,###.##.
    */
-  US_DOLLAR("1,000.00", new Currency(I18NHelper.ENGLISH)),
+  US_DOLLAR("1,000.00", new CurrencyFormat(I18NHelper.ENGLISH)),
   /**
    * A currency format of #.###,##.
    */
-  OTHER("1.000,00", new Currency(I18NHelper.PORTUGUESE));
+  OTHER("1.000,00", new CurrencyFormat(I18NHelper.PORTUGUESE));
 
   //////////////////////////////////////////////////////////////////////////////
   // Start of public methods.
@@ -31,7 +31,7 @@ CurrencyFormatKeys
    * @return The enum constant's currency.
    */
   public
-  Currency
+  CurrencyFormat
   getCurrency()
   {
     return itsCurrency;
@@ -55,7 +55,7 @@ CurrencyFormatKeys
   //////////////////////////////////////////////////////////////////////////////
 
   private
-  CurrencyFormatKeys(String identifier, Currency currency)
+  CurrencyFormatKeys(String identifier, CurrencyFormat currency)
   {
     itsCurrency = currency;
     itsIdentifier = identifier;
@@ -65,6 +65,6 @@ CurrencyFormatKeys
   // Start of class members.
   //////////////////////////////////////////////////////////////////////////////
 
-  private Currency itsCurrency;
+  private CurrencyFormat itsCurrency;
   private String itsIdentifier;
 }

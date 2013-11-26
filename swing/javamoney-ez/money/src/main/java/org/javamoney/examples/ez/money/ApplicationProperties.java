@@ -23,7 +23,7 @@ import javax.swing.JFrame;
 import org.javamoney.examples.ez.money.gui.dialog.preferences.PreferencesKeys;
 import org.javamoney.examples.ez.money.gui.table.RegisterTable;
 import org.javamoney.examples.ez.money.importexport.ImportExportDateFormatKeys;
-import org.javamoney.examples.ez.money.locale.Currency;
+import org.javamoney.examples.ez.money.locale.CurrencyFormat;
 import org.javamoney.examples.ez.money.locale.CurrencyFormatKeys;
 import org.javamoney.examples.ez.money.locale.CurrencySymbolKeys;
 import org.javamoney.examples.ez.money.locale.DateFormatKeys;
@@ -1335,7 +1335,7 @@ ApplicationProperties
    * A constant to improve performance rather than obtaining the value via the
    * properties map since it is used frequently.
    */
-  public static Currency UI_CURRENCY;
+  public static CurrencyFormat UI_CURRENCY;
   /**
    * A constant to improve performance rather than obtaining the value via the
    * properties map since it is used frequently.

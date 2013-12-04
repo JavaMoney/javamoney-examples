@@ -20,6 +20,7 @@ import java.util.Date;
 import java.util.StringTokenizer;
 
 import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
+import org.javamoney.moneta.Money;
 
 /**
  * This class facilitates extracting transactions from a CSV file.
@@ -128,7 +129,7 @@ extends TransactionExtracter
       }
 
       // Create the transaction and assume it is reconciled.
-      trans = new Transaction(number, date, payee, amount, "", notes);
+      trans = new Transaction(number, date, payee, Money.of("USD", amount), "", notes);
       trans.setIsReconciled(true);
     }
 

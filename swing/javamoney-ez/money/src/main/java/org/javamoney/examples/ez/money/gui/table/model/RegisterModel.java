@@ -50,13 +50,13 @@ extends Table.NonmutableTableModel
     // Expenses and incomes are in separate columns and are always positive.
     if(isExpense(trans) == true)
     {
-      rowData[EXPENSE_COLUMN] = UI_CURRENCY.format(-trans.getAmount());
+      rowData[EXPENSE_COLUMN] = UI_CURRENCY.format(trans.getAmount().negate().doubleValue());
       rowData[INCOME_COLUMN] = "";
     }
     else
     {
       rowData[EXPENSE_COLUMN] = "";
-      rowData[INCOME_COLUMN] = UI_CURRENCY.format(trans.getAmount());
+      rowData[INCOME_COLUMN] = UI_CURRENCY.format(trans.getAmount().doubleValue());
     }
 
     addRow(rowData);

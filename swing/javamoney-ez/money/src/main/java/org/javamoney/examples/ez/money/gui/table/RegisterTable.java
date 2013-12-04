@@ -116,7 +116,7 @@ extends SortedDataTable<RegisterTransaction>
     // Add up the sum of all the selected transactions.
     for(int len = 0; len < rows.length; ++len)
     {
-      amount += get(rows[len]).getTransaction().getAmount();
+      amount += get(rows[len]).getTransaction().getAmount().doubleValue();
     }
 
     // Build tool tip.
@@ -152,7 +152,12 @@ extends SortedDataTable<RegisterTransaction>
   extends JLabel
   implements TableCellRenderer
   {
-    public
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5377532078515748547L;
+
+	public
     Component
     getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
         boolean hasFocus, int row, int column)

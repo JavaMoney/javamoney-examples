@@ -68,6 +68,10 @@ RegisterPanel
 extends Panel
 {
   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 6315609604386251385L;
+/**
    * Constructs a new register panel that will reference the specified account.
    *
    * @param account The account to reference.
@@ -136,11 +140,11 @@ extends Panel
 
     for(Transaction trans : getAccount().getTransactions())
     {
-      total += trans.getAmount();
+      total += trans.getAmount().doubleValue();
 
       if(trans.isReconciled() == false)
       {
-        pending += trans.getAmount();
+        pending += trans.getAmount().doubleValue();
       }
 
       if(canAddTransaction(trans) == true)
@@ -159,7 +163,7 @@ extends Panel
       setMultiplier(1);
     }
 
-    setStartingBalance(getAccount().getBalance() - total);
+    setStartingBalance(getAccount().getBalance().doubleValue() - total);
 
     // Display data.
     getRegisterBalancePanel().displayFor(getAccount(), pending);
@@ -211,7 +215,7 @@ extends Panel
 
     if(result == true)
     {
-      result = getFilter().allows(trans);
+      result = getFilter().test(trans);
     }
 
     return result;

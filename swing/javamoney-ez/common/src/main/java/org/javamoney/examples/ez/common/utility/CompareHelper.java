@@ -5,6 +5,8 @@ package org.javamoney.examples.ez.common.utility;
 import java.text.Collator;
 import java.util.Date;
 
+import org.javamoney.moneta.Money;
+
 /**
  * This class facilitates comparing. All methods in this class are static.
  */
@@ -14,7 +16,7 @@ class
 CompareHelper
 {
   /**
-   * TThis method returns the result of comparing two amounts.
+   * This method returns the result of comparing two amounts.
    *
    * @param amount1 An amount to compare.
    * @param amount2 An amount to compare.
@@ -57,6 +59,50 @@ CompareHelper
     }
 
     return result;
+  }
+  
+  /**
+   * TThis method returns the result of comparing two amounts.
+   *
+   * @param amount1 An amount to compare.
+   * @param amount2 An amount to compare.
+   * @param invert Whether or not to invert the sort.
+   *
+   * @return The result of comparing two amounts.
+   */
+  public
+  static
+  int
+  compareAmounts(Money amount1, Money amount2, boolean invert)
+  {
+    int result = 0;
+
+    if(invert == true)
+    {
+      result = amount2.compareTo(amount1);
+    }
+    else
+    {
+      result = amount1.compareTo(amount2);
+    }
+
+    return result;
+  }
+  
+  /**
+   * This method returns the result of comparing two amounts.
+   *
+   * @param amount1 An amount to compare.
+   * @param amount2 An amount to compare.
+   *
+   * @return The result of comparing two amounts.
+   */
+  public
+  static
+  int
+  compareAmounts(Money amount1, Money amount2)
+  {
+    return compareAmounts(amount1, amount2, false);
   }
 
   /**

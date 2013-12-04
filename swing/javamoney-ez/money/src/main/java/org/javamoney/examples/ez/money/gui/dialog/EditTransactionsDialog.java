@@ -35,7 +35,6 @@ import org.javamoney.examples.ez.money.gui.chooser.ElementComboBoxChooser;
 import org.javamoney.examples.ez.money.model.dynamic.transaction.RegisterTransaction;
 import org.javamoney.examples.ez.money.model.persisted.payee.Payee;
 import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
-
 import org.javamoney.examples.ez.common.gui.DialogHeader;
 import org.javamoney.examples.ez.common.gui.Link;
 import org.javamoney.examples.ez.common.gui.Panel;
@@ -43,6 +42,7 @@ import org.javamoney.examples.ez.common.utility.ClipboardMenuController;
 import org.javamoney.examples.ez.common.utility.ComboBoxCompleter;
 import org.javamoney.examples.ez.common.utility.I18NHelper;
 import org.javamoney.examples.ez.common.utility.TextConstrainer;
+import org.javamoney.moneta.Money;
 
 /**
  * This class facilitates providing a way to edit a group of transactions.
@@ -54,6 +54,10 @@ EditTransactionsDialog
 extends ApplicationDialog
 {
   /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5752972898648767469L;
+/**
    * Constructs a new dialog.
    *
    * @param list The transactions to edit.
@@ -338,7 +342,7 @@ extends ApplicationDialog
     String check = getCheckFields()[type].getText();
     String notes = getNotesFields()[type].getText();
     String payee = getPayeeChoosers()[type].getSelectedItem();
-    double amount = 0.0;
+    Money amount = Money.ofZero("USD");
     Date date = new Date();
 
     // Collect data.
@@ -349,11 +353,11 @@ extends ApplicationDialog
 
     try
     {
-      amount = UI_CURRENCY.parse(getAmountFields()[type].getText());
+      amount = Money.of("USD", UI_CURRENCY.parse(getAmountFields()[type].getText()));
 
       if(type == EXPENSES)
       {
-        amount = -amount;
+        amount = amount.negate();
       }
     }
     catch(Exception exception)

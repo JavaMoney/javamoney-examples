@@ -24,6 +24,11 @@ ImportDuplicateModel
 extends Table.NonmutableTableModel
 {
   /**
+	 * 
+	 */
+	private static final long serialVersionUID = -3324902127116493763L;
+
+/**
    * This method adds the specified transaction into the model's table.
    *
    * @param trans The transaction to add.
@@ -34,7 +39,7 @@ extends Table.NonmutableTableModel
   {
     String[] rowData = new String[5];
 
-    rowData[AMOUNT_COLUMN] = UI_CURRENCY.format(trans.getAmount());
+    rowData[AMOUNT_COLUMN] = UI_CURRENCY.format(trans.getAmount().doubleValue());
     rowData[CHECK_NUMBER_COLUMN] = trans.getCheckNumber();
     rowData[DATE_COLUMN] = UI_DATE_FORMAT.format(trans.getDate());
     rowData[PAYEE_COLUMN] = trans.getPayee();

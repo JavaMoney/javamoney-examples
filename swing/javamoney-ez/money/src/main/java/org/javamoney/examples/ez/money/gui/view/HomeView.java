@@ -45,6 +45,10 @@ HomeView
 extends View
 {
   /**
+	 * 
+	 */
+	private static final long serialVersionUID = -6127763031635419778L;
+/**
    * Constructs a new view.
    */
   public
@@ -185,7 +189,7 @@ extends View
         text += "</tr>";
 
         subtotal += balance;
-        setBalanceSummary(getBalanceSummary() + account.getBalance());
+        setBalanceSummary(getBalanceSummary() + account.getBalance().doubleValue());
 
         ++count;
       }

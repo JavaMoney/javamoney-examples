@@ -19,6 +19,7 @@ class
 IncomeExpenseTotal
 extends CategoryTotal
 {
+	// TODO change to Money
   /**
    * Constructs a new category total.
    *

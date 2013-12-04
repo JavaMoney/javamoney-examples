@@ -24,6 +24,11 @@ RegisterBalancePanel
 extends Panel
 {
   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1761400664481997906L;
+
+/**
    * Constructs a new register balance panel.
    */
   protected
@@ -57,7 +62,7 @@ extends Panel
     }
     else
     {
-      displayBalance(account.getBalance(), pending);
+      displayBalance(account.getBalance().doubleValue(), pending);
     }
   }
 

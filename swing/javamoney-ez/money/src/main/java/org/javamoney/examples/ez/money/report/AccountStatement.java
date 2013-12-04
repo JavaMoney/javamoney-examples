@@ -54,22 +54,22 @@ extends Report
         {
           if(isTransfer(trans) == true)
           {
-            statement.setTransferredFromTotal(statement.getTransferredFromTotal() - trans.getAmount());
+            statement.setTransferredFromTotal(statement.getTransferredFromTotal() - trans.getAmount().doubleValue());
           }
           else
           {
-            statement.setExpenseTotal(statement.getExpenseTotal() - trans.getAmount());
+            statement.setExpenseTotal(statement.getExpenseTotal() - trans.getAmount().doubleValue());
           }
         }
         else
         {
           if(isTransfer(trans) == true)
           {
-            statement.setTransferredToTotal(statement.getTransferredToTotal() + trans.getAmount());
+            statement.setTransferredToTotal(statement.getTransferredToTotal() + trans.getAmount().doubleValue());
           }
           else
           {
-            statement.setIncomeTotal(statement.getIncomeTotal() + trans.getAmount());
+            statement.setIncomeTotal(statement.getIncomeTotal() + trans.getAmount().doubleValue());
           }
         }
       }

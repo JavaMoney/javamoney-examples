@@ -27,6 +27,11 @@ ImportTransactionModel
 extends DefaultTableModel
 {
   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 7511477980550047395L;
+
+/**
    * This method adds the specified import transaction into the model's table.
    *
    * @param iTrans The import transaction to add.
@@ -38,7 +43,7 @@ extends DefaultTableModel
     Transaction trans = iTrans.getTransaction();
     String[] rowData = new String[7];
 
-    rowData[AMOUNT_COLUMN] = UI_CURRENCY.format(trans.getAmount());
+    rowData[AMOUNT_COLUMN] = UI_CURRENCY.format(trans.getAmount().doubleValue());
     rowData[CHECK_NUMBER_COLUMN] = trans.getCheckNumber();
     rowData[DUPLICATE_COLUMN] = "";
     rowData[DATE_COLUMN] = UI_DATE_FORMAT.format(trans.getDate());

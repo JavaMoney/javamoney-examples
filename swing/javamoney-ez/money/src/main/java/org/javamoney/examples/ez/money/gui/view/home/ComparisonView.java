@@ -42,6 +42,10 @@ ComparisonView
 extends Panel
 {
   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1810428160527929576L;
+/**
    * Constructs a new comparison  view.
    */
   public
@@ -141,7 +145,7 @@ extends Panel
   {
     if(TransactionHelper.isTransfer(trans) == false)
     {
-      double amount = Math.abs(trans.getAmount());
+      double amount = Math.abs(trans.getAmount().doubleValue());
       int monthIndex = MONTH_EXPENSE;
 
       if(TransactionHelper.isIncome(trans) == true)

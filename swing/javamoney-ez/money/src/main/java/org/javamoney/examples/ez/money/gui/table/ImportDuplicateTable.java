@@ -31,6 +31,10 @@ ImportDuplicateTable
 extends SortedDataTable<Transaction>
 {
   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1254833032089104242L;
+/**
    * Constructs a new table.
    */
   public
@@ -97,7 +101,7 @@ extends SortedDataTable<Transaction>
     // Add up the sum of all the selected transactions.
     for(int len = 0; len < rows.length; ++len)
     {
-      amount += get(rows[len]).getAmount();
+      amount += get(rows[len]).getAmount().doubleValue();
     }
 
     // Build tool tip.

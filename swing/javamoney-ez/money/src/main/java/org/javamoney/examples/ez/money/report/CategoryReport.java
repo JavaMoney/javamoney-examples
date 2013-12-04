@@ -31,6 +31,7 @@ import org.javamoney.examples.ez.money.model.dynamic.total.TransferTotal;
 import org.javamoney.examples.ez.money.model.dynamic.transaction.Split;
 import org.javamoney.examples.ez.money.model.persisted.account.Account;
 import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
+import org.javamoney.moneta.Money;
 
 /**
  * This class facilitates maintaining data pertaining to a category report.
@@ -191,13 +192,13 @@ extends Report
       {
         addCategoryTotalToGroup(getIncomeGroups(), INCOME, trans, account);
         addCategoryTotalToSet(getIncome(), INCOME, trans, account);
-        setIncomeTotal(getIncomeTotal() + trans.getAmount());
+        setIncomeTotal(getIncomeTotal() + trans.getAmount().doubleValue());
       }
       else
       {
         addCategoryTotalToGroup(getExpenseGroups(), EXPENSE, trans, account);
         addCategoryTotalToSet(getExpenses(), EXPENSE, trans, account);
-        setExpenseTotal(getExpenseTotal() - trans.getAmount());
+        setExpenseTotal(getExpenseTotal() - trans.getAmount().doubleValue());
       }
     }
   }
@@ -214,7 +215,7 @@ extends Report
     {
       StringTokenizer tokens = null;
       IncomeExpenseTotal total = null;
-      double amount = trans.getAmount();
+      double amount = trans.getAmount().doubleValue();
 
       // Get the group name.
       qif = qif.substring(0, index);
@@ -248,7 +249,7 @@ extends Report
   {
     IncomeExpenseTotal total = null;
     String qif = trans.getCategory();
-    double amount = trans.getAmount();
+    double amount = trans.getAmount().doubleValue();
 
     // If the transaction is not categorized, then show it as so.
     if(qif.length() == 0)
@@ -277,7 +278,7 @@ extends Report
     for(int len = 0; len < split.size(); ++len)
     {
       trans = trans.clone();
-      trans.setAmount(split.getAmount(len));
+      trans.setAmount(Money.of("USD", split.getAmount(len)));
       trans.setCategory(split.getCategory(len));
 
       addCategory(trans, account);
@@ -290,11 +291,11 @@ extends Report
   {
     if(isIncome(trans) == true)
     {
-      total.setToTotal(total.getToTotal() + trans.getAmount());
+      total.setToTotal(total.getToTotal() + trans.getAmount().doubleValue());
     }
     else
     {
-      total.setFromTotal(total.getFromTotal() + Math.abs(trans.getAmount()));
+      total.setFromTotal(total.getFromTotal() + Math.abs(trans.getAmount().doubleValue()));
     }
 
     total.getTransactionDetails().add(new TransactionDetail(trans, total.getAccount()));

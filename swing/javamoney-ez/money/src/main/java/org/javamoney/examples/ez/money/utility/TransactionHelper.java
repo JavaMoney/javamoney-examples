@@ -15,8 +15,8 @@ import org.javamoney.examples.ez.money.model.dynamic.transaction.Split;
 import org.javamoney.examples.ez.money.model.persisted.account.Account;
 import org.javamoney.examples.ez.money.model.persisted.account.AccountCollection;
 import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
-
 import org.javamoney.examples.ez.common.utility.I18NHelper;
+import org.javamoney.moneta.Money;
 
 /**
  * This class provides convenience methods for dealing with transactions. All
@@ -53,7 +53,7 @@ TransactionHelper
     }
 
     trans = trans.clone();
-    trans.setAmount(-trans.getAmount());
+    trans.setAmount(trans.getAmount().negate());
     trans.setCategory(category);
     trans.setPayee(payee.getIdentifier());
 
@@ -116,6 +116,21 @@ TransactionHelper
   {
     return amount <= 0.0;
   }
+  
+  /**
+   * This method returns true if the amount is considered an expense, otherwise
+   * false.
+   *
+   * @param amount The amount to check.
+   *
+   * @return true or false.
+   */
+  public
+  static
+  boolean
+  isExpense(Money amount) {
+	  return isExpense(amount.doubleValue());
+  }
 
   /**
    * This method returns true if the transaction is considered an expense,
@@ -147,6 +162,22 @@ TransactionHelper
   isIncome(double amount)
   {
     return isExpense(amount) == false;
+  }
+  
+  /**
+   * This method returns true if the amount is considered an income, otherwise
+   * false.
+   *
+   * @param amount The amount to check.
+   *
+   * @return true or false.
+   */
+  public
+  static
+  boolean
+  isIncome(Money amount)
+  {
+	  return isIncome(amount.doubleValue());
   }
 
   /**

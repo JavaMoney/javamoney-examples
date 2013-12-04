@@ -24,6 +24,7 @@ import org.javamoney.examples.ez.money.model.dynamic.transaction.Split;
 import org.javamoney.examples.ez.money.model.persisted.account.Account;
 import org.javamoney.examples.ez.money.model.persisted.category.Category;
 import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
+import org.javamoney.moneta.Money;
 
 /**
  * This class facilitates maintaining data pertaining to a budget report.
@@ -201,7 +202,7 @@ extends Report
         {
           TransactionDetail detail = new TransactionDetail(trans, account);
 
-          budget.setChange(budget.getChange() + Math.abs(trans.getAmount()));
+          budget.setChange(budget.getChange() + Math.abs(trans.getAmount().doubleValue()));
           budget.getTransactionDetails().add(detail);
         }
         else if(budget.hasRolloverBalance() == true)
@@ -210,7 +211,7 @@ extends Report
           {
             if(isOnOrAfter(trans, budget.getRolloverStartDate()) == true)
             {
-              budget.setStartingBalance(budget.getStartingBalance() + trans.getAmount());
+              budget.setStartingBalance(budget.getStartingBalance() + trans.getAmount().doubleValue());
             }
           }
         }
@@ -227,7 +228,7 @@ extends Report
     for(int index = 0; index < split.size(); ++index)
     {
       trans = trans.clone();
-      trans.setAmount(split.getAmount(index));
+      trans.setAmount(Money.of("USD", split.getAmount(index)));
       trans.setCategory(split.getCategory(index));
 
       addCategory(account, trans);

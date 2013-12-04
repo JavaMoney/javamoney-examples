@@ -30,12 +30,12 @@ import javax.swing.event.TreeSelectionListener;
 import org.javamoney.examples.ez.money.model.persisted.account.Account;
 import org.javamoney.examples.ez.money.model.persisted.account.AccountTypeKeys;
 import org.javamoney.examples.ez.money.utility.TransactionHelper;
-
 import org.javamoney.examples.ez.common.gui.CheckBox;
 import org.javamoney.examples.ez.common.gui.ComboBox;
 import org.javamoney.examples.ez.common.gui.Panel;
 import org.javamoney.examples.ez.common.utility.ClipboardMenuController;
 import org.javamoney.examples.ez.common.utility.TextConstrainer;
+import org.javamoney.moneta.Money;
 
 /**
  * This class facilitates managing the accounts.
@@ -217,7 +217,7 @@ extends DataElementPanel
 
     if(account != null)
     {
-      balance = UI_CURRENCY.format(account.getBalance(), false);
+      balance = UI_CURRENCY.format(account.getBalance().doubleValue(), false);
       isActive = account.isActive();
       type = account.getType();
     }
@@ -361,7 +361,7 @@ extends DataElementPanel
       // Ignored.
     }
 
-    account.setBalance(balance);
+    account.setBalance(Money.of("USD", balance));
   }
 
   private
@@ -439,7 +439,7 @@ extends DataElementPanel
     {
       Account account = (Account)getChooser().getSelectedElement();
 
-      getField().setText(UI_CURRENCY.format(account.getBalance(), false));
+      getField().setText(UI_CURRENCY.format(account.getBalance().doubleValue(), false));
     }
   }
 

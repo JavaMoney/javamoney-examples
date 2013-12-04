@@ -7,6 +7,8 @@ import static org.javamoney.examples.ez.common.utility.CompareHelper.compareBool
 
 import java.util.Date;
 
+import org.javamoney.moneta.Money;
+
 /**
  * This class encompasses all the elements that make up a transaction.
  */
@@ -27,7 +29,7 @@ implements Comparable<Transaction>
    * @param notes The notes.
    */
   public
-  Transaction(String number, Date date, String payee, double amount,
+  Transaction(String number, Date date, String payee, Money amount,
       String category, String notes)
   {
     setAmount(amount);
@@ -121,7 +123,7 @@ implements Comparable<Transaction>
    * @return The amount.
    */
   public
-  double
+  Money
   getAmount()
   {
     return itsAmount;
@@ -219,7 +221,7 @@ implements Comparable<Transaction>
    */
   public
   void
-  setAmount(double value)
+  setAmount(Money value)
   {
     itsAmount = value;
   }
@@ -344,7 +346,7 @@ implements Comparable<Transaction>
   // Start of class members.
   //////////////////////////////////////////////////////////////////////////////
 
-  private double itsAmount;
+  private Money itsAmount;
   private String itsCategory;
   private String itsCheckNumber;
   private Date itsDate;

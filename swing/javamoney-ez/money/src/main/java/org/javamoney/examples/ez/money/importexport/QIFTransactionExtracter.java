@@ -35,6 +35,7 @@ import java.util.Date;
 
 import org.javamoney.examples.ez.money.model.persisted.account.AccountTypeKeys;
 import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
+import org.javamoney.moneta.Money;
 
 /**
  * This class facilitates extracting transactions from a QIF file.
@@ -50,7 +51,7 @@ extends TransactionExtracter
   protected
   QIFTransactionExtracter()
   {
-    setAccountBalance(0.0);
+    setAccountBalance(Money.ofZero("USD"));
     setAccountKey(null);
     setAccountUID(null);
   }
@@ -61,7 +62,7 @@ extends TransactionExtracter
    * @return The account's balance.
    */
   protected
-  double
+  Money
   getAccountBalance()
   {
     return itsAccountBalance;
@@ -241,7 +242,7 @@ extends TransactionExtracter
       }
 
       // Create the transaction.
-      trans = new Transaction(number, date, payee, amount, category, notes);
+      trans = new Transaction(number, date, payee, Money.of("USD", amount), category, notes);
       trans.setIsReconciled(reconciled);
     }
 
@@ -279,7 +280,7 @@ extends TransactionExtracter
       }
       else if(key == ACCOUNT_BALANCE)
       {
-        setAccountBalance(extractAmount(line));
+        setAccountBalance(Money.of("USD", extractAmount(line)));
       }
       else if(key == ACCOUNT_NAME)
       {
@@ -323,7 +324,7 @@ extends TransactionExtracter
 
   private
   void
-  setAccountBalance(double balance)
+  setAccountBalance(Money balance)
   {
     itsAccountBalance = balance;
   }
@@ -346,7 +347,7 @@ extends TransactionExtracter
   // Start of class members.
   //////////////////////////////////////////////////////////////////////////////
 
-  private double itsAccountBalance;
+  private Money itsAccountBalance;
   private String itsAccountUID;
   private AccountTypeKeys itsAccountKey;
 }

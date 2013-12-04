@@ -406,7 +406,7 @@ TransactionExtracter
   // Start of class members.
   //////////////////////////////////////////////////////////////////////////////
 
-  private CurrencyFormat itsCurrency;
+  private CurrencyFormat itsCurrency; // TODO use actual CurrencyUnit here
   private ImportExportDateFormatKeys itsDateFormat;
   private TransactionTypeKeys itsType;
 }

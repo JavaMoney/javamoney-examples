@@ -41,7 +41,7 @@ Split
   public
   Split(Transaction trans)
   {
-    this(trans.getCategory(), trans.getAmount());
+    this(trans.getCategory(), trans.getAmount().doubleValue());
   }
 
   /**

@@ -208,7 +208,7 @@ extends ReportWriter
     stream.println("<tr>");
     stream.println("<td align=center>" + UI_DATE_FORMAT.format(trans.getDate()) + "</td>");
     stream.println("<td>&nbsp;</td>");
-    stream.println("<td align=center>" + formatAmount(trans.getAmount()) + "</td>");
+    stream.println("<td align=center>" + formatAmount(trans.getAmount().doubleValue()) + "</td>");
     stream.println("</tr>");
 
     printTransactionDetailField(stream, PAYEE, trans.getPayee());

@@ -37,8 +37,8 @@ import org.javamoney.examples.ez.money.model.persisted.payee.Payee;
 import org.javamoney.examples.ez.money.model.persisted.reminder.Reminder;
 import org.javamoney.examples.ez.money.model.persisted.transaction.LabelKeys;
 import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
-
 import org.javamoney.examples.ez.common.utility.I18NHelper;
+import org.javamoney.moneta.Money;
 
 /**
  * This class facilitates reading and writing the persisted data. All methods in
@@ -257,7 +257,7 @@ DataIOManager
       }
       else if(key == ACCOUNT_BALANCE)
       {
-        account.setBalance(US_DOLLAR.parse(line));
+        account.setBalance(Money.of("USD", US_DOLLAR.parse(line)));
       }
       else if(key == ACCOUNT_KEY)
       {
@@ -446,7 +446,7 @@ DataIOManager
       else if(key == END_OF_ENTRY)
       {
         Transaction trans = new Transaction(number, DATE_FORMAT.parse(date),
-            payee, US_DOLLAR.parse(amount), category, notes);
+            payee, Money.of("USD", US_DOLLAR.parse(amount)), category, notes);
 
         trans.setIsReconciled(parseBoolean(reconciled));
         trans.setLabel(LabelKeys.valueOf(label));
@@ -514,7 +514,7 @@ DataIOManager
 
       stream.println(ACCOUNT_KEY + account.getType().name());
       stream.println(UID + account.getIdentifier());
-      stream.println(ACCOUNT_BALANCE + US_DOLLAR.format(account.getBalance(), false));
+      stream.println(ACCOUNT_BALANCE + US_DOLLAR.format(account.getBalance().doubleValue(), false));
       stream.println(ACCOUNT_ACTIVE + String.valueOf(account.isActive()));
       stream.println(END_OF_ENTRY);
     }
@@ -622,7 +622,7 @@ DataIOManager
       for(Transaction trans : account.getTransactions())
       {
         stream.println(TRANS_ACCOUNT + account.getIdentifier());
-        stream.println(TRANS_AMOUNT +  USD + US_DOLLAR.format(trans.getAmount(), false));
+        stream.println(TRANS_AMOUNT +  USD + US_DOLLAR.format(trans.getAmount().doubleValue(), false));
         stream.println(TRANS_CHECK_NUMBER + trans.getCheckNumber());
         stream.println(TRANS_DATE + DATE_FORMAT.format(trans.getDate()));
         stream.println(TRANS_CATEGORY + trans.getCategory());

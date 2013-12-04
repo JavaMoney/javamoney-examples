@@ -46,9 +46,9 @@ import org.javamoney.examples.ez.money.model.persisted.account.Account;
 import org.javamoney.examples.ez.money.model.persisted.payee.Payee;
 import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
 import org.javamoney.examples.ez.money.utility.TransactionDateHelper;
-
 import org.javamoney.examples.ez.common.gui.Panel;
 import org.javamoney.examples.ez.common.utility.I18NHelper;
+import org.javamoney.moneta.Money;
 
 /**
  * This class facilitates creating transactions.
@@ -59,6 +59,10 @@ TypeCreator
 extends Panel
 {
   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 6592068985005342909L;
+/**
    * Constructs a new transaction creator for the specified transaction type.
    *
    * @param key The type of transactions to create.
@@ -180,7 +184,7 @@ extends Panel
     payee = purgeIdentifier(payee);
 
     trans = new Transaction(getForm().getField(CHECK_NUMBER).getText(), parseDate(),
-        payee, amount, getCategory(), getForm().getField(NOTES).getText());
+        payee, Money.of("USD", amount), getCategory(), getForm().getField(NOTES).getText());
 
     // Set attributes not applicable in the constructor.
     trans.setIsReconciled(getForm().getButton(PENDING).isSelected() == false);
@@ -536,6 +540,13 @@ extends Panel
     getForm().getField(AMOUNT).setText(UI_CURRENCY.format(Math.abs(value)));
   }
 
+  private
+  void
+  setAmount(Money value)
+  {
+	  setAmount(value.doubleValue());
+  }
+  
   private
   void
   setEditModeTransaction(Transaction trans)

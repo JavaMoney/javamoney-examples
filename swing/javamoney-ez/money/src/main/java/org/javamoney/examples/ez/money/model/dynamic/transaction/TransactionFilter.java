@@ -16,6 +16,7 @@ import static org.javamoney.examples.ez.money.model.dynamic.transaction.Transact
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 
+import org.javamoney.calc.function.MonetaryPredicate;
 import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
 
 /**
@@ -24,7 +25,7 @@ import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
 public
 final
 class
-TransactionFilter
+TransactionFilter implements MonetaryPredicate<Transaction>
 {
   /**
    * Constructs a new filter.
@@ -48,7 +49,7 @@ TransactionFilter
    */
   public
   boolean
-  allows(Transaction trans)
+  test(Transaction trans)
   {
     boolean result = false;
 
@@ -180,8 +181,8 @@ TransactionFilter
   boolean
   matchesAmount(Transaction trans, String text)
   {
-    String amount1 = UI_CURRENCY.format(Math.abs(trans.getAmount()));
-    String amount2 = getDecimalFormat().format(Math.abs(trans.getAmount()));
+    String amount1 = UI_CURRENCY.format(Math.abs(trans.getAmount().doubleValue()));
+    String amount2 = getDecimalFormat().format(Math.abs(trans.getAmount().doubleValue()));
 
     return amount1.startsWith(text) == true || amount2.startsWith(text) == true;
   }

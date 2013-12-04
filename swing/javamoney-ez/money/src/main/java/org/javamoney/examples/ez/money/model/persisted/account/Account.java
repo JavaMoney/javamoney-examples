@@ -8,6 +8,7 @@ import static org.javamoney.examples.ez.money.model.persisted.account.AccountTyp
 import org.javamoney.examples.ez.money.model.DataElement;
 import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
 import org.javamoney.examples.ez.money.model.persisted.transaction.TransactionSet;
+import org.javamoney.moneta.Money;
 
 /**
  * This class encompasses all the elements that make up an account and
@@ -30,7 +31,7 @@ extends DataElement
   {
     this(type, identifier, 0.0);
   }
-
+  
   /**
    * Constructs a new account.
    *
@@ -40,6 +41,19 @@ extends DataElement
    */
   public
   Account(AccountTypeKeys type, String identifier, double balance)
+  {
+	  this(type, identifier, Money.of("USD", balance));
+  }
+
+  /**
+   * Constructs a new account.
+   *
+   * @param type The type of account.
+   * @param identifier The unique identifier.
+   * @param balance The starting balance.
+   */
+  public
+  Account(AccountTypeKeys type, String identifier, Money balance)
   {
     super(identifier);
 
@@ -80,7 +94,7 @@ extends DataElement
 
     if(result == true)
     {
-      result = setBalance(getBalance() + trans.getAmount());
+      result = setBalance(getBalance().add(trans.getAmount()));
 
       // Remove the transaction if the balance could not be set.
       if(result == false)
@@ -98,7 +112,7 @@ extends DataElement
    * @return The balance.
    */
   public
-  double
+  Money
   getBalance()
   {
     return itsBalance;
@@ -120,7 +134,7 @@ extends DataElement
   double
   getBalanceForUI()
   {
-    double balance = getBalance();
+    double balance = getBalance().doubleValue();
 
     if(getType() == CREDIT && creditBalanceIsPositive() == true)
     {
@@ -185,7 +199,7 @@ extends DataElement
 
     if(result == true)
     {
-      result = setBalance(getBalance() - trans.getAmount());
+      result = setBalance(getBalance().subtract(trans.getAmount()));
 
       // Remove the transaction if the balance could not be set.
       if(result == false)
@@ -208,7 +222,7 @@ extends DataElement
    */
   public
   boolean
-  setBalance(double value)
+  setBalance(Money value)
   {
     boolean result = exceedsThreshold(value);
 
@@ -240,11 +254,11 @@ extends DataElement
   private
   static
   boolean
-  exceedsThreshold(double value)
+  exceedsThreshold(Money value)
   {
     boolean result = false;
 
-    if(value >= MAX_BALANCE || value <= -MAX_BALANCE)
+    if(value.doubleValue() >= MAX_BALANCE || value.doubleValue() <= -MAX_BALANCE)
     {
       result = true;
     }
@@ -270,7 +284,7 @@ extends DataElement
   // Start of class members.
   //////////////////////////////////////////////////////////////////////////////
 
-  private double itsBalance;
+  private Money itsBalance;
   private boolean itsIsActive;
   private TransactionSet itsTransactions;
   private AccountTypeKeys itsType;

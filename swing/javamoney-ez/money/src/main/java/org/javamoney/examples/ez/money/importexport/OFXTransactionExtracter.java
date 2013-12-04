@@ -15,6 +15,7 @@ import java.util.Date;
 import org.javamoney.examples.ez.money.locale.CurrencyFormat;
 import org.javamoney.examples.ez.money.locale.CurrencyFormatKeys;
 import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
+import org.javamoney.moneta.Money;
 
 /**
  * This class facilitates extracting transactions from an OFX file.
@@ -30,7 +31,7 @@ extends TransactionExtracter
    * @return The account balance specified in the file.
    */
   protected
-  double
+  Money
   getAccountBalance()
   {
     return itsAccountBalance;
@@ -69,7 +70,7 @@ extends TransactionExtracter
         String value = getNextValue(reader);
 
         value = removeNonmoneyValues(value);
-        setAccountBalance(getCurrencyFormat(value).parse(value));
+        setAccountBalance(Money.of("USD", getCurrencyFormat(value).parse(value)));
       }
     }
 
@@ -177,7 +178,7 @@ extends TransactionExtracter
     }
 
     // Create the transaction and assume it is reconciled.
-    trans = new Transaction(number, date, payee, amount, "", notes);
+    trans = new Transaction(number, date, payee, Money.of("USD", amount), "", notes);
     trans.setIsReconciled(true);
 
     return trans;
@@ -230,7 +231,7 @@ extends TransactionExtracter
 
   private
   void
-  setAccountBalance(double value)
+  setAccountBalance(Money value)
   {
     itsAccountBalance = value;
   }
@@ -239,7 +240,7 @@ extends TransactionExtracter
   // Start of class members.
   //////////////////////////////////////////////////////////////////////////////
 
-  private double itsAccountBalance;
+  private Money itsAccountBalance;
 
   private static SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyyMMdd");
 

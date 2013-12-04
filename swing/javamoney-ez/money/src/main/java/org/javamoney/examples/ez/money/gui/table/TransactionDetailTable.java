@@ -30,6 +30,10 @@ TransactionDetailTable
 extends SortedDataTable<TransactionDetail>
 {
   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 5058139622757721485L;
+/**
    * Constructs a new table.
    */
   public
@@ -96,7 +100,7 @@ extends SortedDataTable<TransactionDetail>
     // Add up the sum of all the selected transactions.
     for(int len = 0; len < rows.length; ++len)
     {
-      amount += Math.abs(get(rows[len]).getTransaction().getAmount());
+      amount += Math.abs(get(rows[len]).getTransaction().getAmount().doubleValue());
     }
 
     // Build tool tip.

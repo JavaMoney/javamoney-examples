@@ -14,6 +14,11 @@ GeneralOptionsPanel
 extends PreferencesPanel
 {
   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 8244153030512586124L;
+
+/**
    * Constructs a new preferences panel.
    */
   public

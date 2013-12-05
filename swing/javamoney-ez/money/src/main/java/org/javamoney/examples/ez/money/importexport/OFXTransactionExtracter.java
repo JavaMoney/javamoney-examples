@@ -2,6 +2,7 @@
 
 package org.javamoney.examples.ez.money.importexport;
 
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_SYMBOL;
 import static org.javamoney.examples.ez.money.model.dynamic.transaction.TransactionTypeKeys.EXPENSE;
 import static org.javamoney.examples.ez.money.model.dynamic.transaction.TransactionTypeKeys.INCOME;
 import static org.javamoney.examples.ez.money.utility.TransactionHelper.isExpense;
@@ -70,7 +71,7 @@ extends TransactionExtracter
         String value = getNextValue(reader);
 
         value = removeNonmoneyValues(value);
-        setAccountBalance(Money.of("USD", getCurrencyFormat(value).parse(value)));
+        setAccountBalance(Money.of(UI_CURRENCY_SYMBOL.getCurrency(), getCurrencyFormat(value).parse(value)));
       }
     }
 
@@ -86,20 +87,20 @@ extends TransactionExtracter
   CurrencyFormat
   getCurrencyFormat(String value)
   {
-    CurrencyFormatKeys format = null;
+    CurrencyFormatKeys formatKey = null;
 
     // OFX specifies strict rules for the amounts. No need to specify the
     // decimal format.
     if(value.lastIndexOf('.') != -1)
     {
-      format = CurrencyFormatKeys.US_DOLLAR;
+    	formatKey = CurrencyFormatKeys.US_DOLLAR;
     }
     else
     {
-      format = CurrencyFormatKeys.OTHER;
+    	formatKey = CurrencyFormatKeys.OTHER;
     }
 
-    return format.getCurrency();
+    return formatKey.getFormat();
   }
 
   private
@@ -178,7 +179,7 @@ extends TransactionExtracter
     }
 
     // Create the transaction and assume it is reconciled.
-    trans = new Transaction(number, date, payee, Money.of("USD", amount), "", notes);
+    trans = new Transaction(number, date, payee, Money.of(UI_CURRENCY_SYMBOL.getCurrency(), amount), "", notes);
     trans.setIsReconciled(true);
 
     return trans;

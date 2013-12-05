@@ -28,7 +28,6 @@ import org.javamoney.examples.ez.money.locale.CurrencyFormatKeys;
 import org.javamoney.examples.ez.money.locale.CurrencySymbolKeys;
 import org.javamoney.examples.ez.money.locale.DateFormatKeys;
 import org.javamoney.examples.ez.money.report.CategoryReportSortByKeys;
-
 import org.javamoney.examples.ez.common.net.ProxyConnectionTypeKeys;
 import org.javamoney.examples.ez.common.net.ProxyWrapper;
 
@@ -606,8 +605,9 @@ ApplicationProperties
 
     // Set performance constants.
     UI_DATE_FORMAT = getDateFormat();
-    UI_CURRENCY = getCurrencyFormat().getCurrency();
+    UI_CURRENCY_FORMAT = getCurrencyFormat().getFormat();
     UI_CURRENCY_SYMBOL = getCurrencySymbol();
+    //BASE_CURRENCY = MoneyCurrency.of("USD");
 
     return result;
   }
@@ -696,7 +696,7 @@ ApplicationProperties
   void
   setCurrencyFormat(CurrencyFormatKeys key)
   {
-    UI_CURRENCY = key.getCurrency();
+    UI_CURRENCY_FORMAT = key.getFormat();
 
     setProperty(Keys.CURRENCY_FORMAT, key.name());
   }
@@ -1331,11 +1331,13 @@ ApplicationProperties
    * properties map since it is used frequently.
    */
   public static DateFormatKeys UI_DATE_FORMAT;
+  
   /**
    * A constant to improve performance rather than obtaining the value via the
    * properties map since it is used frequently.
    */
-  public static CurrencyFormat UI_CURRENCY;
+  public static CurrencyFormat UI_CURRENCY_FORMAT;
+    
   /**
    * A constant to improve performance rather than obtaining the value via the
    * properties map since it is used frequently.

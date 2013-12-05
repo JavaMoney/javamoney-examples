@@ -10,6 +10,9 @@ import javafx.beans.value.ObservableValue;
 
 import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
+
+import org.javamoney.moneta.function.CurrencySupplier;
+
 import net.java.javamoney.javafx.value.ObservableMonetaryValue;
 
 /**
@@ -17,7 +20,7 @@ import net.java.javamoney.javafx.value.ObservableMonetaryValue;
  * @author Werner Keil
  */
 public class MonetaryExpressionBase implements MonetaryExpression, Observable,
-        ObservableMonetaryValue, ObservableValue<MonetaryAmount> {
+        ObservableMonetaryValue, ObservableValue<MonetaryAmount>, CurrencySupplier {
 
 	private MonetaryAmount amount;
 	

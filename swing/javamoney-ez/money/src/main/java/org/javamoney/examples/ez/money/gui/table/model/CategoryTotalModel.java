@@ -2,7 +2,7 @@
 
 package org.javamoney.examples.ez.money.gui.table.model;
 
-import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY;
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_FORMAT;
 import static org.javamoney.examples.ez.money.gui.table.CategoryTotalTable.AMOUNT_COLUMN;
 import static org.javamoney.examples.ez.money.gui.table.CategoryTotalTable.CATEGORY_COLUMN;
 import static org.javamoney.examples.ez.money.gui.table.CategoryTotalTable.GROUP_COLUMN;
@@ -33,7 +33,7 @@ extends Table.NonmutableTableModel
   {
     String[] rowData = new String[4];
 
-    rowData[AMOUNT_COLUMN] = UI_CURRENCY.format(Math.abs(total.getAmount()));
+    rowData[AMOUNT_COLUMN] = UI_CURRENCY_FORMAT.format(Math.abs(total.getAmount()));
     rowData[CATEGORY_COLUMN] = total.getCategoryIdentifier();
     rowData[GROUP_COLUMN] = total.getGroupName();
 

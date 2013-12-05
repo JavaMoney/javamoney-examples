@@ -33,7 +33,7 @@ TransactionExtracter
   protected
   TransactionExtracter()
   {
-    setCurrency(getImportExportCurrencyFormat().getCurrency());
+    setCurrency(getImportExportCurrencyFormat().getFormat());
     setDateFormat(getImportExportDateFormat());
     setType(null);
   }

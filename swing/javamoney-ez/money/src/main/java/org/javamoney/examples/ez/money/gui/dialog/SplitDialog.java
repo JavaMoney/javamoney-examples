@@ -5,7 +5,7 @@ package org.javamoney.examples.ez.money.gui.dialog;
 import static org.javamoney.examples.ez.common.utility.BorderHelper.createTitledBorder;
 import static org.javamoney.examples.ez.common.utility.ButtonHelper.buildButton;
 import static org.javamoney.examples.ez.common.utility.I18NHelper.getSharedProperty;
-import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY;
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_FORMAT;
 import static org.javamoney.examples.ez.money.KeywordKeys.NOT_CATEGORIZED;
 import static org.javamoney.examples.ez.money.gui.table.SplitTable.AMOUNT_COLUMN;
 import static org.javamoney.examples.ez.money.gui.table.SplitTable.CATEGORY_COLUMN;
@@ -100,7 +100,7 @@ extends ApplicationDialog
           }
 
           str += ITEM_SEPARATOR + category + AMOUNT_SEPARATOR +
-            US_DOLLAR.format(UI_CURRENCY.parse(amount));
+            US_DOLLAR.format(UI_CURRENCY_FORMAT.parse(amount));
         }
         catch(Exception exception)
         {
@@ -220,7 +220,7 @@ extends ApplicationDialog
 
     for(int len = 0; len < getLabels().length; ++len)
     {
-      getLabels()[len] = new JLabel(UI_CURRENCY.format(0));
+      getLabels()[len] = new JLabel(UI_CURRENCY_FORMAT.format(0));
     }
   }
 
@@ -317,13 +317,13 @@ extends ApplicationDialog
         category = NOT_CATEGORIZED.toString();
       }
 
-      getTable().addSplit(category, UI_CURRENCY.format(amount));
+      getTable().addSplit(category, UI_CURRENCY_FORMAT.format(amount));
       sum += amount;
     }
 
-    getLabels()[SUM].setText(UI_CURRENCY.format(sum));
-    getLabels()[TOTAL].setText(UI_CURRENCY.format(total));
-    getLabels()[UNASSIGNED].setText(UI_CURRENCY.format(total - sum));
+    getLabels()[SUM].setText(UI_CURRENCY_FORMAT.format(sum));
+    getLabels()[TOTAL].setText(UI_CURRENCY_FORMAT.format(total));
+    getLabels()[UNASSIGNED].setText(UI_CURRENCY_FORMAT.format(total - sum));
   }
 
   private
@@ -361,28 +361,28 @@ extends ApplicationDialog
       try
       {
         String str = (String)getTable().getValueAt(len, AMOUNT_COLUMN);
-        double amount = UI_CURRENCY.parse(str);
+        double amount = UI_CURRENCY_FORMAT.parse(str);
 
         total += amount;
-        getTable().setAmountAt(UI_CURRENCY.format(amount), len);
+        getTable().setAmountAt(UI_CURRENCY_FORMAT.format(amount), len);
       }
       catch(Exception exception)
       {
-        getTable().setAmountAt(UI_CURRENCY.format(0), len);
+        getTable().setAmountAt(UI_CURRENCY_FORMAT.format(0), len);
       }
     }
 
-    getLabels()[SUM].setText(UI_CURRENCY.format(total));
+    getLabels()[SUM].setText(UI_CURRENCY_FORMAT.format(total));
 
     if(total > getTotal())
     {
-      getLabels()[TOTAL].setText(UI_CURRENCY.format(total));
-      getLabels()[UNASSIGNED].setText(UI_CURRENCY.format(0.0));
+      getLabels()[TOTAL].setText(UI_CURRENCY_FORMAT.format(total));
+      getLabels()[UNASSIGNED].setText(UI_CURRENCY_FORMAT.format(0.0));
       setTotal(total);
     }
     else
     {
-      getLabels()[UNASSIGNED].setText(UI_CURRENCY.format(getTotal() - total));
+      getLabels()[UNASSIGNED].setText(UI_CURRENCY_FORMAT.format(getTotal() - total));
     }
 
     // Resume responding to events.
@@ -452,7 +452,7 @@ extends ApplicationDialog
   private SplitTable itsTable;
   private double itsTotal;
 
-  private static final CurrencyFormat US_DOLLAR = CurrencyFormatKeys.US_DOLLAR.getCurrency();
+  private static final CurrencyFormat US_DOLLAR = CurrencyFormatKeys.US_DOLLAR.getFormat();
 
   private static final String ACTION_ADD = getProperty("add");
   private static final String ACTION_REMOVE = getSharedProperty("remove");

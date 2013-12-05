@@ -2,7 +2,7 @@
 
 package org.javamoney.examples.ez.money.gui.table.model;
 
-import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY;
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_FORMAT;
 import static org.javamoney.examples.ez.money.gui.table.BudgetTable.BALANCE_COLUMN;
 import static org.javamoney.examples.ez.money.gui.table.BudgetTable.BUDGET_COLUMN;
 import static org.javamoney.examples.ez.money.gui.table.BudgetTable.CHANGE_COLUMN;
@@ -40,12 +40,12 @@ extends Table.NonmutableTableModel
 
     if(budget.hasRolloverBalance() == true)
     {
-      startingBalance = UI_CURRENCY.format(budget.getStartingBalance());
+      startingBalance = UI_CURRENCY_FORMAT.format(budget.getStartingBalance());
     }
 
-    rowData[BALANCE_COLUMN] = UI_CURRENCY.format(budget.getBalance());
-    rowData[BUDGET_COLUMN] = UI_CURRENCY.format(budget.getBudget());
-    rowData[CHANGE_COLUMN] = UI_CURRENCY.format(budget.getChange());
+    rowData[BALANCE_COLUMN] = UI_CURRENCY_FORMAT.format(budget.getBalance());
+    rowData[BUDGET_COLUMN] = UI_CURRENCY_FORMAT.format(budget.getBudget());
+    rowData[CHANGE_COLUMN] = UI_CURRENCY_FORMAT.format(budget.getChange());
     rowData[ICON_COLUMN] = "";
     rowData[ID_COLUMN] = budget.getIdentifier();
     rowData[STARTING_BALANCE_COLUMN] = startingBalance;

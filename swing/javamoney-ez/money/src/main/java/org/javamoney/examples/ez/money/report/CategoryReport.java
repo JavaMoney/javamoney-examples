@@ -2,6 +2,7 @@
 
 package org.javamoney.examples.ez.money.report;
 
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_SYMBOL;
 import static org.javamoney.examples.ez.money.KeywordKeys.NOT_CATEGORIZED;
 import static org.javamoney.examples.ez.money.importexport.QIFConstants.CATEGORY_SEPARATOR;
 import static org.javamoney.examples.ez.money.importexport.QIFConstants.CATEGORY_SEPARATOR_CHAR;
@@ -278,7 +279,7 @@ extends Report
     for(int len = 0; len < split.size(); ++len)
     {
       trans = trans.clone();
-      trans.setAmount(Money.of("USD", split.getAmount(len)));
+      trans.setAmount(Money.of(UI_CURRENCY_SYMBOL.getCurrency(), split.getAmount(len)));
       trans.setCategory(split.getCategory(len));
 
       addCategory(trans, account);

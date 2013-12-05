@@ -2,7 +2,7 @@
 
 package org.javamoney.examples.ez.money.gui.table.model;
 
-import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY;
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_FORMAT;
 import static org.javamoney.examples.ez.money.gui.table.TransferTotalTable.ACTIVE_COLUMN;
 import static org.javamoney.examples.ez.money.gui.table.TransferTotalTable.FROM_COLUMN;
 import static org.javamoney.examples.ez.money.gui.table.TransferTotalTable.ID_COLUMN;
@@ -35,10 +35,10 @@ extends Table.NonmutableTableModel
     String[] rowData = new String[5];
 
     rowData[ACTIVE_COLUMN] = "";
-    rowData[FROM_COLUMN] = UI_CURRENCY.format(total.getFromTotal());
+    rowData[FROM_COLUMN] = UI_CURRENCY_FORMAT.format(total.getFromTotal());
     rowData[ID_COLUMN] = total.getIdentifier();
     rowData[ROW_COLUMN] = "<html><b>" + row + "</b></html>";
-    rowData[TO_COLUMN] = UI_CURRENCY.format(total.getToTotal());
+    rowData[TO_COLUMN] = UI_CURRENCY_FORMAT.format(total.getToTotal());
 
     addRow(rowData);
   }

@@ -2,6 +2,7 @@
 
 package org.javamoney.examples.ez.money.model.persisted.account;
 
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_SYMBOL;
 import static org.javamoney.examples.ez.money.ApplicationProperties.creditBalanceIsPositive;
 import static org.javamoney.examples.ez.money.model.persisted.account.AccountTypeKeys.CREDIT;
 
@@ -42,7 +43,7 @@ extends DataElement
   public
   Account(AccountTypeKeys type, String identifier, double balance)
   {
-	  this(type, identifier, Money.of("USD", balance));
+	  this(type, identifier, Money.of(UI_CURRENCY_SYMBOL.getCurrency(), balance));
   }
 
   /**

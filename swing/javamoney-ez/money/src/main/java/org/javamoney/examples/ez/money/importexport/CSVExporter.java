@@ -72,7 +72,7 @@ extends Exporter
     try
     {
       PrintStream stream = new PrintStream(new FileOutputStream(file));
-      CurrencyFormat currency = getImportExportCurrencyFormat().getCurrency();
+      CurrencyFormat currency = getImportExportCurrencyFormat().getFormat();
       ImportExportDateFormatKeys dateFormat = getImportExportDateFormat();
       int[] columnOrder = getCSVColumnOrder();
 

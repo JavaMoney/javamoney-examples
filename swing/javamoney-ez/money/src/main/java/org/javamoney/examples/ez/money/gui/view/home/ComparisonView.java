@@ -5,7 +5,7 @@ package org.javamoney.examples.ez.money.gui.view.home;
 import static org.javamoney.examples.ez.common.utility.BorderHelper.createTitledBorder;
 import static org.javamoney.examples.ez.common.utility.DateHelper.getStartOfCurrentMonth;
 import static org.javamoney.examples.ez.common.utility.I18NHelper.getSharedProperty;
-import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY;
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_FORMAT;
 import static org.javamoney.examples.ez.money.IconKeys.PIE_CHART_BLUE;
 import static org.javamoney.examples.ez.money.IconKeys.PIE_CHART_BLUE_LEGEND;
 import static org.javamoney.examples.ez.money.IconKeys.PIE_CHART_GRAY;
@@ -268,9 +268,9 @@ extends Panel
       double incomePercent = getTotals()[MONTH_INCOME] / total;
 
       getLabels()[MONTH_EXPENSE].setText(pFormat.format(expensePercent));
-      getLabels()[MONTH_EXPENSE].setToolTipText(UI_CURRENCY.format(getTotals()[MONTH_EXPENSE]));
+      getLabels()[MONTH_EXPENSE].setToolTipText(UI_CURRENCY_FORMAT.format(getTotals()[MONTH_EXPENSE]));
       getLabels()[MONTH_INCOME].setText(pFormat.format(incomePercent));
-      getLabels()[MONTH_INCOME].setToolTipText(UI_CURRENCY.format(getTotals()[MONTH_INCOME]));
+      getLabels()[MONTH_INCOME].setToolTipText(UI_CURRENCY_FORMAT.format(getTotals()[MONTH_INCOME]));
     }
     else
     {

@@ -2,6 +2,7 @@
 
 package org.javamoney.examples.ez.money.importexport;
 
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_SYMBOL;
 import static org.javamoney.examples.ez.money.importexport.QIFConstants.ACCOUNT_BALANCE;
 import static org.javamoney.examples.ez.money.importexport.QIFConstants.ACCOUNT_HEADER;
 import static org.javamoney.examples.ez.money.importexport.QIFConstants.ACCOUNT_NAME;
@@ -51,7 +52,7 @@ extends TransactionExtracter
   protected
   QIFTransactionExtracter()
   {
-    setAccountBalance(Money.ofZero("USD"));
+    setAccountBalance(Money.ofZero(UI_CURRENCY_SYMBOL.getCurrency()));
     setAccountKey(null);
     setAccountUID(null);
   }
@@ -242,7 +243,7 @@ extends TransactionExtracter
       }
 
       // Create the transaction.
-      trans = new Transaction(number, date, payee, Money.of("USD", amount), category, notes);
+      trans = new Transaction(number, date, payee, Money.of(UI_CURRENCY_SYMBOL.getCurrency(), amount), category, notes);
       trans.setIsReconciled(reconciled);
     }
 
@@ -280,7 +281,7 @@ extends TransactionExtracter
       }
       else if(key == ACCOUNT_BALANCE)
       {
-        setAccountBalance(Money.of("USD", extractAmount(line)));
+        setAccountBalance(Money.of(UI_CURRENCY_SYMBOL.getCurrency(), extractAmount(line)));
       }
       else if(key == ACCOUNT_NAME)
       {

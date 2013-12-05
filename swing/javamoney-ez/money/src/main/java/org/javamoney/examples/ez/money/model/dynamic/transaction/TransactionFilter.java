@@ -5,7 +5,7 @@ package org.javamoney.examples.ez.money.model.dynamic.transaction;
 import static org.javamoney.examples.ez.common.utility.I18NHelper.getLanguage;
 import static java.text.DateFormat.LONG;
 import static java.text.DateFormat.getDateInstance;
-import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY;
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_FORMAT;
 import static org.javamoney.examples.ez.money.ApplicationProperties.UI_DATE_FORMAT;
 import static org.javamoney.examples.ez.money.model.dynamic.transaction.TransactionFilterFieldKeys.ALL;
 import static org.javamoney.examples.ez.money.model.dynamic.transaction.TransactionFilterFieldKeys.AMOUNT;
@@ -156,7 +156,7 @@ TransactionFilter implements MonetaryPredicate<Transaction>
   updateFormats()
   {
     setDateFormat(getDateInstance(LONG, getLanguage()));
-    setDecimalFormat(new DecimalFormat("###.##", UI_CURRENCY.getDecimalFormatSymbols()));
+    setDecimalFormat(new DecimalFormat("###.##", UI_CURRENCY_FORMAT.getDecimalFormatSymbols()));
   }
 
   //////////////////////////////////////////////////////////////////////////////
@@ -181,7 +181,7 @@ TransactionFilter implements MonetaryPredicate<Transaction>
   boolean
   matchesAmount(Transaction trans, String text)
   {
-    String amount1 = UI_CURRENCY.format(Math.abs(trans.getAmount().doubleValue()));
+    String amount1 = UI_CURRENCY_FORMAT.format(Math.abs(trans.getAmount().doubleValue()));
     String amount2 = getDecimalFormat().format(Math.abs(trans.getAmount().doubleValue()));
 
     return amount1.startsWith(text) == true || amount2.startsWith(text) == true;

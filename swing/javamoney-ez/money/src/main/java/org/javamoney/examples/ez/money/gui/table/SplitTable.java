@@ -3,7 +3,7 @@
 package org.javamoney.examples.ez.money.gui.table;
 
 import static org.javamoney.examples.ez.common.utility.I18NHelper.getSharedProperty;
-import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY;
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_FORMAT;
 import static org.javamoney.examples.ez.money.KeywordKeys.NOT_CATEGORIZED;
 import static org.javamoney.examples.ez.money.model.dynamic.transaction.Split.MAX_SPLIT;
 import static org.javamoney.examples.ez.money.utility.EditorHelper.createAmountCellEditor;
@@ -69,7 +69,7 @@ extends Table
   boolean
   addSplit()
   {
-    return addSplit(NOT_CATEGORIZED.toString(), UI_CURRENCY.format(0));
+    return addSplit(NOT_CATEGORIZED.toString(), UI_CURRENCY_FORMAT.format(0));
   }
 
   /**

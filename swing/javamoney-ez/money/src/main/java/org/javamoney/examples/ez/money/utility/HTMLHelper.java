@@ -2,7 +2,7 @@
 
 package org.javamoney.examples.ez.money.utility;
 
-import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY;
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_FORMAT;
 import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_SYMBOL;
 import static org.javamoney.examples.ez.money.locale.CurrencySymbolKeys.RUBLE;
 
@@ -130,7 +130,7 @@ HTMLHelper
   {
     String symbol = (showSymbol == true) ? UI_CURRENCY_SYMBOL.getSymbol() : "";
     String text = null;
-    String balance = UI_CURRENCY.format(amount);
+    String balance = UI_CURRENCY_FORMAT.format(amount);
     String color = "";
 
     // Due to rounding inadequacies, testing for amount < 0 can be inaccurate.

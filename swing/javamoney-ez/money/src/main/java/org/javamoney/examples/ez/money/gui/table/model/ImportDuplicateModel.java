@@ -2,7 +2,7 @@
 
 package org.javamoney.examples.ez.money.gui.table.model;
 
-import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY;
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_FORMAT;
 import static org.javamoney.examples.ez.money.ApplicationProperties.UI_DATE_FORMAT;
 import static org.javamoney.examples.ez.money.gui.table.ImportDuplicateTable.AMOUNT_COLUMN;
 import static org.javamoney.examples.ez.money.gui.table.ImportDuplicateTable.CHECK_NUMBER_COLUMN;
@@ -39,7 +39,7 @@ extends Table.NonmutableTableModel
   {
     String[] rowData = new String[5];
 
-    rowData[AMOUNT_COLUMN] = UI_CURRENCY.format(trans.getAmount().doubleValue());
+    rowData[AMOUNT_COLUMN] = UI_CURRENCY_FORMAT.format(trans.getAmount().doubleValue());
     rowData[CHECK_NUMBER_COLUMN] = trans.getCheckNumber();
     rowData[DATE_COLUMN] = UI_DATE_FORMAT.format(trans.getDate());
     rowData[PAYEE_COLUMN] = trans.getPayee();

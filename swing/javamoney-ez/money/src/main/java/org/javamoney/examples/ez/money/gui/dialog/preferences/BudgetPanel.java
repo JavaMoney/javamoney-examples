@@ -5,7 +5,7 @@ package org.javamoney.examples.ez.money.gui.dialog.preferences;
 import static org.javamoney.examples.ez.common.utility.BorderHelper.createTitledBorder;
 import static org.javamoney.examples.ez.common.utility.ButtonHelper.buildButton;
 import static org.javamoney.examples.ez.common.utility.I18NHelper.getSharedProperty;
-import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY;
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_FORMAT;
 import static org.javamoney.examples.ez.money.ApplicationProperties.UI_DATE_FORMAT;
 import static org.javamoney.examples.ez.money.model.DataManager.getIncome;
 
@@ -148,7 +148,7 @@ extends Panel
 
       if(canBeBudgeted == true && category.isBudgeted() == true)
       {
-        amount = UI_CURRENCY.format(Math.abs(category.getBudget()));
+        amount = UI_CURRENCY_FORMAT.format(Math.abs(category.getBudget()));
         date = category.getRolloverStartDate();
         hasRollover = category.hasRolloverBudget();
         isBudgeted = true;
@@ -212,7 +212,7 @@ extends Panel
 
     try
     {
-      amount = (int)UI_CURRENCY.parse(getAmountField().getText());
+      amount = (int)UI_CURRENCY_FORMAT.parse(getAmountField().getText());
     }
     catch(Exception exception)
     {
@@ -312,7 +312,7 @@ extends Panel
     {
       Category category = (Category)getChooser().getSelectedElement();
 
-      getAmountField().setText(UI_CURRENCY.format(Math.abs(category.getBudget())));
+      getAmountField().setText(UI_CURRENCY_FORMAT.format(Math.abs(category.getBudget())));
     }
   }
 

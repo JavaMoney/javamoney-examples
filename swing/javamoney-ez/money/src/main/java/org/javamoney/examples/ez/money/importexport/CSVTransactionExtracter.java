@@ -2,6 +2,7 @@
 
 package org.javamoney.examples.ez.money.importexport;
 
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_SYMBOL;
 import static org.javamoney.examples.ez.money.ApplicationProperties.getCSVColumnOrder;
 import static org.javamoney.examples.ez.money.importexport.CSVColumnKeys.AMOUNT;
 import static org.javamoney.examples.ez.money.importexport.CSVColumnKeys.CHECK_NUMBER;
@@ -129,7 +130,7 @@ extends TransactionExtracter
       }
 
       // Create the transaction and assume it is reconciled.
-      trans = new Transaction(number, date, payee, Money.of("USD", amount), "", notes);
+      trans = new Transaction(number, date, payee, Money.of(UI_CURRENCY_SYMBOL.getCurrency(), amount), "", notes);
       trans.setIsReconciled(true);
     }
 

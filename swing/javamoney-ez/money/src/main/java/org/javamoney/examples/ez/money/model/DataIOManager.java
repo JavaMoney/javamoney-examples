@@ -2,6 +2,7 @@
 
 package org.javamoney.examples.ez.money.model;
 
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_SYMBOL;
 import static org.javamoney.examples.ez.money.model.DataManager.getAccounts;
 import static org.javamoney.examples.ez.money.model.DataManager.getExpenses;
 import static org.javamoney.examples.ez.money.model.DataManager.getIncome;
@@ -257,7 +258,7 @@ DataIOManager
       }
       else if(key == ACCOUNT_BALANCE)
       {
-        account.setBalance(Money.of("USD", US_DOLLAR.parse(line)));
+        account.setBalance(Money.of(UI_CURRENCY_SYMBOL.getCurrency(), US_DOLLAR.parse(line)));
       }
       else if(key == ACCOUNT_KEY)
       {
@@ -446,7 +447,7 @@ DataIOManager
       else if(key == END_OF_ENTRY)
       {
         Transaction trans = new Transaction(number, DATE_FORMAT.parse(date),
-            payee, Money.of("USD", US_DOLLAR.parse(amount)), category, notes);
+            payee, Money.of(UI_CURRENCY_SYMBOL.getCurrency(), US_DOLLAR.parse(amount)), category, notes);
 
         trans.setIsReconciled(parseBoolean(reconciled));
         trans.setLabel(LabelKeys.valueOf(label));
@@ -642,7 +643,7 @@ DataIOManager
   //////////////////////////////////////////////////////////////////////////////
 
   private static final String USD = "$";
-  private static final CurrencyFormat US_DOLLAR = CurrencyFormatKeys.US_DOLLAR.getCurrency();
+  private static final CurrencyFormat US_DOLLAR = CurrencyFormatKeys.US_DOLLAR.getFormat();
   private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("M/d/yyyy");
 
   // Field keys.

@@ -2,7 +2,7 @@
 
 package org.javamoney.examples.ez.money.gui.table.model;
 
-import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY;
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_FORMAT;
 import static org.javamoney.examples.ez.money.ApplicationProperties.UI_DATE_FORMAT;
 import static org.javamoney.examples.ez.money.gui.table.RegisterTable.BALANCE_COLUMN;
 import static org.javamoney.examples.ez.money.gui.table.RegisterTable.CHECK_NUMBER_COLUMN;
@@ -40,7 +40,7 @@ extends Table.NonmutableTableModel
     Transaction trans = rTrans.getTransaction();
     String[] rowData = new String[8];
 
-    rowData[BALANCE_COLUMN] = UI_CURRENCY.format(rTrans.getBalance());
+    rowData[BALANCE_COLUMN] = UI_CURRENCY_FORMAT.format(rTrans.getBalance());
     rowData[CHECK_NUMBER_COLUMN] = trans.getCheckNumber();
     rowData[DATE_COLUMN] = UI_DATE_FORMAT.format(trans.getDate());
     rowData[LABEL_COLUMN] = "";
@@ -50,13 +50,13 @@ extends Table.NonmutableTableModel
     // Expenses and incomes are in separate columns and are always positive.
     if(isExpense(trans) == true)
     {
-      rowData[EXPENSE_COLUMN] = UI_CURRENCY.format(trans.getAmount().negate().doubleValue());
+      rowData[EXPENSE_COLUMN] = UI_CURRENCY_FORMAT.format(trans.getAmount().negate().doubleValue());
       rowData[INCOME_COLUMN] = "";
     }
     else
     {
       rowData[EXPENSE_COLUMN] = "";
-      rowData[INCOME_COLUMN] = UI_CURRENCY.format(trans.getAmount().doubleValue());
+      rowData[INCOME_COLUMN] = UI_CURRENCY_FORMAT.format(trans.getAmount().doubleValue());
     }
 
     addRow(rowData);

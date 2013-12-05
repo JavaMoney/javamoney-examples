@@ -3,7 +3,8 @@
 package org.javamoney.examples.ez.money.gui.dialog;
 
 import static org.javamoney.examples.ez.common.utility.I18NHelper.getSharedProperty;
-import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY;
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_SYMBOL;
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_FORMAT;
 import static org.javamoney.examples.ez.money.ApplicationProperties.UI_DATE_FORMAT;
 import static org.javamoney.examples.ez.money.IconKeys.DIALOG_EDIT_TRANSACTIONS;
 import static org.javamoney.examples.ez.money.IconKeys.WARNING;
@@ -342,7 +343,7 @@ extends ApplicationDialog
     String check = getCheckFields()[type].getText();
     String notes = getNotesFields()[type].getText();
     String payee = getPayeeChoosers()[type].getSelectedItem();
-    Money amount = Money.ofZero("USD");
+    Money amount = Money.ofZero(UI_CURRENCY_SYMBOL.getCurrency());
     Date date = new Date();
 
     // Collect data.
@@ -353,7 +354,7 @@ extends ApplicationDialog
 
     try
     {
-      amount = Money.of("USD", UI_CURRENCY.parse(getAmountFields()[type].getText()));
+      amount = Money.of(UI_CURRENCY_SYMBOL.getCurrency(), UI_CURRENCY_FORMAT.parse(getAmountFields()[type].getText()));
 
       if(type == EXPENSES)
       {

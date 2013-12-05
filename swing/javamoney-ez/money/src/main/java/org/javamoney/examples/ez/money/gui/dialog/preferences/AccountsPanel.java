@@ -6,7 +6,8 @@ import static org.javamoney.examples.ez.common.utility.BorderHelper.createTitled
 import static org.javamoney.examples.ez.common.utility.ButtonHelper.buildButton;
 import static org.javamoney.examples.ez.common.utility.I18NHelper.getSharedProperty;
 import static javax.swing.SwingConstants.TRAILING;
-import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY;
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_SYMBOL;
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_FORMAT;
 import static org.javamoney.examples.ez.money.model.DataTypeKeys.ACCOUNT;
 import static org.javamoney.examples.ez.money.utility.IDHelper.confirmRemoval;
 import static org.javamoney.examples.ez.money.utility.IDHelper.promptForAdd;
@@ -217,7 +218,7 @@ extends DataElementPanel
 
     if(account != null)
     {
-      balance = UI_CURRENCY.format(account.getBalance().doubleValue(), false);
+      balance = UI_CURRENCY_FORMAT.format(account.getBalance().doubleValue(), false);
       isActive = account.isActive();
       type = account.getType();
     }
@@ -354,14 +355,14 @@ extends DataElementPanel
 
     try
     {
-      balance = UI_CURRENCY.parse(getField().getText());
+      balance = UI_CURRENCY_FORMAT.parse(getField().getText());
     }
     catch(Exception exception)
     {
       // Ignored.
     }
 
-    account.setBalance(Money.of("USD", balance));
+    account.setBalance(Money.of(UI_CURRENCY_SYMBOL.getCurrency(), balance));
   }
 
   private
@@ -439,7 +440,7 @@ extends DataElementPanel
     {
       Account account = (Account)getChooser().getSelectedElement();
 
-      getField().setText(UI_CURRENCY.format(account.getBalance().doubleValue(), false));
+      getField().setText(UI_CURRENCY_FORMAT.format(account.getBalance().doubleValue(), false));
     }
   }
 

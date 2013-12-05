@@ -32,7 +32,7 @@ CurrencyFormatKeys
    */
   public
   CurrencyFormat
-  getCurrency()
+  getFormat()
   {
     return itsCurrency;
   }

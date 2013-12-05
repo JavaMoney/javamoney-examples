@@ -169,7 +169,7 @@ Split
   private String[] itsCategories;
   private int itsSize;
 
-  private static final CurrencyFormat FORMAT = US_DOLLAR.getCurrency();
+  private static final CurrencyFormat FORMAT = US_DOLLAR.getFormat();
 
   /**
    * The maximum splits a transaction can have.

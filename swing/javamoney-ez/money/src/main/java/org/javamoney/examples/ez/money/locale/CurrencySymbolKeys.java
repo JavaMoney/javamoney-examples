@@ -2,44 +2,48 @@
 
 package org.javamoney.examples.ez.money.locale;
 
+import javax.money.CurrencyUnit;
+
 import org.javamoney.examples.ez.common.utility.I18NHelper;
+import org.javamoney.moneta.MoneyCurrency;
+import org.javamoney.moneta.function.CurrencySupplier;
 
 /**
- * This enumerated class provides keys for the currency symbols.
+ * This enumerated class provides keys for the currency symbols and values.
  */
 public
 enum
-CurrencySymbolKeys
+CurrencySymbolKeys implements CurrencySupplier
 {
   // Declared in order they should appear in a chooser.
   /**
    * No symbol.
    */
-  NONE(I18NHelper.getSharedProperty("none"), ""),
+  NONE(I18NHelper.getSharedProperty("none"), "", MoneyCurrency.of("XXX")),
   /**
    * The Euro.
    */
-  EURO("\u20ac "),
+  EURO("\u20ac ", MoneyCurrency.of("EUR")),
   /**
    * The US Dollar.
    */
-  DOLLAR("$ "),
+  DOLLAR("$ ", MoneyCurrency.of("USD")),
   /**
    * The English Pound.
    */
-  POUND("\u00a3 "),
+  POUND("\u00a3 ", MoneyCurrency.of("GBP")),
   /**
    * The South African Rand.
    */
-  RAND("R "),
+  RAND("R ", MoneyCurrency.of("ZAR")),
   /**
    * The Brazilian Real.
    */
-  REAL("R$ "),
+  REAL("R$ ", MoneyCurrency.of("BRL")),
   /**
    * The Russian Ruble.
    */
-  RUBLE(" \u0440.");
+  RUBLE(" \u0440.", MoneyCurrency.of("RUB"));
 
   //////////////////////////////////////////////////////////////////////////////
   // Start of public methods.
@@ -56,6 +60,19 @@ CurrencySymbolKeys
   {
     return itsSymbol;
   }
+  
+  /**
+   * This method returns a currency unit for the enum constant.
+   *
+   * @return A currency.
+   */
+  public
+  CurrencyUnit
+  getCurrency()
+  {
+    return itsCurrency;
+  }
+
 
   /**
    * This method returns the currency symbol.
@@ -75,22 +92,24 @@ CurrencySymbolKeys
   //////////////////////////////////////////////////////////////////////////////
 
   private
-  CurrencySymbolKeys(String symbol)
+  CurrencySymbolKeys(String symbol, CurrencyUnit currency)
   {
-    this(symbol, symbol);
+    this(symbol, symbol, currency);
   }
 
   private
-  CurrencySymbolKeys(String identifier, String symbol)
+  CurrencySymbolKeys(String identifier, String symbol, CurrencyUnit currency)
   {
     itsIdentifier = identifier;
     itsSymbol = symbol;
+    itsCurrency = currency;
   }
 
   //////////////////////////////////////////////////////////////////////////////
   // Start of class members.
   //////////////////////////////////////////////////////////////////////////////
 
-  private String itsIdentifier;
-  private String itsSymbol;
+  private final String itsIdentifier;
+  private final String itsSymbol;
+  private final CurrencyUnit itsCurrency;
 }

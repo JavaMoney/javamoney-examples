@@ -426,7 +426,7 @@ TransactionHelper
   updateSplit(Transaction trans, String oldSplit, String newSplit)
   {
     Split split = new Split(trans);
-    CurrencyFormat dollar = CurrencyFormatKeys.US_DOLLAR.getCurrency();
+    CurrencyFormat dollar = CurrencyFormatKeys.US_DOLLAR.getFormat();
     String category = "";
 
     for(int index = 0; index < split.size(); ++index)

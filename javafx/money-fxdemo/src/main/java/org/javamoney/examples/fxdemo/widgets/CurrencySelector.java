@@ -8,12 +8,13 @@ import javax.money.CurrencyUnit;
 
 import org.javamoney.examples.fxdemo.AbstractFXMLComponent;
 import org.javamoney.moneta.MoneyCurrency;
+import org.javamoney.moneta.function.CurrencySupplier;
 
 /**
  * @author Anatole Tresch
  * @author Werner Keil
  */
-public class CurrencySelector extends AbstractFXMLComponent {
+public class CurrencySelector extends AbstractFXMLComponent implements CurrencySupplier {
 
 	@FXML
 	private ComboBox<CurrencyUnit> codeBox;

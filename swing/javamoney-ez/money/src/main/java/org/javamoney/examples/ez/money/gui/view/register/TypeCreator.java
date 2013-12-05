@@ -2,7 +2,8 @@
 
 package org.javamoney.examples.ez.money.gui.view.register;
 
-import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY;
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_SYMBOL;
+import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_FORMAT;
 import static org.javamoney.examples.ez.money.ApplicationProperties.UI_DATE_FORMAT;
 import static org.javamoney.examples.ez.money.ApplicationProperties.newTransactionsArePending;
 import static org.javamoney.examples.ez.money.ApplicationProperties.setNewTransactionsArePending;
@@ -184,7 +185,7 @@ extends Panel
     payee = purgeIdentifier(payee);
 
     trans = new Transaction(getForm().getField(CHECK_NUMBER).getText(), parseDate(),
-        payee, Money.of("USD", amount), getCategory(), getForm().getField(NOTES).getText());
+        payee, Money.of(UI_CURRENCY_SYMBOL.getCurrency(), amount), getCategory(), getForm().getField(NOTES).getText());
 
     // Set attributes not applicable in the constructor.
     trans.setIsReconciled(getForm().getButton(PENDING).isSelected() == false);
@@ -503,7 +504,7 @@ extends Panel
 
       if(str.length() != 0)
       {
-        amount = UI_CURRENCY.parse(str);
+        amount = UI_CURRENCY_FORMAT.parse(str);
       }
     }
     catch(Exception exception)
@@ -537,7 +538,7 @@ extends Panel
   void
   setAmount(double value)
   {
-    getForm().getField(AMOUNT).setText(UI_CURRENCY.format(Math.abs(value)));
+    getForm().getField(AMOUNT).setText(UI_CURRENCY_FORMAT.format(Math.abs(value)));
   }
 
   private

@@ -5,6 +5,8 @@ package org.javamoney.examples.ez.common.utility;
 import java.text.Collator;
 import java.util.Date;
 
+import javax.money.MonetaryAmount;
+
 import org.javamoney.moneta.Money;
 
 /**
@@ -73,17 +75,21 @@ CompareHelper
   public
   static
   int
-  compareAmounts(Money amount1, Money amount2, boolean invert)
+  compareAmounts(MonetaryAmount amount1, MonetaryAmount amount2, boolean invert)
   {
     int result = 0;
-
+    
     if(invert == true)
     {
-      result = amount2.compareTo(amount1);
+      if (amount2 instanceof Money) {
+    	  result = ((Money)amount2).compareTo(amount1);
+      }
     }
     else
     {
-      result = amount1.compareTo(amount2);
+    	 if (amount2 instanceof Money) {
+       	  result = ((Money)amount1).compareTo(amount2);
+    	 }
     }
 
     return result;
@@ -100,7 +106,7 @@ CompareHelper
   public
   static
   int
-  compareAmounts(Money amount1, Money amount2)
+  compareAmounts(MonetaryAmount amount1, MonetaryAmount amount2)
   {
     return compareAmounts(amount1, amount2, false);
   }

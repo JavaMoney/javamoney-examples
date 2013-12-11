@@ -18,8 +18,9 @@ import org.javamoney.examples.ez.money.gui.table.comparator.ImportDuplicateCompa
 import org.javamoney.examples.ez.money.gui.table.model.ImportDuplicateModel;
 import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
 import org.javamoney.examples.ez.money.utility.HTMLHelper;
-
 import org.javamoney.examples.ez.common.gui.table.SortedDataTable;
+
+import java.math.BigDecimal;
 
 /**
  * This class facilitates displaying transactions in a table.
@@ -90,7 +91,8 @@ extends SortedDataTable<Transaction>
   // Start of private methods.
   //////////////////////////////////////////////////////////////////////////////
 
-  private
+  @SuppressWarnings("unchecked")
+private
   String
   buildSumToolTipText()
   {
@@ -101,7 +103,7 @@ extends SortedDataTable<Transaction>
     // Add up the sum of all the selected transactions.
     for(int len = 0; len < rows.length; ++len)
     {
-      amount += get(rows[len]).getAmount().doubleValue();
+      amount += get(rows[len]).getAmount().getNumber(BigDecimal.class).doubleValue();
     }
 
     // Build tool tip.

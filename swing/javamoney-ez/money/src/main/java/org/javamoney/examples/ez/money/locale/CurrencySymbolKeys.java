@@ -5,8 +5,7 @@ package org.javamoney.examples.ez.money.locale;
 import javax.money.CurrencyUnit;
 
 import org.javamoney.examples.ez.common.utility.I18NHelper;
-import org.javamoney.moneta.MoneyCurrency;
-import org.javamoney.moneta.function.CurrencySupplier;
+import org.javamoney.util.CurrencySupplier;
 
 /**
  * This enumerated class provides keys for the currency symbols and values.
@@ -19,7 +18,7 @@ CurrencySymbolKeys implements CurrencySupplier
   /**
    * No symbol.
    */
-  NONE(I18NHelper.getSharedProperty("none"), "", MoneyCurrency.of("XXX")),
+  NONE(I18NHelper.getSharedProperty("none"), "", MonetaryCurrencies.getCurrency("XXX")),
   /**
    * The Euro.
    */

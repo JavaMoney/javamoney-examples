@@ -92,23 +92,24 @@ public class CalculateAmounts extends AbstractExamplePane {
 								return Money.from(amount1).subtract(amount2);
 							} else if ("multiply".equals(operation)) {
 								return Money.from(amount1).multiply(
-										Money.from(amount2).doubleValue());
+										Money.from(amount2).getNumber().doubleValue());
 							} else if ("divide".equals(operation)) {
 								return Money.from(amount1).divide(
-										Money.from(amount2).doubleValue());
+										Money.from(amount2).getNumber().doubleValue());
 							} else if ("divideToIntegralValue"
 									.equals(operation)) {
 								return Money.from(amount1)
 										.divideToIntegralValue(
 												Money.from(amount2)
-														.doubleValue());
+											.getNumber().doubleValue());
 								// } else if ("max".equals(operation)) {
 								// return amount1.max(amount2);
 								// } else if ("min".equals(operation)) {
 								// return amount1.min(amount2);
 							} else if ("remainder".equals(operation)) {
 								return Money.from(amount1).remainder(
-										Money.from(amount2).doubleValue());
+										Money.from(amount2)
+										.getNumber().doubleValue());
 							}
 							return null;
 						}

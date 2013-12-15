@@ -13,15 +13,16 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import javax.money.MonetaryAmount;
+import javax.money.format.CurrencyStyle;
+import javax.money.format.MonetaryAmountFormat;
+import javax.money.format.MonetaryFormats;
 
 import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
 import org.javamoney.examples.fxdemo.widgets.AmountEntry;
 import org.javamoney.format.ItemFormat;
 import org.javamoney.format.LocalizationStyle;
-import org.javamoney.format.MonetaryFormats;
 import org.javamoney.moneta.Money;
-import org.javamoney.moneta.format.CurrencyStyle;
 
 
 public class FormatAmount extends AbstractExamplePane {
@@ -75,13 +76,11 @@ public class FormatAmount extends AbstractExamplePane {
 //									styleBuilder.setAttribute(
 //											"currencyPlacement", placement);
 								}
-								ItemFormat<MonetaryAmount> formatter = MonetaryFormats
-										.getItemFormat(MonetaryAmount.class,
-												styleBuilder.build());
+								MonetaryAmountFormat formatter = MonetaryFormats.getAmountFormat(Locale.getDefault());
 								pw.println("Formatted Amount");
 								pw.println("----------------");
 								if (formatter != null) {
-									pw.println(formatter.format(amount, Locale.getDefault()));
+									formatter.print(pw, amount); // .format(amount, Locale.getDefault()));
 								} else {
 									pw.println("N/A: No formatter available.");
 								}

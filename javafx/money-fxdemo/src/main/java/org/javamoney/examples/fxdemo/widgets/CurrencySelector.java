@@ -5,10 +5,11 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 
 import javax.money.CurrencyUnit;
+import javax.money.MonetaryCurrencies;
 
 import org.javamoney.examples.fxdemo.AbstractFXMLComponent;
-import org.javamoney.moneta.MoneyCurrency;
-import org.javamoney.moneta.function.CurrencySupplier;
+import org.javamoney.util.CurrencySupplier;
+
 
 /**
  * @author Anatole Tresch
@@ -27,10 +28,10 @@ public class CurrencySelector extends AbstractFXMLComponent implements CurrencyS
 		this.currencyTitle.setText(title);
 	}
 
-	public MoneyCurrency getCurrency() {
+	public CurrencyUnit getCurrency() {
 		String code = codeBox.getSelectionModel().getSelectedItem().getCurrencyCode();
 		if (code != null) {
-			return MoneyCurrency.of(code);
+			return MonetaryCurrencies.getCurrency(code);
 		}
 		return null;
 	}

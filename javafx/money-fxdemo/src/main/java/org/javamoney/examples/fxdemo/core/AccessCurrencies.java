@@ -6,6 +6,7 @@ import java.util.Currency;
 import java.util.Locale;
 
 import javax.money.CurrencyUnit;
+import javax.money.MonetaryCurrencies;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
@@ -15,7 +16,6 @@ import javafx.scene.layout.HBox;
 import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
 import org.javamoney.examples.fxdemo.widgets.CurrencySelector;
-import org.javamoney.moneta.MoneyCurrency;
 
 public class AccessCurrencies extends AbstractExamplePane {
 
@@ -61,7 +61,7 @@ public class AccessCurrencies extends AbstractExamplePane {
 					pw.println("Currency Code: " + currency.getCurrencyCode());
 //					pw.println("Numeric Code: " + currency.getNumericCode());
 //					pw.println("Default Fraction Digits: " + currency.getDefaultFractionDigits());
-					if(MoneyCurrency.isJavaCurrency(currency.getCurrencyCode())){
+					if(MonetaryCurrencies.isCurrencyAvailable(currency.getCurrencyCode())){
 						Currency lcu = Currency.getInstance(currency.getCurrencyCode());
 						pw.println("Display Name: " + lcu.getDisplayName(Locale.ENGLISH));
 						pw.println("Symbol: " + lcu.getSymbol(Locale.ENGLISH));

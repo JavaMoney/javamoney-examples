@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.HashSet;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
@@ -48,9 +49,9 @@ public class MinMaxSample extends AbstractExamplePane {
 							StringWriter sw = new StringWriter();
 							PrintWriter pw = new PrintWriter(sw);
 							try {
-								MonetaryAmount min = MonetaryCalculations.minimum().calculate(Arrays.asList(
+								MonetaryAmount min = MonetaryCalculations.minimum().calculate(new HashSet(Arrays.asList(
 										amount1.getAmount(), amount2.getAmount(), 
-										amount3.getAmount()));
+										amount3.getAmount())));
 								pw.println("MonetaryAmount (Min)");
 								pw.println("--------------------");
 								pw.println();
@@ -69,9 +70,9 @@ public class MinMaxSample extends AbstractExamplePane {
 							if (amount instanceof Money) {
 								Money asMoney = (Money)amount;
 								pw.println("Value (BD): "
-										+ asMoney.asType(BigDecimal.class));
+										+ asMoney.getNumber(BigDecimal.class));
 								pw.println("Value (double): "
-										+ asMoney.doubleValue());
+										+ asMoney.getNumber().doubleValue());
 								pw.println("Precision: " + asMoney.getPrecision());
 								pw.println("Scale: " + asMoney.getScale());
 							}
@@ -84,9 +85,9 @@ public class MinMaxSample extends AbstractExamplePane {
 							StringWriter sw = new StringWriter();
 							PrintWriter pw = new PrintWriter(sw);
 							try {
-								MonetaryAmount max =  MonetaryCalculations.maximum().calculate(Arrays.asList(
+								MonetaryAmount max =  MonetaryCalculations.maximum().calculate(new HashSet(Arrays.asList(
 										amount1.getAmount(), amount2.getAmount(), 
-										amount3.getAmount()));
+										amount3.getAmount())));
 								pw.println("MonetaryAmount (Max)");
 								pw.println("--------------------");
 								pw.println();
@@ -105,9 +106,9 @@ public class MinMaxSample extends AbstractExamplePane {
 							if (amount instanceof Money) {
 								Money asMoney = (Money)amount;
 								pw.println("Value (BD): "
-										+ asMoney.asType(BigDecimal.class));
+										+ asMoney.getNumber(BigDecimal.class));
 								pw.println("Value (double): "
-										+ asMoney.doubleValue());
+										+ asMoney.getNumber().doubleValue());
 								pw.println("Precision: " + asMoney.getPrecision());
 								pw.println("Scale: " + asMoney.getScale());
 							}

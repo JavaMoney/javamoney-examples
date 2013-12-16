@@ -145,7 +145,7 @@ extends Panel
   {
     if(TransactionHelper.isTransfer(trans) == false)
     {
-      double amount = Math.abs(trans.getAmount().doubleValue());
+      double amount = Math.abs(trans.getAmount().getNumber().doubleValue());
       int monthIndex = MONTH_EXPENSE;
 
       if(TransactionHelper.isIncome(trans) == true)

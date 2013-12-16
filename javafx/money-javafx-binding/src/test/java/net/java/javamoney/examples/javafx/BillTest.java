@@ -24,7 +24,7 @@ public class BillTest {
 
 	@Test
 	public void testGetNewAmountDue() {
-		assertEquals(10d, bill1.getNewAmountDue().doubleValue(), 0);
+		assertEquals(10d, bill1.getNewAmountDue().getNumber().doubleValue(), 0);
 	}
 
 }

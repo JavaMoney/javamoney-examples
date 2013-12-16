@@ -140,11 +140,11 @@ extends Panel
 
     for(Transaction trans : getAccount().getTransactions())
     {
-      total += trans.getAmount().doubleValue();
+      total += trans.getAmount().getNumber().doubleValue();
 
       if(trans.isReconciled() == false)
       {
-        pending += trans.getAmount().doubleValue();
+        pending += trans.getAmount().getNumber().doubleValue();
       }
 
       if(canAddTransaction(trans) == true)
@@ -163,7 +163,7 @@ extends Panel
       setMultiplier(1);
     }
 
-    setStartingBalance(getAccount().getBalance().doubleValue() - total);
+    setStartingBalance(getAccount().getBalance().getNumber().doubleValue() - total);
 
     // Display data.
     getRegisterBalancePanel().displayFor(getAccount(), pending);

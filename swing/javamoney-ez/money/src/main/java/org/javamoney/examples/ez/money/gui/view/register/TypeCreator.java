@@ -39,6 +39,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
 
+import javax.money.MonetaryAmount;
+
 import org.javamoney.examples.ez.money.gui.dialog.SplitDialog;
 import org.javamoney.examples.ez.money.gui.view.RegisterView;
 import org.javamoney.examples.ez.money.gui.view.ViewKeys;
@@ -543,9 +545,9 @@ extends Panel
 
   private
   void
-  setAmount(Money value)
+  setAmount(@SuppressWarnings("rawtypes") MonetaryAmount value)
   {
-	  setAmount(value.doubleValue());
+	  setAmount(value.getNumber().doubleValue());
   }
   
   private

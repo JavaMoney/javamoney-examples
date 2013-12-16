@@ -56,11 +56,11 @@ DataMerger
 
     if(TransactionHelper.isSplit(category) == true)
     {
-      addSplit(category, trans.getAmount().doubleValue());
+      addSplit(category, trans.getAmount().getNumber().doubleValue());
     }
     else
     {
-      addCategory(category, trans.getAmount().doubleValue());
+      addCategory(category, trans.getAmount().getNumber().doubleValue());
     }
   }
 

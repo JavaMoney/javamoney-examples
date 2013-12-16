@@ -193,13 +193,13 @@ extends Report
       {
         addCategoryTotalToGroup(getIncomeGroups(), INCOME, trans, account);
         addCategoryTotalToSet(getIncome(), INCOME, trans, account);
-        setIncomeTotal(getIncomeTotal() + trans.getAmount().doubleValue());
+        setIncomeTotal(getIncomeTotal() + trans.getAmount().getNumber().doubleValue());
       }
       else
       {
         addCategoryTotalToGroup(getExpenseGroups(), EXPENSE, trans, account);
         addCategoryTotalToSet(getExpenses(), EXPENSE, trans, account);
-        setExpenseTotal(getExpenseTotal() - trans.getAmount().doubleValue());
+        setExpenseTotal(getExpenseTotal() - trans.getAmount().getNumber().doubleValue());
       }
     }
   }
@@ -216,7 +216,7 @@ extends Report
     {
       StringTokenizer tokens = null;
       IncomeExpenseTotal total = null;
-      double amount = trans.getAmount().doubleValue();
+      double amount = trans.getAmount().getNumber().doubleValue();
 
       // Get the group name.
       qif = qif.substring(0, index);
@@ -250,7 +250,7 @@ extends Report
   {
     IncomeExpenseTotal total = null;
     String qif = trans.getCategory();
-    double amount = trans.getAmount().doubleValue();
+    double amount = trans.getAmount().getNumber().doubleValue();
 
     // If the transaction is not categorized, then show it as so.
     if(qif.length() == 0)
@@ -292,11 +292,11 @@ extends Report
   {
     if(isIncome(trans) == true)
     {
-      total.setToTotal(total.getToTotal() + trans.getAmount().doubleValue());
+      total.setToTotal(total.getToTotal() + trans.getAmount().getNumber().doubleValue());
     }
     else
     {
-      total.setFromTotal(total.getFromTotal() + Math.abs(trans.getAmount().doubleValue()));
+      total.setFromTotal(total.getFromTotal() + Math.abs(trans.getAmount().getNumber().doubleValue()));
     }
 
     total.getTransactionDetails().add(new TransactionDetail(trans, total.getAccount()));

@@ -8,7 +8,7 @@ import javax.money.CurrencyUnit;
 import javax.money.MonetaryCurrencies;
 
 import org.javamoney.examples.fxdemo.AbstractFXMLComponent;
-import org.javamoney.util.CurrencySupplier;
+import org.javamoney.moneta.function.CurrencySupplier;
 
 
 /**

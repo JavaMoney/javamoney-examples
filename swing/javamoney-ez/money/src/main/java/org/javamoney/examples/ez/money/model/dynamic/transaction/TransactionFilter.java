@@ -181,8 +181,8 @@ TransactionFilter implements MonetaryPredicate<Transaction>
   boolean
   matchesAmount(Transaction trans, String text)
   {
-    String amount1 = UI_CURRENCY_FORMAT.format(Math.abs(trans.getAmount().doubleValue()));
-    String amount2 = getDecimalFormat().format(Math.abs(trans.getAmount().doubleValue()));
+    String amount1 = UI_CURRENCY_FORMAT.format(Math.abs(trans.getAmount().getNumber().doubleValue()));
+    String amount2 = getDecimalFormat().format(Math.abs(trans.getAmount().getNumber().doubleValue()));
 
     return amount1.startsWith(text) == true || amount2.startsWith(text) == true;
   }

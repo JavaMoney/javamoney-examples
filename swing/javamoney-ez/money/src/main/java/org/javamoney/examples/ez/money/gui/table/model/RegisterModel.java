@@ -29,6 +29,11 @@ RegisterModel
 extends Table.NonmutableTableModel
 {
   /**
+	 * 
+	 */
+	private static final long serialVersionUID = -6550223140249659346L;
+
+/**
    * This method adds the specified transaction into the model's table.
    *
    * @param rTrans The transaction to add.
@@ -50,13 +55,13 @@ extends Table.NonmutableTableModel
     // Expenses and incomes are in separate columns and are always positive.
     if(isExpense(trans) == true)
     {
-      rowData[EXPENSE_COLUMN] = UI_CURRENCY_FORMAT.format(trans.getAmount().negate().doubleValue());
+      rowData[EXPENSE_COLUMN] = UI_CURRENCY_FORMAT.format(trans.getAmount().negate().getNumber().doubleValue());
       rowData[INCOME_COLUMN] = "";
     }
     else
     {
       rowData[EXPENSE_COLUMN] = "";
-      rowData[INCOME_COLUMN] = UI_CURRENCY_FORMAT.format(trans.getAmount().doubleValue());
+      rowData[INCOME_COLUMN] = UI_CURRENCY_FORMAT.format(trans.getAmount().getNumber().doubleValue());
     }
 
     addRow(rowData);

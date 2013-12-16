@@ -218,7 +218,7 @@ extends DataElementPanel
 
     if(account != null)
     {
-      balance = UI_CURRENCY_FORMAT.format(account.getBalance().doubleValue(), false);
+      balance = UI_CURRENCY_FORMAT.format(account.getBalance().getNumber().doubleValue(), false);
       isActive = account.isActive();
       type = account.getType();
     }
@@ -440,7 +440,7 @@ extends DataElementPanel
     {
       Account account = (Account)getChooser().getSelectedElement();
 
-      getField().setText(UI_CURRENCY_FORMAT.format(account.getBalance().doubleValue(), false));
+      getField().setText(UI_CURRENCY_FORMAT.format(account.getBalance().getNumber().doubleValue(), false));
     }
   }
 

@@ -62,7 +62,7 @@ extends Panel
     }
     else
     {
-      displayBalance(account.getBalance().doubleValue(), pending);
+      displayBalance(account.getBalance().getNumber().doubleValue(), pending);
     }
   }
 

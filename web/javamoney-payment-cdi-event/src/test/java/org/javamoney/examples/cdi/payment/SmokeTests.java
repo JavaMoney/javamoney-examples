@@ -21,6 +21,8 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.ibm.icu.math.BigDecimal;
+
 /**
  * 
  * @author Werner Keil
@@ -37,8 +39,8 @@ public class SmokeTests {
 		Money amount2 = Money.of("CHF", 1.0d);
 		Money amount3 = amount1.add(amount2);
 		LOGGER.debug(amount1 + " + " + amount2 + " = " + amount3);
-		assertEquals(1.0d, amount1.doubleValue(), 0);
-		assertEquals(1.0d, amount2.doubleValue(), 0);
-		assertEquals(2.0d, amount3.doubleValue(), 0);
+		assertEquals(BigDecimal.ONE, amount1.getNumber());
+		assertEquals(BigDecimal.ONE, amount2.getNumber());
+		assertEquals(BigDecimal.valueOf(2d), amount3.getNumber());
 	}
 }

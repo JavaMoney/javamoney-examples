@@ -515,7 +515,7 @@ DataIOManager
 
       stream.println(ACCOUNT_KEY + account.getType().name());
       stream.println(UID + account.getIdentifier());
-      stream.println(ACCOUNT_BALANCE + US_DOLLAR.format(account.getBalance().doubleValue(), false));
+      stream.println(ACCOUNT_BALANCE + US_DOLLAR.format(account.getBalance().getNumber().doubleValue(), false));
       stream.println(ACCOUNT_ACTIVE + String.valueOf(account.isActive()));
       stream.println(END_OF_ENTRY);
     }
@@ -623,7 +623,7 @@ DataIOManager
       for(Transaction trans : account.getTransactions())
       {
         stream.println(TRANS_ACCOUNT + account.getIdentifier());
-        stream.println(TRANS_AMOUNT +  USD + US_DOLLAR.format(trans.getAmount().doubleValue(), false));
+        stream.println(TRANS_AMOUNT +  USD + US_DOLLAR.format(trans.getAmount().getNumber().doubleValue(), false));
         stream.println(TRANS_CHECK_NUMBER + trans.getCheckNumber());
         stream.println(TRANS_DATE + DATE_FORMAT.format(trans.getDate()));
         stream.println(TRANS_CATEGORY + trans.getCategory());

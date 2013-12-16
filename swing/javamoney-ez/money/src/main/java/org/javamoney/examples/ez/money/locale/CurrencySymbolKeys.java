@@ -3,9 +3,10 @@
 package org.javamoney.examples.ez.money.locale;
 
 import javax.money.CurrencyUnit;
+import javax.money.MonetaryCurrencies;
 
 import org.javamoney.examples.ez.common.utility.I18NHelper;
-import org.javamoney.util.CurrencySupplier;
+import org.javamoney.moneta.function.CurrencySupplier;
 
 /**
  * This enumerated class provides keys for the currency symbols and values.
@@ -22,27 +23,27 @@ CurrencySymbolKeys implements CurrencySupplier
   /**
    * The Euro.
    */
-  EURO("\u20ac ", MoneyCurrency.of("EUR")),
+  EURO("\u20ac ", MonetaryCurrencies.getCurrency("EUR")),
   /**
    * The US Dollar.
    */
-  DOLLAR("$ ", MoneyCurrency.of("USD")),
+  DOLLAR("$ ", MonetaryCurrencies.getCurrency("USD")),
   /**
    * The English Pound.
    */
-  POUND("\u00a3 ", MoneyCurrency.of("GBP")),
+  POUND("\u00a3 ", MonetaryCurrencies.getCurrency("GBP")),
   /**
    * The South African Rand.
    */
-  RAND("R ", MoneyCurrency.of("ZAR")),
+  RAND("R ", MonetaryCurrencies.getCurrency("ZAR")),
   /**
    * The Brazilian Real.
    */
-  REAL("R$ ", MoneyCurrency.of("BRL")),
+  REAL("R$ ", MonetaryCurrencies.getCurrency("BRL")),
   /**
    * The Russian Ruble.
    */
-  RUBLE(" \u0440.", MoneyCurrency.of("RUB"));
+  RUBLE(" \u0440.", MonetaryCurrencies.getCurrency("RUB"));
 
   //////////////////////////////////////////////////////////////////////////////
   // Start of public methods.

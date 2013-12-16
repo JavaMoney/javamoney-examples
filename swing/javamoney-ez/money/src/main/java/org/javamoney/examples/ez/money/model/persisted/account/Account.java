@@ -6,6 +6,8 @@ import static org.javamoney.examples.ez.money.ApplicationProperties.UI_CURRENCY_
 import static org.javamoney.examples.ez.money.ApplicationProperties.creditBalanceIsPositive;
 import static org.javamoney.examples.ez.money.model.persisted.account.AccountTypeKeys.CREDIT;
 
+import javax.money.MonetaryAmount;
+
 import org.javamoney.examples.ez.money.model.DataElement;
 import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
 import org.javamoney.examples.ez.money.model.persisted.transaction.TransactionSet;
@@ -54,7 +56,7 @@ extends DataElement
    * @param balance The starting balance.
    */
   public
-  Account(AccountTypeKeys type, String identifier, Money balance)
+  Account(AccountTypeKeys type, String identifier, MonetaryAmount balance)
   {
     super(identifier);
 
@@ -113,7 +115,7 @@ extends DataElement
    * @return The balance.
    */
   public
-  Money
+  MonetaryAmount
   getBalance()
   {
     return itsBalance;
@@ -135,7 +137,7 @@ extends DataElement
   double
   getBalanceForUI()
   {
-    double balance = getBalance().doubleValue();
+    double balance = getBalance().getNumber().doubleValue();
 
     if(getType() == CREDIT && creditBalanceIsPositive() == true)
     {
@@ -223,7 +225,7 @@ extends DataElement
    */
   public
   boolean
-  setBalance(Money value)
+  setBalance(MonetaryAmount value)
   {
     boolean result = exceedsThreshold(value);
 
@@ -255,15 +257,15 @@ extends DataElement
   private
   static
   boolean
-  exceedsThreshold(Money value)
+  exceedsThreshold(MonetaryAmount value)
   {
     boolean result = false;
-
-    if(value.doubleValue() >= MAX_BALANCE || value.doubleValue() <= -MAX_BALANCE)
-    {
-      result = true;
+    if (value != null && value.getNumber() != null) {
+	    if(value.getNumber().doubleValue() >= MAX_BALANCE || value.getNumber().doubleValue() <= -MAX_BALANCE)
+	    {
+	      result = true;
+	    }
     }
-
     return result;
   }
 
@@ -285,7 +287,7 @@ extends DataElement
   // Start of class members.
   //////////////////////////////////////////////////////////////////////////////
 
-  private Money itsBalance;
+  private MonetaryAmount itsBalance;
   private boolean itsIsActive;
   private TransactionSet itsTransactions;
   private AccountTypeKeys itsType;

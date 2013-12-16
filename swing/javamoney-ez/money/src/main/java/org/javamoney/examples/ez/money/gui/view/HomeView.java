@@ -189,7 +189,7 @@ extends View
         text += "</tr>";
 
         subtotal += balance;
-        setBalanceSummary(getBalanceSummary() + account.getBalance().doubleValue());
+        setBalanceSummary(getBalanceSummary() + account.getBalance().getNumber().doubleValue());
 
         ++count;
       }

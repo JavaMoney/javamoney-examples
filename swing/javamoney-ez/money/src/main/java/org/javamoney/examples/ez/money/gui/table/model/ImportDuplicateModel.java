@@ -39,7 +39,7 @@ extends Table.NonmutableTableModel
   {
     String[] rowData = new String[5];
 
-    rowData[AMOUNT_COLUMN] = UI_CURRENCY_FORMAT.format(trans.getAmount().doubleValue());
+    rowData[AMOUNT_COLUMN] = UI_CURRENCY_FORMAT.format(trans.getAmount().getNumber().doubleValue());
     rowData[CHECK_NUMBER_COLUMN] = trans.getCheckNumber();
     rowData[DATE_COLUMN] = UI_DATE_FORMAT.format(trans.getDate());
     rowData[PAYEE_COLUMN] = trans.getPayee();

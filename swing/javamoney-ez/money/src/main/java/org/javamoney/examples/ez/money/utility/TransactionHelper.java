@@ -8,6 +8,8 @@ import static org.javamoney.examples.ez.money.importexport.QIFConstants.CATEGORY
 import static org.javamoney.examples.ez.money.model.DataManager.getAccounts;
 import static org.javamoney.examples.ez.money.utility.DialogHelper.error;
 
+import javax.money.MonetaryAmount;
+
 import org.javamoney.examples.ez.money.locale.CurrencyFormat;
 import org.javamoney.examples.ez.money.locale.CurrencyFormatKeys;
 import org.javamoney.examples.ez.money.model.DataElement;
@@ -16,7 +18,6 @@ import org.javamoney.examples.ez.money.model.persisted.account.Account;
 import org.javamoney.examples.ez.money.model.persisted.account.AccountCollection;
 import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
 import org.javamoney.examples.ez.common.utility.I18NHelper;
-import org.javamoney.moneta.Money;
 
 /**
  * This class provides convenience methods for dealing with transactions. All
@@ -128,8 +129,8 @@ TransactionHelper
   public
   static
   boolean
-  isExpense(Money amount) {
-	  return isExpense(amount.doubleValue());
+  isExpense(MonetaryAmount amount) {
+	  return isExpense(amount.getNumber().doubleValue());
   }
 
   /**
@@ -175,9 +176,9 @@ TransactionHelper
   public
   static
   boolean
-  isIncome(Money amount)
+  isIncome(MonetaryAmount amount)
   {
-	  return isIncome(amount.doubleValue());
+	  return isIncome(amount.getNumber().doubleValue());
   }
 
   /**

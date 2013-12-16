@@ -43,7 +43,7 @@ extends DefaultTableModel
     Transaction trans = iTrans.getTransaction();
     String[] rowData = new String[7];
 
-    rowData[AMOUNT_COLUMN] = UI_CURRENCY_FORMAT.format(trans.getAmount().doubleValue());
+    rowData[AMOUNT_COLUMN] = UI_CURRENCY_FORMAT.format(trans.getAmount().getNumber().doubleValue());
     rowData[CHECK_NUMBER_COLUMN] = trans.getCheckNumber();
     rowData[DUPLICATE_COLUMN] = "";
     rowData[DATE_COLUMN] = UI_DATE_FORMAT.format(trans.getDate());

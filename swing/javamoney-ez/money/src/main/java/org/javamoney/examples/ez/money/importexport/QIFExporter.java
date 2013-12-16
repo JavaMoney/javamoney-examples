@@ -97,7 +97,7 @@ extends Exporter
       stream.println(ACCOUNT_TYPE + getAccountType(account));
       stream.println(ACCOUNT_DESCRIPTION + getProperty("description"));
       stream.println(ACCOUNT_STATEMENT_DATE);
-      stream.println(ACCOUNT_BALANCE + currency.format(account.getBalance().doubleValue(), false));
+      stream.println(ACCOUNT_BALANCE + currency.format(account.getBalance().getNumber().doubleValue(), false));
       stream.println(END_OF_ENTRY);
 
       // Print the account's transactions.
@@ -107,7 +107,7 @@ extends Exporter
       {
         stream.println(DATE + dateFormat.format(trans.getDate()));
         stream.println(NOTES + trans.getNotes());
-        stream.println(AMOUNT + currency.format(trans.getAmount().doubleValue(), false));
+        stream.println(AMOUNT + currency.format(trans.getAmount().getNumber().doubleValue(), false));
         stream.println(CHECK_NUMBER + trans.getCheckNumber());
         stream.println(PAYEE + trans.getPayee());
 

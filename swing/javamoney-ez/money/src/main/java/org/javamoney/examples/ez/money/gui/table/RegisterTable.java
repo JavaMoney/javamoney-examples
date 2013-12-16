@@ -116,7 +116,7 @@ extends SortedDataTable<RegisterTransaction>
     // Add up the sum of all the selected transactions.
     for(int len = 0; len < rows.length; ++len)
     {
-      amount += get(rows[len]).getTransaction().getAmount().doubleValue();
+      amount += get(rows[len]).getTransaction().getAmount().getNumber().doubleValue();
     }
 
     // Build tool tip.

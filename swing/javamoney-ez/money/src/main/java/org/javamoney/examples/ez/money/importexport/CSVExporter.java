@@ -87,7 +87,7 @@ extends Exporter
 
           if(ordinal == AMOUNT.ordinal())
           {
-            printField(stream, currency.format(trans.getAmount().doubleValue(), false));
+            printField(stream, currency.format(trans.getAmount().getNumber().doubleValue(), false));
           }
           else if(ordinal == CHECK_NUMBER.ordinal())
           {

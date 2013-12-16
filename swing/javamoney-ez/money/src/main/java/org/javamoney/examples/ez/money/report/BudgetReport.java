@@ -203,7 +203,7 @@ extends Report
         {
           TransactionDetail detail = new TransactionDetail(trans, account);
 
-          budget.setChange(budget.getChange() + Math.abs(trans.getAmount().doubleValue()));
+          budget.setChange(budget.getChange() + Math.abs(trans.getAmount().getNumber().doubleValue()));
           budget.getTransactionDetails().add(detail);
         }
         else if(budget.hasRolloverBalance() == true)
@@ -212,7 +212,7 @@ extends Report
           {
             if(isOnOrAfter(trans, budget.getRolloverStartDate()) == true)
             {
-              budget.setStartingBalance(budget.getStartingBalance() + trans.getAmount().doubleValue());
+              budget.setStartingBalance(budget.getStartingBalance() + trans.getAmount().getNumber().doubleValue());
             }
           }
         }

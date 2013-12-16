@@ -31,6 +31,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
+import javax.money.MonetaryCurrencies;
 
 import org.javamoney.annotation.Amount;
 import org.javamoney.examples.cdi.payment.events.PaymentEvent;
@@ -38,7 +39,6 @@ import org.javamoney.examples.cdi.payment.events.PaymentType;
 import org.javamoney.examples.cdi.payment.qualifiers.Credit;
 import org.javamoney.examples.cdi.payment.qualifiers.Debit;
 import org.javamoney.moneta.Money;
-import org.javamoney.moneta.MoneyCurrency;
 
 @Named
 @SessionScoped
@@ -65,7 +65,7 @@ public class PaymentBean implements Serializable {
 //	@Inject
 //	private MonetaryAmountFactory amountFactory;
 	
-	private static final CurrencyUnit CURRENCY = MoneyCurrency.of("EUR");
+	private static final CurrencyUnit CURRENCY = MonetaryCurrencies.getCurrency("EUR");
 	
 	@Amount
 	private BigDecimal amount= new BigDecimal(10.0);

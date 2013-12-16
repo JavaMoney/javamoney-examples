@@ -8,6 +8,9 @@
   </parent>
   <artifactId>javamoney-examples-javafx</artifactId>
   <packaging>pom</packaging>
+  <properties>
+  	 <jdkVersion>1.8</jdkVersion>
+  </properties>
   <modules>
   	<module>money-javafx-binding</module>
   	<module>money-fxdemo</module>

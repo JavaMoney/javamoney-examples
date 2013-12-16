@@ -18,6 +18,7 @@ package org.javamoney.examples.console;
 import org.javamoney.moneta.FastMoney;
 import org.javamoney.moneta.Money;
 
+
 /**
  * @author Werner Keil
  * @version 0.7.1

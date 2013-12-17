@@ -4,11 +4,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 
+import javax.money.CurrencySupplier;
 import javax.money.CurrencyUnit;
 import javax.money.MonetaryCurrencies;
 
 import org.javamoney.examples.fxdemo.AbstractFXMLComponent;
-import org.javamoney.moneta.function.CurrencySupplier;
 
 
 /**

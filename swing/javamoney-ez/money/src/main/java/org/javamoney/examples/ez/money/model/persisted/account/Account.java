@@ -16,6 +16,8 @@ import org.javamoney.moneta.Money;
 /**
  * This class encompasses all the elements that make up an account and
  * facilitates the management of transactions.
+ * 
+ * @author Werner Keil
  */
 public
 final
@@ -115,7 +117,7 @@ extends DataElement
    * @return The balance.
    */
   public
-  MonetaryAmount
+  MonetaryAmount<?>
   getBalance()
   {
     return itsBalance;
@@ -287,7 +289,7 @@ extends DataElement
   // Start of class members.
   //////////////////////////////////////////////////////////////////////////////
 
-  private MonetaryAmount itsBalance;
+  private MonetaryAmount<?> itsBalance;
   private boolean itsIsActive;
   private TransactionSet itsTransactions;
   private AccountTypeKeys itsType;

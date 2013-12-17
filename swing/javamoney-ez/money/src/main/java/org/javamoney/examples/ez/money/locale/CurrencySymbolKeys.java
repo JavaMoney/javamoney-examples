@@ -2,11 +2,11 @@
 
 package org.javamoney.examples.ez.money.locale;
 
+import javax.money.CurrencySupplier;
 import javax.money.CurrencyUnit;
 import javax.money.MonetaryCurrencies;
 
 import org.javamoney.examples.ez.common.utility.I18NHelper;
-import org.javamoney.moneta.function.CurrencySupplier;
 
 /**
  * This enumerated class provides keys for the currency symbols and values.

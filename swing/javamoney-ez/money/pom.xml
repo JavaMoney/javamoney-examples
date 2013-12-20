@@ -10,7 +10,12 @@
   	<dependency>
   		<groupId>org.javamoney.examples.ez</groupId>
   		<artifactId>javamoney-ez-common</artifactId>
-  		<version>2.5-SNAPSHOT</version>
+  		<version>${parent.version}</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.javamoney.lib</groupId>
+  		<artifactId>javamoney-calc</artifactId>
+  		<version>${javamoney.version}</version>
   	</dependency>
   </dependencies>
   <name>JavaMoney EZ Money</name>

@@ -26,6 +26,12 @@
 				<version>4.8.2</version>
 				<scope>test</scope>
 			</dependency>
+			
+			<dependency>
+				<groupId>org.javamoney.ri</groupId>
+				<artifactId>jsr354-ri</artifactId>
+				<version>${jsr.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -40,17 +46,16 @@
 			<artifactId>jul-to-slf4j</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.javamoney.bundles</groupId>
-			<artifactId>javamoney-se</artifactId>
-			<version>${javamoney.version}</version>
-		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.javamoney.ri</groupId>
+			<artifactId>jsr354-ri</artifactId>
+		</dependency>
 	</dependencies>
 	<modules>
 		<module>javamoney-ez</module>

@@ -52,7 +52,7 @@ extends TransactionExtracter
   protected
   QIFTransactionExtracter()
   {
-    setAccountBalance(Money.ofZero(UI_CURRENCY_SYMBOL.getCurrency()));
+    setAccountBalance(Money.of(UI_CURRENCY_SYMBOL.getCurrency(), Double.valueOf(0)));
     setAccountKey(null);
     setAccountUID(null);
   }

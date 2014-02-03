@@ -2,10 +2,10 @@ package org.javamoney.examples.fxdemo.widgets;
 
 import java.util.Collection;
 
-import javafx.scene.control.ChoiceBox;
+import javax.money.convert.ExchangeRateType;
+import javax.money.convert.MonetaryConversions;
 
-import org.javamoney.convert.ExchangeRateType;
-import org.javamoney.convert.MonetaryConversions;
+import javafx.scene.control.ChoiceBox;
 
 public class ExchangeRateTypeSelector extends ChoiceBox<ExchangeRateType> {
 

@@ -117,7 +117,7 @@ extends DataElement
    * @return The balance.
    */
   public
-  MonetaryAmount<?>
+  MonetaryAmount
   getBalance()
   {
     return itsBalance;
@@ -289,7 +289,7 @@ extends DataElement
   // Start of class members.
   //////////////////////////////////////////////////////////////////////////////
 
-  private MonetaryAmount<?> itsBalance;
+  private MonetaryAmount itsBalance;
   private boolean itsIsActive;
   private TransactionSet itsTransactions;
   private AccountTypeKeys itsType;

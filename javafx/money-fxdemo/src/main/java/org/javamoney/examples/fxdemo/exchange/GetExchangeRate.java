@@ -12,11 +12,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import javax.money.CurrencyUnit;
+import javax.money.convert.ExchangeRate;
+import javax.money.convert.ExchangeRateProvider;
+import javax.money.convert.ExchangeRateType;
+import javax.money.convert.MonetaryConversions;
 
-import org.javamoney.convert.ConversionProvider;
-import org.javamoney.convert.ExchangeRate;
-import org.javamoney.convert.ExchangeRateType;
-import org.javamoney.convert.MonetaryConversions;
 import org.javamoney.convert.provider.EZBCurrentConversionProvider;
 import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
@@ -61,7 +61,7 @@ public class GetExchangeRate extends AbstractExamplePane {
 									+ (newERT !=null ? " New ERT: " + newERT : ""));
 							
 							if (newERT != null) {
-								if (EZBCurrentConversionProvider.RATE_TYPE.equals(newERT)) {
+								if (EZBCurrentConversionProvider.CONTEXT.equals(newERT)) {
 									logger.debug("got ECB");
 									currencySelector1.setCurrency(EZBCurrentConversionProvider.BASE_CURRENCY);
 									currencySelector1.setDisable(true);
@@ -86,7 +86,7 @@ public class GetExchangeRate extends AbstractExamplePane {
 							try {
 								ExchangeRateType type = rateTypeSelector
 										.getSelectionModel().getSelectedItem();
-								ConversionProvider prov = MonetaryConversions
+								ExchangeRateProvider prov = MonetaryConversions
 										.getConversionProvider(type);
 								ExchangeRate rate = prov.getExchangeRate(
 										currencySelector1.getCurrency(),

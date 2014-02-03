@@ -17,8 +17,8 @@
             <artifactId>jul-to-slf4j</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.javamoney.bundles</groupId>
-            <artifactId>javamoney-se</artifactId>
+            <groupId>org.javamoney.lib</groupId>
+            <artifactId>javamoney-lib</artifactId>
             <version>${javamoney.version}</version>
             <type>pom</type>
         </dependency>

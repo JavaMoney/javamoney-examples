@@ -343,7 +343,7 @@ extends ApplicationDialog
     String check = getCheckFields()[type].getText();
     String notes = getNotesFields()[type].getText();
     String payee = getPayeeChoosers()[type].getSelectedItem();
-    Money amount = Money.ofZero(UI_CURRENCY_SYMBOL.getCurrency());
+    Money amount = Money.of(UI_CURRENCY_SYMBOL.getCurrency(), 0);
     Date date = new Date();
 
     // Collect data.

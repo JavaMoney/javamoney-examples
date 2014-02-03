@@ -12,10 +12,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import javax.money.MonetaryAmount;
+import javax.money.convert.CurrencyConverter;
+import javax.money.convert.ExchangeRateType;
+import javax.money.convert.MonetaryConversions;
 
-import org.javamoney.convert.CurrencyConverter;
-import org.javamoney.convert.ExchangeRateType;
-import org.javamoney.convert.MonetaryConversions;
 import org.javamoney.convert.provider.EZBCurrentConversionProvider;
 import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
@@ -62,7 +62,7 @@ public class ConvertAmount extends AbstractExamplePane {
 											: ""));
 
 							if (newERT != null) {
-								if (EZBCurrentConversionProvider.RATE_TYPE
+								if (EZBCurrentConversionProvider.CONTEXT
 										.equals(newERT)) {
 									logger.debug("got ECB");
 									amountBox

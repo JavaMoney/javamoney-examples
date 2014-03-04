@@ -65,7 +65,7 @@ public class AmountEntry extends AbstractFXMLComponent {
 			} else {
 				numberType.getSelectionModel().select("BigDecimal");
 			}
-			numberValue.setText(Money.from(amount).getNumber(BigDecimal.class)
+			numberValue.setText(Money.from(amount).getNumber()
 					.toString());
 		} else {
 			codeBox.getSelectionModel().clearSelection();

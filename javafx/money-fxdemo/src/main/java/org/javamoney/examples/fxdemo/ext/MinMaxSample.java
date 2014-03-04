@@ -70,11 +70,11 @@ public class MinMaxSample extends AbstractExamplePane {
 							if (amount instanceof Money) {
 								Money asMoney = (Money)amount;
 								pw.println("Value (BD): "
-										+ asMoney.getNumber(BigDecimal.class));
+										+ asMoney.getNumber());
 								pw.println("Value (double): "
 										+ asMoney.getNumber().doubleValue());
-								pw.println("Precision: " + asMoney.getPrecision());
-								pw.println("Scale: " + asMoney.getScale());
+								pw.println("Precision: " + asMoney.getNumber().getPrecision());
+								pw.println("Scale: " + asMoney.getNumber().getScale());
 							}
 						}
 					});
@@ -106,11 +106,11 @@ public class MinMaxSample extends AbstractExamplePane {
 							if (amount instanceof Money) {
 								Money asMoney = (Money)amount;
 								pw.println("Value (BD): "
-										+ asMoney.getNumber(BigDecimal.class));
+										+ asMoney.getNumber());
 								pw.println("Value (double): "
 										+ asMoney.getNumber().doubleValue());
-								pw.println("Precision: " + asMoney.getPrecision());
-								pw.println("Scale: " + asMoney.getScale());
+								pw.println("Precision: " + asMoney.getNumber().getPrecision());
+								pw.println("Scale: " + asMoney.getNumber().getScale());
 							}
 						}
 					});

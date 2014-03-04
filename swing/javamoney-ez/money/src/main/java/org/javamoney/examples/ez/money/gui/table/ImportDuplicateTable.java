@@ -103,7 +103,7 @@ private
     // Add up the sum of all the selected transactions.
     for(int len = 0; len < rows.length; ++len)
     {
-      amount += get(rows[len]).getAmount().getNumber().numberValue(BigDecimal.class).doubleValue();
+      amount += get(rows[len]).getAmount().getNumber(BigDecimal.class).doubleValue();
     }
 
     // Build tool tip.

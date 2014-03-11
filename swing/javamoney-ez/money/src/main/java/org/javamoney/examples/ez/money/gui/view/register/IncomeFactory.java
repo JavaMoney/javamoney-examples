@@ -11,14 +11,19 @@ import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
  */
 final
 class
-IncomeCreator
-extends TypeCreator
+IncomeFactory
+extends TransactionFactory
 {
   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 8318425398525241074L;
+
+/**
    * Constructs a new income creator.
    */
   protected
-  IncomeCreator()
+  IncomeFactory()
   {
     super(INCOME);
   }

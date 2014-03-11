@@ -50,7 +50,7 @@ extends Panel
   void
   clear()
   {
-    for(TypeCreator panel : getTypeCreators())
+    for(TransactionFactory panel : getTypeCreators())
     {
       panel.clear();
       panel.enableForm(false);
@@ -140,11 +140,11 @@ extends Panel
   void
   createTypeCreators()
   {
-    itsTypeCreators = new TypeCreator[3];
+    itsTypeCreators = new TransactionFactory[3];
 
-    getTypeCreators()[INCOME] = new IncomeCreator();
-    getTypeCreators()[EXPENSE] = new ExpenseCreator();
-    getTypeCreators()[TRANSFER] = new TransferCreator();
+    getTypeCreators()[INCOME] = new IncomeFactory();
+    getTypeCreators()[EXPENSE] = new ExpenseFactory();
+    getTypeCreators()[TRANSFER] = new TransferFactory();
   }
 
   private
@@ -204,7 +204,7 @@ extends Panel
   }
 
   private
-  TypeCreator[]
+  TransactionFactory[]
   getTypeCreators()
   {
     return itsTypeCreators;
@@ -247,7 +247,7 @@ extends Panel
 
   private AccountTypeKeys itsKey;
   private JTabbedPane itsTabs;
-  private TypeCreator[] itsTypeCreators;
+  private TransactionFactory[] itsTypeCreators;
 
   private static final int EXPENSE = 0;
   private static final int INCOME = 1;

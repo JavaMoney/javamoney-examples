@@ -1,4 +1,4 @@
-// TypeCreator
+// TransactionFactory
 
 package org.javamoney.examples.ez.money.gui.view.register;
 
@@ -58,7 +58,7 @@ import org.javamoney.moneta.Money;
  */
 abstract
 class
-TypeCreator
+TransactionFactory
 extends Panel
 {
   /**
@@ -71,7 +71,7 @@ extends Panel
    * @param key The type of transactions to create.
    */
   protected
-  TypeCreator(TransactionTypeKeys key)
+  TransactionFactory(TransactionTypeKeys key)
   {
     setForm(new Form(key, new ActionHandler()));
     setLastUsedDate(new Date());
@@ -545,7 +545,7 @@ extends Panel
 
   private
   void
-  setAmount(@SuppressWarnings("rawtypes") MonetaryAmount value)
+  setAmount(MonetaryAmount value)
   {
 	  setAmount(value.getNumber().doubleValue());
   }

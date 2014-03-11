@@ -18,14 +18,19 @@ import org.javamoney.examples.ez.common.utility.I18NHelper;
  */
 final
 class
-TransferCreator
-extends TypeCreator
+TransferFactory
+extends TransactionFactory
 {
   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 3103074288677379299L;
+
+/**
    * Constructs a new transfer creator.
    */
   protected
-  TransferCreator()
+  TransferFactory()
   {
     super(TransactionTypeKeys.TRANSFER);
   }

@@ -11,14 +11,19 @@ import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
  */
 final
 class
-ExpenseCreator
-extends TypeCreator
+ExpenseFactory
+extends TransactionFactory
 {
   /**
+	 * 
+	 */
+	private static final long serialVersionUID = -9032624669338490800L;
+
+/**
    * Constructs a new expense creator.
    */
   protected
-  ExpenseCreator()
+  ExpenseFactory()
   {
     super(EXPENSE);
   }

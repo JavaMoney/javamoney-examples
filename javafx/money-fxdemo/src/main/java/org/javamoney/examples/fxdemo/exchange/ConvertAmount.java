@@ -12,8 +12,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import javax.money.MonetaryAmount;
-import javax.money.convert.CurrencyConverter;
-import javax.money.convert.ExchangeRateType;
+import javax.money.convert.CurrencyConversion;
+import javax.money.convert.ProviderContext;
+import javax.money.convert.RateType;
 import javax.money.convert.MonetaryConversions;
 
 import org.javamoney.convert.provider.EZBCurrentConversionProvider;
@@ -21,7 +22,7 @@ import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
 import org.javamoney.examples.fxdemo.widgets.AmountEntry;
 import org.javamoney.examples.fxdemo.widgets.CurrencySelector;
-import org.javamoney.examples.fxdemo.widgets.ExchangeRateTypeSelector;
+import org.javamoney.examples.fxdemo.widgets.RateTypeSelector;
 
 /**
  * @author Anatole Tresch
@@ -42,18 +43,18 @@ public class ConvertAmount extends AbstractExamplePane {
 		private AmountEntry amountBox = new AmountEntry("Amount");
 		private CurrencySelector currencySelector1 = new CurrencySelector(
 				"Term Currency");
-		private ExchangeRateTypeSelector rateTypeSelector = new ExchangeRateTypeSelector();
+		private RateTypeSelector rateTypeSelector = new RateTypeSelector();
 
 		public ExamplePane() {
 			exPane.getChildren().addAll(new Label("Rate Type"),
 					rateTypeSelector, amountBox, currencySelector1);
 			this.inputPane.getChildren().add(exPane);
 			rateTypeSelector.valueProperty().addListener(
-					new ChangeListener<ExchangeRateType>() {
+					new ChangeListener<RateType>() {
 
 						public void changed(
-								ObservableValue<? extends ExchangeRateType> observable,
-								ExchangeRateType oldERT, ExchangeRateType newERT) {
+								ObservableValue<? extends RateType> observable,
+								RateType oldERT, RateType newERT) {
 							logger.info((observable != null ? "Obs: "
 									+ observable : "")
 									+ (oldERT != null ? " Old ERT: " + oldERT
@@ -88,11 +89,10 @@ public class ConvertAmount extends AbstractExamplePane {
 							final StringWriter sw = new StringWriter();
 							final PrintWriter pw = new PrintWriter(sw);
 							try {
-								ExchangeRateType type = rateTypeSelector
+								String type = rateTypeSelector
 										.getSelectionModel().getSelectedItem();
-								CurrencyConverter prov = MonetaryConversions
-										.getConversionProvider(type)
-										.getConverter();
+								ProviderContext prov = MonetaryConversions.getProviderContext(type);
+
 								MonetaryAmount convertedAmount = prov.convert(
 										amountBox.getAmount(),
 										currencySelector1.getCurrency());

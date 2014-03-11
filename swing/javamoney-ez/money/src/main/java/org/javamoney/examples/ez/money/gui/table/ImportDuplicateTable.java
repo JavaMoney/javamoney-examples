@@ -91,8 +91,7 @@ extends SortedDataTable<Transaction>
   // Start of private methods.
   //////////////////////////////////////////////////////////////////////////////
 
-  @SuppressWarnings("unchecked")
-private
+  private
   String
   buildSumToolTipText()
   {
@@ -103,7 +102,7 @@ private
     // Add up the sum of all the selected transactions.
     for(int len = 0; len < rows.length; ++len)
     {
-      amount += get(rows[len]).getAmount().getNumber(BigDecimal.class).doubleValue();
+      amount += get(rows[len]).getAmount().getNumber().doubleValue();
     }
 
     // Build tool tip.
@@ -139,7 +138,12 @@ private
   extends JLabel
   implements TableCellRenderer
   {
-    public
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 965263277445135398L;
+
+	public
     Component
     getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
         boolean hasFocus, int row, int column)

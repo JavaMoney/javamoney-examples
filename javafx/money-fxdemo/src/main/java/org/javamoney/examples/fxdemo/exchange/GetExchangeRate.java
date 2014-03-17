@@ -14,14 +14,14 @@ import javafx.scene.layout.VBox;
 import javax.money.CurrencyUnit;
 import javax.money.convert.ExchangeRate;
 import javax.money.convert.ExchangeRateProvider;
-import javax.money.convert.RateType;
+import javax.money.convert.ExchangeRateType;
 import javax.money.convert.MonetaryConversions;
 
 import org.javamoney.convert.provider.EZBCurrentConversionProvider;
 import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
 import org.javamoney.examples.fxdemo.widgets.CurrencySelector;
-import org.javamoney.examples.fxdemo.widgets.RateTypeSelector;
+import org.javamoney.examples.fxdemo.widgets.ExchangeRateTypeSelector;
 
 /**
  * @author Werner Keil
@@ -43,7 +43,7 @@ public class GetExchangeRate extends AbstractExamplePane {
 				"Base Currency");
 		private CurrencySelector currencySelector2 = new CurrencySelector(
 				"Term Currency");
-		private RateTypeSelector rateTypeSelector = new RateTypeSelector();
+		private ExchangeRateTypeSelector rateTypeSelector = new ExchangeRateTypeSelector();
 
 		public ExamplePane() {
 			final Button swapButton = new Button("Swap");
@@ -52,16 +52,16 @@ public class GetExchangeRate extends AbstractExamplePane {
 					rateTypeSelector, currencySelector1, currencySelector2);
 			this.inputPane.getChildren().add(exPane);
 			rateTypeSelector.valueProperty().addListener(
-					new ChangeListener<RateType>() {
+					new ChangeListener<ExchangeRateType>() {
 						public void changed(
-								ObservableValue<? extends RateType> observable,
-								RateType oldERT, RateType newERT) {
+								ObservableValue<? extends ExchangeRateType> observable,
+								ExchangeRateType oldERT, ExchangeRateType newERT) {
 							logger.info((observable !=null ? "Obs: " + observable : "")
 									+ (oldERT !=null ? " Old ERT: " + oldERT : "")
 									+ (newERT !=null ? " New ERT: " + newERT : ""));
 							
 							if (newERT != null) {
-								if (EZBCurrentConversionProvider. .CONTEXT.equals(newERT)) {
+								if (EZBCurrentConversionProvider.CONTEXT.equals(newERT)) {
 									logger.debug("got ECB");
 									currencySelector1.setCurrency(EZBCurrentConversionProvider.BASE_CURRENCY);
 									currencySelector1.setDisable(true);
@@ -84,9 +84,10 @@ public class GetExchangeRate extends AbstractExamplePane {
 							final StringWriter sw = new StringWriter();
 							final PrintWriter pw = new PrintWriter(sw);
 							try {
-								String type = rateTypeSelector
+								ExchangeRateType type = rateTypeSelector
 										.getSelectionModel().getSelectedItem();
-								ExchangeRateProvider prov = MonetaryConversions.getExchangeRateProvider(type);
+								ExchangeRateProvider prov = MonetaryConversions
+										.getConversionProvider(type);
 								ExchangeRate rate = prov.getExchangeRate(
 										currencySelector1.getCurrency(),
 										currencySelector2.getCurrency());

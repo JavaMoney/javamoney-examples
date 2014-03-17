@@ -17,7 +17,7 @@ import javax.money.convert.ProviderContext;
 import javax.money.convert.RateType;
 import javax.money.convert.MonetaryConversions;
 
-import org.javamoney.convert.provider.EZBCurrentConversionProvider;
+import org.javamoney.convert.provider.ECBCurrentConversionProvider;
 import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
 import org.javamoney.examples.fxdemo.widgets.AmountEntry;
@@ -63,7 +63,7 @@ public class ConvertAmount extends AbstractExamplePane {
 											: ""));
 
 							if (newERT != null) {
-								if (EZBCurrentConversionProvider.CONTEXT
+								if (ECBCurrentConversionProvider.CONTEXT
 										.equals(newERT)) {
 									logger.debug("got ECB");
 									amountBox

@@ -19,7 +19,7 @@ public class CurrencyConversion {
 		Money amount = Money.of("USD", 100.00);
 		Money amount2 = Money.of("GBP", 100.00);
 		CurrencyUnit currency = MoneyCurrency.of("EUR");
-		ExchangeRateType rateType = ExchangeRateType.of("EZB");
+		ExchangeRateType rateType = ExchangeRateType.of("ECB");
 		CurrencyConverter converter = MonetaryConversion.getConversionProvider(rateType).getConverter();
 		Money eurAmount = converter.convert(amount, currency);
 		// using MonetaryFunctions:

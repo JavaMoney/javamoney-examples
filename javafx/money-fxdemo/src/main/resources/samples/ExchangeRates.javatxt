@@ -18,7 +18,7 @@ public class ExchangeRates {
 	public void accessRates() {
 		CurrencyUnit base = MoneyCurrency.of("EUR");
 		CurrencyUnit term = MoneyCurrency.of("USD");
-		ExchangeRateType rateType = ExchangeRateType.of("EZB");
+		ExchangeRateType rateType = ExchangeRateType.of("ECB");
 		COnversionProvider rateProv = MonetaryConversion
 				.getConversionProvider(rateType);
 		// Access Current

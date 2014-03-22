@@ -14,14 +14,11 @@ import javafx.scene.layout.VBox;
 import javax.money.CurrencyUnit;
 import javax.money.convert.ExchangeRate;
 import javax.money.convert.ExchangeRateProvider;
-import javax.money.convert.ExchangeRateType;
 import javax.money.convert.MonetaryConversions;
 
-import org.javamoney.convert.provider.EZBCurrentConversionProvider;
 import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
 import org.javamoney.examples.fxdemo.widgets.CurrencySelector;
-import org.javamoney.examples.fxdemo.widgets.ExchangeRateTypeSelector;
 
 /**
  * @author Werner Keil
@@ -43,38 +40,11 @@ public class GetExchangeRate extends AbstractExamplePane {
 				"Base Currency");
 		private CurrencySelector currencySelector2 = new CurrencySelector(
 				"Term Currency");
-		private ExchangeRateTypeSelector rateTypeSelector = new ExchangeRateTypeSelector();
 
 		public ExamplePane() {
 			final Button swapButton = new Button("Swap");
 			swapButton.setDisable(true);
-			exPane.getChildren().addAll(new Label("Rate Type"),
-					rateTypeSelector, currencySelector1, currencySelector2);
 			this.inputPane.getChildren().add(exPane);
-			rateTypeSelector.valueProperty().addListener(
-					new ChangeListener<ExchangeRateType>() {
-						public void changed(
-								ObservableValue<? extends ExchangeRateType> observable,
-								ExchangeRateType oldERT, ExchangeRateType newERT) {
-							logger.info((observable !=null ? "Obs: " + observable : "")
-									+ (oldERT !=null ? " Old ERT: " + oldERT : "")
-									+ (newERT !=null ? " New ERT: " + newERT : ""));
-							
-							if (newERT != null) {
-								if (EZBCurrentConversionProvider.CONTEXT.equals(newERT)) {
-									logger.debug("got ECB");
-									currencySelector1.setCurrency(EZBCurrentConversionProvider.BASE_CURRENCY);
-									currencySelector1.setDisable(true);
-									swapButton.setDisable(true);
-								} else {
-									currencySelector1.setDisable(false);
-									swapButton.setDisable(false);
-								}
-							}
-						}
-
-					});
-			
 			AnchorPane.setLeftAnchor(exPane, 10d);
 			AnchorPane.setTopAnchor(exPane, 10d);
 			Button actionButton = new Button("Create");
@@ -84,10 +54,8 @@ public class GetExchangeRate extends AbstractExamplePane {
 							final StringWriter sw = new StringWriter();
 							final PrintWriter pw = new PrintWriter(sw);
 							try {
-								ExchangeRateType type = rateTypeSelector
-										.getSelectionModel().getSelectedItem();
 								ExchangeRateProvider prov = MonetaryConversions
-										.getConversionProvider(type);
+										.getExchangeRateProvider();
 								ExchangeRate rate = prov.getExchangeRate(
 										currencySelector1.getCurrency(),
 										currencySelector2.getCurrency());
@@ -113,7 +81,7 @@ public class GetExchangeRate extends AbstractExamplePane {
 							pw.println("Base Currency: " + rate.getBase());
 							pw.println("Term Currency: " + rate.getTerm());
 							pw.println("Factor: " + rate.getFactor());
-							pw.println("Provider: " + rate.getProvider());
+							pw.println("Context: " + rate.getConversionContext());
 							pw.println("Derived: " + rate.isDerived());
 							if (rate.isDerived()) {
 								pw.println("Chain: "

@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.javamoney</groupId>
 		<artifactId>javamoney-parent</artifactId>
-		<version>0.4-SNAPSHOT</version>
+		<version>0.4</version>
 	</parent>
 	
 	<groupId>org.javamoney.examples</groupId>
@@ -26,8 +26,8 @@
 		<junit.version>4.8.2</junit.version>
 		<slf4j.version>1.6.1</slf4j.version>
 		<!-- JSR versions -->
-		<jsr.version>0.8-SNAPSHOT</jsr.version>
-		<javamoney.version>0.4-SNAPSHOT</javamoney.version>
+		<jsr.version>0.9-SNAPSHOT</jsr.version>
+		<javamoney.version>0.1-SNAPSHOT</javamoney.version>
 	</properties>
 
 	<licenses>

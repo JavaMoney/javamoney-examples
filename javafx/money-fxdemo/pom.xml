@@ -6,6 +6,7 @@
 		<groupId>org.javamoney.examples</groupId>
 		<artifactId>javamoney-examples-javafx</artifactId>
 		<version>0.8-SNAPSHOT</version>
+        <relativePath>..</relativePath>
 	</parent>
 
 
@@ -26,38 +27,18 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.javamoney.bundles</groupId>
-			<artifactId>javamoney-se</artifactId>
-			<version>${jsr.ri.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>org.javamoney.lib</groupId>
-			<artifactId>javamoney-common</artifactId>
+			<artifactId>javamoney-lib</artifactId>
 			<version>${javamoney.version}</version>
+            <type>pom</type>
 		</dependency>
-		<dependency>
-			<groupId>org.javamoney.lib</groupId>
-			<artifactId>javamoney-calc</artifactId>
-			<version>${javamoney.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.javamoney.lib</groupId>
-			<artifactId>javamoney-conversion</artifactId>
-			<version>${javamoney.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.javamoney.bundles</groupId>
-			<artifactId>javamoney-se</artifactId>
-			<version>${javamoney.version}</version>
-		</dependency>
-
 	</dependencies>
 
 	<url>http://java.net/project/javamoney</url>
 	<description>JSR 354 Java Money &amp; Currency FX Sample</description>
 	<organization>
 		<name>JSR 354</name>
-		<url>http://jcp.org?id=354</url>
+		<url>http://jcp.org?name=354</url>
 	</organization>
 	<artifactId>javamoney-fxdemo</artifactId>
     <build>

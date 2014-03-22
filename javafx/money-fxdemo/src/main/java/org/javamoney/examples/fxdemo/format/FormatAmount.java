@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import javax.money.MonetaryAmount;
+import javax.money.format.AmountStyle;
 import javax.money.format.CurrencyStyle;
 import javax.money.format.MonetaryAmountFormat;
 import javax.money.format.MonetaryFormats;
@@ -20,8 +21,6 @@ import javax.money.format.MonetaryFormats;
 import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
 import org.javamoney.examples.fxdemo.widgets.AmountEntry;
-import org.javamoney.format.ItemFormat;
-import org.javamoney.format.LocalizationStyle;
 import org.javamoney.moneta.Money;
 
 
@@ -57,8 +56,7 @@ public class FormatAmount extends AbstractExamplePane {
 							PrintWriter pw = new PrintWriter(sw);
 							try {
 								MonetaryAmount amount = amount1.getAmount();
-								LocalizationStyle.Builder styleBuilder = new LocalizationStyle.Builder(
-										MonetaryAmount.class);
+								AmountStyle.Builder styleBuilder = new AmountStyle.Builder(Locale.ENGLISH);
 								if (groupSizes.getText() != null) {
 									String[] groups = groupSizes.getText()
 											.split(",");
@@ -67,14 +65,12 @@ public class FormatAmount extends AbstractExamplePane {
 										groupsInt[i] = Integer
 												.parseInt(groups[i]);
 									}
-//									styleBuilder.setAttribute("groups",
-//											groupsInt);
+									styleBuilder.setGroupingSizes(groupsInt);
 								}
 								CurrencyStyle placement = currencyPlacement
 										.getSelectionModel().getSelectedItem();
 								if (placement != null) {
-//									styleBuilder.setAttribute(
-//											"currencyPlacement", placement);
+									styleBuilder.setCurrencyStyle(placement);
 								}
 								MonetaryAmountFormat formatter = MonetaryFormats.getAmountFormat(Locale.getDefault());
 								pw.println("Formatted Amount");

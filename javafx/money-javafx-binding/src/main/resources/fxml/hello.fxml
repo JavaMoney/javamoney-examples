@@ -6,18 +6,18 @@
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import layouttests.migfxml.sample1.*?>
 
-<MigPane id="rootPane" fx:controller="net.java.javamoney.examples.javafx.BindingController"
+<MigPane name="rootPane" fx:controller="net.java.javamoney.examples.javafx.BindingController"
         styleClass="main-panel"
         layout="insets 20"
         cols="[label, pref!][grow, 50::]"
         rows=""
         xmlns:fx="http://javafx.com/fxml">
 
-    <Label text="First Name:" /> <TextField fx:id="firstNameField" prefColumnCount="30" MigPane.cc="growx, wrap" />
-    <Label text="Last Name:" />	<TextField fx:id="lastNameField" prefColumnCount="30" MigPane.cc="growx, wrap" />
+    <Label text="First Name:" /> <TextField fx:name="firstNameField" prefColumnCount="30" MigPane.cc="growx, wrap" />
+    <Label text="Last Name:" />	<TextField fx:name="lastNameField" prefColumnCount="30" MigPane.cc="growx, wrap" />
 
     <Button text="Say Hello" onAction="#sayHello" MigPane.cc="skip, gap :push, gaptop 15, wrap" />
 
-    <Label fx:id="messageLabel" styleClass="hello-message" MigPane.cc="span, growx, gaptop 15" />
+    <Label fx:name="messageLabel" styleClass="hello-message" MigPane.cc="span, growx, gaptop 15" />
 
 </MigPane >

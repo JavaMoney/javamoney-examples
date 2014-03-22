@@ -17,13 +17,13 @@
         <Insets />
       </StackPane.margin>
     </Rectangle>
-    <BorderPane id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" padding="$x1" prefHeight="156.0" prefWidth="103.0">
+    <BorderPane name="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" padding="$x1" prefHeight="156.0" prefWidth="103.0">
       <center>
         <VBox prefHeight="64.0" prefWidth="149.0">
           <children>
             <Label text="Currency Code">
               <labelFor>
-                <ComboBox fx:id="codeBox" editable="true" maxWidth="1.7976931348623157E308" VBox.margin="$x1" VBox.vgrow="NEVER" />
+                <ComboBox fx:name="codeBox" editable="true" maxWidth="1.7976931348623157E308" VBox.margin="$x1" VBox.vgrow="NEVER" />
               </labelFor>
               <VBox.margin>
                 <Insets left="5.0" right="5.0" top="2.0" />
@@ -34,7 +34,7 @@
         </VBox>
       </center>
       <top>
-        <Label fx:id="currencyTitle" text="Currency" BorderPane.alignment="TOP_LEFT" BorderPane.margin="$x1">
+        <Label fx:name="currencyTitle" text="Currency" BorderPane.alignment="TOP_LEFT" BorderPane.margin="$x1">
           <font>
             <Font name="System Bold" size="14.0" />
           </font>

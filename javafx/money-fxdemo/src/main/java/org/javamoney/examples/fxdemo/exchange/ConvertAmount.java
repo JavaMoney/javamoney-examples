@@ -17,12 +17,12 @@ import javax.money.convert.ProviderContext;
 import javax.money.convert.RateType;
 import javax.money.convert.MonetaryConversions;
 
-import org.javamoney.convert.provider.ECBCurrentConversionProvider;
 import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
 import org.javamoney.examples.fxdemo.widgets.AmountEntry;
 import org.javamoney.examples.fxdemo.widgets.CurrencySelector;
 import org.javamoney.examples.fxdemo.widgets.RateTypeSelector;
+import org.javamoney.moneta.convert.internal.ECBCurrentRateProvider;
 
 /**
  * @author Anatole Tresch
@@ -43,42 +43,8 @@ public class ConvertAmount extends AbstractExamplePane {
 		private AmountEntry amountBox = new AmountEntry("Amount");
 		private CurrencySelector currencySelector1 = new CurrencySelector(
 				"Term Currency");
-		private RateTypeSelector rateTypeSelector = new RateTypeSelector();
-
 		public ExamplePane() {
-			exPane.getChildren().addAll(new Label("Rate Type"),
-					rateTypeSelector, amountBox, currencySelector1);
 			this.inputPane.getChildren().add(exPane);
-			rateTypeSelector.valueProperty().addListener(
-					new ChangeListener<RateType>() {
-
-						public void changed(
-								ObservableValue<? extends RateType> observable,
-								RateType oldERT, RateType newERT) {
-							logger.info((observable != null ? "Obs: "
-									+ observable : "")
-									+ (oldERT != null ? " Old ERT: " + oldERT
-											: "")
-									+ (newERT != null ? " New ERT: " + newERT
-											: ""));
-
-							if (newERT != null) {
-								if (ECBCurrentConversionProvider.CONTEXT
-										.equals(newERT)) {
-									logger.debug("got ECB");
-									amountBox
-											.getCodeBox()
-											.setValue(
-													EZBCurrentConversionProvider.BASE_CURRENCY
-															.getCurrencyCode());
-									amountBox.getCodeBox().setDisable(true);
-								} else {
-									amountBox.getCodeBox().setDisable(false);
-								}
-							}
-						}
-
-					});
 
 			AnchorPane.setLeftAnchor(exPane, 10d);
 			AnchorPane.setTopAnchor(exPane, 10d);
@@ -89,13 +55,8 @@ public class ConvertAmount extends AbstractExamplePane {
 							final StringWriter sw = new StringWriter();
 							final PrintWriter pw = new PrintWriter(sw);
 							try {
-								String type = rateTypeSelector
-										.getSelectionModel().getSelectedItem();
-								ProviderContext prov = MonetaryConversions.getProviderContext(type);
-
-								MonetaryAmount convertedAmount = prov.convert(
-										amountBox.getAmount(),
-										currencySelector1.getCurrency());
+                                CurrencyConversion conv = MonetaryConversions.getConversion(currencySelector1.getCurrency());
+								MonetaryAmount convertedAmount = amountBox.getAmount().with(conv);
 								pw.println("Converted Amount");
 								pw.println("----------------");
 								pw.println();

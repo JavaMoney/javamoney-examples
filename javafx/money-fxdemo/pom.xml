@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.javamoney.examples</groupId>
 		<artifactId>javamoney-examples-javafx</artifactId>
-		<version>0.8</version>
+		<version>0.9-SNAPSHOT</version>
         <relativePath>..</relativePath>
 	</parent>
 
@@ -32,6 +32,12 @@
 			<version>${javamoney.version}</version>
             <type>pom</type>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.javamoney.lib</groupId>
+			<artifactId>javamoney-calc</artifactId>
+			<version>${javamoney.version}</version>
+		</dependency>
 	</dependencies>
 
 	<url>http://java.net/project/javamoney</url>
@@ -46,7 +52,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>

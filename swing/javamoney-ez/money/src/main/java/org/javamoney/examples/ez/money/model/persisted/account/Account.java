@@ -19,283 +19,241 @@ import org.javamoney.moneta.Money;
  * 
  * @author Werner Keil
  */
-public
-final
-class
-Account
-extends DataElement
-{
-  /**
-   * Constructs a new account.
-   *
-   * @param type The type of account.
-   * @param identifier The identifier.
-   */
-  public
-  Account(AccountTypeKeys type, String identifier)
-  {
-    this(type, identifier, 0.0);
-  }
-  
-  /**
-   * Constructs a new account.
-   *
-   * @param type The type of account.
-   * @param identifier The unique identifier.
-   * @param balance The starting balance.
-   */
-  public
-  Account(AccountTypeKeys type, String identifier, double balance)
-  {
-	  this(type, identifier, Money.of(UI_CURRENCY_SYMBOL.getCurrency(), balance));
-  }
+public final class Account extends DataElement {
+	/**
+	 * Constructs a new account.
+	 * 
+	 * @param type
+	 *            The type of account.
+	 * @param identifier
+	 *            The identifier.
+	 */
+	public Account(AccountTypeKeys type, String identifier) {
+		this(type, identifier, 0.0);
+	}
 
-  /**
-   * Constructs a new account.
-   *
-   * @param type The type of account.
-   * @param identifier The unique identifier.
-   * @param balance The starting balance.
-   */
-  public
-  Account(AccountTypeKeys type, String identifier, MonetaryAmount balance)
-  {
-    super(identifier);
+	/**
+	 * Constructs a new account.
+	 * 
+	 * @param type
+	 *            The type of account.
+	 * @param identifier
+	 *            The unique identifier.
+	 * @param balance
+	 *            The starting balance.
+	 */
+	public Account(AccountTypeKeys type, String identifier, double balance) {
+		this(type, identifier, Money.of(balance,
+				UI_CURRENCY_SYMBOL.getCurrency()));
+	}
 
-    setBalance(balance);
-    setIsActive(true);
-    setTransactions(new TransactionSet());
-    setType(type);
-  }
+	/**
+	 * Constructs a new account.
+	 * 
+	 * @param type
+	 *            The type of account.
+	 * @param identifier
+	 *            The unique identifier.
+	 * @param balance
+	 *            The starting balance.
+	 */
+	public Account(AccountTypeKeys type, String identifier,
+			MonetaryAmount balance) {
+		super(identifier);
 
-  /**
-   * This method adds all the transactions from the specified account.
-   *
-   * @param account The account to add the transactions from.
-   */
-  public
-  void
-  addAll(Account account)
-  {
-    getTransactions().addAll(account.getTransactions());
-  }
+		setBalance(balance);
+		setIsActive(true);
+		setTransactions(new TransactionSet());
+		setType(type);
+	}
 
-  /**
-   * This method adds the transaction and then returns the result of the
-   * operation.
-   * <p>
-   * <b>Note:</b> If the transaction causes the balance to exceed the maximum,
-   * then the transaction will be removed.
-   *
-   * @param trans The transaction to add.
-   *
-   * @return true or false.
-   */
-  public
-  boolean
-  addTransaction(Transaction trans)
-  {
-    boolean result = getTransactions().add(trans);
+	/**
+	 * This method adds all the transactions from the specified account.
+	 * 
+	 * @param account
+	 *            The account to add the transactions from.
+	 */
+	public void addAll(Account account) {
+		getTransactions().addAll(account.getTransactions());
+	}
 
-    if(result == true)
-    {
-      result = setBalance(getBalance().add(trans.getAmount()));
+	/**
+	 * This method adds the transaction and then returns the result of the
+	 * operation.
+	 * <p>
+	 * <b>Note:</b> If the transaction causes the balance to exceed the maximum,
+	 * then the transaction will be removed.
+	 * 
+	 * @param trans
+	 *            The transaction to add.
+	 * 
+	 * @return true or false.
+	 */
+	public boolean addTransaction(Transaction trans) {
+		boolean result = getTransactions().add(trans);
 
-      // Remove the transaction if the balance could not be set.
-      if(result == false)
-      {
-        getTransactions().remove(trans);
-      }
-    }
+		if (result == true) {
+			result = setBalance(getBalance().add(trans.getAmount()));
 
-    return result;
-  }
+			// Remove the transaction if the balance could not be set.
+			if (result == false) {
+				getTransactions().remove(trans);
+			}
+		}
 
-  /**
-   * This method returns the balance.
-   *
-   * @return The balance.
-   */
-  public
-  MonetaryAmount
-  getBalance()
-  {
-    return itsBalance;
-  }
+		return result;
+	}
 
-  /**
-   * This method returns the balance customized for the UI.
-   * <p>
-   * <b>Note:</b> A balance can have different meanings amongst the account
-   * types. A deposit account's balance for example, represents how much money
-   * is available. A credit account's balance however, represents how much is
-   * owed. For non-credit accounts, this method will always return the actual
-   * balance. Otherwise, the result will depend on whether or not the user
-   * chooses to display credit card balances as positive (amount owed).
-   *
-   * @return The balance customized for the UI.
-   */
-  public
-  double
-  getBalanceForUI()
-  {
-    double balance = getBalance().getNumber().doubleValue();
+	/**
+	 * This method returns the balance.
+	 * 
+	 * @return The balance.
+	 */
+	public MonetaryAmount getBalance() {
+		return itsBalance;
+	}
 
-    if(getType() == CREDIT && creditBalanceIsPositive() == true)
-    {
-      balance = -balance;
-    }
+	/**
+	 * This method returns the balance customized for the UI.
+	 * <p>
+	 * <b>Note:</b> A balance can have different meanings amongst the account
+	 * types. A deposit account's balance for example, represents how much money
+	 * is available. A credit account's balance however, represents how much is
+	 * owed. For non-credit accounts, this method will always return the actual
+	 * balance. Otherwise, the result will depend on whether or not the user
+	 * chooses to display credit card balances as positive (amount owed).
+	 * 
+	 * @return The balance customized for the UI.
+	 */
+	public double getBalanceForUI() {
+		double balance = getBalance().getNumber().doubleValue();
 
-    return balance;
-  }
+		if (getType() == CREDIT && creditBalanceIsPositive() == true) {
+			balance = -balance;
+		}
 
-  /**
-   * This method returns the transactions.
-   *
-   * @return The transactions.
-   */
-  public
-  TransactionSet
-  getTransactions()
-  {
-    return itsTransactions;
-  }
+		return balance;
+	}
 
-  /**
-   * This method returns the type.
-   *
-   * @return The type.
-   */
-  public
-  AccountTypeKeys
-  getType()
-  {
-    return itsType;
-  }
+	/**
+	 * This method returns the transactions.
+	 * 
+	 * @return The transactions.
+	 */
+	public TransactionSet getTransactions() {
+		return itsTransactions;
+	}
 
-  /**
-   * This method returns true if the account is active, otherwise false.
-   *
-   * @return true or false.
-   */
-  public
-  boolean
-  isActive()
-  {
-    return itsIsActive;
-  }
+	/**
+	 * This method returns the type.
+	 * 
+	 * @return The type.
+	 */
+	public AccountTypeKeys getType() {
+		return itsType;
+	}
 
-  /**
-   * This method removes the transaction and then returns the result of the
-   * operation.
-   * <p>
-   * <b>Note:</b> If the transaction causes the balance to exceed the maximum,
-   * then the transaction will be added back.
-   *
-   * @param trans The transaction to remove.
-   *
-   * @return true or false.
-   */
-  public
-  boolean
-  removeTransaction(Transaction trans)
-  {
-    boolean result = getTransactions().remove(trans);
+	/**
+	 * This method returns true if the account is active, otherwise false.
+	 * 
+	 * @return true or false.
+	 */
+	public boolean isActive() {
+		return itsIsActive;
+	}
 
-    if(result == true)
-    {
-      result = setBalance(getBalance().subtract(trans.getAmount()));
+	/**
+	 * This method removes the transaction and then returns the result of the
+	 * operation.
+	 * <p>
+	 * <b>Note:</b> If the transaction causes the balance to exceed the maximum,
+	 * then the transaction will be added back.
+	 * 
+	 * @param trans
+	 *            The transaction to remove.
+	 * 
+	 * @return true or false.
+	 */
+	public boolean removeTransaction(Transaction trans) {
+		boolean result = getTransactions().remove(trans);
 
-      // Remove the transaction if the balance could not be set.
-      if(result == false)
-      {
-        getTransactions().add(trans);
-      }
-    }
+		if (result == true) {
+			result = setBalance(getBalance().subtract(trans.getAmount()));
 
-    return result;
-  }
+			// Remove the transaction if the balance could not be set.
+			if (result == false) {
+				getTransactions().add(trans);
+			}
+		}
 
-  /**
-   * This method sets the balance as long as the amount does not exceed the
-   * maximum balance. This method returns true if the balance was set, otherwise
-   * false.
-   *
-   * @param value The balance.
-   *
-   * @return true or false.
-   */
-  public
-  boolean
-  setBalance(MonetaryAmount value)
-  {
-    boolean result = exceedsThreshold(value);
+		return result;
+	}
 
-    if(result == false)
-    {
-      itsBalance = value;
-    }
+	/**
+	 * This method sets the balance as long as the amount does not exceed the
+	 * maximum balance. This method returns true if the balance was set,
+	 * otherwise false.
+	 * 
+	 * @param value
+	 *            The balance.
+	 * 
+	 * @return true or false.
+	 */
+	public boolean setBalance(MonetaryAmount value) {
+		boolean result = exceedsThreshold(value);
 
-    return result == false;
-  }
+		if (result == false) {
+			itsBalance = value;
+		}
 
-  /**
-   * This method sets the account's active state to that of the passed in
-   * parameter.
-   *
-   * @param value true or false.
-   */
-  public
-  void
-  setIsActive(boolean value)
-  {
-    itsIsActive = value;
-  }
+		return result == false;
+	}
 
-  //////////////////////////////////////////////////////////////////////////////
-  // Start of private methods.
-  //////////////////////////////////////////////////////////////////////////////
+	/**
+	 * This method sets the account's active state to that of the passed in
+	 * parameter.
+	 * 
+	 * @param value
+	 *            true or false.
+	 */
+	public void setIsActive(boolean value) {
+		itsIsActive = value;
+	}
 
-  private
-  static
-  boolean
-  exceedsThreshold(MonetaryAmount value)
-  {
-    boolean result = false;
-    if (value != null && value.getNumber() != null) {
-	    if(value.getNumber().doubleValue() >= MAX_BALANCE || value.getNumber().doubleValue() <= -MAX_BALANCE)
-	    {
-	      result = true;
-	    }
-    }
-    return result;
-  }
+	// ////////////////////////////////////////////////////////////////////////////
+	// Start of private methods.
+	// ////////////////////////////////////////////////////////////////////////////
 
-  private
-  void
-  setTransactions(TransactionSet set)
-  {
-    itsTransactions = set;
-  }
+	private static boolean exceedsThreshold(MonetaryAmount value) {
+		boolean result = false;
+		if (value != null && value.getNumber() != null) {
+			if (value.getNumber().doubleValue() >= MAX_BALANCE
+					|| value.getNumber().doubleValue() <= -MAX_BALANCE) {
+				result = true;
+			}
+		}
+		return result;
+	}
 
-  private
-  void
-  setType(AccountTypeKeys type)
-  {
-    itsType = type;
-  }
+	private void setTransactions(TransactionSet set) {
+		itsTransactions = set;
+	}
 
-  //////////////////////////////////////////////////////////////////////////////
-  // Start of class members.
-  //////////////////////////////////////////////////////////////////////////////
+	private void setType(AccountTypeKeys type) {
+		itsType = type;
+	}
 
-  private MonetaryAmount itsBalance;
-  private boolean itsIsActive;
-  private TransactionSet itsTransactions;
-  private AccountTypeKeys itsType;
+	// ////////////////////////////////////////////////////////////////////////////
+	// Start of class members.
+	// ////////////////////////////////////////////////////////////////////////////
 
-  /**
-   * The maximum positive and negative amount before an overflow occurs.
-   */
-  public static final double MAX_BALANCE = 99999999.99;
+	private MonetaryAmount itsBalance;
+	private boolean itsIsActive;
+	private TransactionSet itsTransactions;
+	private AccountTypeKeys itsType;
+
+	/**
+	 * The maximum positive and negative amount before an overflow occurs.
+	 */
+	public static final double MAX_BALANCE = 99999999.99;
 }

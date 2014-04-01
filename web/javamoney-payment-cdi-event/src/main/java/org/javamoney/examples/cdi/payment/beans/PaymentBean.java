@@ -72,7 +72,7 @@ public class PaymentBean implements Serializable {
 	//private final CurrencyUnit DOLLAR = MoneyCurrency.getInstance("ISO4217", "USD");
 	
 	@Amount
-	private MonetaryAmount money =  Money.of(CURRENCY, amount);
+	private MonetaryAmount money =  Money.of(amount, CURRENCY);
 	
 	
 	public MonetaryAmount getMoney() {
@@ -164,7 +164,7 @@ public class PaymentBean implements Serializable {
 
 	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
-		this.money = Money.of(CURRENCY, amount);
+		this.money = Money.of(amount, CURRENCY);
 	}
 	
 }

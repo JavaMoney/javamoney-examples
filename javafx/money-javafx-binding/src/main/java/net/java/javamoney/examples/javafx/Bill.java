@@ -20,7 +20,7 @@ public class Bill {
     private DoubleProperty amountDue = new SimpleDoubleProperty();
     private double doubleValue = 10d;
     private CurrencyUnit currency =  MonetaryCurrencies.getCurrency("DKK");
-    private Money newAmountDue = Money.of(currency, doubleValue);
+    private Money newAmountDue = Money.of(doubleValue, currency);
             
     // Define a getter for the property's value
     public final double getAmountDue(){return amountDue.get();}

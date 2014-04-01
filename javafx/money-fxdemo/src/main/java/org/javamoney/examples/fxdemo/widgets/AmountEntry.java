@@ -25,10 +25,10 @@ import org.javamoney.moneta.Money;
 public class AmountEntry extends AbstractFXMLComponent {
 
 	@FXML
-	private ComboBox codeBox;
+	private ComboBox<String> codeBox;
 
 	@FXML
-	private ChoiceBox numberType;
+	private ChoiceBox<String> numberType;
 
 	@FXML
 	private TextField numberValue;
@@ -80,7 +80,7 @@ public class AmountEntry extends AbstractFXMLComponent {
 		}
 	}
 
-	public ComboBox getCodeBox() {
+	public ComboBox<String> getCodeBox() {
 		return codeBox;
 	}
 }

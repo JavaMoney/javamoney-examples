@@ -10,6 +10,8 @@ import javax.money.MonetaryCurrencies;
 
 import org.javamoney.examples.fxdemo.AbstractFXMLComponent;
 
+import java.util.Collections;
+
 
 /**
  * @author Anatole Tresch
@@ -18,7 +20,7 @@ import org.javamoney.examples.fxdemo.AbstractFXMLComponent;
 public class CurrencySelector extends AbstractFXMLComponent implements CurrencySupplier {
 
 	@FXML
-	private ComboBox<CurrencyUnit> codeBox;
+	private ComboBox<String> codeBox;
 
 	@FXML
 	private Label currencyTitle;
@@ -26,10 +28,15 @@ public class CurrencySelector extends AbstractFXMLComponent implements CurrencyS
 	public CurrencySelector(String title) {
 		super("/org/javamoney/examples/fxdemo/widgets/CurrencySelector.fxml");
 		this.currencyTitle.setText(title);
-	}
+        for(CurrencyUnit cu: MonetaryCurrencies.getCurrencies()){
+            codeBox.getItems().add(cu.getCurrencyCode());
+        }
+        Collections.sort(codeBox.getItems());
+        codeBox.getSelectionModel().select("CHF");
+    }
 
 	public CurrencyUnit getCurrency() {
-		String code = codeBox.getSelectionModel().getSelectedItem().getCurrencyCode();
+		String code = codeBox.getSelectionModel().getSelectedItem();
 		if (code != null) {
 			return MonetaryCurrencies.getCurrency(code);
 		}
@@ -38,7 +45,7 @@ public class CurrencySelector extends AbstractFXMLComponent implements CurrencyS
 
 	public void setCurrency(CurrencyUnit unit) {
 		if (unit != null) {
-			codeBox.getSelectionModel().select(unit);
+			codeBox.getSelectionModel().select(unit.getCurrencyCode());
 		} else {
 			codeBox.getSelectionModel().clearSelection();
 		}

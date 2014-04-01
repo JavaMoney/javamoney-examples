@@ -17,25 +17,25 @@
         <Insets />
       </StackPane.margin>
     </Rectangle>
-    <BorderPane name="BorderPane">
+    <BorderPane id="BorderPane">
       <center>
         <VBox maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0">
           <children>
             <Label text="Currency Code" VBox.margin="$x2">
               <labelFor>
-                <ComboBox fx:name="codeBox" editable="true" maxWidth="1.7976931348623157E308" VBox.margin="$x1" VBox.vgrow="NEVER" />
+                <ComboBox fx:id="codeBox" editable="true" maxWidth="1.7976931348623157E308" VBox.margin="$x1" VBox.vgrow="NEVER" />
               </labelFor>
             </Label>
             <fx:reference source="codeBox" />
             <Label text="Amount (number)" VBox.margin="$x2">
               <labelFor>
-                <TextField fx:name="numberValue" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" minHeight="28.0" minWidth="30.0" prefWidth="-1.0" promptText="Enter a number" text="0.0" VBox.margin="$x1" VBox.vgrow="NEVER" />
+                <TextField fx:id="numberValue" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" minHeight="28.0" minWidth="30.0" prefWidth="-1.0" promptText="Enter a number" text="0.0" VBox.margin="$x1" VBox.vgrow="NEVER" />
               </labelFor>
             </Label>
             <fx:reference source="numberValue" />
             <Label text="Numeric Representation" VBox.margin="$x2">
               <labelFor>
-                <ChoiceBox fx:name="numberType" maxWidth="1.7976931348623157E308" VBox.margin="$x1" VBox.vgrow="NEVER" />
+                <ChoiceBox fx:id="numberType" maxWidth="1.7976931348623157E308" VBox.margin="$x1" VBox.vgrow="NEVER" />
               </labelFor>
             </Label>
             <fx:reference source="numberType" />
@@ -43,7 +43,7 @@
         </VBox>
       </center>
       <top>
-        <Label fx:name="amountTitle" text="Monetary Amount" BorderPane.alignment="TOP_LEFT" BorderPane.margin="$x1">
+        <Label fx:id="amountTitle" text="Monetary Amount" BorderPane.alignment="TOP_LEFT" BorderPane.margin="$x1">
           <font>
             <Font name="System Bold" size="14.0" />
           </font>

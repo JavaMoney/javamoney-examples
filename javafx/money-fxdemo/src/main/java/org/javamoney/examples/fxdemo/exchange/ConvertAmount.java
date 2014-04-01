@@ -44,6 +44,7 @@ public class ConvertAmount extends AbstractExamplePane {
 		private CurrencySelector currencySelector1 = new CurrencySelector(
 				"Term Currency");
 		public ExamplePane() {
+            exPane.getChildren().addAll(amountBox, currencySelector1);
 			this.inputPane.getChildren().add(exPane);
 
 			AnchorPane.setLeftAnchor(exPane, 10d);

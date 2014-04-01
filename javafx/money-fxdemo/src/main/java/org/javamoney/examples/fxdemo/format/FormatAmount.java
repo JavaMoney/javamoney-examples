@@ -72,7 +72,7 @@ public class FormatAmount extends AbstractExamplePane {
 								if (placement != null) {
 									styleBuilder.setCurrencyStyle(placement);
 								}
-								MonetaryAmountFormat formatter = MonetaryFormats.getAmountFormat(Locale.getDefault());
+								MonetaryAmountFormat formatter = MonetaryFormats.getAmountFormat(styleBuilder.create());
 								pw.println("Formatted Amount");
 								pw.println("----------------");
 								if (formatter != null) {
@@ -92,8 +92,8 @@ public class FormatAmount extends AbstractExamplePane {
 			fillButton
 					.setOnAction(new javafx.event.EventHandler<ActionEvent>() {
 						public void handle(ActionEvent action) {
-							MonetaryAmount amount = Money.of("INR",
-									12345678901234567890.123d);
+							MonetaryAmount amount = Money.of(
+									12345678901234567890.123d,"INR");
 							amount1.setAmount(amount);
 							groupSizes.setText("3,2");
 						}

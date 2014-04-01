@@ -1,6 +1,7 @@
 package org.javamoney.examples.fxdemo.widgets;
 
 import java.math.BigDecimal;
+import java.util.Collections;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -40,6 +41,11 @@ public class AmountEntry extends AbstractFXMLComponent {
 		amountTitle.setText(title);
 		numberType.getItems().add("BigDecimal");
 		numberType.getItems().add("Long");
+        for(CurrencyUnit cu: MonetaryCurrencies.getCurrencies()){
+            codeBox.getItems().add(cu.getCurrencyCode());
+        }
+        Collections.sort(codeBox.getItems());
+        codeBox.getSelectionModel().select("CHF");
 	}
 
 	public MonetaryAmount getAmount() {
@@ -50,10 +56,10 @@ public class AmountEntry extends AbstractFXMLComponent {
 		BigDecimal dec = new BigDecimal(numberValue.getText());
 		if (typeClass != null) {
 			if ("Long".equals(typeClass)) {
-				return FastMoney.of(currency, dec);
+				return FastMoney.of(dec,currency);
 			}
 		}
-		return Money.of(currency, dec);
+		return Money.of(dec,currency);
 	}
 
 	public void setAmount(MonetaryAmount amount) {

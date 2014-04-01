@@ -8,6 +8,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
@@ -40,10 +41,12 @@ public class GetExchangeRate extends AbstractExamplePane {
 				"Base Currency");
 		private CurrencySelector currencySelector2 = new CurrencySelector(
 				"Term Currency");
+        private TextField rateProvider = new TextField();
 
 		public ExamplePane() {
 			final Button swapButton = new Button("Swap");
 			swapButton.setDisable(true);
+            exPane.getChildren().addAll(currencySelector1, currencySelector2, new Label("Rate Provider(s)"), rateProvider);
 			this.inputPane.getChildren().add(exPane);
 			AnchorPane.setLeftAnchor(exPane, 10d);
 			AnchorPane.setTopAnchor(exPane, 10d);
@@ -54,8 +57,17 @@ public class GetExchangeRate extends AbstractExamplePane {
 							final StringWriter sw = new StringWriter();
 							final PrintWriter pw = new PrintWriter(sw);
 							try {
-								ExchangeRateProvider prov = MonetaryConversions
+                                ExchangeRateProvider prov = null;
+                                String rp = rateProvider.getText();
+                                if(rp==null || rp.trim().isEmpty()){
+								    prov = MonetaryConversions
 										.getExchangeRateProvider();
+                                }
+                                else{
+                                    String[] rps = rp.split(",");
+                                    prov = MonetaryConversions
+                                            .getExchangeRateProvider(rps);
+                                }
 								ExchangeRate rate = prov.getExchangeRate(
 										currencySelector1.getCurrency(),
 										currencySelector2.getCurrency());

@@ -16,11 +16,10 @@ public class ExchangeRates {
 	 * Shows access to exchange rates.
 	 */
 	public void accessRates() {
-		CurrencyUnit base = MoneyCurrency.of("EUR");
-		CurrencyUnit term = MoneyCurrency.of("USD");
-		ExchangeRateType rateType = ExchangeRateType.of("ECB");
-		COnversionProvider rateProv = MonetaryConversion
-				.getConversionProvider(rateType);
+		CurrencyUnit base = MoneetaryCurrencies.getCurrency("EUR");
+		CurrencyUnit term = MoneetaryCurrencies.getCurrency("USD");
+
+		ExchangeRateProvider rateProv = MonetaryConversions.getRateProvider();
 		// Access Current
 		ExchangeRate rate = rateProv.getExchangeRate(base, term);
 		// Access Historic

@@ -10,20 +10,20 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" padding="$x1" prefHeight="170.0" prefWidth="157.0" xmlns:fx="http://javafx.com/fxml">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" padding="$x1" prefHeight="170.00009999999747" prefWidth="157.0" xmlns:fx="http://javafx.com/fxml">
   <children>
-    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="160.0" stroke="#310099" strokeType="INSIDE" width="157.0" StackPane.alignment="CENTER">
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="163.00004541873932" stroke="#310099" strokeType="INSIDE" width="157.0" StackPane.alignment="CENTER">
       <StackPane.margin>
-        <Insets />
+        <Insets fx:id="x1" />
       </StackPane.margin>
     </Rectangle>
-    <BorderPane name="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" padding="$x1" prefHeight="156.0" prefWidth="103.0">
+    <BorderPane id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="156.0" prefWidth="103.0">
       <center>
         <VBox prefHeight="64.0" prefWidth="149.0">
           <children>
             <Label text="Currency Code">
               <labelFor>
-                <ComboBox fx:name="codeBox" editable="true" maxWidth="1.7976931348623157E308" VBox.margin="$x1" VBox.vgrow="NEVER" />
+                <ComboBox fx:id="codeBox" editable="true" maxWidth="1.7976931348623157E308" VBox.vgrow="NEVER" />
               </labelFor>
               <VBox.margin>
                 <Insets left="5.0" right="5.0" top="2.0" />
@@ -33,8 +33,11 @@
           </children>
         </VBox>
       </center>
+      <padding>
+        <Insets fx:id="x1" />
+      </padding>
       <top>
-        <Label fx:name="currencyTitle" text="Currency" BorderPane.alignment="TOP_LEFT" BorderPane.margin="$x1">
+        <Label fx:id="currencyTitle" text="Currency" BorderPane.alignment="TOP_LEFT">
           <font>
             <Font name="System Bold" size="14.0" />
           </font>

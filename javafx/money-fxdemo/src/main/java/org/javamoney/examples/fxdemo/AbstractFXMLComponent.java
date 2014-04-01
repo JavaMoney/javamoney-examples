@@ -92,6 +92,7 @@ public abstract class AbstractFXMLComponent extends AnchorPane {
 			AnchorPane.setLeftAnchor(ui, 0d);
 			AnchorPane.setRightAnchor(ui, 0d);
 		} catch (IOException e) {
+            e.printStackTrace();
 			throw new IllegalArgumentException("Failed to load component: "
 					+ this, e);
 		}

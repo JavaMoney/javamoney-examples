@@ -16,16 +16,12 @@ public class CurrencyConversion {
 	 * Shows simple conversion of an amount.
 	 */
 	public void convertAmount() {
-		Money amount = Money.of("USD", 100.00);
-		Money amount2 = Money.of("GBP", 100.00);
-		CurrencyUnit currency = MoneyCurrency.of("EUR");
-		ExchangeRateType rateType = ExchangeRateType.of("ECB");
-		CurrencyConverter converter = MonetaryConversion.getConversionProvider(rateType).getConverter();
-		Money eurAmount = converter.convert(amount, currency);
-		// using MonetaryFunctions:
-		CurrencyConversion toEuroConversion = MonetaryConversion.getConversionProvider(rateType).getConverter().getConversion(currency);
-		Money moneyInEuro = amount.with(toEuroConversion);
-		Money moneyInEuro = amount2.with(toEuroConversion);
+		Money amount = MonetaryAmounts.getAmountFactory().setCurrency("USD").setNumber(100.00).create();
+		Money amount2 = MonetaryAmounts.getAmountFactory().setCurrency("GBP").setNumber(100.00).create();
+		CurrencyUnit currency = MonetaryCurrencies.of("EUR");
+		CurrencyConversion conversion = MonetaryConversions.getConversion(currency, "ECB");
+		Money moneyInEuro1 = amount.with(conversion);
+		Money moneyInEuro2 = amount2.with(conversion);
 	}
 
 }

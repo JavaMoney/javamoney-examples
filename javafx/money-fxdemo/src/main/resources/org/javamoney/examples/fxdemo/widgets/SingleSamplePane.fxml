@@ -8,11 +8,11 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane name="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml">
+<BorderPane id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml">
   <bottom>
-    <AnchorPane fx:name="actionPane" prefHeight="64.0" prefWidth="600.0">
+    <AnchorPane fx:id="actionPane" prefHeight="64.0" prefWidth="600.0">
       <children>
-        <HBox fx:name="buttonPane" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+        <HBox fx:id="buttonPane" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
       </children>
     </AnchorPane>
   </bottom>
@@ -27,7 +27,7 @@
             <Insets bottom="2.0" left="5.0" right="5.0" top="5.0" />
           </VBox.margin>
         </Label>
-        <TextArea fx:name="outputArea" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="-1.0" wrapText="true" VBox.vgrow="ALWAYS">
+        <TextArea fx:id="outputArea" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="-1.0" wrapText="true" VBox.vgrow="ALWAYS">
           <VBox.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" />
           </VBox.margin>
@@ -36,9 +36,9 @@
     </VBox>
   </center>
   <left>
-    <AnchorPane fx:name="inputPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="-1.0">
+    <AnchorPane fx:id="inputPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="-1.0">
       <BorderPane.margin>
-        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:name="x1" />
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
       </BorderPane.margin>
     </AnchorPane>
   </left>

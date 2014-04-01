@@ -7,7 +7,7 @@
 	<parent>
 		<artifactId>javamoney-examples</artifactId>
 		<groupId>org.javamoney.examples</groupId>
-		<version>0.8-SNAPSHOT</version>
+		<version>0.8</version>
 		<relativePath>..</relativePath>
 	</parent>
 
@@ -129,8 +129,8 @@
 			<version>1.2.16</version>
 		</dependency>
 		<dependency>
-			<groupId>org.javamoney.ri</groupId>
-			<artifactId>jsr354-ri</artifactId>
+			<groupId>org.javamoney</groupId>
+			<artifactId>moneta</artifactId>
 			<version>${jsr.version}</version>
 		</dependency>
 

@@ -29,8 +29,8 @@ public class MoneyDemo {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Money amt1 = Money.of("USD", 10.1234556123456789);
-		FastMoney amt2 = FastMoney.of("USD", 123456789);
+		Money amt1 = Money.of(10.1234556123456789, "USD");
+		FastMoney amt2 = FastMoney.of(123456789, "USD");
 		Money total = amt1.add(amt2);
 		System.out.println(total);
 	}

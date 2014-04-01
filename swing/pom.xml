@@ -28,8 +28,8 @@
 			</dependency>
 			
 			<dependency>
-				<groupId>org.javamoney.ri</groupId>
-				<artifactId>jsr354-ri</artifactId>
+				<groupId>org.javamoney</groupId>
+				<artifactId>moneta</artifactId>
 				<version>${jsr.version}</version>
 			</dependency>
 		</dependencies>
@@ -53,8 +53,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.javamoney.ri</groupId>
-			<artifactId>jsr354-ri</artifactId>
+			<groupId>org.javamoney</groupId>
+			<artifactId>moneta</artifactId>
 		</dependency>
 	</dependencies>
 	<modules>

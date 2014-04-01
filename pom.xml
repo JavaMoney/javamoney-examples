@@ -18,7 +18,7 @@
 		<!-- module>javafx</module -->
 		<!-- TODO add profiles for Java 8/FX -->
 		<module>console</module>
-		<module>swing</module>
+		<!--  module>swing</module -->
 	</modules>
 	<properties>
 		<basedir>.</basedir>

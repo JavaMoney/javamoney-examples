@@ -4,12 +4,12 @@ javamoney-ez
 What is it?
 -----------
 
-This is an improved successor to [EZ Money](http://www.downloadcollection.com/ez_money.htm "EZ Money"). 
+This is an improved successor to [EZ Money](http://macdownload.informer.com/ez-money/ "EZ Money"). 
 
 System requirements
 -------------------
 
-All you need to build this project is **Java 6.0**, Maven 3.0 or better.
+All you need to build this project is (at least) **Java 6.0**, Maven 3.0 or higher.
 
 The application this project produces is designed to be run on Java Swing.
 

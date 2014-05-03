@@ -1,4 +1,3 @@
-package org.javamoney.examples.cdi.payment;
 /*
  * JavaMoney Examples
  * Copyright 2012-2014, Credit Suisse AG, Werner Keil 
@@ -14,6 +13,8 @@ package org.javamoney.examples.cdi.payment;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.javamoney.examples.cdi.payment;
+
 import static org.junit.Assert.assertEquals;
 
 import org.javamoney.moneta.Money;
@@ -35,8 +36,8 @@ public class SmokeTests {
 	@Test
 	public void testCreateMoney() {
 		// Creating one
-		Money amount1 = Money.of("CHF", 1.0d);
-		Money amount2 = Money.of("CHF", 1.0d);
+		Money amount1 = Money.of(1.0d,"CHF");
+		Money amount2 = Money.of(1.0d, "CHF");
 		Money amount3 = amount1.add(amount2);
 		LOGGER.debug(amount1 + " + " + amount2 + " = " + amount3);
 		assertEquals(BigDecimal.ONE, amount1.getNumber());

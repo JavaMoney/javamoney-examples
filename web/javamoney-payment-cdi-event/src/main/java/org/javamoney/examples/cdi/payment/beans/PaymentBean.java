@@ -4,7 +4,7 @@
  * and individual contributors by the @author tags. See the copyright.txt in the
  * distribution for a full listing of individual contributors
  *
- * Copyright 2012-2013, Credit Suisse AG, Werner Keil 
+ * Copyright 2012-2014, Credit Suisse AG, Werner Keil 
  * and individual contributors by the @author tags.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,6 @@
  * limitations under the License.
  */
 package org.javamoney.examples.cdi.payment.beans;
-
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -42,9 +41,8 @@ import org.javamoney.moneta.Money;
 
 @Named
 @SessionScoped
-
 public class PaymentBean implements Serializable {
-	
+
 	/**
 	 * 
 	 */
@@ -53,118 +51,106 @@ public class PaymentBean implements Serializable {
 	@Inject
 	private Logger log;
 
-	//Events producers
+	// Events producers
 	@Inject
-	@Credit 
+	@Credit
 	Event<PaymentEvent> creditEventProducer;
-	
+
 	@Inject
 	@Debit
 	Event<PaymentEvent> debitEventProducer;
-	
-//	@Inject
-//	private MonetaryAmountFactory amountFactory;
-	
-	private static final CurrencyUnit CURRENCY = MonetaryCurrencies.getCurrency("EUR");
-	
+
+	// @Inject
+	// private MonetaryAmountFactory amountFactory;
+
+	private static final CurrencyUnit CURRENCY = MonetaryCurrencies
+			.getCurrency("EUR");
+
 	@Amount
-	private BigDecimal amount= new BigDecimal(10.0);
-	//private final CurrencyUnit DOLLAR = MoneyCurrency.getInstance("ISO4217", "USD");
-	
+	private BigDecimal amount = new BigDecimal(10.0);
+	// private final CurrencyUnit DOLLAR = MoneyCurrency.getInstance("ISO4217",
+	// "USD");
+
 	@Amount
-	private MonetaryAmount money =  Money.of(CURRENCY, amount);
-	
-	
+	private MonetaryAmount money = Money.of(amount, CURRENCY);
+
 	public MonetaryAmount getMoney() {
 		return money;
 	}
-
 
 	public void setMoney(MonetaryAmount money) {
 		this.money = money;
 	}
 
+	private String paymentOption = PaymentType.DEBIT.toString();
 
-	private String paymentOption=PaymentType.DEBIT.toString();
-	
-	
-	//Pay Action
-	public String pay(){
+	// Pay Action
+	public String pay() {
 
 		PaymentEvent currentEvtPayload = new PaymentEvent();
 		currentEvtPayload.setType(PaymentType.of(paymentOption));
-		//currentEvtPayload.setAmount(amount);
+		// currentEvtPayload.setAmount(amount);
 		currentEvtPayload.setMoney(money);
 		currentEvtPayload.setDatetime(new Date());
-		
+
 		switch (currentEvtPayload.getType()) {
 		case DEBIT:
 
 			debitEventProducer.fire(currentEvtPayload);
-			
+
 			break;
 		case CREDIT:
 			creditEventProducer.fire(currentEvtPayload);
 
 			break;
 
-		default: log.severe("invalid payment option");
+		default:
+			log.severe("invalid payment option");
 			break;
 		}
-		
-		//paymentAction
+
+		// paymentAction
 		return "index";
 	}
-	
-	
-	//Reset Action
-	public void reset()
-	{
-		amount= null;
-		paymentOption="";
-	 
+
+	// Reset Action
+	public void reset() {
+		amount = null;
+		paymentOption = "";
+
 	}
-	
-	
-	
+
 	public Event<PaymentEvent> getCreditEventLauncher() {
 		return creditEventProducer;
 	}
-
 
 	public void setCreditEventLauncher(Event<PaymentEvent> creditEventLauncher) {
 		this.creditEventProducer = creditEventLauncher;
 	}
 
-
 	public Event<PaymentEvent> getDebitEventLauncher() {
 		return debitEventProducer;
 	}
-
 
 	public void setDebitEventLauncher(Event<PaymentEvent> debitEventLauncher) {
 		this.debitEventProducer = debitEventLauncher;
 	}
 
-
 	public String getPaymentOption() {
 		return paymentOption;
 	}
-
 
 	public void setPaymentOption(String paymentOption) {
 		this.paymentOption = paymentOption;
 	}
 
-
 	public BigDecimal getAmount() {
 		return amount;
 	}
 
-
 	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
-		this.money = Money.of(CURRENCY, amount);
+		this.money = Money.of(amount, CURRENCY);
 	}
-	
+
 }

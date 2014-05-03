@@ -15,6 +15,10 @@
 
 	<packaging>jar</packaging>
 
+	<properties>
+		<jsr.version>0.9-SNAPSHOT</jsr.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.slf4j</groupId>

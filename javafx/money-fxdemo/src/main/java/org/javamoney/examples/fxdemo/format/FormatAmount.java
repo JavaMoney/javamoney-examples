@@ -72,7 +72,7 @@ public class FormatAmount extends AbstractExamplePane {
 								if (placement != null) {
 									styleBuilder.setCurrencyStyle(placement);
 								}
-								MonetaryAmountFormat formatter = MonetaryFormats.getAmountFormat(styleBuilder.create());
+								MonetaryAmountFormat formatter = MonetaryFormats.getAmountFormat(styleBuilder.build());
 								pw.println("Formatted Amount");
 								pw.println("----------------");
 								if (formatter != null) {

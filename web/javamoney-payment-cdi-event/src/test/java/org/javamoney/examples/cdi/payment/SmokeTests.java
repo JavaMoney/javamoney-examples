@@ -35,8 +35,8 @@ public class SmokeTests {
 	@Test
 	public void testCreateMoney() {
 		// Creating one
-		Money amount1 = Money.of(1.0d, "CHF");
-		Money amount2 = Money.of(1.0d, "CHF");
+		Money amount1 = Money.of("CHF", 1.0d);
+		Money amount2 = Money.of("CHF", 1.0d);
 		Money amount3 = amount1.add(amount2);
 		LOGGER.debug(amount1 + " + " + amount2 + " = " + amount3);
 		assertEquals(BigDecimal.ONE, amount1.getNumber());

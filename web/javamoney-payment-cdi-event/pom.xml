@@ -61,7 +61,7 @@
 		<maven.compiler.source>1.6</maven.compiler.source>
 
 		<!-- JSR versions -->
-		<version.jsr>0.9-SNAPSHOT</version.jsr>
+		<version.jsr>0.8-SNAPSHOT</version.jsr>
 		<version.org.javamoney>0.4-SNAPSHOT</version.org.javamoney>
 	</properties>
 

@@ -11,10 +11,10 @@
 	<artifactId>javamoney-examples</artifactId>
 	<packaging>pom</packaging>
 	<name>Java Money and Currency Examples</name>
-	<version>0.8-SNAPSHOT</version>
+	<version>0.9-SNAPSHOT</version>
 	
 	<modules>
-		<module>web</module>
+		<!--  module>web</module -->
 		<!-- module>javafx</module -->
 		<!-- TODO add profiles for Java 8/FX -->
 		<module>console</module>

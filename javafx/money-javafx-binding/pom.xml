@@ -8,7 +8,6 @@
 		<artifactId>javamoney-examples-javafx</artifactId>
 		<groupId>org.javamoney.examples</groupId>
 		<version>0.9-SNAPSHOT</version>
-		<relativePath>..</relativePath>
 	</parent>
 
 	<artifactId>javamoney-fxbinding</artifactId>
@@ -21,11 +20,6 @@
 		<name>JavaMoney.org</name>
 		<url>http://javamoney.org</url>
 	</organization>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<slf4j.version>1.6.1</slf4j.version>
-	</properties>
 
 	<build>
 		<plugins>
@@ -50,8 +44,8 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>${jdkVersion}</source>
+					<target>${jdkVersion}</target>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -68,17 +62,6 @@
 				<groupId>org.javamoney</groupId>
 				<artifactId>javamoney-extensions</artifactId>
 				<version>${javamoney.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>4.8.1</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>${slf4j.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.javamoney</groupId>

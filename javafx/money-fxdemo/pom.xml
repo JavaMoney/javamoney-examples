@@ -6,7 +6,6 @@
 		<groupId>org.javamoney.examples</groupId>
 		<artifactId>javamoney-examples-javafx</artifactId>
 		<version>0.9-SNAPSHOT</version>
-        <relativePath>..</relativePath>
 	</parent>
 
 
@@ -14,10 +13,6 @@
 	<name>JavaMoney FX Demo</name>
 
 	<packaging>jar</packaging>
-
-	<properties>
-		<jsr.version>0.9-SNAPSHOT</jsr.version>
-	</properties>
 
 	<dependencies>
 		<dependency>
@@ -53,14 +48,14 @@
 	<artifactId>javamoney-fxdemo</artifactId>
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
-            </plugin>
+      		<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${jdkVersion}</source>
+					<target>${jdkVersion}</target>
+				</configuration>
+			</plugin>
         </plugins>
     </build>
 </project>

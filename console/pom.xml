@@ -1,28 +1,32 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>org.javamoney.examples</groupId>
-    <artifactId>javamoney-examples</artifactId>
-    <version>0.9-SNAPSHOT</version>
-  </parent>
-  <artifactId>javamoney-examples-console</artifactId>
-  
-    <dependencies>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jul-to-slf4j</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.javamoney.lib</groupId>
-            <artifactId>javamoney-lib</artifactId>
-            <version>${javamoney.version}</version>
-            <type>pom</type>
-        </dependency>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.javamoney.examples</groupId>
+		<artifactId>javamoney-examples</artifactId>
+		<version>0.9-SNAPSHOT</version>
+	</parent>
+	<artifactId>javamoney-examples-console</artifactId>
+	<name>Java Money and Currency Console Examples</name>
+	<packaging>pom</packaging>
+	<modules>
+		<module>javamoney-console-simple</module>
+	</modules>
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jul-to-slf4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.javamoney.lib</groupId>
+			<artifactId>javamoney-lib</artifactId>
+			<version>${javamoney.version}</version>
+			<type>pom</type>
+		</dependency>
 
-    </dependencies>
-    <name>Java Money and Currency Console Examples</name>
+	</dependencies>
 </project>

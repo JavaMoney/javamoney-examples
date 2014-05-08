@@ -1,6 +1,6 @@
 /*
  * JavaMoney Examples
- * Copyright 2012-2013, Werner Keil 
+ * Copyright 2012-2014, Werner Keil 
  * and individual contributors by the @author tags.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.javamoney.examples.console;
+package org.javamoney.examples.console.simple;
 
 import org.javamoney.moneta.FastMoney;
 import org.javamoney.moneta.Money;
@@ -21,7 +21,7 @@ import org.javamoney.moneta.Money;
 
 /**
  * @author Werner Keil
- * @version 0.7.1
+ * @version 0.8
  */
 public class MoneyDemo {
 

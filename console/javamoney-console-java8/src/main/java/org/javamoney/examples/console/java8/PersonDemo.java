@@ -23,6 +23,11 @@ import java.util.function.UnaryOperator;
 
 import javax.money.MonetaryAmount;
 
+/**
+ * 
+ * @author Werner Keil
+ *
+ */
 public class PersonDemo {
 
 	public static void main(String[] args) {
@@ -171,6 +176,8 @@ public class PersonDemo {
 		}
 	}
 }
+
+
 
 interface CheckPerson {
 	boolean test(Person p);

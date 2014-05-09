@@ -30,11 +30,11 @@ public class Person {
 		MALE, FEMALE
 	}
 
-	String name;
-	LocalDate birthday;
-	Sex gender;
-	String emailAddress;
-	MonetaryAmount salary;
+	final String name;
+	final LocalDate birthday;
+	final Sex gender;
+	final String emailAddress;
+	final MonetaryAmount salary;
 
 	Person(String nameArg, LocalDate birthdayArg, Sex genderArg,
 			String emailArg, MonetaryAmount salArg) {
@@ -69,7 +69,7 @@ public class Person {
 		return emailAddress;
 	}
 
-	public LocalDate getBirthday() {
+	LocalDate getBirthday() {
 		return birthday;
 	}
 
@@ -77,9 +77,12 @@ public class Person {
 		return a.birthday.compareTo(b.birthday);
 	}
 
+	public static int compareBySalary(Person a, Person b) {
+		return a.salary.compareTo(b.salary);
+	}
+	
 	public static List<Person> createRoster() {
-
-		List<Person> roster = new ArrayList<>();
+		final List<Person> roster = new ArrayList<>();
 		roster.add(new Person("Fred", IsoChronology.INSTANCE.date(1980, 6, 20),
 				Person.Sex.MALE, "fred@example.com", Money.of(100000, "USD")));
 		roster.add(new Person("Jane", IsoChronology.INSTANCE.date(1990, 7, 15),

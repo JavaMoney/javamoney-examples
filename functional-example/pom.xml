@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>javamoney-examples</artifactId>
+		<groupId>org.javamoney.examples</groupId>
+		<version>0.9-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>functional-example</artifactId>
+	<properties>
+		<jdkVersion>1.8</jdkVersion>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.javamoney</groupId>
+			<artifactId>moneta</artifactId>
+			<version>${jsr.version}</version>
+		</dependency>
+	</dependencies>
+	<name>Java Money Using functional in Java 8</name>
+</project>

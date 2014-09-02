@@ -19,7 +19,7 @@ import net.java.javamoney.javafx.value.ObservableMonetaryValue;
  * @author Werner Keil
  */
 public class MonetaryExpressionBase implements MonetaryExpression, Observable,
-        ObservableMonetaryValue, ObservableValue<MonetaryAmount>, CurrencySupplier {
+        ObservableMonetaryValue, ObservableValue<MonetaryAmount> {
 
 	private MonetaryAmount amount;
 	
@@ -67,10 +67,4 @@ public class MonetaryExpressionBase implements MonetaryExpression, Observable,
     public MonetaryAmount getValue() {
         return amount;
     }
-
-	@Override
-	public CurrencyUnit getCurrency() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

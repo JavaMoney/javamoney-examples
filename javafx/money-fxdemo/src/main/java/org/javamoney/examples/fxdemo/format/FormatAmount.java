@@ -13,6 +13,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import javax.money.MonetaryAmount;
+import javax.money.format.AmountFormatContext;
+import javax.money.format.AmountFormatContextBuilder;
+import javax.money.format.AmountFormatQuery;
+import javax.money.format.AmountFormatQueryBuilder;
 import javax.money.format.MonetaryAmountFormat;
 import javax.money.format.MonetaryFormats;
 
@@ -20,6 +24,7 @@ import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
 import org.javamoney.examples.fxdemo.widgets.AmountEntry;
 import org.javamoney.moneta.Money;
+import org.javamoney.moneta.format.CurrencyStyle;
 
 
 public class FormatAmount extends AbstractExamplePane {
@@ -54,8 +59,8 @@ public class FormatAmount extends AbstractExamplePane {
 							PrintWriter pw = new PrintWriter(sw);
 							try {
 								MonetaryAmount amount = amount1.getAmount();
-								AmountStyle.Builder styleBuilder = new AmountStyle.Builder(Locale.ENGLISH);
-								if (groupSizes.getText() != null) {
+								AmountFormatQueryBuilder styleBuilder = AmountFormatQueryBuilder.create(Locale.ENGLISH); // new AmountStyle.Builder(Locale.ENGLISH);
+/*								if (groupSizes.getText() != null) {
 									String[] groups = groupSizes.getText()
 											.split(",");
 									int[] groupsInt = new int[groups.length];
@@ -63,13 +68,13 @@ public class FormatAmount extends AbstractExamplePane {
 										groupsInt[i] = Integer
 												.parseInt(groups[i]);
 									}
-									styleBuilder.setGroupingSizes(groupsInt);
+									formatContext .setGroupingSizes(groupsInt);
 								}
 								CurrencyStyle placement = currencyPlacement
 										.getSelectionModel().getSelectedItem();
 								if (placement != null) {
 									styleBuilder.setCurrencyStyle(placement);
-								}
+								}*/
 								MonetaryAmountFormat formatter = MonetaryFormats.getAmountFormat(styleBuilder.build());
 								pw.println("Formatted Amount");
 								pw.println("----------------");

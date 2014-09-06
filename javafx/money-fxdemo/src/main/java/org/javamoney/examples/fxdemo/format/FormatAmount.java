@@ -59,7 +59,7 @@ public class FormatAmount extends AbstractExamplePane {
 							PrintWriter pw = new PrintWriter(sw);
 							try {
 								MonetaryAmount amount = amount1.getAmount();
-								AmountFormatQueryBuilder styleBuilder = AmountFormatQueryBuilder.create(Locale.ENGLISH); // new AmountStyle.Builder(Locale.ENGLISH);
+								AmountFormatQueryBuilder styleBuilder = AmountFormatQueryBuilder.of(Locale.ENGLISH); // new AmountStyle.Builder(Locale.ENGLISH);
 /*								if (groupSizes.getText() != null) {
 									String[] groups = groupSizes.getText()
 											.split(",");

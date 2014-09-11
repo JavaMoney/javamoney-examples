@@ -22,7 +22,7 @@ public interface InternetBanking extends FinancialActions {
 	MonetaryAmount deposit(BankAccount account);
 
 	@POST
-	@Path("/withDraw/")
+	@Path("/withdraw/")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	MonetaryAmount withDraw(BankAccount account);

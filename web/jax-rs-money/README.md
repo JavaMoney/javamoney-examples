@@ -33,27 +33,27 @@ Which COUNTRY may be:
 
 The resources are:
 
-Get method with the link http://localhost:8080/jar-rs-products/resources/COUNTRY
+Get method with the link [http://localhost:8080/jar-rs-products/resources/COUNTRY](http://localhost:8080/jar-rs-products/resources/COUNTRY)
 Returns a list of products that may be used in another methods.
 
 
-Post method with http://localhost:8080/jar-rs-products/resources/COUNTRY/buy send a list of product as json and the application/json  as content type.
+Post method with [http://localhost:8080/jar-rs-products/resources/COUNTRY/buy](http://localhost:8080/jar-rs-products/resources/COUNTRY/buy) send a list of product as json and the application/json  as content type.
 Buy all products in the list and returns the sum.
 
 
-Post method with http://localhost:8080/jar-rs-products/resources/COUNTRY/average send a list of product as json and the application/json  as content type.
+Post method with [http://localhost:8080/jar-rs-products/resources/COUNTRY/average](http://localhost:8080/jar-rs-products/resources/COUNTRY/average) send a list of product as json and the application/json  as content type.
 Return a average of products
 
 
-Método post com http://localhost:8080/jar-rs-products/resources/COUNTRY/cheaper send a list of product as json and the application/json  as content type.
+Método post com [http://localhost:8080/jar-rs-products/resources/COUNTRY/cheaper](http://localhost:8080/jar-rs-products/resources/COUNTRY/cheaper) send a list of product as json and the application/json  as content type.
 Returns the cheapest price in the list.
 
 
-Método post com http://localhost:8080/jar-rs-products/resources/COUNTRY/expensive send a list of product as json and the application/json  as content type.
+Método post com [http://localhost:8080/jar-rs-products/resources/COUNTRY/expensive](http://localhost:8080/jar-rs-products/resources/COUNTRY/expensive) send a list of product as json and the application/json  as content type.
 Returns the more expensive price in the list
 
 
-Método post com http://localhost:8080/jar-rs-products/resources/COUNTRY/summary send a list of product as json and the application/json  as content type.
+Método post com [http://localhost:8080/jar-rs-products/resources/COUNTRY/summary](http://localhost:8080/jar-rs-products/resources/COUNTRY/summary) send a list of product as json and the application/json  as content type.
 Returns the brief of prices in the list.
 
 
@@ -64,21 +64,20 @@ Similar to store, the goal is simulate financial actions trivially done in the b
 
 
 
-Get method with http://localhost:8080/jar-rs-products/resources/bank
+Get method with [http://localhost:8080/jar-rs-products/resources/bank](http://localhost:8080/jar-rs-products/resources/bank)
 Returns a bank account that can be used in another methods.
 
 
-Post method with http://localhost:8080/jar-rs-products/resources/bank/deposit send a bank account as json and the application/json  as content type.
+Post method with [http://localhost:8080/jar-rs-products/resources/bank/deposit](http://localhost:8080/jar-rs-products/resources/bank/deposit) send a bank account as json and the application/json  as content type.
 Do a deposit, in other words, add money in the account. and returns the result of the operation in the currency used in this method.
 
 
-Post method with http://localhost:8080/jar-rs-products/resources/bank/withdraw send a bank account as json and the application/json  as content type.
+Post method with [http://localhost:8080/jar-rs-products/resources/bank/withdraw](http://localhost:8080/jar-rs-products/resources/bank/withdraw) send a bank account as json and the application/json  as content type.
 Do a withdraw, in other words, removes money of a account, and returns the result of the operation in the currency used in this method.
 
 
-Post method with http://localhost:8080/jar-rs-products/resources/bank/all send a bank account as json and the application/json  as content type.
+Post method with [http://localhost:8080/jar-rs-products/resources/bank/all](http://localhost:8080/jar-rs-products/resources/bank/all) send a bank account as json and the application/json  as content type.
 Returns all history in the account.
 
-Post method http://localhost:8080/jar-rs-products/resources/bank/extract send a bank account as json and the application/json  as content type.
+Post method [http://localhost:8080/jar-rs-products/resources/bank/extract](http://localhost:8080/jar-rs-products/resources/bank/extract) send a bank account as json and the application/json  as content type.
 Returns the history from period.
-

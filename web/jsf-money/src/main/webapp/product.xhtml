@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html">
+	<h:head>
+		<f:facet name="first">
+			<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+			<title>MoneyApi JSF example</title>
+		</f:facet>
+	</h:head>
+
+	<h:body>
+	<p:panel id="basic" header="Products List" style="margin-bottom:20px">
+		<h:form id="form">
+			<h:panelGrid columns="2">
+			
+				<p:outputLabel for="nameInput" value="Name: " />
+				<p:inputText id="nameInput" value="#{productMB.product.name}"  required="true"/>
+				<p:outputLabel for="moneyInput" value="Money: " />
+				<p:inputText id="moneyInput" value="#{productMB.product.money}" required="true"	converter="defaultMonetaryAmount" />
+
+			</h:panelGrid>
+			<div  style="margin-top: 20px"></div>
+			<p:commandButton value="Add Product" update="form" actionListener="#{productMB.add}" styleClass="ui-priority-primary" />
+			<div  style="margin-top: 20px"></div>
+			
+			<p:dataTable var="product" value="#{productMB.user.products}" style="margin-bottom: 20px">
+				<p:column headerText="Name">
+					<h:outputText value="#{product.name}"  />
+				</p:column>
+
+				<p:column headerText="Value">
+					<h:outputText value="#{product.money}" converter="outMonetaryAmount" />
+				</p:column>
+
+
+				<f:facet name="footer">
+        			In total there are #{productMB.user.count} products, with sum <h:outputText value="#{productMB.user.sum}" converter="outMonetaryAmount" />, 
+        			with max <h:outputText value="#{productMB.user.max}" converter="outMonetaryAmount" />, with min <h:outputText value="#{productMB.user.min}" converter="outMonetaryAmount" /> and
+        			with average <h:outputText value="#{productMB.user.average}" converter="outMonetaryAmount" />.
+    			</f:facet>
+    			
+				</p:dataTable>
+			
+			
+		</h:form>
+		<h:form>
+			<h:commandLink value="Back" action="index" style="margin-top: 20px;" />
+		</h:form>
+		</p:panel>
+	</h:body>
+
+</f:view>
+</html>
+

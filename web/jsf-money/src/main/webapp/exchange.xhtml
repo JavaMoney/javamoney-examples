@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html">
+	<h:head>
+		<f:facet name="first">
+			<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+			<title>MoneyApi JSF example</title>
+		</f:facet>
+	</h:head>
+
+	<h:body>
+	 <p:panel id="basic" style="margin-bottom:20px" header="Exchange Rate">
+		<h:form id="form">
+			<h:panelGrid columns="3">
+			
+				<p:outputLabel  value="Coin from: " />
+				<p:selectOneMenu  value="#{exchangeMB.bean.coinFrom}">
+					<f:selectItems value="#{exchangeMB.coins}" />
+				</p:selectOneMenu>
+				<p:inputText id="valueInput" value="#{exchangeMB.bean.value}"  required="true"/>
+				
+				<p:outputLabel  value="Coin to: " />
+				<p:selectOneMenu  value="#{exchangeMB.bean.coinTo}">
+					<f:selectItems value="#{exchangeMB.coins}" />
+				</p:selectOneMenu>
+				
+				
+
+			</h:panelGrid>
+			<div  style="margin-top: 20px"></div>
+			<p:commandButton value="Exchange Rate" update="form" actionListener="#{exchangeMB.exchange}" styleClass="ui-priority-primary" />
+			<div  style="margin-top: 60px"></div>
+			
+			<h3>The result is: <h:outputText value="#{exchangeMB.bean.result}" converter="outMonetaryAmount" /> </h3>
+			
+			
+		</h:form>
+		<h:form >
+			<h:commandLink value="Back" action="index" />
+		</h:form>
+	</p:panel>	
+	</h:body>
+
+</f:view>
+</html>
+

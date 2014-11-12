@@ -6,6 +6,7 @@
 		<artifactId>javamoney-examples</artifactId>
 		<version>0.9-SNAPSHOT</version>
 	</parent>
+	<groupId>org.javamoney.examples.console</groupId>
 	<artifactId>javamoney-examples-console</artifactId>
 	<name>Java Money and Currency Console Examples</name>
 	<packaging>pom</packaging>
@@ -28,7 +29,5 @@
 			<version>${javamoney.version}</version>
 			<type>pom</type>
 		</dependency>
-
 	</dependencies>
-	<groupId>org.javamoney.examples.console</groupId>
 </project>

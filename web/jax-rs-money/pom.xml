@@ -3,20 +3,17 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<artifactId>javamoney-examples</artifactId>
+		<artifactId>javamoney-examples-web</artifactId>
 		<groupId>org.javamoney.examples</groupId>
 		<version>0.9-SNAPSHOT</version>
 	</parent>
-
 	<artifactId>jax-rs-money</artifactId>
 	<packaging>war</packaging>
-	<name>jax-rs-money</name>
-
+	<name>Java Money and Currency JAX-RS Examples</name>
 	<properties>
 		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>javax</groupId>
@@ -24,38 +21,27 @@
 			<version>7.0</version>
 			<scope>provided</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 			<version>2.2.4</version>
 		</dependency>
-
 		<dependency>
 			<artifactId>moneta</artifactId>
 			<groupId>org.javamoney</groupId>
 			<version>0.9-SNAPSHOT</version>
 		</dependency>
-
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.2.4</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>1.3.2</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.4.1.3</version>
 			<scope>provided</scope>
 		</dependency>
-
 	</dependencies>
 	<build>
 		<plugins>
@@ -79,5 +65,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

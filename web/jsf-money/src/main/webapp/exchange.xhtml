@@ -17,7 +17,6 @@
 	 <p:panel id="basic" style="margin-bottom:20px" header="Exchange Rate">
 		<h:form id="form">
 			<h:panelGrid columns="3">
-			
 				<p:outputLabel  value="Coin from: " />
 				<p:selectOneMenu  value="#{exchangeMB.bean.coinFrom}">
 					<f:selectItems value="#{exchangeMB.coins}" />
@@ -28,24 +27,18 @@
 				<p:selectOneMenu  value="#{exchangeMB.bean.coinTo}">
 					<f:selectItems value="#{exchangeMB.coins}" />
 				</p:selectOneMenu>
-				
-				
-
 			</h:panelGrid>
 			<div  style="margin-top: 20px"></div>
 			<p:commandButton value="Exchange Rate" update="form" actionListener="#{exchangeMB.exchange}" styleClass="ui-priority-primary" />
 			<div  style="margin-top: 60px"></div>
 			
 			<h3>The result is: <h:outputText value="#{exchangeMB.bean.result}" converter="outMonetaryAmount" /> </h3>
-			
-			
 		</h:form>
 		<h:form >
 			<h:commandLink value="Back" action="index" />
 		</h:form>
 	</p:panel>	
 	</h:body>
-
 </f:view>
 </html>
 

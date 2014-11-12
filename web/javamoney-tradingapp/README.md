@@ -101,24 +101,27 @@ If you want to debug the source code or look at the Javadocs of any library in t
 
 
 Java Financial Library - API Usage
----------------------------------------------------------------------------
+----------------------------------
 
 
 Currency Functions - import net.neurotech.currency.*
--------------------------------------------------------
+----------------------------------------------------
 
 The API to use the JFL functions is very simple.  To convert currencies,
 instantiate a Currency object and use the convert function like so:
 
-	Currency myCur = new Currency();
-	float result = Currency.convert(10, "CAD", "USD");
+```java
+Currency myCur = new Currency();
+float result = Currency.convert(10, "CAD", "USD");
+```
 
 To get the mappings between names and symbols, get the hashtable of 
 entries using:
+```java
+Lister myList = new Lister();
+Hashtable maps = Lister.getTable();
+```
 
-	Lister myList = new Lister();
-	Hashtable maps = Lister.getTable();
-	
 And then enumerate through the hash table.
 
 
@@ -128,40 +131,47 @@ Stock Quote Functions - import net.neurotech.quotes.*
 There are two main functions of the Quotes package inside the JFL.  To
 retrieve stock quotes, use the QuoteFactory.  The first step is to
 instantiate a QuoteFactory object:
-
-	QuoteFactory qf = new QuoteFactory();
+```java
+QuoteFactory qf = new QuoteFactory();
+```
 
 This creates a QuoteFactory that will pull it's quote information from
 the default data source - Yahoo Finance.  Now to grab an actual Quote
 object, use the factory like so:
 
-	Quote microsoft = qf.getQuote("MSFT");
+```java
+Quote microsoft = qf.getQuote("MSFT");
+```
 
 This method can throw a QuoteException when there's an error in the
 retrieval process.
 
 Now you can access information from the new Quote object:
-
-	float price = microsoft.getPrice();
-	long volume = microsoft.getVolume();
+```java
+float price = microsoft.getPrice();
+long volume = microsoft.getVolume();
+```
 
 The other main function of the Quotes package is to search for symbols
 given a company name.  First, instantiate the Searcher object:
-
-	Searcher searcher = new Searcher();
+```
+Searcher searcher = new Searcher();
+```
 
 Then use the Search method, which returns a LinkedList:
-
-	LinkedList hits = searcher.Search("VA Research");
+```java
+LinkedList hits = searcher.Search("VA Research");
+```
 
 Note that this method will throw a SearchException if there is a problem
 making the query.
 
 Now the linked list will now contain a bunch of SearchHit objects, which
 have two methods:
-
-	searchhit.getSymbol();
-	searchhit.getResult();
+```java
+searchhit.getSymbol();
+searchhit.getResult();
+```
 
 You can go through this list and allow the user to choose the closest
 match for their search.

@@ -6,7 +6,6 @@ import javax.money.convert.MonetaryConversions;
 
 public class ExchangeRateProducer {
 
-	
 	@Produces
 	public ExchangeRateProvider get() {
 		return MonetaryConversions.getExchangeRateProvider("ECB");

@@ -29,18 +29,15 @@ public class User implements Serializable {
 		copy.setName(product.getName());
 		products.add(copy);
 		product.clear();
-	
 	}
 	
 	public MonetaryAmount getSum() {
-
 		return products.stream().map(Product::getMoney)
 				.reduce(MonetaryFunctions.sum())
 				.orElse(FastMoney.of(0, CURRENCY));
 	}
 	
 	public MonetaryAmount getMin() {
-
 		return products.stream().map(Product::getMoney)
 				.reduce(MonetaryFunctions.min())
 				.orElse(FastMoney.of(0, CURRENCY));
@@ -48,7 +45,6 @@ public class User implements Serializable {
 	
 	
 	public MonetaryAmount getMax() {
-
 		return products.stream().map(Product::getMoney)
 				.reduce(MonetaryFunctions.max())
 				.orElse(FastMoney.of(0, CURRENCY));

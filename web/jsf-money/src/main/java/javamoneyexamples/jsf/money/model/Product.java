@@ -37,7 +37,6 @@ public class Product implements Serializable {
 	public void clear() {
 		name = "";
 		money = null;
-		
 	}
 	
 }

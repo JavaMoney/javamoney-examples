@@ -1,17 +1,20 @@
-javamoney-examples
-==================
-
-JSR 354 Examples
+JSR 354 JavaMoney Examples
+==========================
 
 The current project structure is as follows:
 
----------
-- console: Console examples
-- javafx: JavaFX examples
- - money-fxdemo: JavaFX Demo application
- - money-javafx-binding: JavaFX binding examples 
-- swing: Swing RCP examples
-- functional-example: same examples using Java 8 with streams, lambda with money-api
- - javamoney-ez: JavaMoney EZ Demo application
-- web: Web examples
-  - javamoney-payment-cdi-event: Demo for CDI 1.0 Events with the Money and Currency API
+- [Console examples](console)
+  - [Simple Console Examples](console/javamoney-console-simple)
+  - [Java 8 Console Examples](console/javamoney-console-java8)
+- [JavaFX examples](javafx)
+ - [JavaFX Demo application](javafx/money-fxdemo)
+ - [JavaFX binding examples](javafx/money-javafx-binding)
+- [Swing RCP examples](swing)
+  - [An improved successor to EZ Money.](swing/javamoney-ez) 
+- [functional-example](functional-example): same examples using Java 8 with streams, lambda with money-api
+ - [JavaMoney EZ Demo application](functional-example/javamoney-ez)
+- [Web examples](web)
+  - [Demo for CDI 1.0 Events with the Money and Currency API](web/javamoney-payment-cdi-event)
+  - [Spring Trading App](web/javamoney-tradingapp)
+  - [Java EE with JAX-RS](web/jax-rs-money)
+  - [Example using JSF with MoneyAPI](jsf-money)

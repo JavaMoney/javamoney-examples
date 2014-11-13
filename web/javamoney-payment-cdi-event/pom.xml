@@ -12,18 +12,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
 	<parent>
 		<groupId>org.javamoney.examples</groupId>
 		<version>0.9-SNAPSHOT</version>
 		<artifactId>javamoney-examples-web</artifactId>
 	</parent>
-	
 	<artifactId>javamoney-payment-cdi-event</artifactId>
 	<packaging>war</packaging>
 	<name>Java Money and Currency: CDI Event</name>
 	<description>Java Money and Currency: CDI Payment Event</description>
-
 	<url>http://javamoney.org</url>
 	<licenses>
 		<license>
@@ -32,14 +29,12 @@
 			<url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
 		</license>
 	</licenses>
-
 	<properties>
 		<!-- Explicitly declaring the source encoding eliminates the following 
 			message: -->
 		<!-- [WARNING] Using platform encoding (UTF-8 actually) to copy filtered 
 			resources, i.e. build is platform dependent! -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
 		<!-- JBoss dependency versions -->
 		<version.org.jboss.as.plugins.maven.plugin>7.3.Final</version.org.jboss.as.plugins.maven.plugin>
 		<!-- Define the version of the JBoss BOMs we want to import. The JBoss 
@@ -51,20 +46,16 @@
 			repository. -->
 		<!-- <version.org.jboss.bom>1.0.0.Final-redhat-1</version.org.jboss.bom>> -->
 		<version.org.jboss.spec.jboss.javaee.6.0>3.0.0.Final</version.org.jboss.spec.jboss.javaee.6.0>
-
 		<!-- other plugin versions -->
 		<version.compiler.plugin>2.3.1</version.compiler.plugin>
 		<version.war.plugin>2.1.1</version.war.plugin>
-
 		<!-- maven-compiler-plugin -->
 		<maven.compiler.target>1.6</maven.compiler.target>
 		<maven.compiler.source>1.6</maven.compiler.source>
-
 		<!-- JSR versions -->
 		<version.jsr>0.8-SNAPSHOT</version.jsr>
 		<version.org.javamoney>0.4-SNAPSHOT</version.org.javamoney>
 	</properties>
-
 	<dependencyManagement>
 		<dependencies>
 			<!-- Define the version of JBoss' Java EE 6 APIs we want to use -->
@@ -81,7 +72,6 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-
 			<dependency>
 				<groupId>org.jboss.bom</groupId>
 				<artifactId>jboss-javaee-6.0-with-hibernate</artifactId>
@@ -89,13 +79,11 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-
 			<dependency>
 				<groupId>org.javamoney.bundles</groupId>
 				<artifactId>javamoney-ee</artifactId>
 				<version>${version.org.javamoney}</version>
 			</dependency>
-
 			<!-- Needed for running tests (you may also use TestNG) -->
 			<dependency>
 				<groupId>junit</groupId>
@@ -103,38 +91,30 @@
 				<version>4.8.2</version>
 				<scope>test</scope>
 			</dependency>
-
 		</dependencies>
-
 	</dependencyManagement>
-
 	<dependencies>
-
-		<!-- Import the CDI API, we use provided scope as the API is included in 
+		<!-- Import the CDI API, we use provided scope as the API is included in
 			JBoss AS 7 -->
 		<dependency>
 			<groupId>javax.enterprise</groupId>
 			<artifactId>cdi-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
-
-		<!-- Import the Common Annotations API (JSR-250), we use provided scope 
+		<!-- Import the Common Annotations API (JSR-250), we use provided scope
 			as the API is included in JBoss AS 7 -->
 		<dependency>
 			<groupId>org.jboss.spec.javax.annotation</groupId>
 			<artifactId>jboss-annotations-api_1.1_spec</artifactId>
 			<scope>provided</scope>
 		</dependency>
-
-		<!-- Import the Servlet API, we use provided scope as the API is included 
+		<!-- Import the Servlet API, we use provided scope as the API is included
 			in JBoss AS 7 -->
 		<dependency>
 			<groupId>org.jboss.spec.javax.servlet</groupId>
 			<artifactId>jboss-servlet-api_3.0_spec</artifactId>
 			<scope>provided</scope>
 		</dependency>
-
-
 		<!-- JSR-303 (Bean Validation) Implementation -->
 		<!-- Provides portable constraints such as @Email -->
 		<!-- Hibernate Validator is shipped in JBoss AS 7 -->
@@ -146,14 +126,12 @@
 			<groupId>org.javamoney.bundles</groupId>
 			<artifactId>javamoney-ee</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<!-- Set the name of the war, used as the context root when the app is 
 			deployed -->
@@ -183,5 +161,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	
 </project>

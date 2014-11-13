@@ -6,18 +6,16 @@
 		<artifactId>javamoney-parent</artifactId>
 		<version>0.5-SNAPSHOT</version>
 	</parent>
-
 	<groupId>org.javamoney.examples</groupId>
 	<artifactId>javamoney-examples</artifactId>
+	<version>0.9-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Java Money and Currency Examples</name>
-	<version>0.9-SNAPSHOT</version>
-
 	<modules>
 		<module>console</module>
 		<module>swing</module>
 		<module>javafx</module>
-		<!--  module>functional-example</module -->
+		<module>functional-example</module>
 		<!-- XXX add profile for Java 8/FX -->
 		<module>web</module>
 	</modules>
@@ -30,14 +28,12 @@
 		<jsr.version>0.9-SNAPSHOT</jsr.version>
 		<javamoney.version>0.5-SNAPSHOT</javamoney.version>
 	</properties>
-
 	<licenses>
 		<license>
 			<name>Apache License version 2.0</name>
 			<url>LICENSE.txt</url>
 		</license>
 	</licenses>
-
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -58,7 +54,6 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
 <repositories>
     <repository>
         <id>money-api-repository</id>

@@ -16,15 +16,12 @@ public class OutMonetaryAmountConverter implements Converter {
 	private static final CurrencyUnit DOLLAR = MonetaryCurrencies.getCurrency("USD");
 		
 	@Override
-	public Object getAsObject(FacesContext context, UIComponent component,
-			String value) {
+	public Object getAsObject(FacesContext context, UIComponent component, String value) {
 			return Money.of(Double.parseDouble(value), DOLLAR);
 	}
 
 	@Override
-	public String getAsString(FacesContext context, UIComponent component,
-			Object value) {
-
+	public String getAsString(FacesContext context, UIComponent component, Object value) {
 		if (MonetaryAmount.class.isInstance(value)) {
 			return new MonetaryFormatTable().format(MonetaryAmount.class.cast(value));
 		}

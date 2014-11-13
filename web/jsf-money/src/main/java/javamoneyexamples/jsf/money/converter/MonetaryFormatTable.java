@@ -23,22 +23,16 @@ public class MonetaryFormatTable implements MonetaryAmountFormat {
 	}
 
 	@Override
-	public void print(Appendable appendable, MonetaryAmount amount)
-			throws IOException {
-
+	public void print(Appendable appendable, MonetaryAmount amount) throws IOException {
 		NumberFormat format = NumberFormat.getInstance();
 		format.setMaximumFractionDigits(2);
 		format.setMinimumFractionDigits(2);
-
 		appendable.append(amount.getCurrency().toString());
 		appendable.append(" ").append(format.format(amount.getNumber()));
-
 	}
 
 	@Override
-	public MonetaryAmount parse(CharSequence text)
-			throws MonetaryParseException {
-		
+	public MonetaryAmount parse(CharSequence text) throws MonetaryParseException {
 		return Money.parse(text);
 	}
 

@@ -9,7 +9,6 @@
 nbproject/
 target/
 .classpath
-/web/jsf-money/target/
 *.iml
 .idea/
 .directory

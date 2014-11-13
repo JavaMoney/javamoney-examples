@@ -11,7 +11,7 @@ The current project structure is as follows:
  - [JavaFX binding examples](javafx/money-javafx-binding)
 - [Swing RCP examples](swing)
   - [An improved successor to EZ Money.](swing/javamoney-ez) 
-- [functional-example](functional-example): same examples using Java 8 with streams, lambda with money-api
+- [Java Functional Examples](functional-example): same examples using Java 8 with streams, lambda with money-api
 - [Web examples](web)
   - [Demo for CDI 1.0 Events with the Money and Currency API](web/javamoney-payment-cdi-event)
   - [Spring Trading App](web/javamoney-tradingapp)

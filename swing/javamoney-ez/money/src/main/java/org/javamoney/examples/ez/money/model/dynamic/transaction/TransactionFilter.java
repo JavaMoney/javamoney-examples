@@ -15,7 +15,8 @@ import static org.javamoney.examples.ez.money.model.dynamic.transaction.Transact
 
 import java.text.DateFormat;
 import java.text.DecimalFormat;
-import org.javamoney.calc.function.MonetaryPredicate;
+import java.util.function.Predicate;
+
 import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
 
 /**
@@ -24,7 +25,7 @@ import org.javamoney.examples.ez.money.model.persisted.transaction.Transaction;
 public
 final
 class
-TransactionFilter implements MonetaryPredicate<Transaction>
+TransactionFilter implements Predicate<Transaction>
 {
   /**
    * Constructs a new filter.

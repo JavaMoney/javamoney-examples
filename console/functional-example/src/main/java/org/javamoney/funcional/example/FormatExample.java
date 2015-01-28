@@ -23,7 +23,7 @@ public class FormatExample {
 		MonetaryAmountFormat usFormat = MonetaryFormats.getAmountFormat(
 				Locale.US);
 		 MonetaryAmountFormat customFormat = MonetaryFormats.getAmountFormat(
-	                AmountFormatQueryBuilder.create(Locale.US).set(CurrencyStyle.SYMBOL).build());
+	                AmountFormatQueryBuilder.of(Locale.US).set(CurrencyStyle.SYMBOL).build());
 		 
 		System.out.println(germanFormat.format(monetaryAmount));//1.202,12 USD
 		System.out.println(usFormat.format(monetaryAmount));//USD1,202.12

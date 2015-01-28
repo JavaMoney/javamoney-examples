@@ -13,11 +13,11 @@ import javafx.scene.layout.HBox;
 
 import javax.money.MonetaryAmount;
 
-import org.javamoney.calc.function.MonetaryCalculations;
 import org.javamoney.examples.fxdemo.widgets.AbstractExamplePane;
 import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
 import org.javamoney.examples.fxdemo.widgets.AmountEntry;
 import org.javamoney.moneta.Money;
+import org.javamoney.moneta.function.MonetaryFunctions;
 
 public class MinMaxSample extends AbstractExamplePane {
 
@@ -46,8 +46,9 @@ public class MinMaxSample extends AbstractExamplePane {
 					StringWriter sw = new StringWriter();
 					PrintWriter pw = new PrintWriter(sw);
 					try {
-						MonetaryAmount min = MonetaryCalculations.minimum()
-								.calculate(
+						/*
+						MonetaryAmount min =MonetaryFunctions.min()
+								.apply(
 										new HashSet<MonetaryAmount>(Arrays
 												.asList(amount1.getAmount(),
 														amount2.getAmount(),
@@ -56,6 +57,7 @@ public class MinMaxSample extends AbstractExamplePane {
 						pw.println("--------------------");
 						pw.println();
 						printSummary(min, pw);
+						*/
 					} catch (Exception e) {
 						e.printStackTrace(pw);
 					}
@@ -82,8 +84,9 @@ public class MinMaxSample extends AbstractExamplePane {
 					StringWriter sw = new StringWriter();
 					PrintWriter pw = new PrintWriter(sw);
 					try {
-						MonetaryAmount max = MonetaryCalculations.maximum()
-								.calculate(
+						/*
+						MonetaryAmount max = MonetaryFunctions.max()
+								.apply(
 										new HashSet<MonetaryAmount>(Arrays
 												.asList(amount1.getAmount(),
 														amount2.getAmount(),
@@ -92,6 +95,7 @@ public class MinMaxSample extends AbstractExamplePane {
 						pw.println("--------------------");
 						pw.println();
 						printSummary(max, pw);
+						*/
 					} catch (Exception e) {
 						e.printStackTrace(pw);
 					}

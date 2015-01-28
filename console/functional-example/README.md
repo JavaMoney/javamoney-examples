@@ -23,6 +23,7 @@ times, however has a limited decimals places, just five.
 - **MonetarySorterOperations** - Operation to do sort in a list or stream, so it's possible sort by CurrencyUnit or by value, in asc or desc way, and you can combine, in other words, I may sort by currency unit in ascending way and descending by value.
 
 - **MonetaryGroupOperations** - From Stream or list is possible create a summary (an object that contains informations as size of list, sum, lesser value, greater value and average), a map where the key is CurrencyUnit and the value is a list of MonetaryAmount and a map where the key is CurrencyUnit and the value is a summary of this currency unit.
+(currently **broken** because a vital class is no longer public, this example was disabled)
 
 
 - **SimpleOperations** – simples operations using MonetaryAmount, that included arithmetic operations such sum, subtract and comparative operations such lesser equal, greater equal, etc.

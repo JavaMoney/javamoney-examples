@@ -32,7 +32,7 @@ import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
 import javax.money.MonetaryCurrencies;
 
-import org.javamoney.annotation.Amount;
+//import org.javamoney.annotation.Amount;
 import org.javamoney.examples.cdi.payment.events.PaymentEvent;
 import org.javamoney.examples.cdi.payment.events.PaymentType;
 import org.javamoney.examples.cdi.payment.qualifiers.Credit;
@@ -66,12 +66,12 @@ public class PaymentBean implements Serializable {
 	private static final CurrencyUnit CURRENCY = MonetaryCurrencies
 			.getCurrency("EUR");
 
-	@Amount
+//	@Amount
 	private BigDecimal amount = new BigDecimal(10.0);
 	// private final CurrencyUnit DOLLAR = MoneyCurrency.getInstance("ISO4217",
 	// "USD");
 
-	@Amount
+//	@Amount
 	private MonetaryAmount money = Money.of(amount, CURRENCY);
 
 	public MonetaryAmount getMoney() {

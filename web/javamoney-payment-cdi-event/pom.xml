@@ -14,7 +14,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.javamoney.examples</groupId>
-		<version>0.9-SNAPSHOT</version>
+		<version>0.9</version>
 		<artifactId>javamoney-examples-web</artifactId>
 	</parent>
 	<artifactId>javamoney-payment-cdi-event</artifactId>
@@ -52,9 +52,6 @@
 		<!-- maven-compiler-plugin -->
 		<maven.compiler.target>1.6</maven.compiler.target>
 		<maven.compiler.source>1.6</maven.compiler.source>
-		<!-- JSR versions -->
-		<version.jsr>0.8-SNAPSHOT</version.jsr>
-		<version.org.javamoney>0.4-SNAPSHOT</version.org.javamoney>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -79,11 +76,6 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			<dependency>
-				<groupId>org.javamoney.bundles</groupId>
-				<artifactId>javamoney-ee</artifactId>
-				<version>${version.org.javamoney}</version>
-			</dependency>
 			<!-- Needed for running tests (you may also use TestNG) -->
 			<dependency>
 				<groupId>junit</groupId>
@@ -91,9 +83,28 @@
 				<version>4.8.2</version>
 				<scope>test</scope>
 			</dependency>
+			<dependency>
+				<groupId>javax.money</groupId>
+				<artifactId>money-api</artifactId>
+				<version>${jsr.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.javamoney</groupId>
+				<artifactId>moneta</artifactId>
+				<version>${jsr.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	
 	<dependencies>
+		<dependency>
+				<groupId>javax.money</groupId>
+				<artifactId>money-api</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.javamoney</groupId>
+				<artifactId>moneta</artifactId>
+			</dependency>
 		<!-- Import the CDI API, we use provided scope as the API is included in
 			JBoss AS 7 -->
 		<dependency>
@@ -121,10 +132,6 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.javamoney.bundles</groupId>
-			<artifactId>javamoney-ee</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>

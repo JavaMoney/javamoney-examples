@@ -15,5 +15,5 @@ The current project structure is as follows:
 - [Web examples](web)
   - [Demo for CDI 1.0 Events with the Money and Currency API](web/javamoney-payment-cdi-event)
   - [Spring Trading App](web/javamoney-tradingapp)
-  - [Java EE with JAX-RS](web/jax-rs-money) **currently unstable/broken**
+  - [Java EE with JAX-RS](web/jax-rs-money) currently **unstable/broken**
   - [Example using JSF with MoneyAPI](web/jsf-money)

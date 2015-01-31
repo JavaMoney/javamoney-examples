@@ -1,4 +1,4 @@
-package org.javamoney.funcional.example;
+package org.javamoney.examples.console.functional;
 
 import java.util.Locale;
 

@@ -1,4 +1,4 @@
-package org.javamoney.funcional.example;
+package org.javamoney.examples.console.functional;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

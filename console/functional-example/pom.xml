@@ -19,5 +19,5 @@
 			<version>${jsr.version}</version>
 		</dependency>
 	</dependencies>
-	<name>Java Money Using functional in Java 8</name>
+	<name>JavaMoney Console Examples Using functional in Java 8</name>
 </project>

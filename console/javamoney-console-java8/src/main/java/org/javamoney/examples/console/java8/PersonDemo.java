@@ -1,6 +1,6 @@
 /*
  * JavaMoney Examples
- * Copyright 2014, Werner Keil 
+ * Copyright 2014, Werner Keil
  * and individual contributors by the @author tags.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -8,7 +8,7 @@
  * You may obtain a copy of the License at
  * http://www.apache.org/licenses/LICENSE-2.0
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,  
+ * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -24,7 +24,7 @@ import java.util.function.UnaryOperator;
 import javax.money.MonetaryAmount;
 
 /**
- * 
+ *
  * @author Werner Keil
  *
  */
@@ -34,51 +34,50 @@ public class PersonDemo {
 
 		final List<Person> roster = Person.createRoster();
 
-		// printPersonsOlderThan(roster, 30);
+		 printPersonsOlderThan(roster, 30);
 
-		// printPersons(roster, new CheckPersonEligibleForSelectiveService());
+		 printPersons(roster, new CheckPersonEligibleForSelectiveService());
 
-		/*
-		 * printPersons( roster, new CheckPerson() { public boolean test(Person
-		 * p) { return p.getGender() == Person.Sex.MALE && p.getAge() >= 18 &&
-		 * p.getAge() <= 25; } } );
-		 */
 
-		/*
-		 * printPersons(roster, (Person p) -> p.getGender() == Person.Sex.MALE
-		 * && p.getAge() >= 18 && p.getAge() <= 25);
-		 */
+		 printPersons( roster, new CheckPerson() { @Override
+		public boolean test(Person
+		 p) { return p.getGender() == Person.Sex.MALE && p.getAge() >= 18 &&
+		 p.getAge() <= 25; } } );
 
-		/*
-		 * printPersonsWithPredicate(roster, p -> p.getGender() ==
-		 * Person.Sex.MALE && p.getAge() >= 18 && p.getAge() <= 25);
-		 */
 
-		/*
-		 * processPersons( roster, p -> p.getGender() == Person.Sex.MALE &&
-		 * p.getAge() >= 18 && p.getAge() <= 25, p -> p.printPerson());
-		 */
 
-		/*
-		 * processPersonsWithFunction( roster, p -> p.getGender() ==
-		 * Person.Sex.MALE && p.getAge() >= 18 && p.getAge() <= 25, p ->
-		 * p.getEmailAddress(), email -> System.out.println(email));
-		 */
+		printPersons(roster, (Person p) -> p.getGender() == Person.Sex.MALE
+		 && p.getAge() >= 18 && p.getAge() <= 25);
 
-		/*
-		 * processElements( roster, p -> p.getGender() == Person.Sex.MALE &&
-		 * p.getAge() >= 18 && p.getAge() <= 25, p -> p.getEmailAddress(), email
-		 * -> System.out.println(email));
-		 */
 
-		/*
-		 * roster.stream() .filter(p -> p.getGender() == Person.Sex.MALE &&
-		 * p.getAge() >= 18 && p.getAge() <= 25 &&
-		 * p.getSalary().getNumber().intValue() <= 100000) //.map(p ->
-		 * p.getEmailAddress()) //.forEach(email -> System.out.println(email));
-		 * .map(p -> p.getSalary()) .forEach(salary ->
-		 * System.out.println(salary));
-		 */
+
+		printPersonsWithPredicate(roster, p -> p.getGender() ==
+		Person.Sex.MALE && p.getAge() >= 18 && p.getAge() <= 25);
+
+
+		processPersons( roster, p -> p.getGender() == Person.Sex.MALE &&
+		p.getAge() >= 18 && p.getAge() <= 25, p -> p.printPerson());
+
+
+
+		processPersonsWithFunction( roster, p -> p.getGender() ==
+		Person.Sex.MALE && p.getAge() >= 18 && p.getAge() <= 25, p ->
+		p.getEmailAddress(), email -> System.out.println(email));
+
+
+
+		 processElements( roster, p -> p.getGender() == Person.Sex.MALE &&
+		 p.getAge() >= 18 && p.getAge() <= 25, p -> p.getEmailAddress(), email
+		 -> System.out.println(email));
+
+
+
+		 roster.stream() .filter(p -> p.getGender() == Person.Sex.MALE &&
+		 p.getAge() >= 18 && p.getAge() <= 25 &&
+		 p.getSalary().getNumber().intValue() <= 100000)
+		 .map(p -> p.getSalary()) .forEach(salary ->
+		 System.out.println(salary));
+
 
 		processPersonsWithOperator(
 				roster,
@@ -87,18 +86,6 @@ public class PersonDemo {
 				salary -> System.out.println(salary));
 
 	}
-
-//	private static void processPersonsWithOperator(List<Person> roster,
-//			Predicate<Person> tester, Object mapper,
-//			Consumer<MonetaryAmount> block) {
-//		for (Person p : roster) {
-//			if (tester.test(p)) {
-//				MonetaryAmount data = mapper.apply(p.getSalary());
-//				block.accept(data);
-//			}
-//		}
-//		
-//	}
 
 
 	static void printPersonsOlderThan(List<Person> roster, int age) {
@@ -184,6 +171,7 @@ interface CheckPerson {
 }
 
 class CheckPersonEligibleForSelectiveService implements CheckPerson {
+	@Override
 	public boolean test(Person p) {
 		return p.gender == Person.Sex.MALE && p.getAge() >= 18
 				&& p.getAge() <= 25;

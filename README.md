@@ -14,8 +14,8 @@ The current project structure is as follows:
   - [An improved successor to EZ Money.](swing/javamoney-ez) 
 - [Web examples](web)
   - [Demo for CDI 1.0 Events with the Money and Currency API](web/javamoney-payment-cdi-event)
-  - [Spring Trading App](web/javamoney-tradingapp)  currently **unstable**
-  - [Java EE with JAX-RS](web/jax-rs-money) currently **unstable/broken**
+  - [Spring Trading App](web/javamoney-tradingapp)  currently **unstable**/disabled
+  - [Java EE with JAX-RS](web/jax-rs-money) currently **unstable/broken**/disabled
   - [Example using JSF with MoneyAPI](web/jsf-money)
 
 [![Build Status](https://api.travis-ci.org/JavaMoney/javamoney-shelter.png?branch=master)](https://travis-ci.org/JavaMoney/javamoney-examples) [![License](http://img.shields.io/badge/license-Apache2-red.svg)](http://opensource.org/licenses/apache-2.0) 

@@ -66,6 +66,5 @@
         		<id>money-api-repository</id>
         		<url>http://repository-jsr354.forge.cloudbees.com/snapshot/</url>
     		</repository>
-    </repositories>
-  </repositories>
+    	</repositories>
 </project>

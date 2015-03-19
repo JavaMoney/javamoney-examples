@@ -25,7 +25,7 @@
 		<slf4j.version>1.6.1</slf4j.version>
 		<!-- JSR versions -->
 		<jsr.version>1.0-RC1</jsr.version>
-		<javamoney.version>0.6-SNAPSHOT</javamoney.version>
+		<javamoney.version>0.5</javamoney.version>
 	</properties>
 	<licenses>
 		<license>
@@ -53,10 +53,19 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-<repositories>
-    <repository>
-        <id>money-api-repository</id>
-        <url>http://repository-jsr354.forge.cloudbees.com/snapshot/</url>
-    </repository>
+	
+	<!-- Additional repositories -->
+    	<!-- Helps to resolve Parent POM -->
+    	<repositories> 
+        	<repository> 
+            		<id>jcenter</id>
+            		<name>JCenter</name>
+            		<url>http://jcenter.bintray.com</url> 
+		</repository> 
+		<repository> <!-- TODO is this still necessary? -->
+        		<id>money-api-repository</id>
+        		<url>http://repository-jsr354.forge.cloudbees.com/snapshot/</url>
+    		</repository>
+    </repositories>
   </repositories>
 </project>

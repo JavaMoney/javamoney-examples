@@ -21,7 +21,6 @@ import java.net.URLConnection;
 
 import org.javamoney.examples.ez.money.ApplicationProperties;
 import org.javamoney.examples.ez.money.gui.dialog.ProcessDialog;
-
 import org.javamoney.examples.ez.common.net.ProxyWrapper;
 import org.javamoney.examples.ez.common.utility.I18NHelper;
 import org.javamoney.examples.ez.common.utility.ResourceHelper;
@@ -118,13 +117,11 @@ UpdateHelper
   // Start of inner classes.
   //////////////////////////////////////////////////////////////////////////////
 
-  private
-  static
-  class
-  ProcessWorker
+  @SuppressWarnings("serial")
+  private static class ProcessWorker
   extends ProcessDialog
   {
-    protected
+	protected
     ProcessWorker()
     {
       super(getProperty("processing"), 0);
@@ -212,10 +209,10 @@ UpdateHelper
   private static final String WIN_FIN = "win_fin.txt";
   private static final String WIN_ITA = "win_ita.txt";
   private static final String WIN_POR = "win_por.txt";
-  private static final String VERSION_URL = "http://www.adoracom.com/ezmoney/version_";
+  private static final String VERSION_URL = "http://www.javamoney.org/ezmoney/version_";
 
   /**
    * The current program version.
    */
-  public static final String CURRENT_VERSION = "2.5-SNAPSHOT";
+  public static final String CURRENT_VERSION = "3.0-RC3";
 }

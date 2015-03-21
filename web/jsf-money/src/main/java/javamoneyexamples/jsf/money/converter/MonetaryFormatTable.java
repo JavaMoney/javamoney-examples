@@ -18,7 +18,7 @@ public class MonetaryFormatTable implements MonetaryAmountFormat {
 	}
 
 	@Override
-	public AmountFormatContext getContext() {
+	public AmountFormatContext getAmountFormatContext() { // getContext()
 		throw new UnsupportedOperationException();
 	}
 

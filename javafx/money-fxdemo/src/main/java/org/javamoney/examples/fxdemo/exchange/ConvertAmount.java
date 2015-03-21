@@ -22,7 +22,6 @@ import org.javamoney.examples.fxdemo.widgets.AbstractSingleSamplePane;
 import org.javamoney.examples.fxdemo.widgets.AmountEntry;
 import org.javamoney.examples.fxdemo.widgets.CurrencySelector;
 import org.javamoney.examples.fxdemo.widgets.RateTypeSelector;
-import org.javamoney.moneta.convert.internal.ECBCurrentRateProvider;
 
 /**
  * @author Anatole Tresch

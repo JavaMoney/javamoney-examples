@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.javamoney.examples</groupId>
 		<artifactId>javamoney-examples-javafx</artifactId>
-		<version>1.0-RC2</version>
+		<version>1.0-RC3</version>
 	</parent>
 	<organization>
 		<name>JSR 354</name>

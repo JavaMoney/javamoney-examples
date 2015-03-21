@@ -93,7 +93,7 @@ public class GetExchangeRate extends AbstractExamplePane {
 							pw.println("Base Currency: " + rate.getBaseCurrency());
 							pw.println("Term Currency: " + rate.getCurrency());
 							pw.println("Factor: " + rate.getFactor());
-							pw.println("Context: " + rate.getConversionContext()); // .getContext());
+							pw.println("Context: " + rate.getContext());
 							pw.println("Derived: " + rate.isDerived());
 							if (rate.isDerived()) {
 								pw.println("Chain: "

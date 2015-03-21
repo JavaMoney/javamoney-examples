@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.javamoney.examples.ez</groupId>
     <artifactId>javamoney-ez</artifactId>
-    <version>3.0-RC2</version>
+    <version>3.0-RC3</version>
   </parent>
   <artifactId>javamoney-ez-common</artifactId>
   <name>JavaMoney EZ Common</name>

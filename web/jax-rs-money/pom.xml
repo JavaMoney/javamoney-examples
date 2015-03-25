@@ -5,7 +5,7 @@
 	<parent>
 		<artifactId>javamoney-examples-web</artifactId>
 		<groupId>org.javamoney.examples</groupId>
-		<version>1.0-RC3</version>
+		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>jax-rs-money</artifactId>
 	<packaging>war</packaging>

@@ -5,6 +5,7 @@
 		<artifactId>javamoney-examples-console</artifactId>
 		<groupId>org.javamoney.examples.console</groupId>
 		<version>1.0-SNAPSHOT</version>
+		<relativePath>..</relativePath>
 	</parent>
 
 	<artifactId>functional-example</artifactId>

@@ -14,21 +14,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.javamoney.examples</groupId>
-		<version>1.0-RC3</version>
+		<version>1.0-SNAPSHOT</version>
 		<artifactId>javamoney-examples-web</artifactId>
 	</parent>
 	<artifactId>javamoney-payment-cdi-event</artifactId>
 	<packaging>war</packaging>
 	<name>Java Money and Currency: CDI Event</name>
 	<description>Java Money and Currency: CDI Payment Event</description>
-	<url>http://javamoney.org</url>
-	<licenses>
-		<license>
-			<name>Apache License, Version 2.0</name>
-			<distribution>repo</distribution>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
-		</license>
-	</licenses>
 	<properties>
 		<!-- Explicitly declaring the source encoding eliminates the following 
 			message: -->

@@ -4,11 +4,12 @@
 	<parent>
 		<groupId>org.javamoney</groupId>
 		<artifactId>javamoney-parent</artifactId>
-		<version>1.0-SNAPSHOT</version>
+		<version>1.0</version>
 	</parent>
 	<groupId>org.javamoney.examples</groupId>
 	<artifactId>javamoney-examples</artifactId>
 	<packaging>pom</packaging>
+	<version>1.0-SNAPSHOT</version>
 	<name>Java Money and Currency Examples</name>
 	<modules>
 		<module>console</module>
@@ -23,8 +24,8 @@
 		<junit.version>4.8.2</junit.version>
 		<slf4j.version>1.6.1</slf4j.version>
 		<!-- JSR versions -->
-		<jsr.version>1.0-SNAPSHOT</jsr.version>
-		<javamoney.version>1.0-SNAPSHOT</javamoney.version> <!-- mostly for LIB -->
+		<jsr.version>1.0</jsr.version>
+		<lib.version>0.7</lib.version>
 	</properties>
 	<licenses>
 		<license>
@@ -57,10 +58,10 @@
     	<!-- Helps to resolve Parent POM -->
     	<repositories> 
         	<repository> 
-            		<id>jcenter</id>
-            		<name>JCenter</name>
-            		<url>http://jcenter.bintray.com</url> 
-		</repository> 
+           		<id>jcenter</id>
+           		<name>JCenter</name>
+           		<url>http://jcenter.bintray.com</url> 
+			</repository> 
 	        <repository>
 	            <snapshots>
 	                <enabled>false</enabled>

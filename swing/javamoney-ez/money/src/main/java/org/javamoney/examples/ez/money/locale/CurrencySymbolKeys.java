@@ -4,7 +4,7 @@ package org.javamoney.examples.ez.money.locale;
 
 import javax.money.CurrencySupplier;
 import javax.money.CurrencyUnit;
-import javax.money.MonetaryCurrencies;
+import javax.money.Monetary;
 
 import org.javamoney.examples.ez.common.utility.I18NHelper;
 
@@ -19,31 +19,31 @@ CurrencySymbolKeys implements CurrencySupplier
   /**
    * No symbol.
    */
-  NONE(I18NHelper.getSharedProperty("none"), "", MonetaryCurrencies.getCurrency("XXX")),
+  NONE(I18NHelper.getSharedProperty("none"), "", Monetary.getCurrency("XXX")),
   /**
    * The Euro.
    */
-  EURO("\u20ac ", MonetaryCurrencies.getCurrency("EUR")),
+  EURO("\u20ac ", Monetary.getCurrency("EUR")),
   /**
    * The US Dollar.
    */
-  DOLLAR("$ ", MonetaryCurrencies.getCurrency("USD")),
+  DOLLAR("$ ", Monetary.getCurrency("USD")),
   /**
    * The English Pound.
    */
-  POUND("\u00a3 ", MonetaryCurrencies.getCurrency("GBP")),
+  POUND("\u00a3 ", Monetary.getCurrency("GBP")),
   /**
    * The South African Rand.
    */
-  RAND("R ", MonetaryCurrencies.getCurrency("ZAR")),
+  RAND("R ", Monetary.getCurrency("ZAR")),
   /**
    * The Brazilian Real.
    */
-  REAL("R$ ", MonetaryCurrencies.getCurrency("BRL")),
+  REAL("R$ ", Monetary.getCurrency("BRL")),
   /**
    * The Russian Ruble.
    */
-  RUBLE(" \u0440.", MonetaryCurrencies.getCurrency("RUB"));
+  RUBLE(" \u0440.", Monetary.getCurrency("RUB"));
 
   //////////////////////////////////////////////////////////////////////////////
   // Start of public methods.

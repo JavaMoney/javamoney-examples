@@ -15,7 +15,7 @@
   	<dependency>
   		<groupId>org.javamoney.lib</groupId>
   		<artifactId>javamoney-calc</artifactId>
-  		<version>${javamoney.version}</version>
+  		<version>${lib.version}</version>
   	</dependency>
   </dependencies>
   <name>JavaMoney EZ Money</name>

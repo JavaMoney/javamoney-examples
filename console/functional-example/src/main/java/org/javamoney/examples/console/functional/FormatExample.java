@@ -4,7 +4,7 @@ import java.util.Locale;
 
 import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
-import javax.money.MonetaryCurrencies;
+import javax.money.Monetary;
 import javax.money.format.AmountFormatQueryBuilder;
 import javax.money.format.MonetaryAmountFormat;
 import javax.money.format.MonetaryFormats;
@@ -14,7 +14,7 @@ import org.javamoney.moneta.Money;
 public class FormatExample {
 
 	public static void main(String[] args) {
-		CurrencyUnit dollar = MonetaryCurrencies.getCurrency(Locale.US);
+		CurrencyUnit dollar = Monetary.getCurrency(Locale.US);
 		
 		MonetaryAmount monetaryAmount = Money.of(1202.12D, dollar);
 		MonetaryAmountFormat germanFormat = MonetaryFormats.getAmountFormat(

@@ -6,10 +6,11 @@ import javax.money.convert.MonetaryConversions;
 
 import javafx.scene.control.ChoiceBox;
 
+@SuppressWarnings("restriction")
 public class RateTypeSelector extends ChoiceBox<String> {
 
 	public RateTypeSelector() {
-		final Collection<String> types = MonetaryConversions.getProviderNames();
+		final Collection<String> types = MonetaryConversions.getConversionProviderNames();
 	}
 
 }

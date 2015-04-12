@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
-import javax.money.MonetaryCurrencies;
+import javax.money.Monetary;
 
 import org.javamoney.moneta.Money;
 
@@ -56,11 +56,11 @@ public class ExchangeBean implements Serializable {
 	}
 
 	public CurrencyUnit getCurrencyFrom() {
-		return MonetaryCurrencies.getCurrency(coinFrom);
+		return Monetary.getCurrency(coinFrom);
 	}
 	
 	public CurrencyUnit getCurrencyTo() {
-		return MonetaryCurrencies.getCurrency(coinTo);
+		return Monetary.getCurrency(coinTo);
 	}
 
 	public MonetaryAmount getMounetaryFrom() {

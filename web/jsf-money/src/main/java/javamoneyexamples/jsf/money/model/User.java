@@ -6,14 +6,14 @@ import java.util.List;
 
 import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
-import javax.money.MonetaryCurrencies;
+import javax.money.Monetary;
 
 import org.javamoney.moneta.FastMoney;
 import org.javamoney.moneta.function.MonetaryFunctions;
 
 public class User implements Serializable {
 
-	private static final CurrencyUnit CURRENCY = MonetaryCurrencies.getCurrency("USD");
+	private static final CurrencyUnit CURRENCY = Monetary.getCurrency("USD");
 
 	private static final long serialVersionUID = -4619662846488953817L;
 	

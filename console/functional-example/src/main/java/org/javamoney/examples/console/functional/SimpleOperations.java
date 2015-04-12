@@ -4,14 +4,14 @@ import java.util.Locale;
 
 import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
-import javax.money.MonetaryCurrencies;
+import javax.money.Monetary;
 
 import org.javamoney.moneta.Money;
 
 public class SimpleOperations {
 
 	public static void main(String[] args) {
-		CurrencyUnit dollar = MonetaryCurrencies.getCurrency(Locale.US);
+		CurrencyUnit dollar = Monetary.getCurrency(Locale.US);
         MonetaryAmount money = Money.of(120, dollar);
         MonetaryAmount money2 = Money.of(50, dollar);
         System.out.println(money.add(money2));

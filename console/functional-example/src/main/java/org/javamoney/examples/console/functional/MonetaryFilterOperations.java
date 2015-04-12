@@ -8,14 +8,14 @@ import java.util.stream.Collectors;
 
 import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
-import javax.money.MonetaryCurrencies;
+import javax.money.Monetary;
 
 import org.javamoney.moneta.Money;
 import org.javamoney.moneta.function.MonetaryFunctions;
 
 public class MonetaryFilterOperations {
-	private static CurrencyUnit DOLLAR = MonetaryCurrencies.getCurrency(Locale.US);
-	private static CurrencyUnit EURO = MonetaryCurrencies.getCurrency("EUR");
+	private static CurrencyUnit DOLLAR = Monetary.getCurrency(Locale.US);
+	private static CurrencyUnit EURO = Monetary.getCurrency("EUR");
 
 	public static void main(String[] args) {
 	

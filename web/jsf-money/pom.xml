@@ -30,7 +30,7 @@
 		<dependency>
 			<artifactId>moneta</artifactId>
 			<groupId>org.javamoney</groupId>
-			<version>1.0-RC3</version>
+			<version>${jsr.version}</version>
 		</dependency>
 	</dependencies>
 	<build>

@@ -11,7 +11,7 @@ import javafx.scene.control.TextField;
 
 import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
-import javax.money.MonetaryCurrencies;
+import javax.money.Monetary;
 
 import org.javamoney.examples.fxdemo.AbstractFXMLComponent;
 import org.javamoney.moneta.FastMoney;
@@ -41,7 +41,7 @@ public class AmountEntry extends AbstractFXMLComponent {
 		amountTitle.setText(title);
 		numberType.getItems().add("BigDecimal");
 		numberType.getItems().add("Long");
-        for(CurrencyUnit cu: MonetaryCurrencies.getCurrencies()){
+        for(CurrencyUnit cu: Monetary.getCurrencies()){
             codeBox.getItems().add(cu.getCurrencyCode());
         }
         Collections.sort(codeBox.getItems());
@@ -52,7 +52,7 @@ public class AmountEntry extends AbstractFXMLComponent {
 		String code = (String) codeBox.getSelectionModel().getSelectedItem();
 		String typeClass = (String) numberType.getSelectionModel()
 				.getSelectedItem();
-		CurrencyUnit currency = MonetaryCurrencies.getCurrency(code);
+		CurrencyUnit currency = Monetary.getCurrency(code);
 		BigDecimal dec = new BigDecimal(numberValue.getText());
 		if (typeClass != null) {
 			if ("Long".equals(typeClass)) {

@@ -64,7 +64,7 @@
 			</repository> 
 	        <repository>
 	            <snapshots>
-	                <enabled>false</enabled>
+	                <enabled>true</enabled>
 	            </snapshots>
 	            <id>central</id>
 	            <name>libs-release</name>

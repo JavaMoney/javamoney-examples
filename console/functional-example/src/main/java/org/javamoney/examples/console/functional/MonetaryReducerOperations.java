@@ -6,7 +6,7 @@ import java.util.Locale;
 
 import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
-import javax.money.MonetaryCurrencies;
+import javax.money.Monetary;
 
 import org.javamoney.moneta.Money;
 import org.javamoney.moneta.function.MonetaryFunctions;
@@ -24,7 +24,7 @@ public class MonetaryReducerOperations {
 	}
 	
 	public static List<MonetaryAmount> getDollars() {
-		CurrencyUnit dollar = MonetaryCurrencies.getCurrency(Locale.US);
+		CurrencyUnit dollar = Monetary.getCurrency(Locale.US);
 		List<MonetaryAmount> moneys = new ArrayList<>();
 		moneys.add(Money.of(120, dollar));
 		moneys.add(Money.of(50, dollar));

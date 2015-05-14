@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
 
 import javax.money.CurrencySupplier;
 import javax.money.CurrencyUnit;
-import javax.money.MonetaryCurrencies;
+import javax.money.Monetary;
 
 import org.javamoney.examples.fxdemo.AbstractFXMLComponent;
 
@@ -28,7 +28,7 @@ public class CurrencySelector extends AbstractFXMLComponent implements CurrencyS
 	public CurrencySelector(String title) {
 		super("/org/javamoney/examples/fxdemo/widgets/CurrencySelector.fxml");
 		this.currencyTitle.setText(title);
-        for(CurrencyUnit cu: MonetaryCurrencies.getCurrencies()){
+        for(CurrencyUnit cu: Monetary.getCurrencies()){
             codeBox.getItems().add(cu.getCurrencyCode());
         }
         Collections.sort(codeBox.getItems());
@@ -38,7 +38,7 @@ public class CurrencySelector extends AbstractFXMLComponent implements CurrencyS
 	public CurrencyUnit getCurrency() {
 		String code = codeBox.getSelectionModel().getSelectedItem();
 		if (code != null) {
-			return MonetaryCurrencies.getCurrency(code);
+			return Monetary.getCurrency(code);
 		}
 		return null;
 	}

@@ -4,7 +4,7 @@ import java.util.Locale;
 
 import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
-import javax.money.MonetaryCurrencies;
+import javax.money.Monetary;
 import javax.money.convert.CurrencyConversion;
 import javax.money.convert.ExchangeRateProvider;
 import javax.money.convert.MonetaryConversions;
@@ -19,8 +19,8 @@ public class ExchangeExample {
 		ExchangeRateProvider ecbRateProvider = MonetaryConversions
 				.getExchangeRateProvider("ECB");
 
-		CurrencyUnit real = MonetaryCurrencies.getCurrency("BRL");
-		CurrencyUnit dollar = MonetaryCurrencies.getCurrency(Locale.US);
+		CurrencyUnit real = Monetary.getCurrency("BRL");
+		CurrencyUnit dollar = Monetary.getCurrency(Locale.US);
 
 		CurrencyConversion ecbDollarConvertion = ecbRateProvider
 				.getCurrencyConversion(dollar);

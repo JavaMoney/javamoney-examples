@@ -23,13 +23,13 @@
 		<dependency>
 			<groupId>org.javamoney.lib</groupId>
 			<artifactId>javamoney-lib</artifactId>
-			<version>${javamoney.version}</version>
+			<version>${lib.version}</version>
             <type>pom</type>
 		</dependency>
 		<dependency>
 			<groupId>org.javamoney.lib</groupId>
 			<artifactId>javamoney-calc</artifactId>
-			<version>${javamoney.version}</version>
+			<version>${lib.version}</version>
 		</dependency>
 	</dependencies>
 </project>

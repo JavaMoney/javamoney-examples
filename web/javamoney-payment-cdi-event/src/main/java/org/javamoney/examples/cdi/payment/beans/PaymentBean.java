@@ -30,7 +30,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;
-import javax.money.MonetaryCurrencies;
+import javax.money.Monetary;
 
 
 //import org.javamoney.annotation.Amount;
@@ -65,7 +65,7 @@ public class PaymentBean implements Serializable {
 	// @Inject
 	// private MonetaryAmountFactory amountFactory;
 
-	private static final CurrencyUnit CURRENCY = MonetaryCurrencies
+	private static final CurrencyUnit CURRENCY = Monetary
 			.getCurrency("EUR");
 
 	@Amount

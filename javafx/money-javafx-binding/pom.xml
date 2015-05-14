@@ -42,12 +42,12 @@
 			<dependency>
 				<groupId>org.javamoney</groupId>
 				<artifactId>javamoney-conversion</artifactId>
-				<version>${javamoney.version}</version>
+				<version>${lib.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.javamoney</groupId>
 				<artifactId>javamoney-extensions</artifactId>
-				<version>${javamoney.version}</version>
+				<version>${lib.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.javamoney</groupId>

@@ -13,26 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.javamoney.examples.console.simple;
+package org.javamoney.examples.console.simple.core;
 
-import org.javamoney.moneta.FastMoney;
-import org.javamoney.moneta.Money;
-
+import javax.money.Monetary;
 
 /**
- * @author Werner Keil
- * @version 0.8
+ * Play around with the current CurrencyUnitProviders available.
  */
-public class MoneyDemo {
+public class CurrenciesPlayWithProviders {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Money amt1 = Money.of(10.1234556123456789, "USD");
-		FastMoney amt2 = FastMoney.of(123456789, "USD");
-		Money total = amt1.add(amt2);
-		System.out.println(total);
-	}
+        System.out.println("Known CurrencyProviders: " + Monetary.getCurrencyProviderNames());
+        System.out.println("CurrencyProviders, default chain: " + Monetary.getDefaultCurrencyProviderChain());
+    }
+
 
 }

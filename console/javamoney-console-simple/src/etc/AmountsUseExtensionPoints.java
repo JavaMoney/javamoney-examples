@@ -1,5 +1,6 @@
 package org.javamoney.examples.console.simple.core;
 
+import org.javamoney.examples.console.simple.util.ConsoleUtils;
 import org.javamoney.moneta.Money;
 import org.javamoney.moneta.function.MonetaryFunctions;
 import org.javamoney.moneta.function.MonetaryOperators;
@@ -7,8 +8,8 @@ import org.javamoney.moneta.function.MonetaryQueries;
 
 import javax.money.Monetary;
 import javax.money.MonetaryAmount;
-import javax.money.MonetaryRounding;
 import javax.money.RoundingQueryBuilder;
+
 import java.math.RoundingMode;
 
 /**

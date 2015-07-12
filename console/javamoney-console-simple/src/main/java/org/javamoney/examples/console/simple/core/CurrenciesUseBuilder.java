@@ -15,6 +15,7 @@
  */
 package org.javamoney.examples.console.simple.core;
 
+import org.javamoney.examples.console.simple.util.ConsoleUtils;
 import org.javamoney.moneta.CurrencyUnitBuilder;
 
 import javax.money.CurrencyQueryBuilder;

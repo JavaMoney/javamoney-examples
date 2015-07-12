@@ -1,4 +1,4 @@
-package org.javamoney.examples.console.simple.core;
+package org.javamoney.examples.console.simple.util;
 
 import javax.money.CurrencyUnit;
 import javax.money.MonetaryAmount;

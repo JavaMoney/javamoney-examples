@@ -15,7 +15,6 @@
 		<module>console</module>
 		<module>swing</module>
 		<module>javafx</module>
-		<!-- XXX add profile for Java 8/FX -->
 		<module>web</module>
 	</modules>
 	<properties>

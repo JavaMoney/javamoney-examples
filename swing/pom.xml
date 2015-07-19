@@ -60,4 +60,5 @@
 	<modules>
 		<module>javamoney-ez</module>
 	</modules>
+	<groupId>org.javamoney.examples.swing</groupId>
 </project>

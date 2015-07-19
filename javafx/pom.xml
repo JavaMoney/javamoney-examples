@@ -16,4 +16,5 @@
         <module>money-javafx-binding</module>
         <module>money-fxdemo</module>
     </modules>
+    <groupId>org.javamoney.examples.javafx</groupId>
 </project>

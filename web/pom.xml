@@ -5,7 +5,6 @@
     <artifactId>javamoney-examples</artifactId>
     <groupId>org.javamoney.examples</groupId>
     <version>1.0</version>
-    <relativePath>..</relativePath>
   </parent>
   <artifactId>javamoney-examples-web</artifactId>
   <packaging>pom</packaging>

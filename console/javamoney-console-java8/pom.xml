@@ -5,7 +5,6 @@
 		<groupId>org.javamoney.examples.console</groupId>
 		<artifactId>javamoney-examples-console</artifactId>
 		<version>1.0</version>
-		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>javamoney-console-java8</artifactId>
 	<name>JavaMoney Java 8 Console Examples</name>

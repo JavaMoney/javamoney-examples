@@ -6,7 +6,6 @@
 		<artifactId>javamoney-examples-web</artifactId>
 		<groupId>org.javamoney.examples</groupId>
 		<version>1.0</version>
-		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>javamoney-examples-jsf</artifactId>
 	<packaging>war</packaging>

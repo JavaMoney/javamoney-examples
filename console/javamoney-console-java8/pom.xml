@@ -11,4 +11,11 @@
 	<properties>
 		<jdkVersion>1.8</jdkVersion>
 	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.javamoney</groupId>
+			<artifactId>moneta</artifactId>
+			<version>${jsr.version}</version>
+		</dependency>
+	</dependencies>
 </project>

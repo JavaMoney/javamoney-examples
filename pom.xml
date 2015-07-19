@@ -23,7 +23,7 @@
 		<slf4j.version>1.6.1</slf4j.version>
 		<!-- JSR versions -->
 		<jsr.version>1.0</jsr.version>
-		<lib.version>0.8</lib.version>
+		<!-- lib.version>0.8</lib.version  --> 
 	</properties>
 	<licenses>
 		<license>

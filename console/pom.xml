@@ -24,11 +24,5 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>jul-to-slf4j</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.javamoney.lib</groupId>
-			<artifactId>javamoney-lib</artifactId>
-			<version>${lib.version}</version>
-			<type>pom</type>
-		</dependency>
 	</dependencies>
 </project>

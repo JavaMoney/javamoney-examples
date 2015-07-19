@@ -27,25 +27,8 @@
 		<dependency>
 			<groupId>org.javamoney.lib</groupId>
 			<artifactId>javamoney-lib</artifactId>
-			<version>0.7-SNAPSHOT</version>
+			<version>${lib.version}</version>
 			<type>pom</type>
 		</dependency>
 	</dependencies>
-	<repositories>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>central</id>
-            <name>libs-release</name>
-            <url>http://oss.jfrog.org/artifactory/libs-release</url>
-        </repository>
-        <repository>
-            <snapshots />
-            <id>snapshots</id>
-            <name>libs-snapshot</name>
-            <url>http://oss.jfrog.org/artifactory/libs-snapshot</url>
-        </repository>
-    </repositories>
-
 </project>

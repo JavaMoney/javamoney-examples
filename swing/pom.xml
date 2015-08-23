@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.javamoney.examples</groupId>
 		<artifactId>javamoney-examples</artifactId>
-		<version>1.0</version>
+		<version>1.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>javamoney-examples-swing</artifactId>
 	<name>Java Money and Currency Swing RCP Examples</name>
@@ -30,7 +30,7 @@
 			<dependency>
 				<groupId>org.javamoney</groupId>
 				<artifactId>moneta</artifactId>
-				<version>${jsr.version}</version>
+				<version>${impl.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -40,12 +40,10 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jul-to-slf4j</artifactId>
 		</dependency>
-
 
 		<dependency>
 			<groupId>junit</groupId>

@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.javamoney.examples.console</groupId>
 		<artifactId>javamoney-examples-console</artifactId>
-		<version>1.0</version>
+		<version>1.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>javamoney-console-java8</artifactId>
 	<name>JavaMoney Java 8 Console Examples</name>
@@ -15,7 +15,7 @@
 		<dependency>
 			<groupId>org.javamoney</groupId>
 			<artifactId>moneta</artifactId>
-			<version>${jsr.version}</version>
+			<version>${impl.version}</version>
 		</dependency>
 	</dependencies>
 </project>

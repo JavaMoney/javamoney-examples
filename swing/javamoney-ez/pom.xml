@@ -4,11 +4,11 @@
 	<parent>
 		<groupId>org.javamoney.examples.swing</groupId>
 		<artifactId>javamoney-examples-swing</artifactId>
-		<version>1.0</version>
+		<version>1.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>org.javamoney.examples.ez</groupId>
 	<artifactId>javamoney-ez</artifactId>
-	<version>3.0</version>
+	<version>3.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>JavaMoney EZ</name>
 	<description>EZ Money Reloaded - powered by JavaMoney</description>

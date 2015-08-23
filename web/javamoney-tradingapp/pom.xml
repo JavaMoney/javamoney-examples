@@ -5,7 +5,7 @@
 	<parent>
 		<artifactId>javamoney-examples-web</artifactId>
 		<groupId>org.javamoney.examples.web</groupId>
-		<version>1.0</version>
+		<version>1.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>javamoney-tradingapp</artifactId>
 	<packaging>war</packaging>
@@ -14,13 +14,13 @@
 		<!-- Spring version -->
 		<version.spring>3.1.1.RELEASE</version.spring>
 		<!-- Spring Third Party dependencies -->
-		<version.aopalliance>1.0</version.aopalliance>
+		<version.aopalliance>1.0.1-SNAPSHOT</version.aopalliance>
 		<!-- Third Party dependencies -->
-		<version.standard.taglibs>1.0.5</version.standard.taglibs>
-		<version.string.taglibs>1.1.0</version.string.taglibs>
+		<version.standard.taglibs>1.0.1-SNAPSHOT.5</version.standard.taglibs>
+		<version.string.taglibs>1.1.0.1-SNAPSHOT</version.string.taglibs>
 		<version.commons.lang>2.6</version.commons.lang>
 		<version.commons.logging>1.1.1</version.commons.logging>
-		<version.sdj>1.0-RC3.30</version.sdj>
+		<version.sdj>1.0.1-SNAPSHOT-RC3.30</version.sdj>
 		<version.jfl>1.6.1</version.jfl>
 		<!-- JBoss AS plugin for deployment -->
 		<version.jboss.as.maven.plugin>7.1.1.Final</version.jboss.as.maven.plugin>
@@ -180,7 +180,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>4.1.0.Final</version>
+			<version>4.1.0.1-SNAPSHOT.Final</version>
 			<scope>provided</scope>
 			<exclusions>
 				<exclusion>
@@ -194,13 +194,13 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator-annotation-processor</artifactId>
-			<version>4.1.0.Final</version>
+			<version>4.1.0.1-SNAPSHOT.Final</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.1.0.Final</version>
+			<version>4.1.0.1-SNAPSHOT.Final</version>
 			<scope>provided</scope>
 		</dependency>
 		<!-- Import Spring dependencies, these are either from community or versions

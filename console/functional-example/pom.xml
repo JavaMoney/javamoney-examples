@@ -4,7 +4,7 @@
 	<parent>
 		<artifactId>javamoney-examples-console</artifactId>
 		<groupId>org.javamoney.examples.console</groupId>
-		<version>1.0</version>
+		<version>1.0.1-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>functional-example</artifactId>
@@ -16,7 +16,7 @@
 		<dependency>
 			<groupId>org.javamoney</groupId>
 			<artifactId>moneta</artifactId>
-			<version>${jsr.version}</version>
+			<version>${impl.version}</version>
 		</dependency>
 	</dependencies>
 	<name>JavaMoney Console Examples Using functional in Java 8</name>

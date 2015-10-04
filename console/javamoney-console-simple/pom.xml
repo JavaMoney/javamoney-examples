@@ -8,7 +8,13 @@
 	</parent>
 	<artifactId>javamoney-console-simple</artifactId>
 	<name>JavaMoney Simple Console Examples</name>
-
+	
+	<properties>
+		<!--  <exampleMainClass>org.javamoney.examples.console.simple.conversion.ConversionExample</exampleMainClass>
+		-->
+		<exampleMainClass>org.javamoney.examples.console.simple.core.AmountsDoCalculations</exampleMainClass>
+	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.javamoney</groupId>
@@ -19,8 +25,29 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.jolira</groupId>
+				<artifactId>onejar-maven-plugin</artifactId>
+				<version>1.4.4</version>
+				<executions>
+					<execution>
+						<configuration>
+							<mainClass>${exampleMainClass}</mainClass>
+							<attachToBuild>true</attachToBuild>
+							<filename>${project.build.finalName}-onejar.${project.packaging}</filename>
+						</configuration>
+						<goals>
+							<goal>one-jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>

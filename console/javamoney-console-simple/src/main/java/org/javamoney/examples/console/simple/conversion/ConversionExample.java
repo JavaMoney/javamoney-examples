@@ -38,21 +38,18 @@ public class ConversionExample {
 		}
 		final MonetaryAmount amt = Money.of(2000, "EUR");
 		CurrencyConversion conv= MonetaryConversions.getConversion(termCurrencyCode, "ECB");
-		System.out.println(MessageFormat.format("2000 EUR -(ECB)-> {0} = {1}",
+		System.out.println(MessageFormat.format("2000 EUR (ECB)-> {0} = {1}",
 				termCurrencyCode, amt.with(conv)));
 		conv= MonetaryConversions.getConversion(termCurrencyCode, "IMF");
-		System.out.println(MessageFormat.format("2000 EUR -(IMF)-> {0} = {1}",
+		System.out.println(MessageFormat.format("2000 EUR (IMF)-> {0} = {1}",
 				termCurrencyCode, amt.with(conv)));
 
 		System.out.println(MessageFormat.format(
-				"2000 EUR -(ECB, at 5th Jan 2008)-> {0} = {1}",
+				"2000 EUR (ECB, at 5th Jan 2015)-> {0} = {1}",
 				termCurrencyCode, amt.with(MonetaryConversions
 						.getConversion(ConversionQueryBuilder.of()
 								.setTermCurrency(termCurrencyCode)
-								.set(LocalDate.of(2008, 01, 05)).build()))));
-
-		// System.out.println("2000 EUR -(?)-> BRL = " +
-		// amt.with(MonetaryConversions.getConversion("BRL")));
+								.set(LocalDate.of(2015, 01, 05)).build()))));
 	}
 
 }

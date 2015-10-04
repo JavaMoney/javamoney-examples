@@ -1,20 +1,32 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <artifactId>javamoney-examples</artifactId>
-        <groupId>org.javamoney.examples</groupId>
-        <version>1.0.1-SNAPSHOT</version>
-    </parent>
-    <artifactId>javamoney-examples-javafx</artifactId>
-    <packaging>pom</packaging>
-    <name>Java Money and Currency JavaFX Examples</name>
-    <properties>
-        <jdkVersion>1.8</jdkVersion>
-    </properties>
-    <modules>
-        <module>money-javafx-binding</module>
-        <module>money-fxdemo</module>
-    </modules>
-    <groupId>org.javamoney.examples.javafx</groupId>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>javamoney-examples</artifactId>
+		<groupId>org.javamoney.examples</groupId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>javamoney-examples-javafx</artifactId>
+	<packaging>pom</packaging>
+	<name>Java Money and Currency JavaFX Examples</name>
+	<properties>
+		<jdkVersion>1.8</jdkVersion>
+	</properties>
+	<modules>
+		<module>money-javafx-binding</module>
+		<module>money-fxdemo</module>
+	</modules>
+	<groupId>org.javamoney.examples.javafx</groupId>
+	<dependencies>
+		<dependency>
+			<groupId>javax.money</groupId>
+			<artifactId>money-api</artifactId>
+			<version>${api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.javamoney</groupId>
+			<artifactId>moneta</artifactId>
+			<version>${impl.version}</version>
+		</dependency>
+	</dependencies>
 </project>

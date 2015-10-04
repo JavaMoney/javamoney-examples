@@ -90,7 +90,7 @@ public class ConvertAmount extends AbstractExamplePane {
 						private void printSummary(MonetaryAmount amount,
 								PrintWriter pw) {
 							pw.println("Class: " + amount.getClass().getName());
-							pw.println("Vaöue: " + amount.toString());
+							pw.println("Value: " + amount.toString());
 						}
 					});
 			buttonPane.getChildren().add(actionButton);

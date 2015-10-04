@@ -20,11 +20,11 @@
 	<properties>
 		<basedir>.</basedir>
 		<!-- Dependency versions -->
-		<junit.version>4.8.2</junit.version>
+		<junit.version>4.11</junit.version>
 		<slf4j.version>1.6.1</slf4j.version>
 		<!-- JSR versions -->
 		<api.version>1.0</api.version>
-		<impl.version>1.0.1-SNAPSHOT</impl.version>
+		<impl.version>1.0</impl.version>
 		<lib.version>0.8</lib.version> 
 	</properties>
 	<licenses>

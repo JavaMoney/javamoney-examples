@@ -6,7 +6,7 @@ The current project structure is as follows:
 - [Console examples](console)
   - [Simple Console Examples](console/javamoney-console-simple)
   - [Java 8 Console Examples](console/javamoney-console-java8)
-  - [Java Functional Examples](functional-example): examples using Java 8 with streams, lambda and money-api
+  - [Java Functional Examples](console/functional-example): examples using Java 8 with streams, lambda and money-api
 - [JavaFX examples](javafx)
  - [JavaFX Demo application](javafx/money-fxdemo)
  - [JavaFX binding examples](javafx/money-javafx-binding)

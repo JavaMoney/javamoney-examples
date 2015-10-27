@@ -14,6 +14,7 @@
 		<module>javamoney-console-simple</module>
 		<module>javamoney-console-java8</module>
 		<module>functional-example</module>
+		<module>moneymachine</module>
 	</modules>
 	<dependencies>
 		<dependency>

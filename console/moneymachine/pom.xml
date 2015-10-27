@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CREDIT SUISSE IS WILLING TO LICENSE THIS SPECIFICATION TO YOU ONLY UPON 
+	THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS CONTAINED IN THIS AGREEMENT. 
+	PLEASE READ THE TERMS AND CONDITIONS OF THIS AGREEMENT CAREFULLY. BY DOWNLOADING 
+	THIS SPECIFICATION, YOU ACCEPT THE TERMS AND CONDITIONS OF THE AGREEMENT. 
+	IF YOU ARE NOT WILLING TO BE BOUND BY IT, SELECT THE "DECLINE" BUTTON AT 
+	THE BOTTOM OF THIS PAGE. Specification: JSR-354 Money and Currency API ("Specification") 
+	Copyright (c) 2012-2013, Credit Suisse All rights reserved. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>javamoney-examples-console</artifactId>
+        <groupId>org.javamoney.examples.console</groupId>
+        <version>1.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>moneymachine</artifactId>
+
+    <name>Money Machine (API Test suite)</name>
+    <url>http://java.net/projects/javamoney</url>
+    <inceptionYear>2014</inceptionYear>
+    <description>JSR 354 provides an API for representing, transporting, and performing comprehensive calculations with
+        Money and Currency.
+        This module is an API test suite to guide a workshop to gain feedback on the API.
+    </description>
+
+    <organization>
+        <name>JavaMoney</name>
+        <url>http://javamoney.org</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>Apache 2 License</name>
+            <comments>Spec</comments>
+            <url>LICENSE.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <properties>
+        <moduleDir>.</moduleDir>
+        <basedir>.</basedir>
+
+        <license.licenseName>jcp_spec</license.licenseName>
+        <license.licenseResolver>src/license</license.licenseResolver>
+    </properties>
+
+    <developers>
+        <developer>
+            <id>atsticks</id>
+            <name>Anatole Tresch</name>
+            <organization>Credit Suisse</organization>
+            <roles>
+                <role>Specification Lead</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <prerequisites>
+        <maven>3.0.4</maven>
+    </prerequisites>
+
+    <scm>
+        <connection>scm:git:https://github.com/atsticks/javamachine.git</connection>
+        <tag>master</tag>
+        <developerConnection>scm:git:https://github.com/atsticks/javamaschine.git</developerConnection>
+        <url>https://github.com/atsticks/javamaschine</url>
+    </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.money</groupId>
+            <artifactId>money-api</artifactId>
+            <version>${api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.javamoney</groupId>
+            <artifactId>moneta</artifactId>
+            <version>${impl.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <defaultGoal>install</defaultGoal>
+
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh</artifactId>
+                <version>2.4</version>
+            </extension>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-webdav-jackrabbit</artifactId>
+                <version>2.2</version>
+            </extension>
+        </extensions>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <debug>true</debug>
+                    <optimize>true</optimize>
+                    <verbose>true</verbose>
+                    <source>${maven.compile.sourceLevel}</source>
+                    <target>${maven.compile.targetLevel}</target>
+                    <compilerArgument>-g</compilerArgument>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -112,7 +112,7 @@ public class SamplePage extends BorderPane {
 		html.append('\n');
 		html.append("        .syntaxhighlighter {\n");
 		html.append("			overflow: visible;\n");
-		if (com.sun.javafx.Utils.isMac()) {
+		if (com.sun.javafx.util.Utils.isMac()) {
 			html.append("			font: 12px Ayuthaya !important; line-height: 150% !important; \n");
 			html.append("		}\n");
 			html.append("		code { font: 12px Ayuthaya !important; line-height: 150% !important; } \n");

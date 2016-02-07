@@ -8,6 +8,7 @@ import javax.money.CurrencyContextBuilder;
 import javax.money.CurrencyQuery;
 import javax.money.CurrencyUnit;
 import javax.money.spi.CurrencyProviderSpi;
+
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -32,4 +33,15 @@ public class GeeConCurrencyProvider implements CurrencyProviderSpi{
         }
         return Collections.emptySet();
     }
+
+	@Override
+	public String getProviderName() {
+		return "GeeCon";
+	}
+
+	@Override
+	public boolean isCurrencyAvailable(CurrencyQuery query) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

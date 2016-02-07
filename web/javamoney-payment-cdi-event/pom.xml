@@ -44,6 +44,7 @@
 		<!-- maven-compiler-plugin -->
 		<maven.compiler.target>1.6</maven.compiler.target>
 		<maven.compiler.source>1.6</maven.compiler.source>
+		<impl.version>1.1</impl.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -77,12 +78,12 @@
 			</dependency>
 			<dependency>
 				<groupId>javax.money</groupId>
-				<artifactId>money-api</artifactId>
+				<artifactId>money-api-bp</artifactId>
 				<version>${api.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.javamoney</groupId>
-				<artifactId>moneta</artifactId>
+				<artifactId>moneta-bp</artifactId>
 				<version>${impl.version}</version>
 			</dependency>
 		</dependencies>
@@ -91,11 +92,11 @@
 	<dependencies>
 		<dependency>
 				<groupId>javax.money</groupId>
-				<artifactId>money-api</artifactId>
+				<artifactId>money-api-bp</artifactId>
 			</dependency>
 			<dependency>
 				<groupId>org.javamoney</groupId>
-				<artifactId>moneta</artifactId>
+				<artifactId>moneta-bp</artifactId>
 			</dependency>
 		<!-- Import the CDI API, we use provided scope as the API is included in
 			JBoss AS 7 -->

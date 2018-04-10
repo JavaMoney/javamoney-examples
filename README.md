@@ -23,7 +23,7 @@ The current project structure is as follows:
 
 [![Built with Maven](http://maven.apache.org/images/logos/maven-feather.png)](http://maven.org/)
 
-Waffle.io [![Stories in Ready](https://badge.waffle.io/JavaMoney/javamoney-examples.png?label=ready&title=Ready)](https://waffle.io/JavaMoney/javamoney-examples) [![Stories in Progress](https://badge.waffle.io/JavaMoney/javamoney-examples.png?label=in%20progress&title=In Progress)](https://waffle.io/JavaMoney/javamoney-examples)
+Waffle.io [![Stories in Ready](https://badge.waffle.io/JavaMoney/javamoney-examples.png?label=ready&title=Ready)](https://waffle.io/JavaMoney/javamoney-examples)
 -----------
 
 [![Throughput Graph](https://graphs.waffle.io/JavaMoney/javamoney-examples/throughput.svg)](https://waffle.io/JavaMoney/javamoney-examples/metrics)

@@ -4,7 +4,7 @@
 	<parent>
 		<artifactId>javamoney-examples-web</artifactId>
 		<groupId>org.javamoney.examples.web</groupId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>javamoney-examples-jsf</artifactId>
 	<packaging>war</packaging>
@@ -29,6 +29,7 @@
 			<artifactId>moneta</artifactId>
 			<groupId>org.javamoney</groupId>
 			<version>${impl.version}</version>
+			<type>${impl.type}</type>
 		</dependency>
 	</dependencies>
 	<build>

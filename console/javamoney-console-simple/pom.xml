@@ -4,22 +4,22 @@
 	<parent>
 		<artifactId>javamoney-examples-console</artifactId>
 		<groupId>org.javamoney.examples.console</groupId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>javamoney-console-simple</artifactId>
 	<name>JavaMoney Simple Console Examples</name>
-	
+
 	<properties>
-		<!--  <exampleMainClass>org.javamoney.examples.console.simple.conversion.ConversionExample</exampleMainClass>
-		-->
+		<!-- <exampleMainClass>org.javamoney.examples.console.simple.conversion.ConversionExample</exampleMainClass> -->
 		<exampleMainClass>org.javamoney.examples.console.simple.core.AmountsDoCalculations</exampleMainClass>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.javamoney</groupId>
 			<artifactId>moneta</artifactId>
 			<version>${impl.version}</version>
+			<type>${impl.type}</type>
 		</dependency>
 
 		<dependency>
@@ -28,7 +28,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>

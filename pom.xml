@@ -10,7 +10,7 @@
 	<artifactId>javamoney-examples</artifactId>
 	<packaging>pom</packaging>
 	<name>Java Money and Currency Examples</name>
-	<version>1.1</version>
+	<version>1.2-SNAPSHOT</version>
 	<modules>
 		<module>console</module>
 		<module>swing</module>

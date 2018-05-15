@@ -52,6 +52,7 @@
 				<groupId>org.javamoney</groupId>
 				<artifactId>moneta</artifactId>
 				<version>${impl.version}</version>
+				<type>${impl.type}</type>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -98,6 +99,8 @@
 		<dependency>
 			<groupId>org.javamoney</groupId>
 			<artifactId>moneta</artifactId>
+			<version>${impl.version}</version>
+			<type>${impl.type}</type>
 		</dependency>
 
 		<dependency>

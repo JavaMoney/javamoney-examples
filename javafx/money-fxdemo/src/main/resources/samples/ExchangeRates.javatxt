@@ -2,10 +2,9 @@ package samples;
 
 import javax.money.CurrencyUnit;
 import javax.money.convert.CurrencyConverter;
-import javax.money.provider.Monetary;
+import javax.money.Monetary;
 
-import net.java.javamoney.ri.core.Money;
-import net.java.javamoney.ri.core.MoneyCurrency;
+import org.javamoney.moneta.Money;
 
 /**
  * Sample snippets for accessing and creating currencies on platform level.
@@ -16,8 +15,8 @@ public class ExchangeRates {
 	 * Shows access to exchange rates.
 	 */
 	public void accessRates() {
-		CurrencyUnit base = MoneetaryCurrencies.getCurrency("EUR");
-		CurrencyUnit term = MoneetaryCurrencies.getCurrency("USD");
+		CurrencyUnit base = Monetary.getCurrency("EUR");
+		CurrencyUnit term = Monetary.getCurrency("USD");
 
 		ExchangeRateProvider rateProv = MonetaryConversions.getRateProvider();
 		// Access Current

@@ -31,7 +31,7 @@
 	<licenses>
 		<license>
 			<name>Apache License version 2.0</name>
-			<url>LICENSE.txt</url>
+			<url>LICENSE</url>
 		</license>
 	</licenses>
 	<dependencyManagement>

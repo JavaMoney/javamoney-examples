@@ -20,7 +20,6 @@ import org.javamoney.moneta.FastMoney;
 import org.javamoney.moneta.Money;
 
 import javax.money.Monetary;
-import javax.money.MonetaryAmount;
 import javax.money.MonetaryAmountFactoryQueryBuilder;
 
 

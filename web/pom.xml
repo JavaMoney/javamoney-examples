@@ -9,9 +9,9 @@
   <packaging>pom</packaging>
   <name>Java Money and Currency Web Examples</name>
   <modules>
-    <!--  module>javamoney-tradingapp</module> -->
     <module>javamoney-payment-cdi-event</module>
     <module>jsf-money</module>
+    <!--  module>javamoney-tradingapp</module> -->
     <!--  module>jax-rs-money</module> -->
   </modules>
   <groupId>org.javamoney.examples.web</groupId>

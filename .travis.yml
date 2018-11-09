@@ -1,7 +1,7 @@
 sudo: false
 language: java
 jdk:
-  - openjdk10
+  - oraclejdk8
 
 after_success:
   - mvn jacoco:report coveralls:jacoco -DsourceEncoding=UTF-8

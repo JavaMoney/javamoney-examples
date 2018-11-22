@@ -1,21 +1,20 @@
-package org.javamoney.examples.console.simple.format;
+package org.javamoney.examples.console.java10;
 
 import org.javamoney.moneta.Money;
 import org.javamoney.moneta.format.AmountFormatParams;
 import org.javamoney.moneta.format.CurrencyStyle;
 
-import javax.money.MonetaryAmount;
 import javax.money.format.AmountFormatQueryBuilder;
 import javax.money.format.MonetaryFormats;
 import java.util.Locale;
 
 /**
- * Created by Anatole on 14.05.2015.
+ * Created by Werner on 22.11.2018.
  */
 public class FormattingAmounts {
 
     public static void main(String... args) {
-        MonetaryAmount amt = Money.of(1234.5678, "EUR");
+    	var amt = Money.of(1234.5678, "EUR");
         System.out.println(amt.query(MonetaryFormats.getAmountFormat(Locale.GERMANY)));
         System.out.println(MonetaryFormats.getAmountFormat(Locale.GERMANY).format(amt));
         amt = Money.of(123412341234.5678, "INR");
@@ -32,5 +31,4 @@ public class FormattingAmounts {
         amt = Money.of(5, "USD");
         System.out.println(MonetaryFormats.getAmountFormat(AmountFormatQueryBuilder.of(Locale.US).set(CurrencyStyle.SYMBOL).set(AmountFormatParams.PATTERN, "¤##.##").build()).format(amt));
     }
-
 }

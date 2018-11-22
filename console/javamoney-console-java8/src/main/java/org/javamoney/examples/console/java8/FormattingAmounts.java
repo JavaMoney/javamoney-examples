@@ -1,4 +1,4 @@
-package org.javamoney.examples.console.simple.format;
+package org.javamoney.examples.console.java8;
 
 import org.javamoney.moneta.Money;
 import org.javamoney.moneta.format.AmountFormatParams;

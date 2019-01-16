@@ -3,13 +3,13 @@ javamoney-payment-cdi-event: Use CDI Events to Process Debit and Credit Operatio
 Author: Elvadas Nono (initial contribution), Werner Keil; 
 Level: Beginner; 
 Technologies: CDI, JSR 345 (Money and Currency API) 
-Summary: Demonstrates how to use CDI 1.0 Events with the Money and Currency API; 
-Target Product: EAP
+Summary: Demonstrates how to use CDI Events with the Money and Currency API; 
+Target Product: Java EE 8, Jakarta EE
 
 What is it?
 -----------
 
-This example demonstrates how to use *CDI 1.0 Events* in  *JBoss Enterprise Application Platform 6* or *JBoss WildFly 7* and above.
+This example demonstrates how to use *CDI Events* in  *JBoss WildFly 13* and above.
 
 The JSF front-end client allows you to create both credit and debit operation events.
 

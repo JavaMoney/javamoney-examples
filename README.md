@@ -15,7 +15,7 @@ The current project structure is as follows:
 - [Swing RCP examples](swing)
   - [An improved successor to EZ Money.](swing/javamoney-ez) 
 - [Web examples](web)
-  - [Demo for CDI 1.0 Events with the Money and Currency API](web/javamoney-payment-cdi-event)
+  - [Demo for CDI Events with the Money and Currency API](web/javamoney-payment-cdi-event)
   - [Spring Trading App](web/javamoney-tradingapp)  currently **unstable**/disabled
   - [Java EE with JAX-RS](web/jax-rs-money) currently **unstable/broken**/disabled
   - [Example using JSF with MoneyAPI](web/jsf-money)

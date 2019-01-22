@@ -16,8 +16,13 @@
 package org.javamoney.examples.cdi.payment;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.math.BigDecimal;
+
+import javax.money.CurrencyUnit;
+import javax.money.Monetary;
+import javax.money.convert.MonetaryConversions;
 
 import org.javamoney.moneta.Money;
 import org.junit.Test;
@@ -33,15 +38,22 @@ public class SmokeTests {
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(SmokeTests.class);
 
+	private static final CurrencyUnit CHF = Monetary.getCurrency("CHF");
+	private static final CurrencyUnit EUR = Monetary.getCurrency("EUR");
+
 	@Test
 	public void testCreateMoney() {
 		// Creating one
 		Money amount1 = Money.of(1.0d,"CHF");
-		Money amount2 = Money.of(1.0d, "CHF");
-		Money amount3 = amount1.add(amount2);
+		Money amount2 = Money.of(1.0d, "EUR");
+		Money amount3 = amount1.add(
+				MonetaryConversions.getConversion(CHF).apply(amount2));
 		LOGGER.debug(amount1 + " + " + amount2 + " = " + amount3);
-		assertEquals(BigDecimal.ONE, amount1.getNumber());
-		assertEquals(BigDecimal.ONE, amount2.getNumber());
-		assertEquals(BigDecimal.valueOf(2d), amount3.getNumber());
+		assertEquals(BigDecimal.ONE, amount1.getNumber().numberValue(BigDecimal.class));
+		assertEquals(BigDecimal.ONE, amount2.getNumber().numberValue(BigDecimal.class));
+		assertTrue(amount3.getNumber().doubleValue() > 1d); 
+		assertEquals(CHF, amount1.getCurrency());
+		assertEquals(EUR, amount2.getCurrency());
+		assertEquals(CHF, amount3.getCurrency());
 	}
 }

@@ -9,7 +9,7 @@ Target Product: Java EE 8, Jakarta EE
 What is it?
 -----------
 
-This example demonstrates how to use *CDI Events* in  *JBoss WildFly 13* and above.
+This example demonstrates how to use **CDI Events** in *JBoss WildFly 13* and above or a compatible *Java EE 8 / Jakarta EE 8* container.
 
 The JSF front-end client allows you to create both credit and debit operation events.
 

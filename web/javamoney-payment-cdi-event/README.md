@@ -40,9 +40,9 @@ The javamoney-payment-cdi-event example defines the following classes:
 System requirements
 -------------------
 
-All you need to build this project is Java 6.0 (Java SDK 1.6) or better, Maven 3.0 or better.
+All you need to build this project is Java 8 or above, Maven 3.0 or above.
 
-The application this project produces is designed to be run on JBoss Enterprise Application Platform 6 or JBoss WildFly 7. 
+The application this project produces is designed to be run on Java EE 8 or JBoss WildFly 13 and above. 
 
  
 Configure Maven

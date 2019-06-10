@@ -23,9 +23,3 @@ The current project structure is as follows:
 [![Build Status](https://api.travis-ci.org/JavaMoney/javamoney-examples.png?branch=master)](https://travis-ci.org/JavaMoney/javamoney-examples) [![License](http://img.shields.io/badge/license-Apache2-red.svg)](http://opensource.org/licenses/apache-2.0) 
 
 [![Built with Maven](http://maven.apache.org/images/logos/maven-feather.png)](http://maven.org/)
-
-Waffle.io [![Stories in Ready](https://badge.waffle.io/JavaMoney/javamoney-examples.png?label=ready&title=Ready)](https://waffle.io/JavaMoney/javamoney-examples)
------------
-
-[![Throughput Graph](https://graphs.waffle.io/JavaMoney/javamoney-examples/throughput.svg)](https://waffle.io/JavaMoney/javamoney-examples/metrics)
-

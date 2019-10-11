@@ -14,7 +14,7 @@
 	<modules>
 		<module>console</module>
 		<module>swing</module>
-		<!--  >module>javafx</module -->
+		<module>javafx</module>
 		<module>web</module>
 	</modules>
 	<properties>

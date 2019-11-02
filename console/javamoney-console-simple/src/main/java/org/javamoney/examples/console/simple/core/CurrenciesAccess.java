@@ -1,6 +1,6 @@
 /*
  * JavaMoney Examples
- * Copyright 2012-2014, Werner Keil 
+ * Copyright 2012-2019, Werner Keil
  * and individual contributors by the @author tags.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,6 @@ import org.javamoney.moneta.CurrencyUnitBuilder;
 import javax.money.CurrencyQueryBuilder;
 import javax.money.Monetary;
 
-
 public class CurrenciesAccess {
 
     /**
@@ -34,7 +33,7 @@ public class CurrenciesAccess {
                 ConsoleUtils::printDetails
         );
 
-        CurrencyUnitBuilder.of("GeeCon", "GeeCon-Conference").build(true);
+        CurrencyUnitBuilder.of("Devoxx", "Devoxx-Conference").build(true);
         Monetary.getCurrencies(CurrencyQueryBuilder.of().setProviderNames("ConfigurableCurrencyUnitProvider").build()).forEach(
                 ConsoleUtils::printDetails
         );
@@ -44,6 +43,5 @@ public class CurrenciesAccess {
 
 //        printDetails(Monetary.getCurrency("CHF"));
     }
-
 
 }

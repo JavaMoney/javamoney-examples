@@ -1,6 +1,6 @@
 /*
  * JavaMoney Examples
- * Copyright 2012-2014, Werner Keil 
+ * Copyright 2012-2019, Werner Keil
  * and individual contributors by the @author tags.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");

@@ -45,6 +45,11 @@ public class FormattingAmounts {
                 .format(amt));
         
         amt = Money.of(5, "USD");
-        System.out.println(MonetaryFormats.getAmountFormat(AmountFormatQueryBuilder.of(Locale.US).set(CurrencyStyle.SYMBOL).set(AmountFormatParams.PATTERN, "¤##.##").build()).format(amt));
+        System.out.println(MonetaryFormats.getAmountFormat(
+                AmountFormatQueryBuilder.of(Locale.US)
+                    .set(CurrencyStyle.SYMBOL)
+                    .set(AmountFormatParams.PATTERN, "¤##.##")
+                    .build())
+                .format(amt));
     }
 }

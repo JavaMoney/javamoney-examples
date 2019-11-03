@@ -62,9 +62,6 @@ public class PaymentBean implements Serializable {
 	@Debit
 	Event<PaymentEvent> debitEventProducer;
 
-	// @Inject
-	// private MonetaryAmountFactory amountFactory;
-
 	private static final CurrencyUnit CURRENCY = Monetary
 			.getCurrency("EUR");
 
@@ -86,10 +83,8 @@ public class PaymentBean implements Serializable {
 
 	// Pay Action
 	public String pay() {
-
 		PaymentEvent currentEvtPayload = new PaymentEvent();
 		currentEvtPayload.setType(PaymentType.of(paymentOption));
-		// currentEvtPayload.setAmount(amount);
 		currentEvtPayload.setMoney(money);
 		currentEvtPayload.setDatetime(new Date());
 
@@ -150,4 +145,6 @@ public class PaymentBean implements Serializable {
 		this.money = Money.of(amount, CURRENCY);
 	}
 
+	// @Inject
+	// private MonetaryAmountFactory amountFactory;
 }

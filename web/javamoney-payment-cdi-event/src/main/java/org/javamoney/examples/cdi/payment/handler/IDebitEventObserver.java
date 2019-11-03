@@ -4,7 +4,7 @@
  * and individual contributors by the @author tags. See the copyright.txt in the
  * distribution for a full listing of individual contributors
  *
- * Copyright 2012-2013, Credit Suisse AG, Werner Keil 
+ * Copyright 2012-2019, Werner Keil
  * and individual contributors by the @author tags.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,12 +24,10 @@ package org.javamoney.examples.cdi.payment.handler;
  *
  */
 
-
 import javax.enterprise.event.Observes;
 
 import org.javamoney.examples.cdi.payment.events.PaymentEvent;
 import org.javamoney.examples.cdi.payment.qualifiers.Debit;
-
 
 public interface IDebitEventObserver {
 	

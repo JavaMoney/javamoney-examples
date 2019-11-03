@@ -4,7 +4,7 @@
  * and individual contributors by the @author tags. See the copyright.txt in the
  * distribution for a full listing of individual contributors
  *
- * Copyright 2012-2015, Credit Suisse AG, Werner Keil 
+ * Copyright 2012-2019, Werner Keil
  * and individual contributors by the @author tags.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -70,8 +70,6 @@ public class PaymentBean implements Serializable {
 
 	@Amount
 	private BigDecimal amount = new BigDecimal(10.0);
-	// private final CurrencyUnit DOLLAR = MoneyCurrency.getInstance("ISO4217",
-	// "USD");
 
 	@Amount
 	private MonetaryAmount money = Money.of(amount, CURRENCY);
@@ -97,13 +95,11 @@ public class PaymentBean implements Serializable {
 
 		switch (currentEvtPayload.getType()) {
 		case DEBIT:
-
 			debitEventProducer.fire(currentEvtPayload);
-
 			break;
+
 		case CREDIT:
 			creditEventProducer.fire(currentEvtPayload);
-
 			break;
 
 		default:
@@ -119,7 +115,6 @@ public class PaymentBean implements Serializable {
 	public void reset() {
 		amount = null;
 		paymentOption = "";
-
 	}
 
 	public Event<PaymentEvent> getCreditEventLauncher() {

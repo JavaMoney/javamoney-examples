@@ -4,7 +4,7 @@
  * and individual contributors by the @author tags. See the copyright.txt in the
  * distribution for a full listing of individual contributors
  *
- * Copyright 2012-2013, Credit Suisse AG, Werner Keil 
+ * Copyright 2012-2019, Werner Keil
  * and individual contributors by the @author tags.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");

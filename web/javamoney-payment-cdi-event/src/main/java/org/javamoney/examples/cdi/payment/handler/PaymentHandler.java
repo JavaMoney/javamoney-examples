@@ -4,7 +4,7 @@
  * and individual contributors by the @author tags. See the copyright.txt in the
  * distribution for a full listing of individual contributors
  *
- * Copyright 2012-2013, Credit Suisse AG, Werner Keil 
+ * Copyright 2012-2019, Werner Keil
  * and individual contributors by the @author tags.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,7 +34,6 @@ import org.javamoney.examples.cdi.payment.events.PaymentEvent;
 import org.javamoney.examples.cdi.payment.qualifiers.Credit;
 import org.javamoney.examples.cdi.payment.qualifiers.Debit;
 
-
 /**
  * @author Werner Keil
  *
@@ -58,18 +57,13 @@ public class PaymentHandler implements Serializable,ICreditEventObserver, IDebit
 		return payments;
 	}
 
-
 	public void onCreditPaymentEvent(@Observes @Credit PaymentEvent event){
-
 		logger.info("Processing the credit operation "+event);
 		payments.add(event);
 	}
 
-	
 	public void onDebitPaymentEvent(@Observes @Debit PaymentEvent event) {
 		logger.info("Processing the debit operation "+event);
 		payments.add(event);
-		
 	}
-
 }

@@ -14,7 +14,7 @@ import org.javamoney.moneta.function.MonetaryFunctions;
 public class MonetaryReducerOperations {
 
 	public static void main(String[] args) {
-		List<MonetaryAmount> moneys = getDollars();
+		List<MonetaryAmount> moneys = aFistfulOfDollars();
 		MonetaryAmount min = moneys.stream().reduce(MonetaryFunctions.min()).get();
 		MonetaryAmount max = moneys.stream().reduce(MonetaryFunctions.max()).get();
 		MonetaryAmount sum = moneys.stream().reduce(MonetaryFunctions.sum()).get();
@@ -23,7 +23,7 @@ public class MonetaryReducerOperations {
 		System.out.println(sum);//USD 460
 	}
 	
-	public static List<MonetaryAmount> getDollars() {
+	private static List<MonetaryAmount> aFistfulOfDollars() {
 		CurrencyUnit dollar = Monetary.getCurrency(Locale.US);
 		List<MonetaryAmount> moneys = new ArrayList<>();
 		moneys.add(Money.of(120, dollar));

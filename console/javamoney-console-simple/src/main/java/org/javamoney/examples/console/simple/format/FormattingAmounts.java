@@ -36,10 +36,10 @@ public class FormattingAmounts {
         amt = Money.of(123412341234.5678, "INR");
         System.out.println(MonetaryFormats.getAmountFormat(new Locale("", "INR")).format(amt));
 
-        // no with adaptive groupings
+        // now with adaptive groupings
         System.out.println(MonetaryFormats.getAmountFormat(
                 AmountFormatQueryBuilder.of(new Locale("", "INR"))
-                        .set(AmountFormatParams.GROUPING_SIZES, new int[]{2, 3})
+                        .set(AmountFormatParams.GROUPING_SIZES, new int[]{3, 2})
                         .set(AmountFormatParams.GROUPING_GROUPING_SEPARATORS, new char[]{',', '`'})
                         .build())
                 .format(amt));
@@ -47,5 +47,4 @@ public class FormattingAmounts {
         amt = Money.of(5, "USD");
         System.out.println(MonetaryFormats.getAmountFormat(AmountFormatQueryBuilder.of(Locale.US).set(CurrencyStyle.SYMBOL).set(AmountFormatParams.PATTERN, "¤##.##").build()).format(amt));
     }
-
 }

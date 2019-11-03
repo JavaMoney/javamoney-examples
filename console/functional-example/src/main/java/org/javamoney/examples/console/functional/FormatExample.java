@@ -28,7 +28,5 @@ public class FormatExample {
 		System.out.println(germanFormat.format(monetaryAmount));//1.202,12 USD
 		System.out.println(usFormat.format(monetaryAmount));//USD1,202.12
 		System.out.println(customFormat.format(monetaryAmount));//$1,202.12
-		
-		 
 	}
 }

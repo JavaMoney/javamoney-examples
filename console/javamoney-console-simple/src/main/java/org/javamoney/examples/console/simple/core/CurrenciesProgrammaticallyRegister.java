@@ -1,6 +1,6 @@
 /*
  * JavaMoney Examples
- * Copyright 2012-2014, Werner Keil 
+ * Copyright 2012-2019, Werner Keil
  * and individual contributors by the @author tags.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,14 +24,14 @@ import javax.money.CurrencyUnit;
 import javax.money.Monetary;
 
 /**
- * Programmatically registers a on the fly CurrencyUnit into the current registry.
+ * Programmatically registers a CurrencyUnit on the fly into the current registry.
  */
 public class CurrenciesProgrammaticallyRegister {
 
     public static void main(String[] args) {
         CurrencyUnit onTheFlyUnit = new CurrencyUnit() {
 
-            private CurrencyContext context = CurrencyContextBuilder.of("GeeCon-onTheFly").build();
+            private CurrencyContext context = CurrencyContextBuilder.of("Devoxx-ToolsInAction").build();
 
             @Override
             public int compareTo(CurrencyUnit o) {
@@ -40,7 +40,7 @@ public class CurrenciesProgrammaticallyRegister {
 
             @Override
             public String getCurrencyCode() {
-                return "GeeCon-Special";
+                return "DevoxxFranc";
             }
 
             @Override
@@ -59,8 +59,6 @@ public class CurrenciesProgrammaticallyRegister {
             }
         };
         ConfigurableCurrencyUnitProvider.registerCurrencyUnit(onTheFlyUnit);
-        ConsoleUtils.printDetails(Monetary.getCurrency("GeeCon-Special"));
+        ConsoleUtils.printDetails(Monetary.getCurrency("DevoxxFranc"));
     }
-
-
 }

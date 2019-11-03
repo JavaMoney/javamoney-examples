@@ -1,11 +1,8 @@
 *.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
-.settings/
 .project
+
+.settings/
+.resourceCache/
 nbproject/
 target/
 .classpath
@@ -13,3 +10,7 @@ target/
 .idea/
 .directory
 
+# Package Files #
+*.jar
+*.war
+*.ear

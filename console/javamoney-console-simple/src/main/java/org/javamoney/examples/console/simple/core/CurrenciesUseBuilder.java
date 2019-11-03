@@ -26,16 +26,13 @@ import javax.money.Monetary;
  */
 public class CurrenciesUseBuilder {
 
-
 	public static void main(String[] args) {
         ConsoleUtils.printDetails(
-                CurrencyUnitBuilder.of("GeeCoin", "BuildingCurrenciesExample").setCurrencyCode("GCC").setDefaultFractionDigits(2).build());
+                CurrencyUnitBuilder.of("DevoxxFranc", "BuildingCurrenciesExample").setCurrencyCode("DXF").setDefaultFractionDigits(2).build());
         Monetary.getCurrencies(CurrencyQueryBuilder.of().setProviderNames("ConfigurableCurrencyUnitProvider").build()).forEach(
                 ConsoleUtils::printDetails
         );
         ConsoleUtils.printDetails(
-                CurrencyUnitBuilder.of("GeeCoin", "BuildingCurrenciesExample").setCurrencyCode("GCC").setDefaultFractionDigits(2).build(true));
+                CurrencyUnitBuilder.of("DevoxxFranc", "BuildingCurrenciesExample").setCurrencyCode("DXF").setDefaultFractionDigits(2).build(true));
     }
-
-
 }

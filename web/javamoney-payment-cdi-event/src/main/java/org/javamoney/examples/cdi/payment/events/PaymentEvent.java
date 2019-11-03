@@ -47,7 +47,7 @@ public class PaymentEvent {
 	}
 
 	public String toString(){
-		return "EVT:"+getDatetime()+":"+getMoney()+":"+getType();
+        return String.format("EVT: %s:%s:%s", getDatetime(), getMoney(), getType());
 	}
 	public MonetaryAmount getMoney() {
 		return money;

@@ -23,7 +23,6 @@ import java.util.Date;
 
 import javax.money.MonetaryAmount;
 
-
 /**
  * @author Werner Keil
  *
@@ -56,5 +55,4 @@ public class PaymentEvent {
 	public void setMoney(MonetaryAmount money) {
 		this.money = money;
 	}
-	
 }

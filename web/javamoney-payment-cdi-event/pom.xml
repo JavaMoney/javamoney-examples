@@ -45,15 +45,15 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>javax</groupId>
-				<artifactId>javaee-api</artifactId>
-				<version>8.0</version>
+				<groupId>jakarta.platform</groupId>
+				<artifactId>jakarta.jakartaee-api</artifactId>
+				<version>8.0.0</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-validator</artifactId>
-				<version>6.0.14.Final</version>
+				<version>6.1.0.Final</version>
 			</dependency>
 			<!-- Needed for running tests (you may also use TestNG) -->
 			<dependency>
@@ -94,8 +94,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>javax</groupId>
-			<artifactId>javaee-api</artifactId>
+			<groupId>jakarta.platform</groupId>
+			<artifactId>jakarta.jakartaee-api</artifactId>
 		</dependency>
 
 		<!-- JSR-380 (Bean Validation) Implementation -->

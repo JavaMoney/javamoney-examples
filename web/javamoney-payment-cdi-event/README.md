@@ -9,7 +9,7 @@ Target Product: Jakarta EE 8
 What is it?
 -----------
 
-This example demonstrates the use of **CDI Events** in *JBoss WildFly 13* and above or a compatible *Java EE 8 / Jakarta EE 8* container.
+This example demonstrates the use of **CDI Events** in *JBoss WildFly 17* and above or a compatible *Jakarta EE 8* container.
 
 The JSF front-end client allows you to create both credit and debit operation events.
 
@@ -36,14 +36,12 @@ The javamoney-payment-cdi-event example defines the following classes:
      *   The concrete implementation of the payment handler, it implements both IcreditEventObserver and IDebitEventObserver.
      *   The payment handler exposes the list of events caught during a session ( @Named  name=payments).
  
-
 System requirements
 -------------------
 
 All you need to build this project is Java 8 or above, Maven 3.0 or above.
 
-The application this project produces is designed to be run on Java EE 8 or JBoss WildFly 13 and above. 
-
+The application this project produces is designed to be run on Jakarta EE 8, e.g. JBoss WildFly 17 and above. 
  
 Configure Maven
 ---------------
@@ -74,12 +72,10 @@ _NOTE: The following build command assumes you have configured your Maven user s
 
 4. This will deploy `target/javamoney-payment-cdi-event.war` to the running instance of the server.
 
-
 Access the application 
 ---------------------
 
 The application will be running at the following URL: <http://localhost:8080/javamoney-payment-cdi-event/>.
-
 
 Undeploy the Archive
 --------------------
@@ -90,11 +86,9 @@ Undeploy the Archive
 
         mvn jboss-as:undeploy
 
-
 Run the Example in JBoss Developer Studio or Eclipse
 -------------------------------------
 You can also start the server and deploy the examples from Eclipse using JBoss tools. For more information, see [Use JBoss Developer Studio or Eclipse to Run the Quickstarts](../README.md#useeclipse) 
-
 
 Debug the Application
 ------------------------------------

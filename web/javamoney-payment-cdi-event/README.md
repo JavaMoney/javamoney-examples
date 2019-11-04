@@ -2,7 +2,7 @@ javamoney-payment-cdi-event: Use CDI Events to Process Debit and Credit Operatio
 ========================================================================
 Author: Elvadas Nono (initial contribution), Werner Keil; 
 Level: Beginner; 
-Technologies: CDI, JSR 345 (Money and Currency API) 
+Technologies: CDI, JSR 354 (Money and Currency API) 
 Summary: Demonstrates how to use CDI Events with the Money and Currency API; 
 Target Product: Jakarta EE 8
 

@@ -4,7 +4,7 @@ Author: Elvadas Nono (initial contribution), Werner Keil;
 Level: Beginner; 
 Technologies: CDI, JSR 345 (Money and Currency API) 
 Summary: Demonstrates how to use CDI Events with the Money and Currency API; 
-Target Product: Java EE 8, Jakarta EE
+Target Product: Jakarta EE 8
 
 What is it?
 -----------
@@ -51,7 +51,7 @@ Configure Maven
 If you have not yet done so, you must [Configure Maven](../README.md#mavenconfiguration) before testing the quickstarts.
 
 
-Start a Java EE 8 container like WildFly 13 and higher with the Web Profile
+Start a Jakarta EE 8 container like WildFly 17 and higher with the Web Profile
 -------------------------
 
 1. Open a command line and navigate to the root of the Wildfly server directory.

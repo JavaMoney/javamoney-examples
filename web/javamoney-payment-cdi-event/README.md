@@ -41,7 +41,7 @@ System requirements
 
 All you need to build this project is Java 8 or above, Maven 3.0 or above.
 
-The application this project produces is designed to be run on Jakarta EE 8, e.g. JBoss WildFly 17 and above. 
+The application this project produces is designed to be run on Jakarta EE 8, like JBoss WildFly 17 and above. 
  
 Configure Maven
 ---------------

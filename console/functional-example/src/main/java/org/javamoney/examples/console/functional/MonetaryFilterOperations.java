@@ -55,7 +55,7 @@ public class MonetaryFilterOperations {
 		System.out.println(between);
 	}
 
-	public static List<MonetaryAmount> getMoneys() {
+	private static List<MonetaryAmount> getMoneys() {
 		List<MonetaryAmount> moneys = new ArrayList<>();
 		moneys.add(Money.of(120, DOLLAR));
 		moneys.add(Money.of(50, DOLLAR));

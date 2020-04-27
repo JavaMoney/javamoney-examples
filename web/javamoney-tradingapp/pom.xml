@@ -22,6 +22,7 @@
 		<version.commons.logging>1.1.1</version.commons.logging>
 		<version.sdj>1.0.1-SNAPSHOT-RC3.30</version.sdj>
 		<version.jfl>1.6.1</version.jfl>
+		<version.jackson>1.9.13</version.jackson>
 		<!-- JBoss AS plugin for deployment -->
 		<version.jboss.as.maven.plugin>7.1.1.Final</version.jboss.as.maven.plugin>
 	</properties>
@@ -301,13 +302,13 @@
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.9.3</version>
+			<version>${version.jackson}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-core-asl</artifactId>
-			<version>1.9.3</version>
+			<version>${version.jackson}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>

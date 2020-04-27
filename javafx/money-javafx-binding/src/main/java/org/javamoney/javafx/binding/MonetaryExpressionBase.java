@@ -1,18 +1,15 @@
 /*
  * JSR 354 JavaFX Binding Example
  */
-package net.java.javamoney.javafx.binding;
+package org.javamoney.javafx.binding;
 
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-
-import javax.money.CurrencySupplier;
-import javax.money.CurrencyUnit;
-import javax.money.MonetaryAmount;
-
 import net.java.javamoney.javafx.value.ObservableMonetaryValue;
+
+import javax.money.MonetaryAmount;
 
 /**
  *

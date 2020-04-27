@@ -1,7 +1,7 @@
 /*
  * JSR 354 JavaFX Binding Example
  */
-package net.java.javamoney.examples.javafx;
+package org.javamoney.examples.javafx;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

@@ -1,15 +1,14 @@
 /*
  * JSR 354 JavaFX Binding Example
  */
-package net.java.javamoney.examples.javafx;
-
-import javax.money.CurrencyUnit;
-import javax.money.Monetary;
+package org.javamoney.examples.javafx;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
-
 import org.javamoney.moneta.Money;
+
+import javax.money.CurrencyUnit;
+import javax.money.Monetary;
 
 /**
  * @author Werner Keil

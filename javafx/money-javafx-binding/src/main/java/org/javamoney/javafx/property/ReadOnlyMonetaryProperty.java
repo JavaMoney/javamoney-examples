@@ -1,11 +1,11 @@
 /*
  * JSR 354 JavaFX Binding Example
  */
-package net.java.javamoney.javafx.property;
-
-import javax.money.MonetaryAmount;
+package org.javamoney.javafx.property;
 
 import javafx.beans.property.ReadOnlyProperty;
+
+import javax.money.MonetaryAmount;
 
 /**
  * @author Werner Keil

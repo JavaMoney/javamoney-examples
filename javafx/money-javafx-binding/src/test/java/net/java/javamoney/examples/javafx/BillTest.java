@@ -3,9 +3,9 @@
  */
 package net.java.javamoney.examples.javafx;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
  * @author Werner Keil

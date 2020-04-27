@@ -1,11 +1,11 @@
 /*
  * JSR 354 JavaFX Binding Example
  */
-package net.java.javamoney.javafx.value;
-
-import javax.money.MonetaryAmount;
+package org.javamoney.javafx.value;
 
 import javafx.beans.value.WritableValue;
+
+import javax.money.MonetaryAmount;
 
 /**
  * @author Werner Keil

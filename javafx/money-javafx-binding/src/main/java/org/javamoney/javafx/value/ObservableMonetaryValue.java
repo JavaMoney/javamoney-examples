@@ -1,7 +1,7 @@
 /*
  * JSR 354 JavaFX Binding Example
  */
-package net.java.javamoney.javafx.value;
+package org.javamoney.javafx.value;
 
 import javafx.beans.value.ObservableValue;
 

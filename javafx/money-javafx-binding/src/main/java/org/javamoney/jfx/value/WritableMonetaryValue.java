@@ -1,7 +1,7 @@
 /*
  * JSR 354 JavaFX Binding Example
  */
-package org.javamoney.javafx.value;
+package org.javamoney.jfx.value;
 
 import javafx.beans.value.WritableValue;
 

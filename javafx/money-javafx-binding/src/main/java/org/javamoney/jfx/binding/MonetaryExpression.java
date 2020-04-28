@@ -1,9 +1,9 @@
 /*
  * JSR 354 JavaFX Binding Example
  */
-package org.javamoney.javafx.binding;
+package org.javamoney.jfx.binding;
 
-import org.javamoney.javafx.value.ObservableMonetaryValue;
+import org.javamoney.jfx.value.ObservableMonetaryValue;
 
 /**
  *

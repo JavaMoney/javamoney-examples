@@ -1,7 +1,7 @@
 /*
  * JSR 354 JavaFX Binding Example
  */
-package org.javamoney.javafx.property;
+package org.javamoney.jfx.property;
 
 import javafx.beans.InvalidationListener;
 import javafx.beans.value.ChangeListener;

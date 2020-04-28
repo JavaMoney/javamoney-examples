@@ -1,7 +1,7 @@
 /*
  * JSR 354 JavaFX Binding Example
  */
-package org.javamoney.javafx.binding;
+package org.javamoney.jfx.binding;
 
 import javafx.beans.binding.Binding;
 

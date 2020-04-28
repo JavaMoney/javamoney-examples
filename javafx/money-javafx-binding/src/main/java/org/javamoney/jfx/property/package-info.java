@@ -5,4 +5,4 @@
  * @author Werner Keil
  *
  */
-package net.java.javamoney.javafx.value;
+package org.javamoney.jfx.property;

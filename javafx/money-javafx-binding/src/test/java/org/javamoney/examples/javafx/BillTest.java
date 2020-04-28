@@ -1,7 +1,7 @@
 /*
  * JSR 354 JavaFX Binding Example
  */
-package net.java.javamoney.examples.javafx;
+package org.javamoney.examples.javafx;
 
 import org.junit.Test;
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2012, 2016, Anatole Tresch, Werner Keil and others by the @author tag.
+ * Copyright (c) 2012, 2020, Anatole Tresch, Werner Keil and others by the @author tag.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -26,7 +26,7 @@ import javax.money.convert.ExchangeRateProvider;
 import javax.money.convert.MonetaryConversions;
 
 import org.javamoney.moneta.Money;
-import org.javamoney.moneta.internal.convert.ECBCurrentRateProvider;
+import org.javamoney.moneta.convert.ECBCurrentRateProvider;
 import org.javamoney.moneta.spi.CompoundRateProvider;
 import org.junit.Test;
 

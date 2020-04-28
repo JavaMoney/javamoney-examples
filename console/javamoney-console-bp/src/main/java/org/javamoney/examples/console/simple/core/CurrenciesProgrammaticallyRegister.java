@@ -16,7 +16,7 @@
 package org.javamoney.examples.console.simple.core;
 
 import org.javamoney.examples.console.simple.util.ConsoleUtils;
-import org.javamoney.moneta.internal.ConfigurableCurrencyUnitProvider;
+import org.javamoney.moneta.spi.ConfigurableCurrencyUnitProvider;
 
 import javax.money.CurrencyContext;
 import javax.money.CurrencyContextBuilder;

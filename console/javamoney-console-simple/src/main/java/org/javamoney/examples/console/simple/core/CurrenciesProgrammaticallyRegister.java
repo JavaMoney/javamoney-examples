@@ -1,6 +1,6 @@
 /*
  * JavaMoney Examples
- * Copyright 2012-2019, Werner Keil
+ * Copyright 2012-2020, Werner Keil
  * and individual contributors by the @author tags.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +16,7 @@
 package org.javamoney.examples.console.simple.core;
 
 import org.javamoney.examples.console.simple.util.ConsoleUtils;
-import org.javamoney.moneta.internal.ConfigurableCurrencyUnitProvider;
+import org.javamoney.moneta.spi.ConfigurableCurrencyUnitProvider;
 
 import javax.money.CurrencyContext;
 import javax.money.CurrencyContextBuilder;

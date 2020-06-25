@@ -23,6 +23,8 @@
 		<version.sdj>1.0.1-SNAPSHOT-RC3.30</version.sdj>
 		<version.jfl>1.6.1</version.jfl>
 		<version.jackson>1.9.13</version.jackson>
+		<version.hibernate.validator>5.3.5.Final</version.hibernate.validator>
+		<version.jboss.web>3.0.0.Final</version.jboss.web>
 		<!-- JBoss AS plugin for deployment -->
 		<version.jboss.as.maven.plugin>7.1.1.Final</version.jboss.as.maven.plugin>
 	</properties>
@@ -42,7 +44,7 @@
 			<dependency>
 				<groupId>org.jboss.spec</groupId>
 				<artifactId>jboss-javaee-web-6.0</artifactId>
-				<version>3.0.0.Final</version>
+				<version>${version.jboss.web}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -181,7 +183,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>4.1.0.1-SNAPSHOT.Final</version>
+			<version>${version.hibernate.validator}</version>
 			<scope>provided</scope>
 			<exclusions>
 				<exclusion>
@@ -195,13 +197,13 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator-annotation-processor</artifactId>
-			<version>4.1.0.1-SNAPSHOT.Final</version>
+			<version>${version.hibernate.validator}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.1.0.1-SNAPSHOT.Final</version>
+			<version>${version.hibernate.validator}</version>
 			<scope>provided</scope>
 		</dependency>
 		<!-- Import Spring dependencies, these are either from community or versions

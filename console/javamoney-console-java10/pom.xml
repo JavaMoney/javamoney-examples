@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.javamoney.examples.console</groupId>
+		<artifactId>javamoney-examples-console</artifactId>
+		<version>1.2-SNAPSHOT</version>
+	</parent>
+	<artifactId>javamoney-console-java8</artifactId>
+	<name>JavaMoney Java 8 Console Examples</name>
+	<properties>
+		<jdkVersion>10</jdkVersion>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.javamoney</groupId>
+			<artifactId>moneta</artifactId>
+			<version>${impl.version}</version>
+			<type>${impl.type}</type>
+		</dependency>
+	</dependencies>
+</project>

@@ -1,6 +1,6 @@
 /*	
  * JavaMoney Examples	
- * Copyright 2012-2018, Werner Keil 	
+ * Copyright 2012-2020, Werner Keil 	
  * and individual contributors by the @author tags.	
  *	
  * Licensed under the Apache License, Version 2.0 (the "License");	
@@ -25,7 +25,7 @@ import javax.money.MonetaryAmountFactoryQueryBuilder;
 
 /**	
  * @author Werner Keil	
- * @version 0.9	
+ * @version 1.0	
  */	
 public class AmountsDoCalculations {	
 
@@ -51,5 +51,4 @@ public class AmountsDoCalculations {
                 .remainder(1);	
         ConsoleUtils.printDetails(total);	
     }	
-
 }

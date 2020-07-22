@@ -7,7 +7,7 @@
 		<version>1.2-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>functional-example</artifactId>
+	<artifactId>functional-examples</artifactId>
 	<properties>
 		<jdkVersion>1.8</jdkVersion>
 	</properties>

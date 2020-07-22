@@ -12,10 +12,9 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>javamoney-console-simple</module>
-		<module>javamoney-console-java8</module>
 		<!-- >module>javamoney-console-java10</module -->
 		<module>javamoney-console-bp</module>
-		<module>functional-example</module>
+		<module>functional-examples</module>
 		<!-- This module is broken somehow
 		<module>moneymachine</module>
 		 -->

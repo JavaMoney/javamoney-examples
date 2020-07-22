@@ -12,7 +12,7 @@
 	<properties>
 		<!-- <exampleMainClass>org.javamoney.examples.console.simple.conversion.ConversionExample</exampleMainClass> -->
 		<exampleMainClass>org.javamoney.examples.console.simple.core.AmountsDoCalculations</exampleMainClass>
-		<impl.version>1.4-SNAPSHOT</impl.version>
+		<impl.version>1.4.1</impl.version>
 		<jdkVersion>1.7</jdkVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>

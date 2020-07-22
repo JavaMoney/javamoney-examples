@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.javamoney.examples.console.java8;
+package org.javamoney.examples.console.functional;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -28,7 +28,7 @@ import javax.money.MonetaryAmount;
  * @author Werner Keil
  *
  */
-public class PersonDemo {
+public class PersonExample {
 
 	public static void main(String[] args) {
 

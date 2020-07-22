@@ -31,7 +31,7 @@
  *
  *
  * JavaMoney Examples
- * Copyright 2014, Werner Keil 
+ * Copyright 2014, 2020, Werner Keil 
  * and individual contributors by the @author tags.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -44,7 +44,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.javamoney.examples.console.java8;
+package org.javamoney.examples.console.functional;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -131,5 +131,4 @@ public class Person {
 
 		return roster;
 	}
-
 }

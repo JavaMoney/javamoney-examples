@@ -6,7 +6,7 @@ The current project structure is as follows:
 - [Console examples](console)
   - [Simple Console Examples](console/javamoney-console-simple)
   - [Java 10 Console Examples](console/javamoney-console-java10) **disabled on CI because we still support JavaFX 8**
-  - [Java Functional Examples](console/functional-example): examples using Java 8+ with streams, lambda and money-api
+  - [Java Functional Examples](console/functional-examples): examples using Java 8+ with streams, lambda and money-api
   - [Money Machine](console/moneymachine): Adopt JSR API Testing project for getting feedback on the API
 - [JavaFX examples](javafx)
  - [JavaFX Demo application](javafx/money-fxdemo)

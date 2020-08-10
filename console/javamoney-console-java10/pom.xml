@@ -6,8 +6,8 @@
 		<artifactId>javamoney-examples-console</artifactId>
 		<version>1.2-SNAPSHOT</version>
 	</parent>
-	<artifactId>javamoney-console-java8</artifactId>
-	<name>JavaMoney Java 8 Console Examples</name>
+	<artifactId>javamoney-console-java10</artifactId>
+	<name>JavaMoney Java 10 Console Examples</name>
 	<properties>
 		<jdkVersion>10</jdkVersion>
 	</properties>

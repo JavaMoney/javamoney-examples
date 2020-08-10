@@ -14,7 +14,9 @@ License for the specific language governing permissions and limitations under
 the License.
 */
 module org.javamoney.examples.console.java10 {
-    exports org.javamoney.examples.console.java10;
+    exports org.javamoney.examples.console.java10.convert;
+    exports org.javamoney.examples.console.java10.core;
+    exports org.javamoney.examples.console.java10.format;
     
     requires transitive java.money;
     requires org.javamoney.moneta;       

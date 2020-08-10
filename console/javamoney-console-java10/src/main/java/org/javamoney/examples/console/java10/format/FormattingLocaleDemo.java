@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and	
  * limitations under the License.	
  */	
-package org.javamoney.examples.console.java10;	
+package org.javamoney.examples.console.java10.format;	
 
 import java.util.Locale;	
 

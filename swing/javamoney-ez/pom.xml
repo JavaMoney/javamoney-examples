@@ -4,14 +4,14 @@
 	<parent>
 		<groupId>org.javamoney.examples.swing</groupId>
 		<artifactId>javamoney-examples-swing</artifactId>
-		<version>1.2-SNAPSHOT</version>
+		<version>1.2</version>
 	</parent>
 	<groupId>org.javamoney.examples.ez</groupId>
 	<artifactId>javamoney-ez</artifactId>
-	<version>3.0.2-SNAPSHOT</version>
+	<version>3.0.2</version>
 	<packaging>pom</packaging>
 	<name>JavaMoney EZ</name>
-	<description>EZ Money Reloaded - powered by JavaMoney</description>
+	<description>EZ Money Reboot - powered by JavaMoney</description>
 	<licenses>
 		<license>
 			<name>Apache License version 2.0</name>

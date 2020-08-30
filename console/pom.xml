@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.javamoney.examples</groupId>
 		<artifactId>javamoney-examples</artifactId>
-		<version>1.2</version>
+		<version>1.3-SNAPSHOT</version>
 	</parent>
 	<groupId>org.javamoney.examples.console</groupId>
 	<artifactId>javamoney-examples-console</artifactId>

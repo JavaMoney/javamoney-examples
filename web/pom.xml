@@ -3,7 +3,7 @@
   <parent>
     <artifactId>javamoney-examples</artifactId>
     <groupId>org.javamoney.examples</groupId>
-    <version>1.2</version>
+    <version>1.3-SNAPSHOT</version>
   </parent>
   <artifactId>javamoney-examples-web</artifactId>
   <packaging>pom</packaging>

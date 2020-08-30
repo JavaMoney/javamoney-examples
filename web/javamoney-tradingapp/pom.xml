@@ -23,10 +23,10 @@
 		<version.sdj>1.0.1-SNAPSHOT-RC3.30</version.sdj>
 		<version.jfl>1.6.1</version.jfl>
 		<version.jackson>1.9.13</version.jackson>
-		<version.hibernate.validator>5.3.5.Final</version.hibernate.validator>
-		<version.jboss.web>3.0.0.Final</version.jboss.web>
+		<version.hibernate.validator>6.1.0.Final</version.hibernate.validator>
+		<version.jboss.web>1.0.4.Final</version.jboss.web>
 		<!-- JBoss AS plugin for deployment -->
-		<version.jboss.as.maven.plugin>7.1.1.Final</version.jboss.as.maven.plugin>
+		<version.jboss.as.maven.plugin>7.9.Final</version.jboss.as.maven.plugin>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -43,7 +43,7 @@
 				JBoss AS 7! -->
 			<dependency>
 				<groupId>org.jboss.spec</groupId>
-				<artifactId>jboss-javaee-web-6.0</artifactId>
+				<artifactId>jboss-javaee-web-8.0</artifactId>
 				<version>${version.jboss.web}</version>
 				<type>pom</type>
 				<scope>import</scope>

@@ -1,0 +1,51 @@
+/*
+ * JavaMoney Examples
+ * Copyright 2015-2019, Werner Keil, Anatole Tresch
+ * and individual contributors by the @author tags.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.javamoney.examples.console.functional;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
+import javax.money.CurrencyUnit;
+import javax.money.MonetaryAmount;
+import javax.money.Monetary;
+
+import org.javamoney.moneta.Money;
+import org.javamoney.moneta.function.MonetaryFunctions;
+
+public class MonetaryReducerOperations {
+
+	public static void main(String[] args) {
+		List<MonetaryAmount> moneys = aFistfulOfDollars();
+		MonetaryAmount min = moneys.stream().reduce(MonetaryFunctions.min()).get();
+		MonetaryAmount max = moneys.stream().reduce(MonetaryFunctions.max()).get();
+		MonetaryAmount sum = moneys.stream().reduce(MonetaryFunctions.sum()).get();
+		System.out.println(min);//USD 50
+		System.out.println(max);//USD 120
+		System.out.println(sum);//USD 460
+	}
+	
+	private static List<MonetaryAmount> aFistfulOfDollars() {
+		CurrencyUnit dollar = Monetary.getCurrency(Locale.US);
+		List<MonetaryAmount> moneys = new ArrayList<>();
+		moneys.add(Money.of(120, dollar));
+		moneys.add(Money.of(50, dollar));
+		moneys.add(Money.of(80, dollar));
+		moneys.add(Money.of(90, dollar));
+		moneys.add(Money.of(120, dollar));
+		return moneys;
+	}
+}

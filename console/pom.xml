@@ -15,6 +15,7 @@
 		<module>javamoney-console-java10</module>
 		<module>javamoney-console-bp</module>
 		<module>functional-examples</module>
+		<module>javamoney-console-java8</module>
 		<!-- This module is broken somehow
 		<module>moneymachine</module>
 		 -->
@@ -27,6 +28,13 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jul-to-slf4j</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.javamoney</groupId>
+			<artifactId>moneta</artifactId>
+			<version>${impl.version}</version>
+			<type>${impl.type}</type>
 		</dependency>
 	</dependencies>
 </project>

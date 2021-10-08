@@ -5,4 +5,4 @@ jdk:
   - openjdk14
 
 after_success:
-  - mvn jacoco:report coveralls:jacoco -DsourceEncoding=UTF-8
+  - mvn -T 1C jacoco:report coveralls:jacoco -DsourceEncoding=UTF-8

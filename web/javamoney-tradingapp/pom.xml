@@ -12,7 +12,7 @@
 	<name>Java Money and Currency Web Spring Trading App</name>
 	<properties>
 		<!-- Spring version -->
-		<version.spring>4.3.20.RELEASE</version.spring>
+		<version.spring>4.3.21.RELEASE</version.spring>
 		<!-- Spring Third Party dependencies -->
 		<version.aopalliance>1.0.1-SNAPSHOT</version.aopalliance>
 		<!-- Third Party dependencies -->
@@ -283,7 +283,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.8.2</version>
+			<version>4.13.1</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- Add cglib for the MemberDaoTest -->

@@ -56,26 +56,22 @@
 	
 	<!-- Additional repositories -->
     	<!-- Helps to resolve Parent POM -->
-    	<repositories> 
-        	<repository> 
-           		<id>jcenter</id>
-           		<name>JCenter</name>
-           		<url>https://jcenter.bintray.com</url>
-			</repository>
-	        <repository>
-	            <snapshots>
-	                <enabled>true</enabled>
-	            </snapshots>
-	            <id>central</id>
-	            <name>libs-release</name>
-	            <url>https://oss.jfrog.org/artifactory/libs-release</url>
-	        </repository>
-	        <repository>
-	            <snapshots />
-	            <id>snapshots</id>
-	            <name>libs-snapshot</name>
-	            <url>https://oss.jfrog.org/artifactory/libs-snapshot</url>
-	        </repository>
-    	</repositories>
-    	<version>1.3-SNAPSHOT</version>
+	<!-- Additional repositories -->
+	<!-- Helps to resolve Parent POM and Snapshot artifacts -->
+	<repositories>
+		<repository>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<id>ossrh-snapshot</id>
+			<name>OSSRH Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</repository>
+		<repository>
+			<id>repository.jboss.org</id>
+			<name>JBoss Repository</name>
+			<url>http://repository.jboss.org/maven2</url>
+		</repository>
+	</repositories>
+	<version>1.3-SNAPSHOT</version>
 </project>

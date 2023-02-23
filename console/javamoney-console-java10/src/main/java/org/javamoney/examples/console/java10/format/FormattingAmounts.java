@@ -29,11 +29,16 @@ import java.util.Locale;
 public class FormattingAmounts {
 
     public static void main(String... args) {
-        var amt = Money.of(1234.5678, "EUR");
+        final var amt = Money.of(1234.5678, "EUR");
+        System.out.println(amt);
         System.out.println(amt.query(MonetaryFormats.getAmountFormat(Locale.GERMANY)));
         System.out.println(MonetaryFormats.getAmountFormat(Locale.GERMANY).format(amt));
-        amt = Money.of(123412341234.5678, "INR");
-        System.out.println(MonetaryFormats.getAmountFormat(new Locale("", "INR")).format(amt));
+        var newAmt = Money.of(123412341234.5678, "INR");
+        System.out.println(MonetaryFormats.getAmountFormat(new Locale("", "INR")).format(newAmt));
+        var str = amt.toString();
+        var parsedAmt = Money.parse(str);
+        System.out.println(parsedAmt);
+        System.out.println(amt.equals(parsedAmt));
 
         // no with adaptive groupings
         System.out.println(MonetaryFormats.getAmountFormat(
@@ -43,8 +48,8 @@ public class FormattingAmounts {
                         .build())
                 .format(amt));
         
-        amt = Money.of(5, "USD");
-        System.out.println(MonetaryFormats.getAmountFormat(AmountFormatQueryBuilder.of(Locale.US).set(CurrencyStyle.SYMBOL).set(AmountFormatParams.PATTERN, "¤##.##").build()).format(amt));
+        newAmt = Money.of(5, "USD");
+        System.out.println(MonetaryFormats.getAmountFormat(AmountFormatQueryBuilder.of(Locale.US).set(CurrencyStyle.SYMBOL).set(AmountFormatParams.PATTERN, "¤##.##").build()).format(newAmt));
         
         final var MONEY_FORMATTER = MonetaryFormats.getAmountFormat(Locale.ENGLISH);
 

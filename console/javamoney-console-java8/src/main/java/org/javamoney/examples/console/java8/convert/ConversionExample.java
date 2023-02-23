@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2012, 2020, Anatole Tresch, Werner Keil and others by the @author tag.
+ * Copyright (c) 2012, 2023, Werner Keil and others by the @author tag.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -13,13 +13,11 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.javamoney.examples.console.java10.convert;
+package org.javamoney.examples.console.java8.convert;
 
 import org.javamoney.moneta.Money;
 
 import javax.money.MonetaryAmount;
-import javax.money.MonetaryOperator;
-import javax.money.convert.ConversionQuery;
 import javax.money.convert.ConversionQueryBuilder;
 import javax.money.convert.CurrencyConversion;
 import javax.money.convert.MonetaryConversions;
@@ -42,23 +40,16 @@ public class ConversionExample {
 		CurrencyConversion conv= MonetaryConversions.getConversion(termCurrencyCode, "ECB");
 		System.out.println(MessageFormat.format("2000 EUR (ECB)-> {0} = {1}",
 				termCurrencyCode, amt.with(conv)));
-/*
-		conv= MonetaryConversions.getConversion(termCurrencyCode, "IMF");
-		System.out.println(MessageFormat.format("2000 EUR (IMF)-> {0} = {1}",
-				termCurrencyCode, amt.with(conv)));
-*/
-
-		final MonetaryAmount histAmt = Money.of(2000, "CHF");
-
-		ConversionQuery histQuery = ConversionQueryBuilder.of()
-				.setTermCurrency("EUR")
-				.set(LocalDate.of(2022, 01, 05)).build();
-		CurrencyConversion histConv = MonetaryConversions
-				.getConversion(histQuery);
+		//conv= MonetaryConversions.getConversion(termCurrencyCode, "IMF");
+		//System.out.println(MessageFormat.format("2000 EUR (IMF)-> {0} = {1}",
+		//		termCurrencyCode, amt.with(conv)));
 
 		System.out.println(MessageFormat.format(
-				"2000 EUR (ECB, at 5th Jan 2020)-> {0} = {1}",
-				termCurrencyCode, histAmt.with(histConv)));
+				"2000 EUR (ECB, at 5th Jan 2021)-> {0} = {1}",
+				termCurrencyCode, amt.with(MonetaryConversions
+						.getConversion(ConversionQueryBuilder.of()
+								.setTermCurrency(termCurrencyCode)
+								.set(LocalDate.of(2021, 01, 05)).build()))));
 	}
 
 }

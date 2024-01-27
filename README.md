@@ -5,7 +5,7 @@ The current project structure is as follows:
 
 - [Console examples](console)
   - [Simple Console Examples](console/javamoney-console-simple)
-  - [Java 18 Console Examples](console/javamoney-console-java8)
+  - [Java 8 Console Examples](console/javamoney-console-java8)
   - [Java 11 Console Examples](console/javamoney-console-java11)
   - [Java Functional Examples](console/functional-examples): examples using Java 8+ with streams, lambda and money-api
   - [Money Machine](console/moneymachine): Adopt JSR API Testing project for getting feedback on the API

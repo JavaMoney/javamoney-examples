@@ -10,7 +10,7 @@
   	<dependency>
   		<groupId>org.javamoney.examples.ez</groupId>
   		<artifactId>javamoney-ez-common</artifactId>
-  		<version>${parent.version}</version>
+  		<version>${project.parent.version}</version>
   	</dependency>
   	<dependency>
   		<groupId>org.javamoney.lib</groupId>

@@ -40,9 +40,9 @@ public class ConversionExample {
 		CurrencyConversion conv= MonetaryConversions.getConversion(termCurrencyCode, "ECB");
 		System.out.println(MessageFormat.format("2000 EUR (ECB)-> {0} = {1}",
 				termCurrencyCode, amt.with(conv)));
-		//conv= MonetaryConversions.getConversion(termCurrencyCode, "IMF");
-		//System.out.println(MessageFormat.format("2000 EUR (IMF)-> {0} = {1}",
-		//		termCurrencyCode, amt.with(conv)));
+		conv= MonetaryConversions.getConversion(termCurrencyCode, "IMF");
+		System.out.println(MessageFormat.format("2000 EUR (IMF)-> {0} = {1}",
+				termCurrencyCode, amt.with(conv)));
 
 		System.out.println(MessageFormat.format(
 				"2000 EUR (ECB, at 5th Jan 2021)-> {0} = {1}",

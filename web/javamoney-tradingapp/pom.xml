@@ -12,7 +12,7 @@
 	<name>Java Money and Currency Web Spring Trading App</name>
 	<properties>
 		<!-- Spring version -->
-		<version.spring>4.3.21.RELEASE</version.spring>
+		<version.spring>5.2.20.RELEASE</version.spring>
 		<!-- Spring Third Party dependencies -->
 		<version.aopalliance>1.0.1-SNAPSHOT</version.aopalliance>
 		<!-- Third Party dependencies -->

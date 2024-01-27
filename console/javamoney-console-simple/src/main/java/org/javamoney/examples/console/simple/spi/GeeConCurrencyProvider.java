@@ -2,7 +2,7 @@ package org.javamoney.examples.console.simple.spi;
 
 import org.javamoney.moneta.CurrencyUnitBuilder;
 
-import javax.annotation.Priority;
+import jakarta.annotation.Priority;
 import javax.money.CurrencyContext;
 import javax.money.CurrencyContextBuilder;
 import javax.money.CurrencyQuery;

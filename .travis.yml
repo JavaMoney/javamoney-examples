@@ -1,8 +1,0 @@
-sudo: false
-language: java
-jdk:
-  - openjdk11
-  - openjdk14
-
-after_success:
-  - mvn jacoco:report coveralls:jacoco -DsourceEncoding=UTF-8

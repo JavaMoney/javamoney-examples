@@ -5,22 +5,49 @@ version: 2.1
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
-  say-hello:
-    # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/configuration-reference/#executor-job
+  clean:
     docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/configuration-reference/#steps
+      # specify the version you desire here
+      - image: cimg/openjdk:17.0.9
+
+    working_directory: ~/repo
+
+    environment:
+      # Customize the JVM maximum heap limit
+      MAVEN_OPTS: -Xmx3200m
+
     steps:
       - checkout
+
+      # run clean!
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: Clean
+          command: mvn clean
+  build:
+    docker:
+      # specify the version you desire here
+      - image: cimg/openjdk:17.0.9
+
+    working_directory: ~/repo
+
+    environment:
+      # Customize the JVM maximum heap limit
+      MAVEN_OPTS: -Xmx3200m
+
+    steps:
+      - checkout
+
+      # run tests!
+      - run:
+          name: Test
+          command: mvn integration-test
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
-  say-hello-workflow:
+  clean_build:
     jobs:
-      - say-hello
+      - clean
+      - build:
+          requires:
+            - clean

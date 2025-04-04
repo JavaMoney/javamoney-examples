@@ -1,4 +1,4 @@
-package org.javamoney.examples.console.java11.convert;
+package org.javamoney.examples.console.eleven.convert;
 
 import org.javamoney.moneta.Money;
 
@@ -38,5 +38,14 @@ public class ECBExample {
             result = conv2.apply(money);
             System.out.println(result);
         }
+
+        System.out.println("Broken URL Test");
+        var brokenProvider = new BrokenECBCurrentRateProvider();
+        final var conv3 = brokenProvider.getCurrencyConversion(ConversionQueryBuilder.of()
+                .setTermCurrency("EUR")
+                .set(LocalDate.of(2025, 4, 3))
+                .build());
+        result = conv3.apply(money);
+        System.out.println(result);
     }
 }

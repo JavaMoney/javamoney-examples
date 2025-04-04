@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and	
  * limitations under the License.	
  */	
-package org.javamoney.examples.console.java11.core;
+package org.javamoney.examples.console.eleven.core;
 
-import org.javamoney.examples.console.java11.util.ConsoleUtils;
+import org.javamoney.examples.console.eleven.util.ConsoleUtils;
 import org.javamoney.moneta.FastMoney;	
 import org.javamoney.moneta.Money;	
 

@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2012, 2024, Werner Keil and others by the @author tag.
+Copyright (c) 2012, 2025, Werner Keil and others by the @author tag.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not
 use this file except in compliance with the License. You may obtain a copy of
@@ -13,10 +13,10 @@ WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 License for the specific language governing permissions and limitations under
 the License.
 */
-module org.javamoney.examples.console.java11 {
-    exports org.javamoney.examples.console.java11.convert;
-    exports org.javamoney.examples.console.java11.core;
-    exports org.javamoney.examples.console.java11.format;
+module org.javamoney.examples.console.eleven {
+    exports org.javamoney.examples.console.eleven.convert;
+    exports org.javamoney.examples.console.eleven.core;
+    exports org.javamoney.examples.console.eleven.format;
     
     requires transitive java.money;
     requires org.javamoney.moneta;

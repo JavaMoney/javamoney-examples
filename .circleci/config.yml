@@ -8,7 +8,7 @@ jobs:
   clean:
     docker:
       # specify the version you desire here
-      - image: cimg/openjdk:17.0.9
+      - image: cimg/openjdk:21.0.6
 
     working_directory: ~/repo
 
@@ -26,7 +26,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: cimg/openjdk:17.0.9
+      - image: cimg/openjdk:21.0.6
 
     working_directory: ~/repo
 

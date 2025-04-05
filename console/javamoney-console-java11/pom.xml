@@ -11,6 +11,7 @@
 	<name>JavaMoney Java 11 Console Examples</name>
 	<properties>
 		<jdkVersion>11</jdkVersion>
+		<impl.version>1.5-SNAPSHOT</impl.version>
 	</properties>
 	<dependencies>
 		<dependency>

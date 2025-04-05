@@ -1,4 +1,4 @@
-package org.javamoney.examples.console.eleven.format;
+package org.javamoney.examples.console.java11.format;
 
 import java.util.Locale;
 

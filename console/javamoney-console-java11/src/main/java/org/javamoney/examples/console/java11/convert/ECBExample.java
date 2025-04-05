@@ -1,4 +1,4 @@
-package org.javamoney.examples.console.eleven.convert;
+package org.javamoney.examples.console.java11.convert;
 
 import org.javamoney.moneta.Money;
 
@@ -43,7 +43,7 @@ public class ECBExample {
         var brokenProvider = new BrokenECBCurrentRateProvider();
         final var conv3 = brokenProvider.getCurrencyConversion(ConversionQueryBuilder.of()
                 .setTermCurrency("EUR")
-                .set(LocalDate.of(2025, 4, 3))
+                .set(LocalDate.of(2025, 4, 4))
                 .build());
         result = conv3.apply(money);
         System.out.println(result);

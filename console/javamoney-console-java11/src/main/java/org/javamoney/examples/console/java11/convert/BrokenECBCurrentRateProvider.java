@@ -1,4 +1,4 @@
-package org.javamoney.examples.console.eleven.convert;
+package org.javamoney.examples.console.java11.convert;
 
 import org.javamoney.moneta.spi.loader.LoadDataInformation;
 import org.javamoney.moneta.spi.loader.LoadDataInformationBuilder;
@@ -29,8 +29,8 @@ public class BrokenECBCurrentRateProvider extends ECBCurrentRateProvider {
                 .withResourceId(this.getDataId())
                 .withUpdatePolicy(LoaderService.UpdatePolicy.SCHEDULED)
                 .withProperties(props)
-                // The same BackupResource as in the ECBCurrentRateProvider class
-                .withBackupResource(URI.create("file:///org/javamoney/moneta/convert/ecb/defaults/eurofxref-daily.xml"))
+                // Local backup resource based on the ECBCurrentRateProvider class
+                .withBackupResource(getResourceFromPath("/org/javamoney/examples/console/java11/convert/eurofxref-daily.xml", getClass()))
                 // Broken url intentionally
                 .withResourceLocations(URI.create("https://broken-url.xml"))
                 .withStartRemote(true)

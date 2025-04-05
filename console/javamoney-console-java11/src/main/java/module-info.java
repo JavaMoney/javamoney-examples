@@ -14,10 +14,12 @@ License for the specific language governing permissions and limitations under
 the License.
 */
 module org.javamoney.examples.console.eleven {
-    exports org.javamoney.examples.console.eleven.convert;
-    exports org.javamoney.examples.console.eleven.core;
-    exports org.javamoney.examples.console.eleven.format;
-    
+    exports org.javamoney.examples.console.java11.convert;
+    exports org.javamoney.examples.console.java11.core;
+    exports org.javamoney.examples.console.java11.format;
+
+    opens org.javamoney.examples.console.java11.convert;
+
     requires transitive java.money;
     requires org.javamoney.moneta;
     requires org.javamoney.moneta.convert;

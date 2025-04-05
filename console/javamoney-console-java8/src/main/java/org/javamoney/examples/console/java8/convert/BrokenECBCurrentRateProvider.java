@@ -6,6 +6,8 @@ import org.javamoney.moneta.spi.loader.LoadDataInformationBuilder;
 import org.javamoney.moneta.spi.loader.LoaderService;
 
 import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,14 +25,14 @@ public class BrokenECBCurrentRateProvider extends ECBCurrentRateProvider {
 
     @Override
     protected LoadDataInformation getDefaultLoadData() {
-        Map<String, String> props = new HashMap<>();
+        final Map<String, String> props = new HashMap<>();
         props.put("period", "03:00");
         return (new LoadDataInformationBuilder())
                 .withResourceId(this.getDataId())
                 .withUpdatePolicy(LoaderService.UpdatePolicy.SCHEDULED)
                 .withProperties(props)
-                // The same BackupResource as in the ECBCurrentRateProvider class
-                .withBackupResource(URI.create("classpath:/org/javamoney/moneta/convert/ecb/defaults/eurofxref-daily.xml"))
+                // Local backup resource based on the ECBCurrentRateProvider class
+                .withBackupResource(getResourceFromPath("/fallback/eurofxref-daily.xml", getClass()))
                 // Broken url intentionally
                 .withResourceLocations(URI.create("https://broken-url.xml"))
                 .withStartRemote(true)

@@ -47,7 +47,7 @@ public class ECBExample {
         final ExchangeRateProvider brokenProvider = new BrokenECBCurrentRateProvider();
         final CurrencyConversion conv3 = brokenProvider.getCurrencyConversion(ConversionQueryBuilder.of()
                 .setTermCurrency("EUR")
-                .set(LocalDate.of(2025, 4, 3))
+                .set(LocalDate.of(2025, 4, 4))
                 .build());
         result = conv3.apply(money);
         System.out.println(result);

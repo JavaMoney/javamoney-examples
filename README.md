@@ -9,8 +9,8 @@ The current project structure is as follows:
   - [Java 11 Console Examples](console/javamoney-console-java11)
   - [Java Functional Examples](console/functional-examples): examples using Java 8+ with streams, lambda and money-api
 - [JavaFX examples](javafx)
- - [JavaFX Demo application](javafx/money-fxdemo)
- - [JavaFX binding examples](javafx/money-javafx-binding)
+  - [JavaFX Demo application](javafx/money-fxdemo)
+  - [JavaFX binding examples](javafx/money-javafx-binding)
 - [Swing RCP examples](swing)
   - [An improved successor to EZ Money.](swing/javamoney-ez) 
 - [Web examples](web)

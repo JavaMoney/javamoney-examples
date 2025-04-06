@@ -11,7 +11,6 @@
   <modules>
     <module>javamoney-payment-cdi-event</module>
     <module>jsf-money</module>
-    <!--  module>javamoney-tradingapp</module> -->
     <!--  module>jax-rs-money</module> -->
   </modules>
   <groupId>org.javamoney.examples.web</groupId>

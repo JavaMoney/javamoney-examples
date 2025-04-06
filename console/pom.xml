@@ -11,14 +11,9 @@
 	<name>Java Money and Currency Console Examples</name>
 	<packaging>pom</packaging>
 	<modules>
-		<module>javamoney-console-simple</module>
 		<module>javamoney-console-java8</module>
 		<module>javamoney-console-java11</module>
-		<module>functional-examples</module>
-		<!-- <module>javamoney-console-bp</module -->
-		<!-- This module is broken somehow
-		<module>moneymachine</module>
-		 -->
+		<module>javamoney-console-convert</module>
 	</modules>
 	<dependencies>
 		<dependency>

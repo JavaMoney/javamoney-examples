@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2012, 2023, Werner Keil and others by the @author tag.
+ * Copyright (c) 2012, 2025, Werner Keil and others by the @author tag.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.javamoney.examples.console.java8;
+package org.javamoney.examples.console.java8.format;
 
 import org.javamoney.moneta.Money;
 import org.javamoney.moneta.format.AmountFormatParams;
@@ -36,16 +36,21 @@ public class FormattingAmounts {
         amt = Money.of(123412341234.5678, "INR");
         System.out.println(MonetaryFormats.getAmountFormat(new Locale("", "INR")).format(amt));
 
-        // no with adaptive groupings
+        // now with adaptive groupings
         System.out.println(MonetaryFormats.getAmountFormat(
-                AmountFormatQueryBuilder.of(new Locale("", "INR"))
-                        .set(AmountFormatParams.GROUPING_SIZES, new int[]{2, 3})
-                        .set(AmountFormatParams.GROUPING_GROUPING_SEPARATORS, new char[]{',', '`'})
-                        .build())
+                        AmountFormatQueryBuilder.of(new Locale("", "INR"))
+                                .set(AmountFormatParams.GROUPING_SIZES, new int[]{3, 2})
+                                .set(AmountFormatParams.GROUPING_GROUPING_SEPARATORS, new char[]{',', '`'})
+                                .build())
                 .format(amt));
-        
+
         amt = Money.of(5, "USD");
-        System.out.println(MonetaryFormats.getAmountFormat(AmountFormatQueryBuilder.of(Locale.US).set(CurrencyStyle.SYMBOL).set(AmountFormatParams.PATTERN, "¤##.##").build()).format(amt));
+        System.out.println(MonetaryFormats.getAmountFormat(
+                        AmountFormatQueryBuilder.of(Locale.US)
+                                .set(CurrencyStyle.SYMBOL)
+                                .set(AmountFormatParams.PATTERN, "¤##.##")
+                                .build())
+                .format(amt));
     }
 
 }

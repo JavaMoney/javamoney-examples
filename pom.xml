@@ -13,7 +13,7 @@
 	<modules>
 		<module>console</module>
 		<module>swing</module>
-		<!--  >module>javafx</module -->
+		<module>javafx</module>
 		<module>web</module>
 	</modules>
 	<properties>
@@ -50,6 +50,17 @@
 				<artifactId>junit</artifactId>
 				<version>${junit.version}</version>
 				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.javamoney.lib</groupId>
+				<artifactId>javamoney-lib</artifactId>
+				<version>${lib.version}</version>
+				<type>pom</type>
+			</dependency>
+			<dependency>
+				<groupId>org.javamoney.lib</groupId>
+				<artifactId>javamoney-calc</artifactId>
+				<version>${lib.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

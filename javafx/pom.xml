@@ -10,13 +10,39 @@
 	<packaging>pom</packaging>
 	<name>Java Money and Currency JavaFX Examples</name>
 	<properties>
-		<jdkVersion>1.8</jdkVersion>
+		<jdkVersion>11</jdkVersion>
+		<jfxVersion>11.0.2</jfxVersion>
 	</properties>
 	<modules>
 		<module>money-javafx-binding</module>
 		<module>money-fxdemo</module>
 	</modules>
 	<groupId>org.javamoney.examples.javafx</groupId>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.openjfx</groupId>
+				<artifactId>javafx-base</artifactId>
+				<version>${jfxVersion}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.openjfx</groupId>
+				<artifactId>javafx-controls</artifactId>
+				<version>${jfxVersion}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.openjfx</groupId>
+				<artifactId>javafx-web</artifactId>
+				<version>${jfxVersion}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.openjfx</groupId>
+				<artifactId>javafx-fxml</artifactId>
+				<version>${jfxVersion}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
 	<dependencies>
 		<dependency>
 			<groupId>javax.money</groupId>
